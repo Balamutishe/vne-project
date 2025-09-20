@@ -16,6 +16,15 @@
   --font4: "Sora", sans-serif;
 }
 
+@theme {
+  --color-background: #ffffff;
+  --color-foreground: #171717;
+  --color-active: #2725ab;
+  --color-hover: #5856d6;
+  --color-primary: #000;
+  --color-tertiary: #8e8e93;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
