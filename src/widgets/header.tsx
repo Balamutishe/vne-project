@@ -17,7 +17,7 @@ export const Header: FC<{ className?: string }> = ({ className }) => {
         <HeaderLogo />
         <HeaderActions />
       </section>
-      <section className={"h-196 overflow-auto"}>
+      <section className={"h-196 overflow-hidden"}>
         <Image
           src={"/images/preview.jpg"}
           alt={"Preview"}

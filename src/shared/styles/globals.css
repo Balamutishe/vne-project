@@ -23,6 +23,25 @@
   --color-hover: #5856d6;
   --color-primary: #000;
   --color-tertiary: #8e8e93;
+
+  --font-main: "Inter", sans-serif;
+  --font-second: "Helvetica", sans-serif;
+  --font-third: "DaMiOne", sans-serif;
+  --font3: "SF Pro Text", sans-serif;
+  --font4: "Sora", sans-serif;
+}
+
+@layer base {
+  .product-list {
+    @apply grid grid-cols-2 border-zinc-950
+    [&>*:nth-child(even)]:border-r-1
+    [&>*:nth-child(even)]:border-b-1
+    [&>*:nth-child(even)]:border-l-0
+    [&>*:nth-child(-n+2)]:border-t-1
+    [&>*:nth-child(odd)]:border-r-1
+    [&>*:nth-child(odd)]:border-l-1
+    [&>*:nth-child(odd)]:border-b-1
+  }
 }
 
 body {

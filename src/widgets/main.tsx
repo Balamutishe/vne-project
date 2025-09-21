@@ -1,5 +1,5 @@
 import { FC, ReactNode } from "react";
 
 export const Main: FC<{ children: ReactNode }> = ({ children }) => {
-  return <main className={"flex flex-1"}>{children}</main>;
+  return <main className={"flex flex-1 px-13.5"}>{children}</main>;
 };
