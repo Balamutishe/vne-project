@@ -18,7 +18,10 @@ export const Header: FC<{ className?: string }> = ({ className }) => {
         <HeaderActions />
       </section>
       {categoriesType !== null && (
-        <HeaderCategories categoriesType={categoriesType} />
+        <HeaderCategories
+          categoriesType={categoriesType}
+          setCategoriesType={setCategoriesType}
+        />
       )}
     </header>
   );
@@ -218,11 +221,12 @@ const categoriesAccessories = [
 
 const HeaderCategories: FC<{
   categoriesType: "women" | "men" | "accessories";
-}> = ({ categoriesType }) => {
+  setCategoriesType: (type: "women" | "men" | "accessories" | null) => void;
+}> = ({ categoriesType, setCategoriesType }) => {
   return (
     <section
       className={
-        "absolute flex min-h-81 w-full flex-col border-t-1 border-zinc-950 bg-[#ffffff]"
+        "bg-background absolute flex min-h-81 w-full flex-col border-t-1 border-zinc-950"
       }
     >
       <div className={"flex min-h-11.5 items-center border-b-1"}>
@@ -240,7 +244,20 @@ const HeaderCategories: FC<{
         >
           АКСЕССУАРЫ
         </span>
-        <span></span>
+        <span className={"flex w-[54%] items-center justify-end px-13.5"}>
+          <button
+            className={"cursor-pointer"}
+            onClick={() => setCategoriesType(null)}
+          >
+            <Image
+              className={"svg-icon"}
+              src={"/images/close.svg"}
+              alt={"Close"}
+              width={34}
+              height={34}
+            />
+          </button>
+        </span>
       </div>
       <div className={"flex min-h-68"}>
         <ul className={"w-[23%] border-r-1 border-zinc-950 px-13.5 py-4"}>
