@@ -9,13 +9,21 @@ export const Header: FC<{ className?: string }> = ({ className }) => {
   >(null);
 
   return (
-    <header className={"relative h-16"}>
+    <header className={"mb-20 h-212"}>
       <section
-        className={`flex h-full items-center justify-between px-13.5 py-2.5 ${className}`}
+        className={`relative flex h-16 items-center justify-between px-13.5 py-2.5 ${className}`}
       >
         <HeaderNav setCategoriesType={setCategoriesType} />
         <HeaderLogo />
         <HeaderActions />
+      </section>
+      <section className={"h-196 overflow-auto"}>
+        <Image
+          src={"/images/preview.jpg"}
+          alt={"Preview"}
+          height={800}
+          width={1440}
+        />
       </section>
       {categoriesType !== null && (
         <HeaderCategories
@@ -226,20 +234,20 @@ const HeaderCategories: FC<{
   return (
     <section
       className={
-        "bg-background absolute flex min-h-81 w-full flex-col border-t-1 border-zinc-950"
+        "bg-background absolute top-16 flex min-h-80 w-[1440px] flex-col border-t-1 border-zinc-950"
       }
     >
       <div className={"flex min-h-11.5 items-center border-b-1"}>
         <span
           className={
-            "flex h-full w-[23%] items-center border-r-1 border-zinc-950 px-13.5 py-4"
+            "flex h-full w-[23%] items-center border-zinc-950 px-13.5 py-4"
           }
         >
           {categoriesType !== "accessories" && "ОДЕЖДА"}
         </span>
         <span
           className={
-            "flex h-full w-[23%] items-center border-r-1 border-zinc-950 px-4 py-4"
+            "flex h-full w-[23%] items-center border-r-1 border-l-1 border-zinc-950 px-4 py-4"
           }
         >
           АКСЕССУАРЫ
@@ -260,7 +268,7 @@ const HeaderCategories: FC<{
         </span>
       </div>
       <div className={"flex min-h-68"}>
-        <ul className={"w-[23%] border-r-1 border-zinc-950 px-13.5 py-4"}>
+        <ul className={"w-[23%] px-13.5 py-4"}>
           {categoriesType === "men" &&
             categoriesMen.map((category) => (
               <li
@@ -284,7 +292,9 @@ const HeaderCategories: FC<{
               </li>
             ))}
         </ul>
-        <ul className={"w-[23%] border-r-1 border-zinc-950 px-4 py-4"}>
+        <ul
+          className={"w-[23%] border-r-1 border-l-1 border-zinc-950 px-4 py-4"}
+        >
           {categoriesAccessories.map((category) => (
             <li
               key={category.id}
