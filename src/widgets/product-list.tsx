@@ -13,7 +13,16 @@ export const ProductList = () => {
       <h2 className={`${damionFont.className} mb-20 text-7xl`}>
         СТИЛЬ ВНЕ ВРЕМЕНИ
       </h2>
-      <ul className={"product-list"}>
+      <ul className={"product-list product-list-odd"}>
+        <li>
+          <ProductCard title={"БОМБЕР ОВЕРСАЙЗ"} price={"9900"} />
+        </li>
+        <li>
+          <ProductCard title={"БОМБЕР ОВЕРСАЙЗ"} price={"9900"} />
+        </li>
+        <li>
+          <ProductCard title={"БОМБЕР ОВЕРСАЙЗ"} price={"9900"} />
+        </li>
         <li>
           <ProductCard title={"БОМБЕР ОВЕРСАЙЗ"} price={"9900"} />
         </li>
