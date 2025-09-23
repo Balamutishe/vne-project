@@ -1,12 +1,14 @@
 import { ContainerPage, Footer, Main, Header } from "@/widgets";
-import { ProductList } from "@/widgets/product-list";
+import { Categories } from "@/features/categories";
+import { ProductsList } from "@/widgets/products-list";
 
 export default function Home() {
   return (
     <ContainerPage>
       <Header />
       <Main>
-        <ProductList />
+        <ProductsList />
+        <Categories />
       </Main>
       <Footer />
     </ContainerPage>

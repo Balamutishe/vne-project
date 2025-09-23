@@ -1,5 +1,6 @@
 "use client";
 
+import { categories } from "@/server/data";
 import Image from "next/image";
 import { FC, useState } from "react";
 
@@ -130,107 +131,12 @@ const HeaderActions = () => {
   );
 };
 
-const categoriesMen = [
-  {
-    id: crypto.randomUUID(),
-    name: "Брюки и джинсы",
-    count: 1,
-  },
-  {
-    id: crypto.randomUUID(),
-    name: "Рубашки",
-    count: 1,
-  },
-  {
-    id: crypto.randomUUID(),
-    name: "Майки и футболки",
-    count: 1,
-  },
-  {
-    id: crypto.randomUUID(),
-    name: "Худи и свитеры",
-    count: 1,
-  },
-  {
-    id: crypto.randomUUID(),
-    name: "Пиджаки",
-    count: 1,
-  },
-  {
-    id: crypto.randomUUID(),
-    name: "Верхняя одежда",
-    count: 1,
-  },
-];
-const categoriesWomen = [
-  {
-    id: crypto.randomUUID(),
-    name: "Платья",
-    count: 2,
-  },
-  {
-    id: crypto.randomUUID(),
-    name: "Брюки и джинсы",
-    count: 2,
-  },
-  {
-    id: crypto.randomUUID(),
-    name: "Юбки",
-    count: 2,
-  },
-  {
-    id: crypto.randomUUID(),
-    name: "Свитеры",
-    count: 2,
-  },
-  {
-    id: crypto.randomUUID(),
-    name: "Жакеты",
-    count: 2,
-  },
-  {
-    id: crypto.randomUUID(),
-    name: "Топы и футболки",
-    count: 2,
-  },
-  {
-    id: crypto.randomUUID(),
-    name: "Рубашки",
-    count: 2,
-  },
-  {
-    id: crypto.randomUUID(),
-    name: "Верхняя одежда",
-    count: 2,
-  },
-];
-const categoriesAccessories = [
-  {
-    id: crypto.randomUUID(),
-    name: "Шапки",
-    count: 3,
-  },
-  {
-    id: crypto.randomUUID(),
-    name: "Шарфы",
-    count: 3,
-  },
-  {
-    id: crypto.randomUUID(),
-    name: "Капюшоны",
-    count: 3,
-  },
-  {
-    id: crypto.randomUUID(),
-    name: "Балаклавы",
-    count: 3,
-  },
-];
-
 const HeaderCategories: FC<{
   categoriesType: "women" | "men" | "accessories";
   setCategoriesType: (type: "women" | "men" | "accessories" | null) => void;
 }> = ({ categoriesType, setCategoriesType }) => {
+  const { categoriesWomen, categoriesMen, accessoriesListAll } = categories;
+
   return (
     <section
       className={
@@ -295,16 +201,47 @@ const HeaderCategories: FC<{
         <ul
           className={"w-[23%] border-r-1 border-l-1 border-zinc-950 px-4 py-4"}
         >
-          {categoriesAccessories.map((category) => (
-            <li
-              key={category.id}
-              className={
-                "hover:text-hover active:text-active cursor-pointer transition-colors"
+          {categoriesType === "men" &&
+            categoriesMen.map((category) => {
+              if (category.name === "Аксессуары") {
+                return category.list.map((item) => (
+                  <li
+                    key={item.id}
+                    className={
+                      "hover:text-hover active:text-active cursor-pointer transition-colors"
+                    }
+                  >
+                    {item.name}
+                  </li>
+                ));
               }
-            >
-              {category.name} ({category.count})
-            </li>
-          ))}
+            })}
+          {categoriesType === "women" &&
+            categoriesWomen.map((category) => {
+              if (category.name === "Аксессуары") {
+                return category.list.map((item) => (
+                  <li
+                    key={item.id}
+                    className={
+                      "hover:text-hover active:text-active cursor-pointer transition-colors"
+                    }
+                  >
+                    {item.name}
+                  </li>
+                ));
+              }
+            })}
+          {categoriesType === "accessories" &&
+            accessoriesListAll.map((category) => (
+              <li
+                key={category.id}
+                className={
+                  "hover:text-hover active:text-active cursor-pointer transition-colors"
+                }
+              >
+                {category.name} ({category.count})
+              </li>
+            ))}
         </ul>
       </div>
       <div className={"w-2/4"}>

@@ -34,7 +34,7 @@
 @layer base {
   .product-list {
     @apply flex flex-wrap border-zinc-950
-    [&>*]:w-1/2
+    [&>*]:w-1/2 [&>*]:h-202
     [&>*:nth-child(even)]:border-r-1
     [&>*:nth-child(even)]:border-b-1
     [&>*:nth-child(even)]:border-l-0

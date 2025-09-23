@@ -7,7 +7,7 @@ const damionFont = localFont({
   display: "swap",
 });
 
-export const ProductList = () => {
+export const ProductsList = () => {
   return (
     <section className={"mb-20 w-full"}>
       <h2 className={`${damionFont.className} mb-20 text-7xl`}>
@@ -51,7 +51,7 @@ export const ProductCard: FC<{ title: string; price: string }> = ({
   price,
 }) => {
   return (
-    <article className={"relative h-203 overflow-hidden p-2"}>
+    <article className={"relative h-full overflow-hidden p-2"}>
       <div className={"flex items-center justify-between"}>
         <h3>{title}</h3>
         <span>{price} &#8381;</span>
