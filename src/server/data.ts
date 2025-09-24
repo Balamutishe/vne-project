@@ -376,94 +376,18 @@ export const categories = {
     {
       id: crypto.randomUUID(),
       name: "Шапки",
-      list: [
-        {
-          id: crypto.randomUUID(),
-          name: "Шапки",
-        },
-        {
-          id: crypto.randomUUID(),
-          name: "Шарфы",
-        },
-        {
-          id: crypto.randomUUID(),
-          name: "Капюшоны",
-        },
-        {
-          id: crypto.randomUUID(),
-          name: "Балаклавы",
-        },
-      ],
-      count: 3,
     },
     {
       id: crypto.randomUUID(),
       name: "Шарфы",
-      list: [
-        {
-          id: crypto.randomUUID(),
-          name: "Шапки",
-        },
-        {
-          id: crypto.randomUUID(),
-          name: "Шарфы",
-        },
-        {
-          id: crypto.randomUUID(),
-          name: "Капюшоны",
-        },
-        {
-          id: crypto.randomUUID(),
-          name: "Балаклавы",
-        },
-      ],
-      count: 3,
     },
     {
       id: crypto.randomUUID(),
       name: "Капюшоны",
-      list: [
-        {
-          id: crypto.randomUUID(),
-          name: "Шапки",
-        },
-        {
-          id: crypto.randomUUID(),
-          name: "Шарфы",
-        },
-        {
-          id: crypto.randomUUID(),
-          name: "Капюшоны",
-        },
-        {
-          id: crypto.randomUUID(),
-          name: "Балаклавы",
-        },
-      ],
-      count: 3,
     },
     {
       id: crypto.randomUUID(),
       name: "Балаклавы",
-      list: [
-        {
-          id: crypto.randomUUID(),
-          name: "Шапки",
-        },
-        {
-          id: crypto.randomUUID(),
-          name: "Шарфы",
-        },
-        {
-          id: crypto.randomUUID(),
-          name: "Капюшоны",
-        },
-        {
-          id: crypto.randomUUID(),
-          name: "Балаклавы",
-        },
-      ],
-      count: 3,
     },
   ],
 };

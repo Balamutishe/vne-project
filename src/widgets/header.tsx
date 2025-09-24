@@ -1,6 +1,6 @@
 "use client";
 
-import { categories } from "@/server/data";
+import { AccessoriesListView, CategoriesListView } from "@/widgets/categories";
 import Image from "next/image";
 import { FC, useState } from "react";
 
@@ -27,7 +27,7 @@ export const Header: FC<{ className?: string }> = ({ className }) => {
         />
       </section>
       {categoriesType !== null && (
-        <HeaderCategories
+        <HeaderDropdownMenu
           categoriesType={categoriesType}
           setCategoriesType={setCategoriesType}
         />
@@ -131,12 +131,10 @@ const HeaderActions = () => {
   );
 };
 
-const HeaderCategories: FC<{
+const HeaderDropdownMenu: FC<{
   categoriesType: "women" | "men" | "accessories";
   setCategoriesType: (type: "women" | "men" | "accessories" | null) => void;
 }> = ({ categoriesType, setCategoriesType }) => {
-  const { categoriesWomen, categoriesMen, accessoriesListAll } = categories;
-
   return (
     <section
       className={
@@ -173,80 +171,28 @@ const HeaderCategories: FC<{
           </button>
         </span>
       </div>
-      <div className={"flex min-h-68"}>
-        <ul className={"w-[23%] px-13.5 py-4"}>
-          {categoriesType === "men" &&
-            categoriesMen.map((category) => (
-              <li
-                key={category.id}
-                className={
-                  "hover:text-hover active:text-active cursor-pointer transition-colors"
-                }
-              >
-                {category.name} ({category.count})
-              </li>
-            ))}
-          {categoriesType === "women" &&
-            categoriesWomen.map((category) => (
-              <li
-                key={category.id}
-                className={
-                  "hover:text-hover active:text-active cursor-pointer transition-colors"
-                }
-              >
-                {category.name} ({category.count})
-              </li>
-            ))}
-        </ul>
-        <ul
+      <div className={"flex min-h-80"}>
+        <div className={"w-[23%] px-13.5 py-4"}>
+          <CategoriesListView
+            categoriesType={categoriesType}
+            listType={"header"}
+          />
+        </div>
+        <div
           className={"w-[23%] border-r-1 border-l-1 border-zinc-950 px-4 py-4"}
         >
-          {categoriesType === "men" &&
-            categoriesMen.map((category) => {
-              if (category.name === "Аксессуары") {
-                return category.list.map((item) => (
-                  <li
-                    key={item.id}
-                    className={
-                      "hover:text-hover active:text-active cursor-pointer transition-colors"
-                    }
-                  >
-                    {item.name}
-                  </li>
-                ));
-              }
-            })}
-          {categoriesType === "women" &&
-            categoriesWomen.map((category) => {
-              if (category.name === "Аксессуары") {
-                return category.list.map((item) => (
-                  <li
-                    key={item.id}
-                    className={
-                      "hover:text-hover active:text-active cursor-pointer transition-colors"
-                    }
-                  >
-                    {item.name}
-                  </li>
-                ));
-              }
-            })}
-          {categoriesType === "accessories" &&
-            accessoriesListAll.map((category) => (
-              <li
-                key={category.id}
-                className={
-                  "hover:text-hover active:text-active cursor-pointer transition-colors"
-                }
-              >
-                {category.name} ({category.count})
-              </li>
-            ))}
-        </ul>
+          <AccessoriesListView
+            accessoriesType={
+              categoriesType === "accessories"
+                ? "accessoriesAll"
+                : categoriesType === "men"
+                  ? "accessoriesMen"
+                  : "accessoriesWomen"
+            }
+          />
+        </div>
       </div>
-      <div className={"w-2/4"}>
-        <div className={"h-11.5"}></div>
-      </div>
+      <div className={"w-[54%]"}></div>
     </section>
   );
 };
