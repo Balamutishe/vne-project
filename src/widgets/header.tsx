@@ -1,20 +1,21 @@
 "use client";
 
-import { AccessoriesListView, CategoriesListView } from "@/widgets/categories";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import {
+  AccessoriesListView,
+  CategoriesListView,
+} from "@/widgets/categories/categories";
+import { setCategoryHeaderType } from "@/widgets/categories/categoriesSlice";
 import Image from "next/image";
 import { FC, useState } from "react";
 
 export const Header: FC<{ className?: string }> = ({ className }) => {
-  const [categoriesType, setCategoriesType] = useState<
-    "women" | "men" | "accessories" | null
-  >(null);
-
   return (
     <header className={"mb-20 h-212"}>
       <section
         className={`relative flex h-16 items-center justify-between px-13.5 py-2.5 ${className}`}
       >
-        <HeaderNav setCategoriesType={setCategoriesType} />
+        <HeaderNav />
         <HeaderLogo />
         <HeaderActions />
       </section>
@@ -26,25 +27,20 @@ export const Header: FC<{ className?: string }> = ({ className }) => {
           width={1440}
         />
       </section>
-      {categoriesType !== null && (
-        <HeaderDropdownMenu
-          categoriesType={categoriesType}
-          setCategoriesType={setCategoriesType}
-        />
-      )}
+      <HeaderDropdownMenu />
     </header>
   );
 };
 
-const HeaderNav: FC<{
-  setCategoriesType: (type: "women" | "men" | "accessories" | null) => void;
-}> = ({ setCategoriesType }) => {
+const HeaderNav = () => {
+  const dispatch = useAppDispatch();
+
   return (
     <nav>
       <ul className={"flex w-2/5 items-center gap-8"}>
         <li
           key={crypto.randomUUID()}
-          onClick={() => setCategoriesType("women")}
+          onClick={() => dispatch(setCategoryHeaderType("women"))}
           className={
             "hover:text-hover active:text-active cursor-pointer transition-colors"
           }
@@ -53,7 +49,7 @@ const HeaderNav: FC<{
         </li>
         <li
           key={crypto.randomUUID()}
-          onClick={() => setCategoriesType("men")}
+          onClick={() => dispatch(setCategoryHeaderType("men"))}
           className={
             "hover:text-hover active:text-active cursor-pointer transition-colors"
           }
@@ -62,7 +58,7 @@ const HeaderNav: FC<{
         </li>
         <li
           key={crypto.randomUUID()}
-          onClick={() => setCategoriesType("accessories")}
+          onClick={() => dispatch(setCategoryHeaderType("accessories"))}
           className={
             "hover:text-hover active:text-active cursor-pointer transition-colors"
           }
@@ -131,10 +127,11 @@ const HeaderActions = () => {
   );
 };
 
-const HeaderDropdownMenu: FC<{
-  categoriesType: "women" | "men" | "accessories";
-  setCategoriesType: (type: "women" | "men" | "accessories" | null) => void;
-}> = ({ categoriesType, setCategoriesType }) => {
+const HeaderDropdownMenu = () => {
+  const categoriesHeaderType = useAppSelector(
+    (state) => state.categoriesState.categoriesHeaderType,
+  );
+
   return (
     <section
       className={
@@ -147,7 +144,7 @@ const HeaderDropdownMenu: FC<{
             "flex h-full w-[23%] items-center border-zinc-950 px-13.5 py-4"
           }
         >
-          {categoriesType !== "accessories" && "ОДЕЖДА"}
+          {categoriesHeaderType !== "accessories" && "ОДЕЖДА"}
         </span>
         <span
           className={
@@ -156,40 +153,29 @@ const HeaderDropdownMenu: FC<{
         >
           АКСЕССУАРЫ
         </span>
-        <span className={"flex w-[54%] items-center justify-end px-13.5"}>
-          <button
-            className={"cursor-pointer"}
-            onClick={() => setCategoriesType(null)}
-          >
-            <Image
-              className={"svg-icon"}
-              src={"/images/close.svg"}
-              alt={"Close"}
-              width={34}
-              height={34}
-            />
-          </button>
-        </span>
+        {/*<span className={"flex w-[54%] items-center justify-end px-13.5"}>*/}
+        {/*  <button*/}
+        {/*    className={"cursor-pointer"}*/}
+        {/*    onClick={() => setCategoriesType(null)}*/}
+        {/*  >*/}
+        {/*    <Image*/}
+        {/*      className={"svg-icon"}*/}
+        {/*      src={"/images/close.svg"}*/}
+        {/*      alt={"Close"}*/}
+        {/*      width={34}*/}
+        {/*      height={34}*/}
+        {/*    />*/}
+        {/*  </button>*/}
+        {/*</span>*/}
       </div>
       <div className={"flex min-h-80"}>
         <div className={"w-[23%] px-13.5 py-4"}>
-          <CategoriesListView
-            categoriesType={categoriesType}
-            listType={"header"}
-          />
+          <CategoriesListView listType={"header"} />
         </div>
         <div
           className={"w-[23%] border-r-1 border-l-1 border-zinc-950 px-4 py-4"}
         >
-          <AccessoriesListView
-            accessoriesType={
-              categoriesType === "accessories"
-                ? "accessoriesAll"
-                : categoriesType === "men"
-                  ? "accessoriesMen"
-                  : "accessoriesWomen"
-            }
-          />
+          <AccessoriesListView />
         </div>
       </div>
       <div className={"w-[54%]"}></div>

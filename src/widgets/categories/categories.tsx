@@ -1,28 +1,25 @@
 "use client";
 
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { setCategoryMainType } from "@/widgets/categories/categoriesSlice";
 import { clsx } from "clsx";
 import Image from "next/image";
-import { FC, useState } from "react";
+import { FC } from "react";
 import { categories } from "@/server/data";
 import { TCategoriesList } from "@/shared/types/categories";
 import localFont from "next/font/local";
 
 const damionFont = localFont({
-  src: "../../public/fonts/DaMiOne-Regular.ttf",
+  src: "../../../public/fonts/DaMiOne-Regular.ttf",
   display: "swap",
 });
 
-export const CategoriesMain = () => {
-  const [categoryType, setCategoryType] = useState<"men" | "women">("women");
-
+export const CategoriesSection = () => {
   return (
     <section className={"mb-20 min-h-198 w-full"}>
       <div className={"mb-18 flex items-center justify-between"}>
         <h2 className={`${damionFont.className} text-7xl`}>КАТЕГОРИИ</h2>
-        <CategoriesSwitcher
-          categoryType={categoryType}
-          setCategoryType={setCategoryType}
-        />
+        <CategoriesSwitcher />
       </div>
       <div
         className={
@@ -38,17 +35,19 @@ export const CategoriesMain = () => {
           />
         </div>
         <div className={"w-2/3"}>
-          <CategoriesListView categoriesType={categoryType} listType={"main"} />
+          <CategoriesListView listType={"main"} />
         </div>
       </div>
     </section>
   );
 };
 
-export const CategoriesSwitcher: FC<{
-  categoryType: string;
-  setCategoryType: (value: "men" | "women") => void;
-}> = ({ categoryType, setCategoryType }) => {
+export const CategoriesSwitcher = () => {
+  const categoryType = useAppSelector(
+    (state) => state.categoriesState.categoriesMainType,
+  );
+  const dispatch = useAppDispatch();
+
   return (
     <div className={"flex items-center gap-5"}>
       <button
@@ -58,7 +57,7 @@ export const CategoriesSwitcher: FC<{
             "border-b-hover text-hover": categoryType === "women",
           },
         )}
-        onClick={() => setCategoryType("women")}
+        onClick={() => dispatch(setCategoryMainType("women"))}
       >
         Женское
       </button>
@@ -69,7 +68,7 @@ export const CategoriesSwitcher: FC<{
             "border-b-hover text-hover": categoryType === "men",
           },
         )}
-        onClick={() => setCategoryType("men")}
+        onClick={() => dispatch(setCategoryMainType("men"))}
       >
         Мужское
       </button>
@@ -78,10 +77,18 @@ export const CategoriesSwitcher: FC<{
 };
 
 export const CategoriesListView: FC<{
-  categoriesType: "men" | "women" | "accessories";
   listType: "header" | "main";
-}> = ({ categoriesType, listType }) => {
+}> = ({ listType }) => {
   const { categoriesMen, categoriesWomen } = categories;
+  const categoriesMainType = useAppSelector(
+    (state) => state.categoriesState.categoriesMainType,
+  );
+  const categoriesHeaderType = useAppSelector(
+    (state) => state.categoriesState.categoriesHeaderType,
+  );
+
+  const categoriesType =
+    listType === "header" ? categoriesHeaderType : categoriesMainType;
 
   switch (categoriesType) {
     case "men":
@@ -130,10 +137,13 @@ export const CategoriesList: FC<{
   );
 };
 
-export const AccessoriesListView: FC<{
-  accessoriesType: "accessoriesMen" | "accessoriesWomen" | "accessoriesAll";
-}> = ({ accessoriesType }) => {
+export const AccessoriesListView = () => {
   const { categoriesMen, categoriesWomen, accessoriesListAll } = categories;
+
+  const categoriesHeaderType = useAppSelector(
+    (state) => state.categoriesState.categoriesHeaderType,
+  );
+
   const accessoriesMen = categoriesMen.find(
     (category) => category.name === "Аксессуары",
   );
@@ -141,12 +151,12 @@ export const AccessoriesListView: FC<{
     (category) => category.name === "Аксессуары",
   );
 
-  switch (accessoriesType) {
-    case "accessoriesAll":
+  switch (categoriesHeaderType) {
+    case "accessories":
       return <AccessoriesList accessoriesList={accessoriesListAll!} />;
-    case "accessoriesMen":
+    case "men":
       return <AccessoriesList accessoriesList={accessoriesMen!.list} />;
-    case "accessoriesWomen":
+    case "women":
       return <AccessoriesList accessoriesList={accessoriesWomen!.list} />;
   }
 };

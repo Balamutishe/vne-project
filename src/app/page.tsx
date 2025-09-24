@@ -1,5 +1,5 @@
 import { ContainerPage, Footer, Main, Header } from "@/widgets";
-import { CategoriesMain } from "@/widgets/categories";
+import { CategoriesSection } from "@/widgets/categories/categories";
 import { ProductsList } from "@/widgets/products-list";
 
 export default function Home() {
@@ -8,7 +8,7 @@ export default function Home() {
       <Header />
       <Main>
         <ProductsList />
-        <CategoriesMain />
+        <CategoriesSection />
       </Main>
       <Footer />
     </ContainerPage>
