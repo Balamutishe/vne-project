@@ -1,8 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface InitialState {
-  categoriesHeaderType: "men" | "women" | "accessories";
-  categoriesMainType: "men" | "women";
+interface CategoriesState {
+  categoriesType: "men" | "women";
   categoryCurrent:
     | "accessories"
     | "dresses"
@@ -16,9 +15,8 @@ interface InitialState {
     | "trousers";
 }
 
-const initialState: InitialState = {
-  categoriesHeaderType: "women",
-  categoriesMainType: "women",
+const initialState: CategoriesState = {
+  categoriesType: "women",
   categoryCurrent: "trousers",
 };
 
@@ -26,14 +24,8 @@ const categoriesSlice = createSlice({
   name: "categoriesState",
   initialState,
   reducers: {
-    setCategoryMainType: (state, action: PayloadAction<"men" | "women">) => {
-      state.categoriesMainType = action.payload;
-    },
-    setCategoryHeaderType: (
-      state,
-      action: PayloadAction<"men" | "women" | "accessories">,
-    ) => {
-      state.categoriesHeaderType = action.payload;
+    setCategoryType: (state, action: PayloadAction<"men" | "women">) => {
+      state.categoriesType = action.payload;
     },
     setCategoryCurrent: (
       state,
@@ -55,9 +47,5 @@ const categoriesSlice = createSlice({
   },
 });
 
-export const {
-  setCategoryCurrent,
-  setCategoryHeaderType,
-  setCategoryMainType,
-} = categoriesSlice.actions;
+export const { setCategoryCurrent, setCategoryType } = categoriesSlice.actions;
 export default categoriesSlice.reducer;

@@ -1,6 +1,6 @@
 import { ContainerPage, Footer, Main, Header } from "@/widgets";
-import { CategoriesSection } from "@/widgets/categories/categories";
-import { ProductsList } from "@/widgets/products-list";
+import { CategoriesSection } from "@/widgets/categories";
+import { ProductsList } from "@/widgets/productsList";
 
 export default function Home() {
   return (
