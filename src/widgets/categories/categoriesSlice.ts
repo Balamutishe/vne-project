@@ -3,13 +3,23 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 interface InitialState {
   categoriesHeaderType: "men" | "women" | "accessories";
   categoriesMainType: "men" | "women";
-  categoryCurrent: string;
+  categoryCurrent:
+    | "accessories"
+    | "dresses"
+    | "jackets"
+    | "outerwear"
+    | "skirts"
+    | "t-shirts"
+    | "shirts"
+    | "sweaters"
+    | "tops"
+    | "trousers";
 }
 
 const initialState: InitialState = {
   categoriesHeaderType: "women",
   categoriesMainType: "women",
-  categoryCurrent: "",
+  categoryCurrent: "trousers",
 };
 
 const categoriesSlice = createSlice({
@@ -25,7 +35,21 @@ const categoriesSlice = createSlice({
     ) => {
       state.categoriesHeaderType = action.payload;
     },
-    setCategoryCurrent: (state, action: PayloadAction<string>) => {
+    setCategoryCurrent: (
+      state,
+      action: PayloadAction<
+        | "accessories"
+        | "dresses"
+        | "jackets"
+        | "outerwear"
+        | "skirts"
+        | "t-shirts"
+        | "sweaters"
+        | "tops"
+        | "trousers"
+        | "shirts"
+      >,
+    ) => {
       state.categoryCurrent = action.payload;
     },
   },

@@ -1,7 +1,10 @@
 "use client";
 
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { setCategoryMainType } from "@/widgets/categories/categoriesSlice";
+import {
+  setCategoryCurrent,
+  setCategoryMainType,
+} from "@/widgets/categories/categoriesSlice";
 import { clsx } from "clsx";
 import Image from "next/image";
 import { FC } from "react";
@@ -27,18 +30,28 @@ export const CategoriesSection = () => {
         }
       >
         <div className={"w-1/3"}>
-          <Image
-            src={"/images/category-women.png"}
-            alt={"PreviewCategory"}
-            width={431}
-            height={628}
-          />
+          <CategoryPreview />
         </div>
         <div className={"w-2/3"}>
           <CategoriesListView listType={"main"} />
         </div>
       </div>
     </section>
+  );
+};
+
+export const CategoryPreview = () => {
+  const { categoryCurrent, categoriesMainType } = useAppSelector(
+    (state) => state.categoriesState,
+  );
+
+  return (
+    <Image
+      src={`/images/category/${categoriesMainType}-${categoryCurrent}.jpg`}
+      alt={"PreviewCategory"}
+      width={431}
+      height={628}
+    />
   );
 };
 
@@ -106,10 +119,13 @@ export const CategoriesList: FC<{
   categoriesData: TCategoriesList;
   listType: "header" | "main";
 }> = ({ categoriesData, listType }) => {
+  const dispatch = useAppDispatch();
+
   return (
     <ul>
       {categoriesData.map((category) => (
         <li
+          onMouseEnter={() => dispatch(setCategoryCurrent(category.slug))}
           key={category.id}
           className={clsx(
             "flex items-center justify-between" +

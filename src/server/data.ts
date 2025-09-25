@@ -1,7 +1,10 @@
-export const categories = {
+import { TCategoriesResponseData } from "@/shared/types/categories";
+
+export const categories: TCategoriesResponseData = {
   categoriesMen: [
     {
       id: crypto.randomUUID(),
+      slug: "trousers",
       name: "Брюки и джинсы",
       list: [
         {
@@ -25,6 +28,7 @@ export const categories = {
     },
     {
       id: crypto.randomUUID(),
+      slug: "shirts",
       name: "Рубашки",
       list: [
         {
@@ -48,6 +52,7 @@ export const categories = {
     },
     {
       id: crypto.randomUUID(),
+      slug: "t-shirts",
       name: "Майки и футболки",
       list: [
         {
@@ -71,6 +76,7 @@ export const categories = {
     },
     {
       id: crypto.randomUUID(),
+      slug: "sweaters",
       name: "Худи и свитеры",
       list: [
         {
@@ -94,6 +100,7 @@ export const categories = {
     },
     {
       id: crypto.randomUUID(),
+      slug: "jackets",
       name: "Пиджаки",
       list: [
         {
@@ -117,6 +124,7 @@ export const categories = {
     },
     {
       id: crypto.randomUUID(),
+      slug: "outerwear",
       name: "Верхняя одежда",
       list: [
         {
@@ -140,6 +148,7 @@ export const categories = {
     },
     {
       id: crypto.randomUUID(),
+      slug: "accessories",
       name: "Аксессуары",
       list: [
         {
@@ -165,6 +174,7 @@ export const categories = {
   categoriesWomen: [
     {
       id: crypto.randomUUID(),
+      slug: "dresses",
       name: "Платья",
       list: [
         {
@@ -188,6 +198,7 @@ export const categories = {
     },
     {
       id: crypto.randomUUID(),
+      slug: "trousers",
       name: "Брюки и джинсы",
       list: [
         {
@@ -211,6 +222,7 @@ export const categories = {
     },
     {
       id: crypto.randomUUID(),
+      slug: "skirts",
       name: "Юбки",
       list: [
         {
@@ -234,6 +246,7 @@ export const categories = {
     },
     {
       id: crypto.randomUUID(),
+      slug: "sweaters",
       name: "Свитеры",
       list: [
         {
@@ -257,6 +270,7 @@ export const categories = {
     },
     {
       id: crypto.randomUUID(),
+      slug: "jackets",
       name: "Жакеты",
       list: [
         {
@@ -280,6 +294,7 @@ export const categories = {
     },
     {
       id: crypto.randomUUID(),
+      slug: "tops",
       name: "Топы и футболки",
       list: [
         {
@@ -303,6 +318,7 @@ export const categories = {
     },
     {
       id: crypto.randomUUID(),
+      slug: "shirts",
       name: "Рубашки",
       list: [
         {
@@ -326,6 +342,7 @@ export const categories = {
     },
     {
       id: crypto.randomUUID(),
+      slug: "outerwear",
       name: "Верхняя одежда",
       list: [
         {
@@ -349,6 +366,7 @@ export const categories = {
     },
     {
       id: crypto.randomUUID(),
+      slug: "accessories",
       name: "Аксессуары",
       list: [
         {
