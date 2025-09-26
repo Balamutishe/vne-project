@@ -1,21 +1,19 @@
 import { useAppDispatch } from "@/store/hooks";
 import { toggleDropdownMenuVisible } from "@/widgets/header/headerSlice";
-import Image from "next/image";
+import CloseSvg from "./icons/close.svg";
 
 export const DropdownMenuClose = () => {
   const dispatch = useAppDispatch();
 
   return (
     <button
-      className={"cursor-pointer"}
+      className={"flex cursor-pointer items-center"}
       onClick={() => dispatch(toggleDropdownMenuVisible(false))}
     >
-      <Image
-        className={"svg-icon"}
-        src={"/images/close.svg"}
-        alt={"Close"}
-        width={34}
-        height={34}
+      <CloseSvg
+        className={"hover:[&>path]:fill-hover"}
+        width={24}
+        height={24}
       />
     </button>
   );

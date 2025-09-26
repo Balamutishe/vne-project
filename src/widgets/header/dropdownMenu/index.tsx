@@ -27,7 +27,9 @@ export const DropdownMenu = () => {
         >
           АКСЕССУАРЫ
         </span>
-        <span className={"flex w-[54%] items-center justify-end px-13.5"}>
+        <span
+          className={"flex w-[54%] items-center justify-end px-13.5 py-2.5"}
+        >
           <DropdownMenuClose />
         </span>
       </div>
