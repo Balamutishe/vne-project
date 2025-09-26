@@ -1,6 +1,6 @@
 import { useAppDispatch } from "@/store/hooks";
-import { toggleDropdownMenuVisible } from "@/widgets/header/headerSlice";
-import CloseSvg from "./icons/close.svg";
+import { toggleDropdownMenuVisible } from "@/features/header/dropdownMenu/dropdownMenuSlice";
+import CloseSvg from "../icons/close.svg";
 
 export const DropdownMenuClose = () => {
   const dispatch = useAppDispatch();

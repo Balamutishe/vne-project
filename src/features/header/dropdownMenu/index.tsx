@@ -1,7 +1,9 @@
 import { useAppSelector } from "@/store/hooks";
-import { AccessoriesListView } from "@/widgets/header/dropdownMenu/accessoriesList";
-import { CategoriesListView } from "@/widgets/header/dropdownMenu/categoriesList";
-import { DropdownMenuClose } from "@/widgets/header/dropdownMenu/dropdownMenuClose";
+import {
+  AccessoriesListView,
+  CategoriesListView,
+  DropdownMenuClose,
+} from "@/features/header/dropdownMenu/components";
 
 export const DropdownMenu = () => {
   const categoriesType = useAppSelector(

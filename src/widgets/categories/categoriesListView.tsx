@@ -20,7 +20,7 @@ export const CategoriesListView = () => {
   }
 };
 
-export const CategoriesList: FC<{
+const CategoriesList: FC<{
   categoriesData: TCategoriesList;
 }> = ({ categoriesData }) => {
   const dispatch = useAppDispatch();

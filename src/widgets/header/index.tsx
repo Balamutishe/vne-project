@@ -2,7 +2,7 @@
 
 import { FC } from "react";
 import { useAppSelector } from "@/store/hooks";
-import { DropdownMenu } from "@/widgets/header/dropdownMenu";
+import { DropdownMenu } from "@/features/header/dropdownMenu";
 import { HeaderLogo } from "@/widgets/header/headerLogo";
 import { HeaderNav } from "@/widgets/header/headerNav";
 import { HeaderToolbar } from "@/widgets/header/headerToolbar";

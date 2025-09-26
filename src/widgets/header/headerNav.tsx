@@ -1,6 +1,6 @@
 import { useAppDispatch } from "@/store/hooks";
-import { toggleCategoriesType } from "@/widgets/header/headerSlice";
-import { toggleDropdownMenuVisible } from "@/widgets/header/headerSlice";
+import { toggleCategoriesType } from "@/features/header/dropdownMenu/dropdownMenuSlice";
+import { toggleDropdownMenuVisible } from "@/features/header/dropdownMenu/dropdownMenuSlice";
 
 export const HeaderNav = () => {
   const dispatch = useAppDispatch();

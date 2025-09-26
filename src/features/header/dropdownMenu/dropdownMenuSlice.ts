@@ -1,26 +1,21 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface HeaderState {
+interface DropdownMenuState {
   isDropdownMenuVisible: boolean;
-  isSearchFieldVisible: boolean;
   categoriesType: "men" | "women" | "accessories";
 }
 
-const initialState: HeaderState = {
+const initialState: DropdownMenuState = {
   isDropdownMenuVisible: false,
-  isSearchFieldVisible: false,
   categoriesType: "women",
 };
 
-const headerSlice = createSlice({
+const dropdownMenuSlice = createSlice({
   name: "headerState",
   initialState,
   reducers: {
     toggleDropdownMenuVisible: (state, action: PayloadAction<boolean>) => {
       state.isDropdownMenuVisible = action.payload;
-    },
-    toggleSearchFieldVisible: (state, action: PayloadAction<boolean>) => {
-      state.isSearchFieldVisible = action.payload;
     },
     toggleCategoriesType: (
       state,
@@ -31,9 +26,6 @@ const headerSlice = createSlice({
   },
 });
 
-export const {
-  toggleDropdownMenuVisible,
-  toggleCategoriesType,
-  toggleSearchFieldVisible,
-} = headerSlice.actions;
-export default headerSlice.reducer;
+export const { toggleDropdownMenuVisible, toggleCategoriesType } =
+  dropdownMenuSlice.actions;
+export default dropdownMenuSlice.reducer;
