@@ -15,7 +15,17 @@ export const CategorySchema = z.object({
     "trousers",
   ]),
   name: z.string(),
-  list: z.array(z.object({ id: z.string(), name: z.string() })),
+  list: z.array(
+    z.object({
+      id: z.string(),
+      name: z.string(),
+      slug: z.string(),
+      price: z.number(),
+      quantity: z.number(),
+      imagesUrl: z.array(z.string()),
+      previewImageUrl: z.string(),
+    }),
+  ),
   count: z.number(),
 });
 export type TCategory = z.infer<typeof CategorySchema>;
@@ -30,6 +40,11 @@ export const CategoriesResponseDataSchema = z.object({
     z.object({
       id: z.string(),
       name: z.string(),
+      slug: z.string(),
+      price: z.number(),
+      quantity: z.number(),
+      imagesUrl: z.array(z.string()),
+      previewImageUrl: z.string(),
     }),
   ),
 });

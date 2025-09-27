@@ -8,7 +8,7 @@ export const CategoryPreview = () => {
 
   return (
     <Image
-      src={`/images/category/${categoriesType}-${categoryCurrent}.jpg`}
+      src={`/images/category/${categoriesType}/${categoriesType}-${categoryCurrent}.jpg`}
       alt={"PreviewCategory"}
       width={431}
       height={628}
