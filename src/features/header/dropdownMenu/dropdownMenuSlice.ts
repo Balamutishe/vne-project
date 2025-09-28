@@ -11,7 +11,7 @@ const initialState: DropdownMenuState = {
 };
 
 const dropdownMenuSlice = createSlice({
-  name: "headerState",
+  name: "dropdownMenuState",
   initialState,
   reducers: {
     toggleDropdownMenuVisible: (state, action: PayloadAction<boolean>) => {

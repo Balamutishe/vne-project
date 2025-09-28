@@ -1,7 +1,6 @@
 "use client";
 
 import { FC } from "react";
-import { useAppSelector } from "@/store/hooks";
 import { DropdownMenu } from "@/features/header/dropdownMenu";
 import { HeaderLogo } from "@/widgets/header/headerLogo";
 import { HeaderNav } from "@/widgets/header/headerNav";
@@ -9,10 +8,6 @@ import { HeaderToolbar } from "@/widgets/header/headerToolbar";
 import Image from "next/image";
 
 export const Header: FC<{ className?: string }> = ({ className }) => {
-  const isDropdownMenuVisible = useAppSelector(
-    (state) => state.headerState.isDropdownMenuVisible,
-  );
-
   return (
     <header className={"mb-20 h-212"}>
       <section
@@ -30,7 +25,7 @@ export const Header: FC<{ className?: string }> = ({ className }) => {
           width={1440}
         />
       </section>
-      {isDropdownMenuVisible && <DropdownMenu />}
+      <DropdownMenu />
     </header>
   );
 };

@@ -1,17 +1,37 @@
-import { useAppSelector } from "@/store/hooks";
+import { toggleDropdownMenuVisible } from "@/features/header/dropdownMenu/dropdownMenuSlice";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import {
   AccessoriesListView,
   CategoriesListView,
   DropdownMenuClose,
 } from "@/features/header/dropdownMenu/components";
+import { useEffect, useRef } from "react";
 
 export const DropdownMenu = () => {
-  const categoriesType = useAppSelector(
-    (state) => state.headerState.categoriesType,
+  const ref = useRef<HTMLElement | null>(null);
+  const { categoriesType, isDropdownMenuVisible } = useAppSelector(
+    (state) => state.dropdownMenuState,
   );
+  const dispatch = useAppDispatch();
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (ref.current && !ref.current.contains(event.target as Node)) {
+      dispatch(toggleDropdownMenuVisible(false));
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  if (!isDropdownMenuVisible) return null;
 
   return (
     <section
+      ref={ref}
       className={
         "bg-background absolute top-16 flex min-h-80 w-[1440px] flex-col border-t-1 border-zinc-950"
       }
