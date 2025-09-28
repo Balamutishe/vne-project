@@ -23,17 +23,21 @@ const CategoriesList: FC<{
 }> = ({ categoriesData }) => {
   return (
     <ul>
-      {categoriesData.map((category) => (
-        <li
-          key={category.id}
-          className={clsx(
-            "flex items-center justify-between" +
-              " hover:text-hover hover:border-b-hover cursor-pointer transition-colors last:border-b-0",
-          )}
-        >
-          {category.name} ({category.count})
-        </li>
-      ))}
+      {categoriesData.map((category) => {
+        if (category.name !== "Аксессуары") {
+          return (
+            <li
+              key={category.id}
+              className={clsx(
+                "flex items-center justify-between" +
+                  " hover:text-hover hover:border-b-hover cursor-pointer transition-colors last:border-b-0",
+              )}
+            >
+              {category.name} ({category.count})
+            </li>
+          );
+        }
+      })}
     </ul>
   );
 };
