@@ -1,3 +1,4 @@
+import { categories } from "@/server/data";
 import { FC } from "react";
 import Image from "next/image";
 import localFont from "next/font/local";
@@ -8,57 +9,42 @@ const damionFont = localFont({
 });
 
 export const ProductsList = () => {
+  const galleryList = categories.galleryList;
+
   return (
     <section className={"mb-20 w-full"}>
       <h2 className={`${damionFont.className} mb-20 text-7xl`}>
         СТИЛЬ ВНЕ ВРЕМЕНИ
       </h2>
       <ul className={"product-list product-list-odd"}>
-        <li>
-          <ProductCard title={"БОМБЕР ОВЕРСАЙЗ"} price={"9900"} />
-        </li>
-        <li>
-          <ProductCard title={"БОМБЕР ОВЕРСАЙЗ"} price={"9900"} />
-        </li>
-        <li>
-          <ProductCard title={"БОМБЕР ОВЕРСАЙЗ"} price={"9900"} />
-        </li>
-        <li>
-          <ProductCard title={"БОМБЕР ОВЕРСАЙЗ"} price={"9900"} />
-        </li>
-        <li>
-          <ProductCard title={"БОМБЕР ОВЕРСАЙЗ"} price={"9900"} />
-        </li>
-        <li>
-          <ProductCard title={"БОМБЕР ОВЕРСАЙЗ"} price={"9900"} />
-        </li>
-        <li>
-          <ProductCard title={"БОМБЕР ОВЕРСАЙЗ"} price={"9900"} />
-        </li>
-        <li>
-          <ProductCard title={"БОМБЕР ОВЕРСАЙЗ"} price={"9900"} />
-        </li>
-        <li>
-          <ProductCard title={"БОМБЕР ОВЕРСАЙЗ"} price={"9900"} />
-        </li>
+        {galleryList.map((product) => (
+          <li key={product.id}>
+            <ProductCard
+              title={product.name}
+              price={product.price}
+              previewImgUrl={product.previewImageUrl}
+            />
+          </li>
+        ))}
       </ul>
     </section>
   );
 };
 
-export const ProductCard: FC<{ title: string; price: string }> = ({
-  title,
-  price,
-}) => {
+export const ProductCard: FC<{
+  title: string;
+  price: number;
+  previewImgUrl: string;
+}> = ({ title, price, previewImgUrl }) => {
   return (
-    <article className={"relative h-full overflow-hidden p-2"}>
-      <div className={"flex items-center justify-between"}>
+    <article className={"relative h-full overflow-hidden"}>
+      <div className={"flex items-center justify-between p-2"}>
         <h3>{title}</h3>
         <span>{price} &#8381;</span>
       </div>
       <Image
         className={"absolute top-0 z-[-1] w-full"}
-        src={"/images/product-image.png"}
+        src={previewImgUrl}
         alt={"Product image"}
         width={616}
         height={813}

@@ -323,6 +323,7 @@ export const categories: TCategoriesResponseData = {
       count: 5,
     },
   ],
+
   categoriesWomen: [
     {
       id: crypto.randomUUID(),
@@ -431,7 +432,7 @@ export const categories: TCategoriesResponseData = {
             "/images/product/women/skirts/asymmetricalMidiSkirt-4.jpg",
           ],
           previewImageUrl:
-            "/images/product/women/skirts/asymmetricalMidiSkirt-1.jpg",
+            "/images/product/women/skirts/asymmetricalMidiSkirt-5.jpg",
         },
         {
           id: crypto.randomUUID(),
@@ -466,7 +467,7 @@ export const categories: TCategoriesResponseData = {
             "/images/product/women/sweaters/sweaterBlue-1.jpg",
             "/images/product/women/sweaters/sweaterBlue-2.jpg",
           ],
-          previewImageUrl: "/images/product/women/sweaters/sweaterBlue-1.jpg",
+          previewImageUrl: "/images/product/women/sweaters/sweaterBlue-3.jpg",
         },
         {
           id: crypto.randomUUID(),
@@ -646,7 +647,7 @@ export const categories: TCategoriesResponseData = {
             "/images/product/accessories/women-bagVest-1.jpg",
             "/images/product/accessories/women-bagVest-2.jpg",
           ],
-          previewImageUrl: "/images/product/accessories/men-bagVest-3.jpg",
+          previewImageUrl: "/images/product/accessories/women-bagVest-3.jpg",
         },
         {
           id: crypto.randomUUID(),
@@ -772,6 +773,130 @@ export const categories: TCategoriesResponseData = {
     {
       id: crypto.randomUUID(),
       name: "Балаклава",
+      slug: "balaclava",
+      price: 9900,
+      quantity: 10,
+      imagesUrl: [
+        "/images/product/accessories/balaclava-1.jpg",
+        "/images/product/accessories/balaclava-2.jpg",
+        "/images/product/accessories/balaclava-3.jpg",
+      ],
+      previewImageUrl: "/images/product/accessories/balaclava-4.jpg",
+    },
+  ],
+
+  galleryList: [
+    {
+      id: crypto.randomUUID(),
+      name: "БОМБЕР ОВЕРСАЙЗ",
+      slug: "oversizedBomberJacket",
+      price: 9900,
+      quantity: 10,
+      imagesUrl: [
+        "/images/product/women/outerwear/oversizedBomberJacket-1.jpg",
+        "/images/product/women/outerwear/oversizedBomberJacket-2.jpg",
+        "/images/product/women/outerwear/oversizedBomberJacket-3.jpg",
+      ],
+      previewImageUrl:
+        "/images/product/women/outerwear/oversizedBomberJacket-4.jpg",
+    },
+    {
+      id: crypto.randomUUID(),
+      name: "СВИТЕР СИНИЙ",
+      slug: "sweaterBlue",
+      price: 9900,
+      quantity: 10,
+      imagesUrl: [
+        "/images/product/women/sweaters/sweaterBlue-1.jpg",
+        "/images/product/women/sweaters/sweaterBlue-2.jpg",
+      ],
+      previewImageUrl: "/images/product/women/sweaters/sweaterBlue-3.jpg",
+    },
+    {
+      id: crypto.randomUUID(),
+      name: "ВАТНИК ОБЪЁМНЫЙ",
+      slug: "woolQuiltedJacket",
+      price: 9900,
+      quantity: 10,
+      imagesUrl: [
+        "/images/product/men/outerwear/woolQuiltedJacket-1.jpg",
+        "/images/product/men/outerwear/woolQuiltedJacket-2.jpg",
+      ],
+      previewImageUrl: "/images/product/men/outerwear/woolQuiltedJacket-3.jpg",
+    },
+    {
+      id: crypto.randomUUID(),
+      name: "ЮБКА МИДИ АССИМЕТРИЧНАЯ",
+      slug: "asymmetricalMidiSkirt",
+      price: 9900,
+      quantity: 10,
+      imagesUrl: [
+        "/images/product/women/skirts/asymmetricalMidiSkirt-1.jpg",
+        "/images/product/women/skirts/asymmetricalMidiSkirt-2.jpg",
+        "/images/product/women/skirts/asymmetricalMidiSkirt-3.jpg",
+        "/images/product/women/skirts/asymmetricalMidiSkirt-4.jpg",
+      ],
+      previewImageUrl:
+        "/images/product/women/skirts/asymmetricalMidiSkirt-5.jpg",
+    },
+    {
+      id: crypto.randomUUID(),
+      name: "СУМКА-ЖИЛЕТКА",
+      slug: "bagVest",
+      price: 9900,
+      quantity: 10,
+      imagesUrl: [
+        "/images/product/accessories/men-bagVest-1.jpg",
+        "/images/product/accessories/men-bagVest-2.jpg",
+        "/images/product/accessories/women-bagVest-1.jpg",
+        "/images/product/accessories/women-bagVest-2.jpg",
+      ],
+      previewImageUrl: "/images/product/accessories/women-bagVest-3.jpg",
+    },
+    {
+      id: crypto.randomUUID(),
+      name: "МАЙКА ВЯЗАНАЯ",
+      slug: "knittedTShirt",
+      price: 9900,
+      quantity: 10,
+      imagesUrl: [
+        "/images/product/men/t-shirts/knittedTShirt-1.jpg",
+        "/images/product/men/t-shirts/knittedTShirt-2.jpg",
+      ],
+      previewImageUrl: "/images/product/men/t-shirts/knittedTShirt-3.jpg",
+    },
+    {
+      id: crypto.randomUUID(),
+      name: "СЪЕМНЫЙ КАПЮШОН",
+      slug: "removableHoodWithCamouflage",
+      price: 9900,
+      quantity: 10,
+      imagesUrl: [
+        "/images/product/accessories/men-removableHoodWithCamouflage-1.jpg",
+        "/images/product/accessories/men-removableHoodWithCamouflage-2.jpg",
+        "/images/product/accessories/women-removableHoodWithCamouflage-1.jpg",
+        "/images/product/accessories/women-removableHoodWithCamouflage-2.jpg",
+      ],
+      previewImageUrl:
+        "/images/product/accessories/women-removableHoodWithCamouflage-3.jpg",
+    },
+    {
+      id: crypto.randomUUID(),
+      name: "ШАПКА",
+      slug: "cap",
+      price: 9900,
+      quantity: 10,
+      imagesUrl: [
+        "/images/product/accessories/men-cap-1.jpg",
+        "/images/product/accessories/men-cap-2.jpg",
+        "/images/product/accessories/women-cap-1.jpg",
+        "/images/product/accessories/women-cap-2.jpg",
+      ],
+      previewImageUrl: "/images/product/accessories/women-cap-3.jpg",
+    },
+    {
+      id: crypto.randomUUID(),
+      name: "БАЛАКЛАВА",
       slug: "balaclava",
       price: 9900,
       quantity: 10,
