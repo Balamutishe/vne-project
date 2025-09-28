@@ -15,6 +15,7 @@ export const CategorySchema = z.object({
   id: z.string(),
   slug: z.enum([
     "accessories",
+    "accessoriesAll",
     "dresses",
     "jackets",
     "outerwear",
@@ -24,6 +25,7 @@ export const CategorySchema = z.object({
     "sweaters",
     "tops",
     "trousers",
+    "galleryList",
   ]),
   name: z.string(),
   list: z.array(ProductSchema),
@@ -35,10 +37,10 @@ export const CategoriesListSchema = z.array(CategorySchema);
 export type TCategoriesList = z.infer<typeof CategoriesListSchema>;
 
 export const CategoriesResponseDataSchema = z.object({
-  categoriesMen: CategoriesListSchema,
-  categoriesWomen: CategoriesListSchema,
-  accessoriesListAll: z.array(ProductSchema),
-  galleryList: z.array(ProductSchema),
+  men: CategoriesListSchema,
+  women: CategoriesListSchema,
+  accessoriesAll: CategoriesListSchema,
+  galleryList: CategoriesListSchema,
 });
 export type TCategoriesResponseData = z.infer<
   typeof CategoriesResponseDataSchema

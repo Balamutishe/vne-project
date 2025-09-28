@@ -33,7 +33,7 @@ export const DropdownMenu = () => {
     <section
       ref={ref}
       className={
-        "bg-background absolute top-16 flex min-h-80 w-[1440px] flex-col border-t-1 border-zinc-950"
+        "bg-background absolute top-16 z-50 flex min-h-80 w-[1440px] flex-col border-t-1 border-zinc-950"
       }
     >
       <div className={"flex h-11.5 items-center border-b-1"}>

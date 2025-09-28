@@ -12,7 +12,9 @@ interface CategoriesState {
     | "shirts"
     | "sweaters"
     | "tops"
-    | "trousers";
+    | "trousers"
+    | "galleryList"
+    | "accessoriesAll";
 }
 
 const initialState: CategoriesState = {
@@ -40,6 +42,8 @@ const categoriesSlice = createSlice({
         | "tops"
         | "trousers"
         | "shirts"
+        | "galleryList"
+        | "accessoriesAll"
       >,
     ) => {
       state.categoryCurrent = action.payload;

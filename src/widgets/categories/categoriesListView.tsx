@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FC } from "react";
 import { categories } from "@/server/data";
 import { TCategoriesList } from "@/shared/types/categories";
@@ -7,16 +8,16 @@ import { clsx } from "clsx";
 import ArrowSvg from "./icons/arrow.svg";
 
 export const CategoriesListView = () => {
-  const { categoriesMen, categoriesWomen } = categories;
+  const { men, women } = categories;
   const categoriesType = useAppSelector(
     (state) => state.categoriesState.categoriesType,
   );
 
   switch (categoriesType) {
     case "men":
-      return <CategoriesList categoriesData={categoriesMen} />;
+      return <CategoriesList categoriesData={men} />;
     case "women":
-      return <CategoriesList categoriesData={categoriesWomen} />;
+      return <CategoriesList categoriesData={women} />;
   }
 };
 
@@ -24,6 +25,9 @@ const CategoriesList: FC<{
   categoriesData: TCategoriesList;
 }> = ({ categoriesData }) => {
   const dispatch = useAppDispatch();
+  const { categoriesType, categoryCurrent } = useAppSelector(
+    (state) => state.categoriesState,
+  );
 
   return (
     <ul>
@@ -32,19 +36,25 @@ const CategoriesList: FC<{
           onMouseEnter={() => dispatch(setCategoryCurrent(category.slug))}
           key={category.id}
           className={clsx(
-            "group flex items-center justify-between" +
-              " hover:text-hover hover:border-b-hover cursor-pointer transition-colors last:border-b-0" +
-              " border-b-[0.5px] border-zinc-950 px-4 py-4 text-3xl font-light",
+            "hover:text-hover hover:border-b-hover cursor-pointer transition-colors last:border-b-0" +
+              " border-b-[0.5px] border-zinc-950",
           )}
         >
-          <div>
-            {category.name} ({category.count})
-          </div>
-          <ArrowSvg
-            className={"group-hover:[&>path]:fill-hover"}
-            width={48}
-            height={8}
-          />
+          <Link
+            href={`/categories/${categoriesType}/${categoryCurrent}`}
+            className={
+              "group flex items-center justify-between px-4 py-4 text-3xl font-light"
+            }
+          >
+            <div>
+              {category.name} ({category.count})
+            </div>
+            <ArrowSvg
+              className={"group-hover:[&>path]:fill-hover"}
+              width={48}
+              height={8}
+            />
+          </Link>
         </li>
       ))}
     </ul>

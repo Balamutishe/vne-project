@@ -1,25 +1,24 @@
+import { toggleDropdownMenuVisible } from "@/features/header/dropdownMenu/dropdownMenuSlice";
 import { categories } from "@/server/data";
-import { useAppSelector } from "@/store/hooks";
+import { TProduct } from "@/shared/types/categories";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { clsx } from "clsx";
+import Link from "next/link";
 import { FC } from "react";
 
 export const AccessoriesListView = () => {
-  const { categoriesMen, categoriesWomen, accessoriesListAll } = categories;
+  const { men, women, accessoriesAll } = categories;
 
-  const categoriesType = useAppSelector(
-    (state) => state.headerState.categoriesType,
-  );
+  const { categoriesType } = useAppSelector((state) => state.dropdownMenuState);
 
-  const accessoriesMen = categoriesMen.find(
-    (category) => category.name === "Аксессуары",
-  );
-  const accessoriesWomen = categoriesWomen.find(
+  const accessoriesMen = men.find((category) => category.name === "Аксессуары");
+  const accessoriesWomen = women.find(
     (category) => category.name === "Аксессуары",
   );
 
   switch (categoriesType) {
     case "accessories":
-      return <AccessoriesList accessoriesList={accessoriesListAll!} />;
+      return <AccessoriesList accessoriesList={accessoriesAll![0].list} />;
     case "men":
       return <AccessoriesList accessoriesList={accessoriesMen!.list} />;
     case "women":
@@ -28,11 +27,15 @@ export const AccessoriesListView = () => {
 };
 
 export const AccessoriesList: FC<{
-  accessoriesList: {
-    id: string;
-    name: string;
-  }[];
+  accessoriesList: TProduct[];
 }> = ({ accessoriesList }) => {
+  const { categoriesType } = useAppSelector((state) => state.dropdownMenuState);
+  const dispatch = useAppDispatch();
+
+  const handleMenuClose = () => {
+    dispatch(toggleDropdownMenuVisible(false));
+  };
+
   return (
     <ul>
       {accessoriesList.map((accessory) => (
@@ -42,8 +45,11 @@ export const AccessoriesList: FC<{
             "hover:text-hover hover:border-b-hover flex cursor-pointer items-center justify-between" +
               " transition-colors last:border-b-0",
           )}
+          onClick={handleMenuClose}
         >
-          {accessory.name}
+          <Link href={`/categories/${categoriesType}/${accessory.slug}`}>
+            {accessory.name}
+          </Link>
         </li>
       ))}
     </ul>

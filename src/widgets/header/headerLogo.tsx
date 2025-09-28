@@ -1,15 +1,18 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export const HeaderLogo = () => {
   return (
     <div className={"flex w-1/5 items-center justify-center"}>
-      <Image
-        src={"/images/logo.svg"}
-        alt={"Logo"}
-        width={115}
-        height={31}
-        priority={true}
-      />
+      <Link href={"/"}>
+        <Image
+          src={"/images/logo.svg"}
+          alt={"Logo"}
+          width={115}
+          height={31}
+          priority={true}
+        />
+      </Link>
     </div>
   );
 };

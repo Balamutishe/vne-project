@@ -1,4 +1,9 @@
+"use client";
+
 import { categories } from "@/server/data";
+import { TProduct } from "@/shared/types/categories";
+import { clsx } from "clsx";
+import { useParams } from "next/navigation";
 import { FC } from "react";
 import Image from "next/image";
 import localFont from "next/font/local";
@@ -8,16 +13,56 @@ const damionFont = localFont({
   display: "swap",
 });
 
-export const ProductsList = () => {
-  const galleryList = categories.galleryList;
+export const ProductsListView = () => {
+  const { category, subcategory } = useParams();
+
+  const handleSwitchCategoryData = () => {
+    switch (category) {
+      case "men":
+        return "men";
+      case "women":
+        return "women";
+      case "accessories":
+        return "accessoriesAll";
+      default:
+        return "galleryList";
+    }
+  };
+
+  const data =
+    category === "men" || category === "women"
+      ? categories[handleSwitchCategoryData()!].find(
+          ({ slug }) => slug === subcategory,
+        )
+      : categories[handleSwitchCategoryData()!][0];
+
+  if (!data) return <div>СПИСОК ПУСТ</div>;
 
   return (
+    <ProductsList
+      data={data.list}
+      title={data.name}
+      variant={
+        handleSwitchCategoryData() !== "galleryList" ? "category" : "main"
+      }
+    />
+  );
+};
+
+export const ProductsList: FC<{
+  data: TProduct[];
+  title: string;
+  variant: "main" | "category";
+}> = ({ data, title, variant }) => {
+  return (
     <section className={"mb-20 w-full"}>
-      <h2 className={`${damionFont.className} mb-20 text-7xl`}>
-        СТИЛЬ ВНЕ ВРЕМЕНИ
-      </h2>
-      <ul className={"product-list product-list-odd"}>
-        {galleryList.map((product) => (
+      <h2 className={`${damionFont.className} mb-20 text-7xl`}>{title}</h2>
+      <ul
+        className={clsx("product-list", {
+          "product-list-odd": variant === "main",
+        })}
+      >
+        {data.map((product: TProduct) => (
           <li key={product.id}>
             <ProductCard
               title={product.name}
@@ -38,12 +83,12 @@ export const ProductCard: FC<{
 }> = ({ title, price, previewImgUrl }) => {
   return (
     <article className={"relative h-full overflow-hidden"}>
-      <div className={"flex items-center justify-between p-2"}>
+      <div className={"z-[-1] flex items-center justify-between p-2"}>
         <h3>{title}</h3>
         <span>{price} &#8381;</span>
       </div>
       <Image
-        className={"absolute top-0 z-[-1] w-full"}
+        className={"absolute top-0 z-[-2] w-full"}
         src={previewImgUrl}
         alt={"Product image"}
         width={616}

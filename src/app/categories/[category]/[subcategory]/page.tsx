@@ -1,20 +1,18 @@
 import { Metadata } from "next";
 import { ContainerPage, Footer, Main, Header } from "@/widgets";
-import { CategoriesSection } from "@/widgets/categories";
 import { ProductsListView } from "@/widgets/productsList";
 
 export const metadata: Metadata = {
-  title: "Main",
-  description: "main page",
+  title: "Category",
+  description: "category page",
 };
 
-export default function Home() {
+export default function CategoriesPage() {
   return (
     <ContainerPage>
       <Header />
       <Main>
         <ProductsListView />
-        <CategoriesSection />
       </Main>
       <Footer />
     </ContainerPage>

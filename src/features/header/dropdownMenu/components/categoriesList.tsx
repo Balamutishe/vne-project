@@ -1,26 +1,33 @@
+import { FC } from "react";
+import Link from "next/link";
+import { toggleDropdownMenuVisible } from "@/features/header/dropdownMenu/dropdownMenuSlice";
 import { categories } from "@/server/data";
 import { TCategoriesList } from "@/shared/types/categories";
-import { useAppSelector } from "@/store/hooks";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { clsx } from "clsx";
-import { FC } from "react";
 
 export const CategoriesListView = () => {
-  const { categoriesMen, categoriesWomen } = categories;
-  const categoriesType = useAppSelector(
-    (state) => state.headerState.categoriesType,
-  );
+  const { men, women } = categories;
+  const { categoriesType } = useAppSelector((state) => state.dropdownMenuState);
 
   switch (categoriesType) {
     case "men":
-      return <CategoriesList categoriesData={categoriesMen} />;
+      return <CategoriesList categoriesData={men} />;
     case "women":
-      return <CategoriesList categoriesData={categoriesWomen} />;
+      return <CategoriesList categoriesData={women} />;
   }
 };
 
 const CategoriesList: FC<{
   categoriesData: TCategoriesList;
 }> = ({ categoriesData }) => {
+  const { categoriesType } = useAppSelector((state) => state.dropdownMenuState);
+  const dispatch = useAppDispatch();
+
+  const handleMenuClose = () => {
+    dispatch(toggleDropdownMenuVisible(false));
+  };
+
   return (
     <ul>
       {categoriesData.map((category) => {
@@ -32,8 +39,11 @@ const CategoriesList: FC<{
                 "flex items-center justify-between" +
                   " hover:text-hover hover:border-b-hover cursor-pointer transition-colors last:border-b-0",
               )}
+              onClick={handleMenuClose}
             >
-              {category.name} ({category.count})
+              <Link href={`/categories/${categoriesType}/${category.slug}`}>
+                {category.name} ({category.count})
+              </Link>
             </li>
           );
         }
