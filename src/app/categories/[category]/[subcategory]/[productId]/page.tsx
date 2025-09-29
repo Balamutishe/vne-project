@@ -1,18 +1,18 @@
+import { ProductDetails } from "@/widgets/products/productDetails";
 import { Metadata } from "next";
 import { ContainerPage, Footer, Main, Header } from "@/widgets";
-import { ProductsListView } from "@/widgets/products/productsList";
 
 export const metadata: Metadata = {
-  title: "Category",
-  description: "category page",
+  title: "Product",
+  description: "product details page",
 };
 
-export default function ProductPage() {
+export default function CategoriesPage() {
   return (
     <ContainerPage>
       <Header />
       <Main>
-        <ProductsListView />
+        <ProductDetails />
       </Main>
       <Footer />
     </ContainerPage>

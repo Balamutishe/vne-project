@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { ContainerPage, Footer, Main, Header } from "@/widgets";
 import { CategoriesSection } from "@/widgets/categories";
-import { ProductsListView } from "@/widgets/productsList";
+import { ProductsListView } from "@/widgets/products/productsList";
 
 export const metadata: Metadata = {
   title: "Main",

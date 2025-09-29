@@ -9,7 +9,7 @@ export const HeaderToolbar = () => {
   );
 
   return (
-    <div className={"flex w-2/5 items-center justify-end gap-8"}>
+    <div className={"flex min-w-[25%] items-center justify-end gap-8"}>
       {!isSearchFieldVisible && (
         <button
           className={

@@ -3,13 +3,14 @@
 import { categories } from "@/server/data";
 import { TProduct } from "@/shared/types/categories";
 import { clsx } from "clsx";
+import Link from "next/link";
 import { useParams } from "next/navigation";
 import { FC } from "react";
 import Image from "next/image";
 import localFont from "next/font/local";
 
 const damionFont = localFont({
-  src: "../../public/fonts/DaMiOne-Regular.ttf",
+  src: "../../../public/fonts/DaMiOne-Regular.ttf",
   display: "swap",
 });
 
@@ -68,6 +69,7 @@ export const ProductsList: FC<{
               title={product.name}
               price={product.price}
               previewImgUrl={product.previewImageUrl}
+              productId={product.id}
             />
           </li>
         ))}
@@ -80,21 +82,26 @@ export const ProductCard: FC<{
   title: string;
   price: number;
   previewImgUrl: string;
-}> = ({ title, price, previewImgUrl }) => {
+  productId: string;
+}> = ({ title, price, previewImgUrl, productId }) => {
+  const { category, subcategory } = useParams();
+
   return (
-    <article className={"relative h-full overflow-hidden"}>
-      <div className={"z-[-1] flex items-center justify-between p-2"}>
-        <h3>{title}</h3>
-        <span>{price} &#8381;</span>
-      </div>
-      <Image
-        className={"absolute top-0 z-[-2] w-full"}
-        src={previewImgUrl}
-        alt={"Product image"}
-        width={616}
-        height={813}
-        priority={true}
-      />
-    </article>
+    <Link href={`/categories/${category}/${subcategory}/${productId}`}>
+      <article className={"relative h-full overflow-hidden"}>
+        <div className={"z-[-1] flex items-center justify-between p-2"}>
+          <h3>{title}</h3>
+          <span>{price} &#8381;</span>
+        </div>
+        <Image
+          className={"absolute top-0 z-[-2] w-full"}
+          src={previewImgUrl}
+          alt={"Product image"}
+          width={616}
+          height={813}
+          priority={true}
+        />
+      </article>
+    </Link>
   );
 };

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const HeaderLogo = () => {
   return (
-    <div className={"flex w-1/5 items-center justify-center"}>
+    <div className={"flex items-center justify-center"}>
       <Link href={"/"}>
         <Image
           src={"/images/logo.svg"}

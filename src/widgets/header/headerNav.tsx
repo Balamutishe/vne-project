@@ -7,7 +7,7 @@ export const HeaderNav = () => {
 
   return (
     <nav>
-      <ul className={"flex w-2/5 items-center gap-8"}>
+      <ul className={"flex items-center gap-8"}>
         <li
           key={crypto.randomUUID()}
           onClick={() => {
