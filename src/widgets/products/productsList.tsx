@@ -68,6 +68,8 @@ export const ProductsList: FC<{
             <ProductCard
               title={product.name}
               price={product.price}
+              gender={product.gender}
+              category={product.category}
               previewImgUrl={product.previewImageUrl}
               productId={product.id}
             />
@@ -83,11 +85,11 @@ export const ProductCard: FC<{
   price: number;
   previewImgUrl: string;
   productId: string;
-}> = ({ title, price, previewImgUrl, productId }) => {
-  const { category, subcategory } = useParams();
-
+  gender: string;
+  category: string;
+}> = ({ title, price, previewImgUrl, productId, gender, category }) => {
   return (
-    <Link href={`/categories/${category}/${subcategory}/${productId}`}>
+    <Link href={`/categories/${gender}/${category}/${productId}`}>
       <article className={"relative h-full overflow-hidden"}>
         <div className={"z-[-1] flex items-center justify-between p-2"}>
           <h3>{title}</h3>

@@ -4,6 +4,8 @@ export const ProductSchema = z.object({
   id: z.string(),
   name: z.string(),
   slug: z.string(),
+  gender: z.enum(["men", "women", "unisex"]),
+  category: z.string(),
   price: z.number(),
   quantity: z.number(),
   imagesUrl: z.array(z.string()),
