@@ -154,7 +154,7 @@ export const categories: TCategoriesResponseData = {
             "/images/product/men/sweaters/oversizedHoodie-2.jpg",
             "/images/product/men/sweaters/oversizedHoodie-3.jpg",
           ],
-          previewImageUrl: "/images/product/men/sweaters/oversizedHoodie-5.jpg",
+          previewImageUrl: "/images/product/men/sweaters/oversizedHoodie-4.jpg",
         },
         {
           id: crypto.randomUUID(),
@@ -343,7 +343,7 @@ export const categories: TCategoriesResponseData = {
             "/images/product/women/dresses/ThreeLayerMaxiDress-4.jpg",
           ],
           previewImageUrl:
-            "/images/product/women/dresses/ThreeLayerMaxiDress-1.jpg",
+            "/images/product/women/dresses/ThreeLayerMaxiDress-5.jpg",
         },
       ],
       count: 1,
@@ -366,7 +366,7 @@ export const categories: TCategoriesResponseData = {
             "/images/product/women/trousers/jeansWithDoubleBelt-4.jpg",
           ],
           previewImageUrl:
-            "/images/product/women/trousers/jeansWithDoubleBelt-1.jpg",
+            "/images/product/women/trousers/jeansWithDoubleBelt-5.jpg",
         },
         {
           id: crypto.randomUUID(),
@@ -380,7 +380,7 @@ export const categories: TCategoriesResponseData = {
             "/images/product/women/trousers/flaredJeans-3.jpg",
             "/images/product/women/trousers/flaredJeans-4.jpg",
           ],
-          previewImageUrl: "/images/product/women/trousers/flaredJeans-1.jpg",
+          previewImageUrl: "/images/product/women/trousers/flaredJeans-5.jpg",
         },
         {
           id: crypto.randomUUID(),
@@ -395,7 +395,7 @@ export const categories: TCategoriesResponseData = {
             "/images/product/women/trousers/straightTrousers-4.jpg",
           ],
           previewImageUrl:
-            "/images/product/women/trousers/straightTrousers-1.jpg",
+            "/images/product/women/trousers/straightTrousers-5.jpg",
         },
         {
           id: crypto.randomUUID(),
@@ -409,7 +409,7 @@ export const categories: TCategoriesResponseData = {
             "/images/product/women/trousers/looseTrousers-3.jpg",
             "/images/product/women/trousers/looseTrousers-4.jpg",
           ],
-          previewImageUrl: "/images/product/women/trousers/looseTrousers-1.jpg",
+          previewImageUrl: "/images/product/women/trousers/looseTrousers-5.jpg",
         },
       ],
       count: 4,
@@ -447,7 +447,7 @@ export const categories: TCategoriesResponseData = {
             "/images/product/women/skirts/asymmetricalMiniSkirt-4.jpg",
           ],
           previewImageUrl:
-            "/images/product/women/skirts/asymmetricalMiniSkirt-1.jpg",
+            "/images/product/women/skirts/asymmetricalMiniSkirt-5.jpg",
         },
       ],
       count: 2,
@@ -479,7 +479,7 @@ export const categories: TCategoriesResponseData = {
             "/images/product/women/sweaters/sweaterGray-1.jpg",
             "/images/product/women/sweaters/sweaterGray-2.jpg",
           ],
-          previewImageUrl: "/images/product/women/sweaters/sweaterGray-1.jpg",
+          previewImageUrl: "/images/product/women/sweaters/sweaterGray-3.jpg",
         },
       ],
       count: 2,
@@ -502,7 +502,7 @@ export const categories: TCategoriesResponseData = {
             "/images/product/women/jackets/asymmetricalJacket-4.jpg",
           ],
           previewImageUrl:
-            "/images/product/women/jackets/asymmetricalJacket-1.jpg",
+            "/images/product/women/jackets/asymmetricalJacket-5.jpg",
         },
         {
           id: crypto.randomUUID(),
@@ -517,7 +517,7 @@ export const categories: TCategoriesResponseData = {
             "/images/product/women/jackets/elongatedJacketWithBelt-4.jpg",
           ],
           previewImageUrl:
-            "/images/product/women/jackets/elongatedJacketWithBelt-1.jpg",
+            "/images/product/women/jackets/elongatedJacketWithBelt-5.jpg",
         },
       ],
       count: 2,
@@ -553,7 +553,7 @@ export const categories: TCategoriesResponseData = {
             "/images/product/women/tops/TShirtWithTexturedSeams-4.jpg",
           ],
           previewImageUrl:
-            "/images/product/women/tops/TShirtWithTexturedSeams-1.jpg",
+            "/images/product/women/tops/TShirtWithTexturedSeams-5.jpg",
         },
         {
           id: crypto.randomUUID(),
@@ -566,7 +566,7 @@ export const categories: TCategoriesResponseData = {
             "/images/product/women/tops/TShirtKnitted-2.jpg",
             "/images/product/women/tops/TShirtKnitted-3.jpg",
           ],
-          previewImageUrl: "/images/product/women/tops/TShirtKnitted-1.jpg",
+          previewImageUrl: "/images/product/women/tops/TShirtKnitted-4.jpg",
         },
       ],
       count: 3,

@@ -50,12 +50,16 @@ const FooterHeader = () => {
 
 const FooterSocials = () => {
   return (
-    <div className={"flex justify-between text-base"}>
-      <div className={"w-1/4 border-r-1 border-zinc-950 py-8 pr-4 pl-13.5"}>
+    <div
+      className={
+        "flex justify-between text-base [&>*]:w-1/4 [&>*]:border-b-1 [&>*]:border-zinc-950 [&>*]:py-8"
+      }
+    >
+      <div className={"border-r-1 pr-4 pl-13.5"}>
         Мы создаём простую и качественную базовую одежду вне времени и моды —
         комфортную, универсальную и отражающую индивидуальность.
       </div>
-      <div className={"w-1/4 border-r-1 border-zinc-950 px-4 py-8"}>
+      <div className={"border-r-1 px-4"}>
         <ul className={"flex flex-col gap-6"}>
           <li
             className={
@@ -80,7 +84,7 @@ const FooterSocials = () => {
           </li>
         </ul>
       </div>
-      <div className={"w-1/4 border-r-1 border-zinc-950 px-4 py-8"}>
+      <div className={"border-r-1 px-4"}>
         <ul className={"flex flex-col gap-6"}>
           <li
             className={
@@ -98,7 +102,7 @@ const FooterSocials = () => {
           </li>
         </ul>
       </div>
-      <div className={"w-1/4 py-8 pr-13.5 pl-4"}>
+      <div className={"pr-13.5 pl-4"}>
         <ul className={"flex flex-col gap-6"}>
           <li
             className={
