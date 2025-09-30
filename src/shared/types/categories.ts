@@ -10,6 +10,7 @@ export const ProductSchema = z.object({
   quantity: z.number(),
   imagesUrl: z.array(z.string()),
   previewImageUrl: z.string(),
+  topList: z.boolean(),
 });
 export type TProduct = z.infer<typeof ProductSchema>;
 
@@ -27,7 +28,6 @@ export const CategorySchema = z.object({
     "sweaters",
     "tops",
     "trousers",
-    "galleryList",
   ]),
   name: z.string(),
   list: z.array(ProductSchema),
@@ -42,7 +42,6 @@ export const CategoriesResponseDataSchema = z.object({
   men: CategoriesListSchema,
   women: CategoriesListSchema,
   accessoriesAll: CategoriesListSchema,
-  galleryList: CategoriesListSchema,
 });
 export type TCategoriesResponseData = z.infer<
   typeof CategoriesResponseDataSchema

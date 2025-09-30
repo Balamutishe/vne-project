@@ -1,4 +1,4 @@
-import { TCategoriesResponseData } from "@/shared/types/categories";
+import { TCategoriesResponseData, TProduct } from "@/shared/types/categories";
 
 export const categories: TCategoriesResponseData = {
   men: [
@@ -22,6 +22,7 @@ export const categories: TCategoriesResponseData = {
           previewImageUrl: "/images/product/men/trousers/balloonTrousers-5.jpg",
           gender: "men",
           category: "trousers",
+          topList: false,
         },
         {
           id: crypto.randomUUID(),
@@ -38,6 +39,7 @@ export const categories: TCategoriesResponseData = {
           previewImageUrl: "/images/product/men/trousers/cargoPants-5.jpg",
           gender: "men",
           category: "trousers",
+          topList: false,
         },
         {
           id: crypto.randomUUID(),
@@ -55,6 +57,7 @@ export const categories: TCategoriesResponseData = {
             "/images/product/men/trousers/straightTrousers-5.jpg",
           gender: "men",
           category: "trousers",
+          topList: false,
         },
         {
           id: crypto.randomUUID(),
@@ -71,6 +74,7 @@ export const categories: TCategoriesResponseData = {
           previewImageUrl: "/images/product/men/trousers/sportsTrousers-5.jpg",
           gender: "men",
           category: "trousers",
+          topList: false,
         },
       ],
       count: 4,
@@ -95,6 +99,7 @@ export const categories: TCategoriesResponseData = {
           previewImageUrl: "/images/product/men/shirts/oversizedShirt-5.jpg",
           gender: "men",
           category: "shirts",
+          topList: false,
         },
       ],
       count: 1,
@@ -119,6 +124,7 @@ export const categories: TCategoriesResponseData = {
           previewImageUrl: "/images/product/men/t-shirts/oversizedTShirt-5.jpg",
           gender: "men",
           category: "t-shirts",
+          topList: false,
         },
         {
           id: crypto.randomUUID(),
@@ -133,6 +139,7 @@ export const categories: TCategoriesResponseData = {
           previewImageUrl: "/images/product/men/t-shirts/knittedTShirt-3.jpg",
           gender: "men",
           category: "t-shirts",
+          topList: true,
         },
         {
           id: crypto.randomUUID(),
@@ -150,6 +157,7 @@ export const categories: TCategoriesResponseData = {
             "/images/product/men/t-shirts/multiLayeredTShirt-5.jpg",
           gender: "men",
           category: "t-shirts",
+          topList: false,
         },
       ],
       count: 3,
@@ -173,6 +181,7 @@ export const categories: TCategoriesResponseData = {
           previewImageUrl: "/images/product/men/sweaters/oversizedHoodie-4.jpg",
           gender: "men",
           category: "sweaters",
+          topList: false,
         },
         {
           id: crypto.randomUUID(),
@@ -187,6 +196,7 @@ export const categories: TCategoriesResponseData = {
           previewImageUrl: "/images/product/men/sweaters/sweaterBlue-3.jpg",
           gender: "men",
           category: "sweaters",
+          topList: false,
         },
         {
           id: crypto.randomUUID(),
@@ -203,6 +213,7 @@ export const categories: TCategoriesResponseData = {
           previewImageUrl: "/images/product/men/sweaters/sweaterGray-5.jpg",
           gender: "men",
           category: "sweaters",
+          topList: false,
         },
       ],
       count: 3,
@@ -228,6 +239,7 @@ export const categories: TCategoriesResponseData = {
             "/images/product/men/jackets/jacketWithZippers-5.jpg",
           gender: "men",
           category: "jackets",
+          topList: false,
         },
       ],
       count: 1,
@@ -251,6 +263,7 @@ export const categories: TCategoriesResponseData = {
             "/images/product/men/outerwear/woolQuiltedJacket-3.jpg",
           gender: "men",
           category: "outerwear",
+          topList: true,
         },
         {
           id: crypto.randomUUID(),
@@ -267,6 +280,7 @@ export const categories: TCategoriesResponseData = {
             "/images/product/men/outerwear/oversizedBomberJacket-4.jpg",
           gender: "men",
           category: "outerwear",
+          topList: false,
         },
       ],
       count: 2,
@@ -291,6 +305,7 @@ export const categories: TCategoriesResponseData = {
           previewImageUrl: "/images/product/accessories/men-bagVest-3.jpg",
           gender: "men",
           category: "accessories",
+          topList: false,
         },
         {
           id: crypto.randomUUID(),
@@ -308,6 +323,7 @@ export const categories: TCategoriesResponseData = {
             "/images/product/accessories/women-removableHoodWithCamouflage-3.jpg",
           gender: "men",
           category: "accessories",
+          topList: false,
         },
         {
           id: crypto.randomUUID(),
@@ -325,6 +341,7 @@ export const categories: TCategoriesResponseData = {
             "/images/product/accessories/women-removableHoodWithCamouflage-3.jpg",
           gender: "men",
           category: "accessories",
+          topList: false,
         },
         {
           id: crypto.randomUUID(),
@@ -341,6 +358,7 @@ export const categories: TCategoriesResponseData = {
           previewImageUrl: "/images/product/accessories/women-cap-3.jpg",
           gender: "men",
           category: "accessories",
+          topList: false,
         },
         {
           id: crypto.randomUUID(),
@@ -356,6 +374,7 @@ export const categories: TCategoriesResponseData = {
           previewImageUrl: "/images/product/accessories/balaclava-4.jpg",
           gender: "men",
           category: "accessories",
+          topList: false,
         },
       ],
       count: 5,
@@ -384,6 +403,7 @@ export const categories: TCategoriesResponseData = {
             "/images/product/women/dresses/ThreeLayerMaxiDress-5.jpg",
           gender: "women",
           category: "dresses",
+          topList: false,
         },
       ],
       count: 1,
@@ -409,6 +429,7 @@ export const categories: TCategoriesResponseData = {
             "/images/product/women/trousers/jeansWithDoubleBelt-5.jpg",
           gender: "women",
           category: "trousers",
+          topList: false,
         },
         {
           id: crypto.randomUUID(),
@@ -425,6 +446,7 @@ export const categories: TCategoriesResponseData = {
           previewImageUrl: "/images/product/women/trousers/flaredJeans-5.jpg",
           gender: "women",
           category: "trousers",
+          topList: false,
         },
         {
           id: crypto.randomUUID(),
@@ -442,6 +464,7 @@ export const categories: TCategoriesResponseData = {
             "/images/product/women/trousers/straightTrousers-5.jpg",
           gender: "women",
           category: "trousers",
+          topList: false,
         },
         {
           id: crypto.randomUUID(),
@@ -458,6 +481,7 @@ export const categories: TCategoriesResponseData = {
           previewImageUrl: "/images/product/women/trousers/looseTrousers-5.jpg",
           gender: "women",
           category: "trousers",
+          topList: false,
         },
       ],
       count: 4,
@@ -483,6 +507,7 @@ export const categories: TCategoriesResponseData = {
             "/images/product/women/skirts/asymmetricalMidiSkirt-5.jpg",
           gender: "women",
           category: "skirts",
+          topList: true,
         },
         {
           id: crypto.randomUUID(),
@@ -500,6 +525,7 @@ export const categories: TCategoriesResponseData = {
             "/images/product/women/skirts/asymmetricalMiniSkirt-5.jpg",
           gender: "women",
           category: "skirts",
+          topList: false,
         },
       ],
       count: 2,
@@ -522,6 +548,7 @@ export const categories: TCategoriesResponseData = {
           previewImageUrl: "/images/product/women/sweaters/sweaterBlue-3.jpg",
           gender: "women",
           category: "sweaters",
+          topList: true,
         },
         {
           id: crypto.randomUUID(),
@@ -536,6 +563,7 @@ export const categories: TCategoriesResponseData = {
           previewImageUrl: "/images/product/women/sweaters/sweaterGray-3.jpg",
           gender: "women",
           category: "sweaters",
+          topList: false,
         },
       ],
       count: 2,
@@ -561,6 +589,7 @@ export const categories: TCategoriesResponseData = {
             "/images/product/women/jackets/asymmetricalJacket-5.jpg",
           gender: "women",
           category: "jackets",
+          topList: false,
         },
         {
           id: crypto.randomUUID(),
@@ -578,6 +607,7 @@ export const categories: TCategoriesResponseData = {
             "/images/product/women/jackets/elongatedJacketWithBelt-5.jpg",
           gender: "women",
           category: "jackets",
+          topList: false,
         },
       ],
       count: 2,
@@ -601,6 +631,7 @@ export const categories: TCategoriesResponseData = {
           previewImageUrl: "/images/product/women/tops/topWithInsert-3.jpg",
           gender: "women",
           category: "tops",
+          topList: false,
         },
         {
           id: crypto.randomUUID(),
@@ -618,6 +649,7 @@ export const categories: TCategoriesResponseData = {
             "/images/product/women/tops/TShirtWithTexturedSeams-5.jpg",
           gender: "women",
           category: "tops",
+          topList: false,
         },
         {
           id: crypto.randomUUID(),
@@ -633,6 +665,7 @@ export const categories: TCategoriesResponseData = {
           previewImageUrl: "/images/product/women/tops/TShirtKnitted-4.jpg",
           gender: "women",
           category: "tops",
+          topList: false,
         },
       ],
       count: 3,
@@ -653,11 +686,11 @@ export const categories: TCategoriesResponseData = {
             "/images/product/women/shirts/shirtWithYoke-2.jpg",
             "/images/product/women/shirts/shirtWithYoke-3.jpg",
             "/images/product/women/shirts/shirtWithYoke-4.jpg",
-            "/images/product/women/shirts/shirtWithYoke-5.jpg",
           ],
           previewImageUrl: "/images/product/women/shirts/shirtWithYoke-5.jpg",
           gender: "women",
           category: "shirts",
+          topList: false,
         },
       ],
       count: 1,
@@ -682,6 +715,7 @@ export const categories: TCategoriesResponseData = {
             "/images/product/women/outerwear/oversizedBomberJacket-4.jpg",
           gender: "women",
           category: "outerwear",
+          topList: true,
         },
         {
           id: crypto.randomUUID(),
@@ -698,6 +732,7 @@ export const categories: TCategoriesResponseData = {
             "/images/product/women/outerwear/woolQuiltedJacket-4.jpg",
           gender: "women",
           category: "outerwear",
+          topList: false,
         },
       ],
       count: 2,
@@ -714,14 +749,13 @@ export const categories: TCategoriesResponseData = {
           price: 9900,
           quantity: 10,
           imagesUrl: [
-            "/images/product/accessories/men-bagVest-1.jpg",
-            "/images/product/accessories/men-bagVest-2.jpg",
             "/images/product/accessories/women-bagVest-1.jpg",
             "/images/product/accessories/women-bagVest-2.jpg",
           ],
-          previewImageUrl: "/images/product/accessories/men-bagVest-3.jpg",
+          previewImageUrl: "/images/product/accessories/women-bagVest-3.jpg",
           gender: "women",
           category: "accessories",
+          topList: true,
         },
         {
           id: crypto.randomUUID(),
@@ -730,8 +764,6 @@ export const categories: TCategoriesResponseData = {
           price: 9900,
           quantity: 10,
           imagesUrl: [
-            "/images/product/accessories/men-removableHoodWithCamouflage-1.jpg",
-            "/images/product/accessories/men-removableHoodWithCamouflage-2.jpg",
             "/images/product/accessories/women-removableHoodWithCamouflage-1.jpg",
             "/images/product/accessories/women-removableHoodWithCamouflage-2.jpg",
           ],
@@ -739,6 +771,7 @@ export const categories: TCategoriesResponseData = {
             "/images/product/accessories/women-removableHoodWithCamouflage-3.jpg",
           gender: "women",
           category: "accessories",
+          topList: true,
         },
         {
           id: crypto.randomUUID(),
@@ -746,16 +779,12 @@ export const categories: TCategoriesResponseData = {
           slug: "scarf",
           price: 9900,
           quantity: 10,
-          imagesUrl: [
-            "/images/product/accessories/men-scarfBlue-1.jpg",
-            "/images/product/accessories/men-scarfBlue-2.jpg",
-            "/images/product/accessories/men-scarfGray-1.jpg",
-            "/images/product/accessories/women-scarfGray-1.jpg",
-          ],
+          imagesUrl: ["/images/product/accessories/women-scarfGray-1.jpg"],
           previewImageUrl:
             "/images/product/accessories/women-removableHoodWithCamouflage-3.jpg",
           gender: "women",
           category: "accessories",
+          topList: false,
         },
         {
           id: crypto.randomUUID(),
@@ -764,14 +793,13 @@ export const categories: TCategoriesResponseData = {
           price: 9900,
           quantity: 10,
           imagesUrl: [
-            "/images/product/accessories/men-cap-1.jpg",
-            "/images/product/accessories/men-cap-2.jpg",
             "/images/product/accessories/women-cap-1.jpg",
             "/images/product/accessories/women-cap-2.jpg",
           ],
           previewImageUrl: "/images/product/accessories/women-cap-3.jpg",
           gender: "women",
           category: "accessories",
+          topList: true,
         },
         {
           id: crypto.randomUUID(),
@@ -787,6 +815,7 @@ export const categories: TCategoriesResponseData = {
           previewImageUrl: "/images/product/accessories/balaclava-4.jpg",
           gender: "women",
           category: "accessories",
+          topList: true,
         },
       ],
       count: 5,
@@ -814,6 +843,7 @@ export const categories: TCategoriesResponseData = {
           previewImageUrl: "/images/product/accessories/men-bagVest-3.jpg",
           gender: "unisex",
           category: "accessories",
+          topList: false,
         },
         {
           id: crypto.randomUUID(),
@@ -831,6 +861,7 @@ export const categories: TCategoriesResponseData = {
             "/images/product/accessories/women-removableHoodWithCamouflage-3.jpg",
           gender: "unisex",
           category: "accessories",
+          topList: false,
         },
         {
           id: crypto.randomUUID(),
@@ -848,6 +879,7 @@ export const categories: TCategoriesResponseData = {
             "/images/product/accessories/women-removableHoodWithCamouflage-3.jpg",
           gender: "unisex",
           category: "accessories",
+          topList: false,
         },
         {
           id: crypto.randomUUID(),
@@ -864,6 +896,7 @@ export const categories: TCategoriesResponseData = {
           previewImageUrl: "/images/product/accessories/women-cap-3.jpg",
           gender: "unisex",
           category: "accessories",
+          topList: false,
         },
         {
           id: crypto.randomUUID(),
@@ -879,160 +912,63 @@ export const categories: TCategoriesResponseData = {
           previewImageUrl: "/images/product/accessories/balaclava-4.jpg",
           gender: "unisex",
           category: "accessories",
+          topList: false,
         },
       ],
       count: 5,
     },
   ],
+};
 
-  galleryList: [
-    {
-      id: crypto.randomUUID(),
-      slug: "galleryList",
-      name: "СТИЛЬ ВНЕ ВРЕМЕНИ",
-      list: [
-        {
-          id: crypto.randomUUID(),
-          name: "БОМБЕР ОВЕРСАЙЗ",
-          slug: "oversizedBomberJacket",
-          price: 9900,
-          quantity: 10,
-          imagesUrl: [
-            "/images/product/women/outerwear/oversizedBomberJacket-1.jpg",
-            "/images/product/women/outerwear/oversizedBomberJacket-2.jpg",
-            "/images/product/women/outerwear/oversizedBomberJacket-3.jpg",
-          ],
-          previewImageUrl:
-            "/images/product/women/outerwear/oversizedBomberJacket-4.jpg",
-          gender: "women",
-          category: "outerwear",
-        },
-        {
-          id: crypto.randomUUID(),
-          name: "СВИТЕР СИНИЙ",
-          slug: "sweaterBlue",
-          price: 9900,
-          quantity: 10,
-          imagesUrl: [
-            "/images/product/women/sweaters/sweaterBlue-1.jpg",
-            "/images/product/women/sweaters/sweaterBlue-2.jpg",
-          ],
-          previewImageUrl: "/images/product/women/sweaters/sweaterBlue-3.jpg",
-          gender: "women",
-          category: "sweaters",
-        },
-        {
-          id: crypto.randomUUID(),
-          name: "ВАТНИК ОБЪЁМНЫЙ",
-          slug: "woolQuiltedJacket",
-          price: 9900,
-          quantity: 10,
-          imagesUrl: [
-            "/images/product/men/outerwear/woolQuiltedJacket-1.jpg",
-            "/images/product/men/outerwear/woolQuiltedJacket-2.jpg",
-          ],
-          previewImageUrl:
-            "/images/product/men/outerwear/woolQuiltedJacket-3.jpg",
-          gender: "men",
-          category: "outerwear",
-        },
-        {
-          id: crypto.randomUUID(),
-          name: "ЮБКА МИДИ АССИМЕТРИЧНАЯ",
-          slug: "asymmetricalMidiSkirt",
-          price: 9900,
-          quantity: 10,
-          imagesUrl: [
-            "/images/product/women/skirts/asymmetricalMidiSkirt-1.jpg",
-            "/images/product/women/skirts/asymmetricalMidiSkirt-2.jpg",
-            "/images/product/women/skirts/asymmetricalMidiSkirt-3.jpg",
-            "/images/product/women/skirts/asymmetricalMidiSkirt-4.jpg",
-          ],
-          previewImageUrl:
-            "/images/product/women/skirts/asymmetricalMidiSkirt-5.jpg",
-          gender: "women",
-          category: "skirts",
-        },
-        {
-          id: crypto.randomUUID(),
-          name: "СУМКА-ЖИЛЕТКА",
-          slug: "bagVest",
-          price: 9900,
-          quantity: 10,
-          imagesUrl: [
-            "/images/product/accessories/men-bagVest-1.jpg",
-            "/images/product/accessories/men-bagVest-2.jpg",
-            "/images/product/accessories/women-bagVest-1.jpg",
-            "/images/product/accessories/women-bagVest-2.jpg",
-          ],
-          previewImageUrl: "/images/product/accessories/women-bagVest-3.jpg",
-          gender: "unisex",
-          category: "accessories",
-        },
-        {
-          id: crypto.randomUUID(),
-          name: "МАЙКА ВЯЗАНАЯ",
-          slug: "knittedTShirt",
-          price: 9900,
-          quantity: 10,
-          imagesUrl: [
-            "/images/product/men/t-shirts/knittedTShirt-1.jpg",
-            "/images/product/men/t-shirts/knittedTShirt-2.jpg",
-          ],
-          previewImageUrl: "/images/product/men/t-shirts/knittedTShirt-3.jpg",
-          gender: "unisex",
-          category: "t-shirts",
-        },
-        {
-          id: crypto.randomUUID(),
-          name: "СЪЕМНЫЙ КАПЮШОН",
-          slug: "removableHoodWithCamouflage",
-          price: 9900,
-          quantity: 10,
-          imagesUrl: [
-            "/images/product/accessories/men-removableHoodWithCamouflage-1.jpg",
-            "/images/product/accessories/men-removableHoodWithCamouflage-2.jpg",
-            "/images/product/accessories/women-removableHoodWithCamouflage-1.jpg",
-            "/images/product/accessories/women-removableHoodWithCamouflage-2.jpg",
-          ],
-          previewImageUrl:
-            "/images/product/accessories/women-removableHoodWithCamouflage-3.jpg",
-          gender: "unisex",
-          category: "accessories",
-        },
-        {
-          id: crypto.randomUUID(),
-          name: "ШАПКА",
-          slug: "cap",
-          price: 9900,
-          quantity: 10,
-          imagesUrl: [
-            "/images/product/accessories/men-cap-1.jpg",
-            "/images/product/accessories/men-cap-2.jpg",
-            "/images/product/accessories/women-cap-1.jpg",
-            "/images/product/accessories/women-cap-2.jpg",
-          ],
-          previewImageUrl: "/images/product/accessories/women-cap-3.jpg",
-          gender: "unisex",
-          category: "accessories",
-        },
-        {
-          id: crypto.randomUUID(),
-          name: "БАЛАКЛАВА",
-          slug: "balaclava",
-          price: 9900,
-          quantity: 10,
-          imagesUrl: [
-            "/images/product/accessories/balaclava-1.jpg",
-            "/images/product/accessories/balaclava-2.jpg",
-            "/images/product/accessories/balaclava-3.jpg",
-          ],
-          previewImageUrl: "/images/product/accessories/balaclava-4.jpg",
-          gender: "unisex",
-          category: "accessories",
-        },
-      ],
-      count: 9,
-    },
-  ],
+export const getTopList = () => {
+  let arr: TProduct[] = [];
+
+  for (let [_, value] of Object.entries(categories)) {
+    if (Array.isArray(value)) {
+      value.map((category) => {
+        category.list.forEach((product: TProduct) => {
+          if (product.topList === true) arr.push(product);
+        });
+      });
+    }
+  }
+
+  return {
+    name: "СТИЛЬ ВНЕ ВРЕМЕНИ",
+    list: arr,
+  };
+};
+
+export const getDataByCategory = (
+  gender: "men" | "women" | undefined,
+  category: string | undefined,
+) => {
+  if (!category || !gender) throw new Error("category or gender not found");
+
+  const data = categories[gender].find(({ slug }) => slug === category);
+
+  return {
+    name: data!.name,
+    list: data!.list,
+  };
+};
+
+export const getDataProductById = (
+  gender: "men" | "women" | undefined,
+  category: string | undefined,
+  productId: string | undefined,
+) => {
+  if (!category || !gender || !productId)
+    throw new Error("category, gender or productId not found");
+
+  const product = categories[gender]
+    .find(({ slug }) => slug === category)!
+    .list.find(({ id }) => id === productId);
+
+  if (!product) {
+    console.error("product not found");
+    return;
+  }
+
+  return product;
 };

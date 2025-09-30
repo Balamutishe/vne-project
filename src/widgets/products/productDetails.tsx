@@ -2,27 +2,16 @@
 
 import Image from "next/image";
 import { useParams } from "next/navigation";
-import { categories } from "@/server/data";
+import { getDataProductById } from "@/server/data";
 
 export const ProductDetails = () => {
-  const { category, subcategory, productId } = useParams();
+  const { category, subcategory, productId } = useParams<{
+    category: "men" | "women" | undefined;
+    subcategory: string | undefined;
+    productId: string | undefined;
+  }>();
 
-  const handleSwitchCategoryData = () => {
-    switch (category) {
-      case "men":
-        return "men";
-      case "women":
-        return "women";
-      case "accessories":
-        return "accessoriesAll";
-      default:
-        return "galleryList";
-    }
-  };
-
-  const product = categories[handleSwitchCategoryData()]
-    .find(({ slug }) => slug === subcategory)!
-    .list.find(({ id }) => id === productId);
+  const product = getDataProductById(category, subcategory, productId);
 
   return (
     <section className={"flex justify-between gap-2"}>
