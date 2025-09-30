@@ -47,7 +47,9 @@ export const AccessoriesList: FC<{
           )}
           onClick={handleMenuClose}
         >
-          <Link href={`/categories/${categoriesType}/${accessory.slug}`}>
+          <Link
+            href={`/categories/${categoriesType}/accessories/${accessory.id}`}
+          >
             {accessory.name}
           </Link>
         </li>
