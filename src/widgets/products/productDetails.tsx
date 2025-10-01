@@ -8,7 +8,7 @@ import ArrowDownSvg from "./icons/arrow-down.svg";
 
 export const ProductDetails = () => {
   const { category, subcategory, productId } = useParams<{
-    category: "men" | "women" | undefined;
+    category: "men" | "women" | "accessories" | undefined;
     subcategory: string | undefined;
     productId: string | undefined;
   }>();

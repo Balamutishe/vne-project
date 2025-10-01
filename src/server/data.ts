@@ -299,8 +299,6 @@ export const categories: TCategoriesResponseData = {
           imagesUrl: [
             "/images/product/accessories/men-bagVest-1.jpg",
             "/images/product/accessories/men-bagVest-2.jpg",
-            "/images/product/accessories/women-bagVest-1.jpg",
-            "/images/product/accessories/women-bagVest-2.jpg",
           ],
           previewImageUrl: "/images/product/accessories/men-bagVest-3.jpg",
           gender: "men",
@@ -337,8 +335,7 @@ export const categories: TCategoriesResponseData = {
             "/images/product/accessories/men-scarfGray-1.jpg",
             "/images/product/accessories/women-scarfGray-1.jpg",
           ],
-          previewImageUrl:
-            "/images/product/accessories/women-removableHoodWithCamouflage-3.jpg",
+          previewImageUrl: "/images/product/accessories/women-scarfGray-1.jpg",
           gender: "men",
           category: "accessories",
           topList: false,
@@ -822,10 +819,10 @@ export const categories: TCategoriesResponseData = {
     },
   ],
 
-  accessoriesAll: [
+  accessories: [
     {
       id: crypto.randomUUID(),
-      slug: "accessoriesAll",
+      slug: "accessories",
       name: "ВСЕ АКСЕССУАРЫ",
       list: [
         {
@@ -920,6 +917,12 @@ export const categories: TCategoriesResponseData = {
   ],
 };
 
+export const getDataByCollection = (
+  collection: "men" | "women" | "accessories",
+) => {
+  return categories[collection];
+};
+
 export const getTopList = () => {
   let arr: TProduct[] = [];
 
@@ -940,21 +943,16 @@ export const getTopList = () => {
 };
 
 export const getDataByCategory = (
-  gender: "men" | "women" | undefined,
+  gender: "men" | "women" | "accessories" | undefined,
   category: string | undefined,
 ) => {
   if (!category || !gender) throw new Error("category or gender not found");
 
-  const data = categories[gender].find(({ slug }) => slug === category);
-
-  return {
-    name: data!.name,
-    list: data!.list,
-  };
+  return categories[gender].find(({ slug }) => slug === category);
 };
 
 export const getDataProductById = (
-  gender: "men" | "women" | undefined,
+  gender: "men" | "women" | "accessories" | undefined,
   category: string | undefined,
   productId: string | undefined,
 ) => {

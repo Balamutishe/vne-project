@@ -41,7 +41,7 @@ export type TCategoriesList = z.infer<typeof CategoriesListSchema>;
 export const CategoriesResponseDataSchema = z.object({
   men: CategoriesListSchema,
   women: CategoriesListSchema,
-  accessoriesAll: CategoriesListSchema,
+  accessories: CategoriesListSchema,
 });
 export type TCategoriesResponseData = z.infer<
   typeof CategoriesResponseDataSchema

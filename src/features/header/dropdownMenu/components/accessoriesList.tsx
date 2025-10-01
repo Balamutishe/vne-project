@@ -1,5 +1,5 @@
 import { toggleDropdownMenuVisible } from "@/features/header/dropdownMenu/dropdownMenuSlice";
-import { categories } from "@/server/data";
+import { getDataByCategory } from "@/server/data";
 import { TProduct } from "@/shared/types/categories";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { clsx } from "clsx";
@@ -7,23 +7,10 @@ import Link from "next/link";
 import { FC } from "react";
 
 export const AccessoriesListView = () => {
-  const { men, women, accessoriesAll } = categories;
-
   const { categoriesType } = useAppSelector((state) => state.dropdownMenuState);
+  const data = getDataByCategory(categoriesType, "accessories")!.list;
 
-  const accessoriesMen = men.find((category) => category.name === "Аксессуары");
-  const accessoriesWomen = women.find(
-    (category) => category.name === "Аксессуары",
-  );
-
-  switch (categoriesType) {
-    case "accessories":
-      return <AccessoriesList accessoriesList={accessoriesAll![0].list} />;
-    case "men":
-      return <AccessoriesList accessoriesList={accessoriesMen!.list} />;
-    case "women":
-      return <AccessoriesList accessoriesList={accessoriesWomen!.list} />;
-  }
+  return <AccessoriesList accessoriesList={data} />;
 };
 
 export const AccessoriesList: FC<{
@@ -38,22 +25,26 @@ export const AccessoriesList: FC<{
 
   return (
     <ul>
-      {accessoriesList.map((accessory) => (
-        <li
-          key={accessory.id}
-          className={clsx(
-            "hover:text-hover hover:border-b-hover flex cursor-pointer items-center justify-between" +
-              " transition-colors last:border-b-0",
-          )}
-          onClick={handleMenuClose}
-        >
-          <Link
-            href={`/categories/${categoriesType}/accessories/${accessory.id}`}
+      {accessoriesList ? (
+        accessoriesList.map((accessory) => (
+          <li
+            key={accessory.id}
+            className={clsx(
+              "hover:text-hover hover:border-b-hover flex cursor-pointer items-center justify-between" +
+                " transition-colors last:border-b-0",
+            )}
+            onClick={handleMenuClose}
           >
-            {accessory.name}
-          </Link>
-        </li>
-      ))}
+            <Link
+              href={`/categories/${categoriesType}/${accessory.category}/${accessory.id}`}
+            >
+              {accessory.name}
+            </Link>
+          </li>
+        ))
+      ) : (
+        <div>Список не найден</div>
+      )}
     </ul>
   );
 };

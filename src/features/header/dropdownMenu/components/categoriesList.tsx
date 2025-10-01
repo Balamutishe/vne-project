@@ -1,21 +1,22 @@
 import { FC } from "react";
 import Link from "next/link";
 import { toggleDropdownMenuVisible } from "@/features/header/dropdownMenu/dropdownMenuSlice";
-import { categories } from "@/server/data";
+import { getDataByCollection } from "@/server/data";
 import { TCategoriesList } from "@/shared/types/categories";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { clsx } from "clsx";
 
 export const CategoriesListView = () => {
-  const { men, women } = categories;
   const { categoriesType } = useAppSelector((state) => state.dropdownMenuState);
+  const data = getDataByCollection(categoriesType);
 
-  switch (categoriesType) {
-    case "men":
-      return <CategoriesList categoriesData={men} />;
-    case "women":
-      return <CategoriesList categoriesData={women} />;
-  }
+  return (
+    <>
+      {categoriesType !== "accessories" && (
+        <CategoriesList categoriesData={data} />
+      )}
+    </>
+  );
 };
 
 const CategoriesList: FC<{
