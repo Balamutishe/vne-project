@@ -23,6 +23,48 @@ export const categories: TCategoriesResponseData = {
           gender: "men",
           category: "trousers",
           topList: false,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
         {
           id: crypto.randomUUID(),
@@ -40,6 +82,48 @@ export const categories: TCategoriesResponseData = {
           gender: "men",
           category: "trousers",
           topList: false,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
         {
           id: crypto.randomUUID(),
@@ -58,6 +142,48 @@ export const categories: TCategoriesResponseData = {
           gender: "men",
           category: "trousers",
           topList: false,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
         {
           id: crypto.randomUUID(),
@@ -75,6 +201,48 @@ export const categories: TCategoriesResponseData = {
           gender: "men",
           category: "trousers",
           topList: false,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
       ],
       count: 4,
@@ -100,6 +268,48 @@ export const categories: TCategoriesResponseData = {
           gender: "men",
           category: "shirts",
           topList: false,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
       ],
       count: 1,
@@ -125,6 +335,48 @@ export const categories: TCategoriesResponseData = {
           gender: "men",
           category: "t-shirts",
           topList: false,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
         {
           id: crypto.randomUUID(),
@@ -140,6 +392,48 @@ export const categories: TCategoriesResponseData = {
           gender: "men",
           category: "t-shirts",
           topList: true,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
         {
           id: crypto.randomUUID(),
@@ -158,6 +452,48 @@ export const categories: TCategoriesResponseData = {
           gender: "men",
           category: "t-shirts",
           topList: false,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
       ],
       count: 3,
@@ -182,6 +518,48 @@ export const categories: TCategoriesResponseData = {
           gender: "men",
           category: "sweaters",
           topList: false,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
         {
           id: crypto.randomUUID(),
@@ -197,6 +575,48 @@ export const categories: TCategoriesResponseData = {
           gender: "men",
           category: "sweaters",
           topList: false,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
         {
           id: crypto.randomUUID(),
@@ -214,6 +634,48 @@ export const categories: TCategoriesResponseData = {
           gender: "men",
           category: "sweaters",
           topList: false,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
       ],
       count: 3,
@@ -240,6 +702,48 @@ export const categories: TCategoriesResponseData = {
           gender: "men",
           category: "jackets",
           topList: false,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
       ],
       count: 1,
@@ -264,6 +768,48 @@ export const categories: TCategoriesResponseData = {
           gender: "men",
           category: "outerwear",
           topList: true,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
         {
           id: crypto.randomUUID(),
@@ -281,6 +827,48 @@ export const categories: TCategoriesResponseData = {
           gender: "men",
           category: "outerwear",
           topList: false,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
       ],
       count: 2,
@@ -304,6 +892,48 @@ export const categories: TCategoriesResponseData = {
           gender: "men",
           category: "accessories",
           topList: false,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
         {
           id: crypto.randomUUID(),
@@ -322,6 +952,48 @@ export const categories: TCategoriesResponseData = {
           gender: "men",
           category: "accessories",
           topList: false,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
         {
           id: crypto.randomUUID(),
@@ -339,6 +1011,48 @@ export const categories: TCategoriesResponseData = {
           gender: "men",
           category: "accessories",
           topList: false,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
         {
           id: crypto.randomUUID(),
@@ -356,6 +1070,48 @@ export const categories: TCategoriesResponseData = {
           gender: "men",
           category: "accessories",
           topList: false,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
         {
           id: crypto.randomUUID(),
@@ -372,6 +1128,48 @@ export const categories: TCategoriesResponseData = {
           gender: "men",
           category: "accessories",
           topList: false,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
       ],
       count: 5,
@@ -401,6 +1199,48 @@ export const categories: TCategoriesResponseData = {
           gender: "women",
           category: "dresses",
           topList: false,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
       ],
       count: 1,
@@ -427,6 +1267,48 @@ export const categories: TCategoriesResponseData = {
           gender: "women",
           category: "trousers",
           topList: false,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
         {
           id: crypto.randomUUID(),
@@ -444,6 +1326,48 @@ export const categories: TCategoriesResponseData = {
           gender: "women",
           category: "trousers",
           topList: false,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
         {
           id: crypto.randomUUID(),
@@ -462,6 +1386,48 @@ export const categories: TCategoriesResponseData = {
           gender: "women",
           category: "trousers",
           topList: false,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
         {
           id: crypto.randomUUID(),
@@ -479,6 +1445,48 @@ export const categories: TCategoriesResponseData = {
           gender: "women",
           category: "trousers",
           topList: false,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
       ],
       count: 4,
@@ -505,6 +1513,48 @@ export const categories: TCategoriesResponseData = {
           gender: "women",
           category: "skirts",
           topList: true,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
         {
           id: crypto.randomUUID(),
@@ -523,6 +1573,48 @@ export const categories: TCategoriesResponseData = {
           gender: "women",
           category: "skirts",
           topList: false,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
       ],
       count: 2,
@@ -546,6 +1638,48 @@ export const categories: TCategoriesResponseData = {
           gender: "women",
           category: "sweaters",
           topList: true,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
         {
           id: crypto.randomUUID(),
@@ -561,6 +1695,48 @@ export const categories: TCategoriesResponseData = {
           gender: "women",
           category: "sweaters",
           topList: false,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
       ],
       count: 2,
@@ -587,6 +1763,48 @@ export const categories: TCategoriesResponseData = {
           gender: "women",
           category: "jackets",
           topList: false,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
         {
           id: crypto.randomUUID(),
@@ -605,6 +1823,48 @@ export const categories: TCategoriesResponseData = {
           gender: "women",
           category: "jackets",
           topList: false,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
       ],
       count: 2,
@@ -629,6 +1889,48 @@ export const categories: TCategoriesResponseData = {
           gender: "women",
           category: "tops",
           topList: false,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
         {
           id: crypto.randomUUID(),
@@ -647,6 +1949,48 @@ export const categories: TCategoriesResponseData = {
           gender: "women",
           category: "tops",
           topList: false,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
         {
           id: crypto.randomUUID(),
@@ -663,6 +2007,48 @@ export const categories: TCategoriesResponseData = {
           gender: "women",
           category: "tops",
           topList: false,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
       ],
       count: 3,
@@ -688,6 +2074,48 @@ export const categories: TCategoriesResponseData = {
           gender: "women",
           category: "shirts",
           topList: false,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
       ],
       count: 1,
@@ -713,6 +2141,48 @@ export const categories: TCategoriesResponseData = {
           gender: "women",
           category: "outerwear",
           topList: true,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
         {
           id: crypto.randomUUID(),
@@ -730,6 +2200,48 @@ export const categories: TCategoriesResponseData = {
           gender: "women",
           category: "outerwear",
           topList: false,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
       ],
       count: 2,
@@ -753,6 +2265,48 @@ export const categories: TCategoriesResponseData = {
           gender: "women",
           category: "accessories",
           topList: true,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
         {
           id: crypto.randomUUID(),
@@ -769,6 +2323,48 @@ export const categories: TCategoriesResponseData = {
           gender: "women",
           category: "accessories",
           topList: true,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
         {
           id: crypto.randomUUID(),
@@ -782,6 +2378,48 @@ export const categories: TCategoriesResponseData = {
           gender: "women",
           category: "accessories",
           topList: false,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
         {
           id: crypto.randomUUID(),
@@ -797,6 +2435,48 @@ export const categories: TCategoriesResponseData = {
           gender: "women",
           category: "accessories",
           topList: true,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
         {
           id: crypto.randomUUID(),
@@ -813,6 +2493,48 @@ export const categories: TCategoriesResponseData = {
           gender: "women",
           category: "accessories",
           topList: true,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
       ],
       count: 5,
@@ -841,6 +2563,48 @@ export const categories: TCategoriesResponseData = {
           gender: "unisex",
           category: "accessories",
           topList: false,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
         {
           id: crypto.randomUUID(),
@@ -859,6 +2623,48 @@ export const categories: TCategoriesResponseData = {
           gender: "unisex",
           category: "accessories",
           topList: false,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
         {
           id: crypto.randomUUID(),
@@ -877,6 +2683,48 @@ export const categories: TCategoriesResponseData = {
           gender: "unisex",
           category: "accessories",
           topList: false,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
         {
           id: crypto.randomUUID(),
@@ -894,6 +2742,48 @@ export const categories: TCategoriesResponseData = {
           gender: "unisex",
           category: "accessories",
           topList: false,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
         {
           id: crypto.randomUUID(),
@@ -910,6 +2800,48 @@ export const categories: TCategoriesResponseData = {
           gender: "unisex",
           category: "accessories",
           topList: false,
+          details: {
+            description:
+              "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            care: "Брюки-клёш с разрезами и эластичным поясом-резинкой. Идеально сочетаются с базовой майкой, удлинённой кофтой и пиджаком. Ткань эластичная, имеет растяжимость по всем сторонам. Трикотаж уютный, приятный к телу и удобный в носке. Ткань из вискозы прекрасно пропускает воздух, но при этом имеет способность сохранять тепло. Не электризуется, обладает хорошей гигроскопичностью.",
+            sizeChart: [
+              {
+                sizeShared: "XS",
+                sizeRussian: 42,
+                sizeBreast: 84,
+                sizeWaist: 62,
+                sizeHips: 92,
+              },
+              {
+                sizeShared: "S",
+                sizeRussian: 44,
+                sizeBreast: 88,
+                sizeWaist: 62,
+                sizeHips: 96,
+              },
+              {
+                sizeShared: "M",
+                sizeRussian: 46,
+                sizeBreast: 92,
+                sizeWaist: 72,
+                sizeHips: 100,
+              },
+              {
+                sizeShared: "L",
+                sizeRussian: 48,
+                sizeBreast: 96,
+                sizeWaist: 76,
+                sizeHips: 104,
+              },
+              {
+                sizeShared: "XL",
+                sizeRussian: 50,
+                sizeBreast: 100,
+                sizeWaist: 80,
+                sizeHips: 108,
+              },
+            ],
+          },
         },
       ],
       count: 5,
@@ -943,23 +2875,23 @@ export const getTopList = () => {
 };
 
 export const getDataByCategory = (
-  gender: "men" | "women" | "accessories" | undefined,
+  collection: "men" | "women" | "accessories" | undefined,
   category: string | undefined,
 ) => {
-  if (!category || !gender) throw new Error("category or gender not found");
+  if (!category || !collection) throw new Error("category or gender not found");
 
-  return categories[gender].find(({ slug }) => slug === category);
+  return getDataByCollection(collection).find(({ slug }) => slug === category);
 };
 
 export const getDataProductById = (
-  gender: "men" | "women" | "accessories" | undefined,
+  collection: "men" | "women" | "accessories" | undefined,
   category: string | undefined,
   productId: string | undefined,
 ) => {
-  if (!category || !gender || !productId)
+  if (!category || !collection || !productId)
     throw new Error("category, gender or productId not found");
 
-  const product = categories[gender]
+  const product = categories[collection]
     .find(({ slug }) => slug === category)!
     .list.find(({ id }) => id === productId);
 

@@ -11,24 +11,25 @@ export const ProductSchema = z.object({
   imagesUrl: z.array(z.string()),
   previewImageUrl: z.string(),
   topList: z.boolean(),
+  details: z.object({
+    description: z.string(),
+    care: z.string(),
+    sizeChart: z.array(
+      z.object({
+        sizeShared: z.string(),
+        sizeRussian: z.number(),
+        sizeBreast: z.number(),
+        sizeWaist: z.number(),
+        sizeHips: z.number(),
+      }),
+    ),
+  }),
 });
 export type TProduct = z.infer<typeof ProductSchema>;
 
 export const CategorySchema = z.object({
   id: z.string(),
-  slug: z.enum([
-    "accessories",
-    "accessoriesAll",
-    "dresses",
-    "jackets",
-    "outerwear",
-    "skirts",
-    "t-shirts",
-    "shirts",
-    "sweaters",
-    "tops",
-    "trousers",
-  ]),
+  slug: z.string(),
   name: z.string(),
   list: z.array(ProductSchema),
   count: z.number(),
