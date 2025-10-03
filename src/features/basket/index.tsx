@@ -65,7 +65,10 @@ export const Basket = () => {
                       <div
                         className={"flex items-center justify-between gap-1"}
                       >
-                        <button className={"text-3xl"}>
+                        <button
+                          className={"text-3xl"}
+                          disabled={product.quantity === 1}
+                        >
                           <MinusSvg
                             width={24}
                             height={24}
