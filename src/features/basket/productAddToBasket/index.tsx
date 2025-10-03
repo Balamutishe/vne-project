@@ -7,7 +7,8 @@ export const ProductAddToBasket: FC<{
   name: string;
   price: number;
   quantity: number;
-}> = ({ id, name, price, quantity }) => {
+  imageUrl: string;
+}> = ({ id, name, price, quantity, imageUrl }) => {
   const dispatch = useAppDispatch();
   const handleProductAddToBasket = () => {
     dispatch(
@@ -16,6 +17,7 @@ export const ProductAddToBasket: FC<{
         name,
         price,
         quantity,
+        imageUrl,
       }),
     );
   };

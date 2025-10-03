@@ -47,6 +47,7 @@ export const ProductDetails = () => {
             name={product.name}
             price={product.price}
             quantity={1}
+            imageUrl={product.previewImageUrl}
           />
         </div>
       </div>
