@@ -1,20 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface CategoriesState {
-  categoriesType: "men" | "women";
-  categoryCurrent:
-    | "accessories"
-    | "dresses"
-    | "jackets"
-    | "outerwear"
-    | "skirts"
-    | "t-shirts"
-    | "shirts"
-    | "sweaters"
-    | "tops"
-    | "trousers"
-    | "galleryList"
-    | "accessoriesAll";
+  categoriesType: "men" | "women" | "accessories";
+  categoryCurrent: string;
 }
 
 const initialState: CategoriesState = {
@@ -26,26 +14,13 @@ const categoriesSlice = createSlice({
   name: "categoriesState",
   initialState,
   reducers: {
-    setCategoryType: (state, action: PayloadAction<"men" | "women">) => {
+    setCategoryType: (
+      state,
+      action: PayloadAction<"men" | "women" | "accessories">,
+    ) => {
       state.categoriesType = action.payload;
     },
-    setCategoryCurrent: (
-      state,
-      action: PayloadAction<
-        | "accessories"
-        | "dresses"
-        | "jackets"
-        | "outerwear"
-        | "skirts"
-        | "t-shirts"
-        | "sweaters"
-        | "tops"
-        | "trousers"
-        | "shirts"
-        | "galleryList"
-        | "accessoriesAll"
-      >,
-    ) => {
+    setCategoryCurrent: (state, action: PayloadAction<string>) => {
       state.categoryCurrent = action.payload;
     },
   },
