@@ -1,5 +1,6 @@
 "use client";
 
+import { ProductAddToBasket } from "@/features/basket/productAddToBasket";
 import { TProduct } from "@/shared/types/categories";
 import { clsx } from "clsx";
 import Image from "next/image";
@@ -41,13 +42,12 @@ export const ProductDetails = () => {
           />
         </div>
         <div className={"flex items-center justify-center px-30"}>
-          <button
-            className={
-              "bg-hover text-background hover:bg-active min-w-136 cursor-pointer p-4 transition-colors"
-            }
-          >
-            ДОБАВИТЬ В КОРЗИНУ
-          </button>
+          <ProductAddToBasket
+            id={product.id}
+            name={product.name}
+            price={product.price}
+            quantity={1}
+          />
         </div>
       </div>
     </section>
@@ -75,9 +75,21 @@ const ProductDetailsHeader: FC<{ name: string; price: number }> = ({
             "flex justify-start gap-2 text-sm [&>*]:h-8.5 [&>*]:w-8.5 [&>*]:border-1 [&>*]:border-[#a7a7a7]"
           }
         >
-          <button className={"cursor-pointer"}>S</button>
-          <button className={"cursor-pointer"}>M</button>
-          <button className={"cursor-pointer"}>L</button>
+          <button
+            className={"hover:text-background hover:bg-hover cursor-pointer"}
+          >
+            S
+          </button>
+          <button
+            className={"hover:text-background hover:bg-hover cursor-pointer"}
+          >
+            M
+          </button>
+          <button
+            className={"hover:text-background hover:bg-hover cursor-pointer"}
+          >
+            L
+          </button>
         </div>
       </div>
     </div>
@@ -153,7 +165,6 @@ const ProductDetailsDescriptionItem: FC<{
   index: number;
 }> = ({ item, index }) => {
   const [visibleAdditional, setVisibleAdditional] = useState<boolean>(false);
-
   const handleSetVisibleAdditional = () => {
     setVisibleAdditional((prev) => !prev);
   };

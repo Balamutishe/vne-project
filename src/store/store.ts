@@ -3,6 +3,7 @@ import categoriesReducer from "@/widgets/categories/categoriesSlice";
 import headerReducer from "@/features/header/dropdownMenu/dropdownMenuSlice";
 import headerSearchReducer from "@/features/header/headerSearchField/headerSearchFieldSlice";
 import dropdownMenuReducer from "@/features/header/dropdownMenu/dropdownMenuSlice";
+import basketReducer from "@/features/basket/basketSlice";
 
 export const makeStore = () => {
   return configureStore({
@@ -11,6 +12,7 @@ export const makeStore = () => {
       categoriesState: categoriesReducer,
       headerSearchFieldState: headerSearchReducer,
       dropdownMenuState: dropdownMenuReducer,
+      basketState: basketReducer,
     },
   });
 };
