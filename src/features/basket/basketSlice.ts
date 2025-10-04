@@ -2,9 +2,12 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface BasketState {
   products: {
+    _id: string;
     id: string;
     name: string;
     price: number;
+    size: string;
+    color: string;
     quantity: number;
     imageUrl: string;
   }[];
@@ -34,22 +37,37 @@ const basketSlice = createSlice({
         name: string;
         price: number;
         quantity: number;
+        size: string;
+        color: string;
         imageUrl: string;
+        _id?: string;
       }>,
     ) => {
-      if (state.products.some((product) => product.id === action.payload.id)) {
+      const productAvailable = state.products.some(
+        (product) =>
+          product.id === action.payload.id &&
+          product.size === action.payload.size,
+      );
+
+      if (!productAvailable) {
+        state.products = [
+          ...state.products,
+          { ...action.payload, _id: crypto.randomUUID() },
+        ];
+      } else {
         state.products = state.products.map((product) => {
-          if (product.id === action.payload.id) {
+          if (
+            product.id === action.payload.id &&
+            product.size === action.payload.size
+          ) {
             return {
               ...product,
-              price: product.price + action.payload.price,
-              quantity: product.quantity + action.payload.quantity,
+              quantity: product.quantity + 1,
             };
           }
+
           return product;
         });
-      } else {
-        state.products = [...state.products, action.payload];
       }
 
       state.totalPrice = state.totalPrice + action.payload.price;
@@ -58,43 +76,47 @@ const basketSlice = createSlice({
     productDelete: (
       state,
       action: PayloadAction<{
-        id: string;
-        price?: number;
-        quantity?: number;
+        type: "decreaseQuantity" | "deleteProduct";
+        _id: string;
       }>,
     ) => {
-      if (state.products.some((product) => product.id === action.payload.id)) {
-        if (action.payload.price && action.payload.quantity) {
-          state.products = state.products.map((product) => {
-            if (product.id === action.payload.id) {
-              return {
-                ...product,
-                price: product.price - action.payload.price!,
-                quantity: product.quantity - action.payload.quantity!,
-              };
-            }
-            return product;
-          });
+      const productAvailable = state.products.some(
+        (product) => product._id === action.payload._id,
+      );
 
-          state.totalPrice = state.totalPrice - action.payload.price;
-          state.totalQuantity = state.totalQuantity - action.payload.quantity;
-        } else {
-          const product = state.products.find(
-            (product) => product.id === action.payload.id,
-          );
+      if (!productAvailable) {
+        console.error("product not found");
+        return;
+      }
 
-          if (!product) {
-            console.error("Product not found in basket");
-            return;
+      if (action.payload.type === "decreaseQuantity") {
+        state.products = state.products.map((product) => {
+          if (product._id === action.payload._id) {
+            state.totalPrice = state.totalPrice - product.price;
+            state.totalQuantity = state.totalQuantity - 1;
+
+            return {
+              ...product,
+              quantity: product.quantity - 1,
+            };
           }
 
-          state.totalPrice = state.totalPrice - product.price;
-          state.totalQuantity = state.totalQuantity - product.quantity;
+          return product;
+        });
+      }
 
-          state.products = state.products.filter(
-            (product) => product.id !== action.payload.id,
-          );
-        }
+      if (action.payload.type === "deleteProduct") {
+        const currentProduct = state.products.find(
+          (product) => product._id === action.payload._id,
+        );
+
+        state.products = state.products.filter(
+          (product) => product._id !== currentProduct!._id,
+        );
+
+        state.totalPrice =
+          state.totalPrice - currentProduct!.price * currentProduct!.quantity;
+        state.totalQuantity = state.totalQuantity - currentProduct!.quantity;
       }
     },
     basketClear: (state) => {

@@ -17,6 +17,8 @@ export const ProductDetails = () => {
     productId: string | undefined;
   }>();
 
+  const [size, setSize] = useState("M");
+
   const product: TProduct | undefined = getDataProductById(
     category,
     subcategory,
@@ -33,7 +35,12 @@ export const ProductDetails = () => {
         <ProductDetailsImagesList imagesUrlList={product.imagesUrl} />
       </div>
       <div className={"mb-4 flex min-h-135 flex-col pt-16"}>
-        <ProductDetailsHeader name={product.name} price={product.price} />
+        <ProductDetailsHeader
+          name={product.name}
+          price={product.price}
+          currentSize={size}
+          setSize={setSize}
+        />
         <div className={"mb-16"}>
           <ProductDetailsDescriptionList
             description={description}
@@ -48,6 +55,8 @@ export const ProductDetails = () => {
             price={product.price}
             quantity={1}
             imageUrl={product.previewImageUrl}
+            size={size}
+            color={"Серый"}
           />
         </div>
       </div>
@@ -55,10 +64,16 @@ export const ProductDetails = () => {
   );
 };
 
-const ProductDetailsHeader: FC<{ name: string; price: number }> = ({
-  name,
-  price,
-}) => {
+const ProductDetailsHeader: FC<{
+  name: string;
+  price: number;
+  currentSize: string;
+  setSize: (size: string) => void;
+}> = ({ name, price, currentSize, setSize }) => {
+  const listSizes = ["XS", "S", "M", "L", "XL"];
+
+  const handleSetSize = (size: string) => setSize(size);
+
   return (
     <div>
       <div
@@ -71,26 +86,18 @@ const ProductDetailsHeader: FC<{ name: string; price: number }> = ({
       </div>
       <div className={"mb-16 px-30 py-4"}>
         <ColorSvg width={49} height={49} className={"mb-4"} />
-        <div
-          className={
-            "flex justify-start gap-2 text-sm [&>*]:h-8.5 [&>*]:w-8.5 [&>*]:border-1 [&>*]:border-[#a7a7a7]"
-          }
-        >
-          <button
-            className={"hover:text-background hover:bg-hover cursor-pointer"}
-          >
-            S
-          </button>
-          <button
-            className={"hover:text-background hover:bg-hover cursor-pointer"}
-          >
-            M
-          </button>
-          <button
-            className={"hover:text-background hover:bg-hover cursor-pointer"}
-          >
-            L
-          </button>
+        <div className={"flex justify-start gap-2 text-sm"}>
+          {listSizes.map((size) => (
+            <button
+              className={clsx(
+                "hover:text-background hover:bg-hover h-8.5 w-8.5 cursor-pointer border-1 border-[#a7a7a7]",
+                { "text-background bg-hover": size === currentSize },
+              )}
+              onClick={() => handleSetSize(size)}
+            >
+              {size}
+            </button>
+          ))}
         </div>
       </div>
     </div>

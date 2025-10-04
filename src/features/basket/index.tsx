@@ -58,9 +58,11 @@ export const Basket = () => {
                   <div className={"w-2/3"}>
                     <div className={"flex justify-between"}>
                       <h4 className={"text-base"}>{product.name}</h4>
-                      <ProductDeleteFromBasket id={product.id} />
+                      <ProductDeleteFromBasket id={product._id} />
                     </div>
-                    <div>Color</div>
+                    <div>
+                      {product.color}/{product.size}
+                    </div>
                     <div className={"flex items-center justify-between"}>
                       <div
                         className={"flex items-center justify-between gap-1"}
@@ -78,9 +80,8 @@ export const Basket = () => {
                             onClick={() =>
                               dispatch(
                                 productDelete({
-                                  id: product.id,
-                                  quantity: 1,
-                                  price: 9900,
+                                  type: "decreaseQuantity",
+                                  _id: product._id,
                                 }),
                               )
                             }
@@ -90,13 +91,7 @@ export const Basket = () => {
                         <button
                           className={"text-3xl"}
                           onClick={() =>
-                            dispatch(
-                              productAdd({
-                                ...product,
-                                price: 9900,
-                                quantity: 1,
-                              }),
-                            )
+                            dispatch(productAdd({ ...product, quantity: 1 }))
                           }
                         >
                           <PlusSvg
@@ -108,7 +103,7 @@ export const Basket = () => {
                           />
                         </button>
                       </div>
-                      <div>{product.price}</div>
+                      <div>{product.price * product.quantity} &#8381;</div>
                     </div>
                   </div>
                 </article>
@@ -121,7 +116,7 @@ export const Basket = () => {
         <div>
           <div className={"mb-2 flex items-center justify-between"}>
             <span>ВСЕГО</span>
-            <span>{totalPrice}</span>
+            <span>{totalPrice} &#8381;</span>
           </div>
           <div className={"flex items-center justify-between"}>
             <button

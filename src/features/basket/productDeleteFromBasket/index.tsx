@@ -6,7 +6,7 @@ import { FC } from "react";
 export const ProductDeleteFromBasket: FC<{ id: string }> = ({ id }) => {
   const dispatch = useAppDispatch();
   const handleProductDeleteFromBasket = () => {
-    dispatch(productDelete({ id }));
+    dispatch(productDelete({ type: "deleteProduct", _id: id }));
   };
 
   return (

@@ -6,9 +6,11 @@ export const ProductAddToBasket: FC<{
   id: string;
   name: string;
   price: number;
+  color: string;
+  size: string;
   quantity: number;
   imageUrl: string;
-}> = ({ id, name, price, quantity, imageUrl }) => {
+}> = ({ id, name, price, color, size, quantity, imageUrl }) => {
   const dispatch = useAppDispatch();
   const handleProductAddToBasket = () => {
     dispatch(
@@ -18,6 +20,8 @@ export const ProductAddToBasket: FC<{
         price,
         quantity,
         imageUrl,
+        color,
+        size,
       }),
     );
   };
