@@ -1,16 +1,18 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
+type BasketProduct = {
+  _id: string;
+  id: string;
+  name: string;
+  price: number;
+  size: string;
+  color: string;
+  quantity: number;
+  imageUrl: string;
+};
+
 interface BasketState {
-  products: {
-    _id: string;
-    id: string;
-    name: string;
-    price: number;
-    size: string;
-    color: string;
-    quantity: number;
-    imageUrl: string;
-  }[];
+  products: BasketProduct[];
   totalPrice: number;
   totalQuantity: number;
   isBasketOpen: boolean;
@@ -30,35 +32,22 @@ const basketSlice = createSlice({
     toggleBasketOpen: (state, action: PayloadAction<boolean>) => {
       state.isBasketOpen = action.payload;
     },
-    productAdd: (
-      state,
-      action: PayloadAction<{
-        id: string;
-        name: string;
-        price: number;
-        quantity: number;
-        size: string;
-        color: string;
-        imageUrl: string;
-        _id?: string;
-      }>,
-    ) => {
+    productAdd: (state, action: PayloadAction<BasketProduct>) => {
       const productAvailable = state.products.some(
         (product) =>
           product.id === action.payload.id &&
-          product.size === action.payload.size,
+          product.size === action.payload.size &&
+          product.color === action.payload.color,
       );
 
       if (!productAvailable) {
-        state.products = [
-          ...state.products,
-          { ...action.payload, _id: crypto.randomUUID() },
-        ];
+        state.products = [...state.products, action.payload];
       } else {
         state.products = state.products.map((product) => {
           if (
             product.id === action.payload.id &&
-            product.size === action.payload.size
+            product.size === action.payload.size &&
+            product.color === action.payload.color
           ) {
             return {
               ...product,

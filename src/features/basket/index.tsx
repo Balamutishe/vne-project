@@ -31,13 +31,13 @@ export const Basket = () => {
   const { products, totalPrice } = useAppSelector((state) => state.basketState);
 
   return (
-    <div ref={ref} className={"w-98 px-5 py-8"}>
+    <div ref={ref} className={"max-h-199 w-98 px-5 py-8"}>
       <div className={"mb-4 flex items-center justify-between"}>
         <h3>КОРЗИНА</h3>
         <BasketClear />
       </div>
       <div>
-        <ul className={"mb-5 flex flex-col gap-10"}>
+        <ul className={"mb-5 flex max-h-135 flex-col gap-10 overflow-auto"}>
           {products.length !== 0 ? (
             products.map((product) => (
               <li
@@ -45,9 +45,9 @@ export const Basket = () => {
                 className={"flex min-h-36 items-center justify-between"}
               >
                 <article
-                  className={"flex w-full items-center justify-between gap-1"}
+                  className={"flex w-full items-center justify-between gap-4"}
                 >
-                  <div className={"w-1/3"}>
+                  <div className={"w-1/3 border-1 border-[#a7a7a7]"}>
                     <Image
                       src={product.imageUrl}
                       alt={product.name}
@@ -61,7 +61,7 @@ export const Basket = () => {
                       <ProductDeleteFromBasket id={product._id} />
                     </div>
                     <div>
-                      {product.color}/{product.size}
+                      {product.color} / {product.size}
                     </div>
                     <div className={"flex items-center justify-between"}>
                       <div
@@ -87,7 +87,9 @@ export const Basket = () => {
                             }
                           />
                         </button>
-                        <span>( {product.quantity} )</span>
+                        <span className={"text-hover"}>
+                          ( {product.quantity} )
+                        </span>
                         <button
                           className={"text-3xl"}
                           onClick={() =>

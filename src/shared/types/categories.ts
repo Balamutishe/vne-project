@@ -23,6 +23,7 @@ export const ProductSchema = z.object({
         sizeHips: z.number(),
       }),
     ),
+    color: z.array(z.string()),
   }),
 });
 export type TProduct = z.infer<typeof ProductSchema>;

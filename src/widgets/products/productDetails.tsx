@@ -27,7 +27,9 @@ export const ProductDetails = () => {
 
   if (!product) return <div>Продукт не найден</div>;
 
-  const { description, care, sizeChart } = product.details;
+  const { description, care, sizeChart, color } = product.details;
+
+  const [currentColor, setCurrentColor] = useState(color[0]);
 
   return (
     <section className={"mb-31 flex justify-between [&>*]:w-1/2"}>
@@ -38,8 +40,11 @@ export const ProductDetails = () => {
         <ProductDetailsHeader
           name={product.name}
           price={product.price}
+          colors={color}
           currentSize={size}
           setSize={setSize}
+          currentColor={currentColor}
+          setCurrentColor={setCurrentColor}
         />
         <div className={"mb-16"}>
           <ProductDetailsDescriptionList
@@ -56,7 +61,7 @@ export const ProductDetails = () => {
             quantity={1}
             imageUrl={product.previewImageUrl}
             size={size}
-            color={"Серый"}
+            color={currentColor}
           />
         </div>
       </div>
@@ -67,12 +72,24 @@ export const ProductDetails = () => {
 const ProductDetailsHeader: FC<{
   name: string;
   price: number;
+  colors: string[];
   currentSize: string;
   setSize: (size: string) => void;
-}> = ({ name, price, currentSize, setSize }) => {
+  currentColor: string;
+  setCurrentColor: (size: string) => void;
+}> = ({
+  name,
+  price,
+  colors,
+  currentSize,
+  setSize,
+  setCurrentColor,
+  currentColor,
+}) => {
   const listSizes = ["XS", "S", "M", "L", "XL"];
 
   const handleSetSize = (size: string) => setSize(size);
+  const handleSetColor = (color: string) => setCurrentColor(color);
 
   return (
     <div>
@@ -85,10 +102,28 @@ const ProductDetailsHeader: FC<{
         <span>{price} &#8381;</span>
       </div>
       <div className={"mb-16 px-30 py-4"}>
-        <ColorSvg width={49} height={49} className={"mb-4"} />
+        <div className={"flex gap-2"}>
+          {colors.map((color) => (
+            <ColorSvg
+              key={crypto.randomUUID()}
+              width={49}
+              height={49}
+              className={clsx(`mb-4 cursor-pointer`, {
+                "[&>*]:fill-hover": color === "blue",
+                "[&>*]:fill-tertiary": color === "gray",
+                "[&>*]:fill-violet": color === "violet",
+                "[&>*]:fill-white [&>*]:stroke-[#a7a7a7]": color === "white",
+                "[&>*]:fill-black": color === "black",
+                "scale-110": color === currentColor,
+              })}
+              onClick={() => handleSetColor(color)}
+            />
+          ))}
+        </div>
         <div className={"flex justify-start gap-2 text-sm"}>
           {listSizes.map((size) => (
             <button
+              key={crypto.randomUUID()}
               className={clsx(
                 "hover:text-background hover:bg-hover h-8.5 w-8.5 cursor-pointer border-1 border-[#a7a7a7]",
                 { "text-background bg-hover": size === currentSize },
@@ -212,7 +247,10 @@ const ProductDetailsDescriptionItem: FC<{
             <ul className={"flex flex-col justify-between"}>
               <li className={"flex justify-between"} key={crypto.randomUUID()}>
                 {listSizeChartHeader.map((item) => (
-                  <span className={"flex w-1/5 items-center justify-center"}>
+                  <span
+                    key={crypto.randomUUID()}
+                    className={"flex w-1/5 items-center justify-center"}
+                  >
                     {item}
                   </span>
                 ))}

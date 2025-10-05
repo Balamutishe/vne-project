@@ -15,6 +15,7 @@ export const ProductAddToBasket: FC<{
   const handleProductAddToBasket = () => {
     dispatch(
       productAdd({
+        _id: crypto.randomUUID(),
         id,
         name,
         price,

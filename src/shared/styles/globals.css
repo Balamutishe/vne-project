@@ -7,7 +7,6 @@
   --accent: #5856d6;
   --primary: #000;
   --tertiary: #8e8e93;
-  --accent: rgba(0, 0, 0, 0.2);
 
   --font-main: "Inter", sans-serif;
   --font-second: "Helvetica", sans-serif;
@@ -24,6 +23,7 @@
   --color-primary: #000;
   --color-tertiary: #8e8e93;
   --color-accent: #5856d6;
+  --color-violet: #5F5671;
 
   --font-main: "Inter", sans-serif;
   --font-second: "Helvetica", sans-serif;

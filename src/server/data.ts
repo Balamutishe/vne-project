@@ -64,6 +64,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["black"],
           },
         },
         {
@@ -123,6 +124,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["gray"],
           },
         },
         {
@@ -183,6 +185,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["black"],
           },
         },
         {
@@ -242,6 +245,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["black"],
           },
         },
       ],
@@ -309,6 +313,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["white"],
           },
         },
       ],
@@ -376,6 +381,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["black"],
           },
         },
         {
@@ -433,6 +439,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["violet"],
           },
         },
         {
@@ -493,6 +500,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["blue"],
           },
         },
       ],
@@ -559,6 +567,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["blue"],
           },
         },
         {
@@ -616,6 +625,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["blue"],
           },
         },
         {
@@ -675,6 +685,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["gray"],
           },
         },
       ],
@@ -743,6 +754,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["black"],
           },
         },
       ],
@@ -809,6 +821,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["black"],
           },
         },
         {
@@ -868,6 +881,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["black"],
           },
         },
       ],
@@ -933,6 +947,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["black"],
           },
         },
         {
@@ -993,6 +1008,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["black"],
           },
         },
         {
@@ -1052,6 +1068,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["blue", "gray"],
           },
         },
         {
@@ -1111,6 +1128,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["blue"],
           },
         },
         {
@@ -1169,6 +1187,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["blue"],
           },
         },
       ],
@@ -1240,6 +1259,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["black"],
           },
         },
       ],
@@ -1308,6 +1328,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["gray"],
           },
         },
         {
@@ -1367,6 +1388,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["gray"],
           },
         },
         {
@@ -1427,6 +1449,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["violet"],
           },
         },
         {
@@ -1486,6 +1509,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["black"],
           },
         },
       ],
@@ -1554,6 +1578,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["gray"],
           },
         },
         {
@@ -1614,6 +1639,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["gray"],
           },
         },
       ],
@@ -1679,6 +1705,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["blue"],
           },
         },
         {
@@ -1736,6 +1763,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["gray"],
           },
         },
       ],
@@ -1804,6 +1832,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["violet"],
           },
         },
         {
@@ -1864,6 +1893,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["black"],
           },
         },
       ],
@@ -1930,6 +1960,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["white"],
           },
         },
         {
@@ -1990,6 +2021,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["blue"],
           },
         },
         {
@@ -2048,6 +2080,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["violet"],
           },
         },
       ],
@@ -2115,6 +2148,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["white"],
           },
         },
       ],
@@ -2182,6 +2216,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: [],
           },
         },
         {
@@ -2241,6 +2276,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["black"],
           },
         },
       ],
@@ -2306,6 +2342,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["black"],
           },
         },
         {
@@ -2364,6 +2401,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["black"],
           },
         },
         {
@@ -2373,8 +2411,7 @@ export const categories: TCategoriesResponseData = {
           price: 9900,
           quantity: 10,
           imagesUrl: ["/images/product/accessories/women-scarfGray-1.jpg"],
-          previewImageUrl:
-            "/images/product/accessories/women-removableHoodWithCamouflage-3.jpg",
+          previewImageUrl: "/images/product/accessories/women-scarfGray-1.jpg",
           gender: "women",
           category: "accessories",
           topList: false,
@@ -2419,6 +2456,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["blue", "gray"],
           },
         },
         {
@@ -2476,6 +2514,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["blue"],
           },
         },
         {
@@ -2534,6 +2573,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["blue"],
           },
         },
       ],
@@ -2604,6 +2644,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["black"],
           },
         },
         {
@@ -2664,6 +2705,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["black"],
           },
         },
         {
@@ -2724,6 +2766,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["blue", "gray"],
           },
         },
         {
@@ -2783,6 +2826,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["blue"],
           },
         },
         {
@@ -2841,6 +2885,7 @@ export const categories: TCategoriesResponseData = {
                 sizeHips: 108,
               },
             ],
+            color: ["blue"],
           },
         },
       ],
