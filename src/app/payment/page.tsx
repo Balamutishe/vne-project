@@ -1,20 +1,18 @@
+import { Payment } from "@/features/payment";
 import { Metadata } from "next";
 import { ContainerPage, Footer, Main, Header } from "@/widgets";
-import { CategoriesSection } from "@/widgets/categories";
-import { ProductsListView } from "@/widgets/products/productsList";
 
 export const metadata: Metadata = {
-  title: "Main",
-  description: "main page",
+  title: "Payment",
+  description: "payment page",
 };
 
 export default function Home() {
   return (
     <ContainerPage>
-      <Header className={"mb-20"} />
+      <Header />
       <Main>
-        <ProductsListView />
-        <CategoriesSection />
+        <Payment />
       </Main>
       <Footer />
     </ContainerPage>
