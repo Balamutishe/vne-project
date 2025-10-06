@@ -1,126 +1,197 @@
 "use client";
 
-import { InputHTMLAttributes, ReactNode, SelectHTMLAttributes } from "react";
+import { toggleVariantPaymentForm } from "@/features/payment/paymentSlice";
+import { useOutsideClick } from "@/shared/hooks/useOutsideClick";
+import { useAppSelector } from "@/store/hooks";
+import ArrowDownSvg from "@/widgets/products/icons/arrow-down.svg";
+import { clsx } from "clsx";
+import { FC, InputHTMLAttributes, ReactNode, useRef, useState } from "react";
 import { BasketList } from "@/features/basket";
+import { useDispatch } from "react-redux";
 import ShareSvg from "./icons/share.svg";
 
-export const Payment = () => (
-  <form className={"flex h-full items-center justify-between gap-10"}>
-    <section className={"w-1/3"}>
-      <h3 className={"mb-10"}>Контакты</h3>
-      <div className={"flex flex-col gap-5"}>
-        <FormField
-          id={crypto.randomUUID()}
-          labelText={"Фамилия"}
-          name={"surname"}
-          type="text"
-          placeholder={"Иванов"}
-        />
-        <FormField
-          id={crypto.randomUUID()}
-          labelText={"Имя"}
-          name={"firstname"}
-          type="text"
-          placeholder={"Иван"}
-        />
-        <FormField
-          id={crypto.randomUUID()}
-          labelText={"Отчество"}
-          name={"lastname"}
-          type="text"
-          placeholder={"Иванович"}
-        />
-        <FormField
-          id={crypto.randomUUID()}
-          labelText={"Телефон"}
-          name={"phone"}
-          type="tel"
-          placeholder={"+7 ("}
-        />
-        <FormField
-          id={crypto.randomUUID()}
-          labelText={"Email"}
-          name={"email"}
-          type="email"
-          placeholder={"example@mail.ru"}
-        />
-      </div>
-    </section>
-    <section className={"w-1/3"}>
-      <h3 className={"mb-10"}>Доставка</h3>
-      <div className={"flex flex-col gap-5"}>
-        <FormFieldSelect
-          id={crypto.randomUUID()}
-          labelText={"Доставка"}
-          name={"delivery"}
-        />
-        <FormField
-          id={crypto.randomUUID()}
-          labelText={"Регион"}
-          name={"region"}
-          type="text"
-          placeholder={"Введите регион"}
-        />
-        <FormField
-          id={crypto.randomUUID()}
-          labelText={"Город"}
-          name={"city"}
-          type="text"
-          placeholder={"Введите город"}
-        />
-        <FormField
-          id={crypto.randomUUID()}
-          labelText={"Улица"}
-          name={"street"}
-          type="text"
-          placeholder={"Введите улицу"}
-        />
-        <FormField
-          id={crypto.randomUUID()}
-          labelText={"Дом"}
-          name={"house"}
-          type="number"
-          placeholder={"Номер дома"}
-        />
-      </div>
-    </section>
-    <section className={"w-1/3"}>
-      <div className={"mb-5"}>
-        <BasketList />
-      </div>
-      <button
-        type={"submit"}
-        className={
-          "bg-hover text-background active:bg-active mb-5 w-full cursor-pointer p-4 transition-colors"
-        }
-      >
-        ОПЛАТИТЬ
-      </button>
-      <div className={"flex items-center justify-start gap-2"}>
-        <input
-          type={"checkbox"}
-          name={"share"}
-          id={"share"}
-          className={"h-6 w-6 cursor-pointer"}
-        />
-        <label htmlFor={"share"} className={"cursor-pointer"}>
-          <ShareSvg width={75} height={14} />
-        </label>
-      </div>
-    </section>
-  </form>
-);
+export const Payment = () => {
+  const { variantPaymentForm } = useAppSelector((state) => state.paymentState);
+
+  return (
+    <form className={"flex h-full justify-between gap-10 pt-45"}>
+      <section className={"w-1/3"}>
+        <h3 className={"mb-10"}>Контакты</h3>
+        <div className={"flex flex-col gap-5"}>
+          <FormField
+            id={crypto.randomUUID()}
+            labelText={"Фамилия"}
+            name={"surname"}
+            type="text"
+            placeholder={"Иванов"}
+          />
+          <FormField
+            id={crypto.randomUUID()}
+            labelText={"Имя"}
+            name={"firstname"}
+            type="text"
+            placeholder={"Иван"}
+          />
+          <FormField
+            id={crypto.randomUUID()}
+            labelText={"Отчество"}
+            name={"lastname"}
+            type="text"
+            placeholder={"Иванович"}
+          />
+          <FormField
+            id={crypto.randomUUID()}
+            labelText={"Телефон"}
+            name={"phone"}
+            type="tel"
+            placeholder={"+7 ("}
+          />
+          <FormField
+            id={crypto.randomUUID()}
+            labelText={"Email"}
+            name={"email"}
+            type="email"
+            placeholder={"example@mail.ru"}
+          />
+        </div>
+      </section>
+      <section className={"w-1/3"}>
+        <h3 className={"mb-10"}>Доставка</h3>
+        <div className={"flex flex-col gap-5"}>
+          <CustomSelect
+            initialValue={{
+              value: "default",
+              label: "Выберите способ доставки",
+              disabled: true,
+            }}
+            options={[
+              {
+                value: "courier",
+                label: "Доставка курьером",
+              },
+              {
+                value: "pickup",
+                label: "Доставка в пункт выдачи",
+              },
+            ]}
+            id={crypto.randomUUID()}
+            mainLabelText={"Доставка"}
+          />
+          <FormField
+            id={crypto.randomUUID()}
+            labelText={"Регион"}
+            name={"region"}
+            type="text"
+            placeholder={"Введите регион"}
+          />
+          <FormField
+            id={crypto.randomUUID()}
+            labelText={"Город"}
+            name={"city"}
+            type="text"
+            placeholder={"Введите город"}
+          />
+          <FormField
+            id={crypto.randomUUID()}
+            labelText={"Улица"}
+            name={"street"}
+            type="text"
+            placeholder={"Введите улицу"}
+          />
+          {(variantPaymentForm === "pickup" ||
+            variantPaymentForm === "default") && (
+            <FormField
+              id={crypto.randomUUID()}
+              labelText={"Дом"}
+              name={"house"}
+              type="number"
+              placeholder={"Номер дома"}
+            />
+          )}
+
+          {variantPaymentForm === "courier" && (
+            <div className={"flex flex-1 flex-wrap justify-between gap-4"}>
+              <FormField
+                id={crypto.randomUUID()}
+                labelText={"Дом"}
+                name={"house"}
+                type="number"
+                placeholder={"Номер дома"}
+                containerStyle={"w-[47%]"}
+              />
+              <FormField
+                id={crypto.randomUUID()}
+                labelText={"Подъезд"}
+                name={"entrance"}
+                type="number"
+                placeholder={"Номер подъезда"}
+                containerStyle={"w-[47%]"}
+              />
+              <FormField
+                id={crypto.randomUUID()}
+                labelText={"Квартира"}
+                name={"apartment"}
+                type="number"
+                placeholder={"Номер квартиры"}
+                containerStyle={"w-[47%]"}
+              />
+              <FormField
+                id={crypto.randomUUID()}
+                labelText={"Этаж"}
+                name={"floor"}
+                type="number"
+                placeholder={"Номер этажа"}
+                containerStyle={"w-[47%]"}
+              />
+            </div>
+          )}
+        </div>
+      </section>
+      <section className={"w-1/3"}>
+        <div className={"mb-5"}>
+          <BasketList />
+        </div>
+        <button
+          type={"submit"}
+          className={
+            "bg-hover text-background active:bg-active mb-5 w-full cursor-pointer p-4 transition-colors"
+          }
+        >
+          ОПЛАТИТЬ
+        </button>
+        <div className={"flex items-center justify-start gap-2"}>
+          <input
+            type={"checkbox"}
+            name={"share"}
+            id={"share"}
+            className={"h-6 w-6 cursor-pointer"}
+          />
+          <label htmlFor={"share"} className={"cursor-pointer"}>
+            <ShareSvg width={75} height={14} />
+          </label>
+        </div>
+      </section>
+    </form>
+  );
+};
 
 interface IFormField extends InputHTMLAttributes<HTMLInputElement> {
   id?: string;
   labelText?: string;
   children?: ReactNode;
+  containerStyle?: string;
 }
 
-function FormField({ children, labelText, id, ...rest }: IFormField) {
+function FormField({
+  children,
+  labelText,
+  id,
+  containerStyle,
+  ...rest
+}: IFormField) {
   return (
-    <div className={"flex flex-1 flex-col gap-2 text-sm"}>
-      <label htmlFor={id} className={"cursor-pointer"}>
+    <div className={`group flex flex-col gap-2 text-sm ${containerStyle}`}>
+      <label htmlFor={id} className={"group-hover:text-hover cursor-pointer"}>
         {labelText}
       </label>
       <div className={"flex flex-1"}>
@@ -130,7 +201,7 @@ function FormField({ children, labelText, id, ...rest }: IFormField) {
           id={id}
           autoComplete={"off"}
           className={
-            "outline-tertiary w-full cursor-pointer px-2 py-3 outline-1"
+            "outline-tertiary group-hover:outline-hover w-full cursor-pointer px-2 py-3 outline-1"
           }
         />
       </div>
@@ -138,39 +209,103 @@ function FormField({ children, labelText, id, ...rest }: IFormField) {
   );
 }
 
-interface IFormFieldSelect extends SelectHTMLAttributes<HTMLSelectElement> {
+type OptionType = {
+  value: string;
+  label: string;
+  disabled?: boolean;
+};
+
+interface CustomSelectProps {
+  options: OptionType[];
+  initialValue: OptionType;
   id?: string;
-  labelText?: string;
-  children?: ReactNode;
+  mainLabelText?: string;
 }
 
-function FormFieldSelect({
-  children,
-  labelText,
+const CustomSelect: FC<CustomSelectProps> = ({
+  options,
+  initialValue,
   id,
-  ...rest
-}: IFormFieldSelect) {
+  mainLabelText,
+}) => {
+  const dispatch = useDispatch();
+  const [selectedValue, setSelectedValue] = useState<OptionType>(initialValue);
+  const [showOptions, setShowOptions] = useState(false);
+  const ref = useRef<HTMLDivElement | null>(null);
+
+  useOutsideClick({ ref, callback: setShowOptions });
+
+  const handleOptionClick = (value: OptionType) => {
+    dispatch(
+      toggleVariantPaymentForm(
+        selectedValue.value as "pickup" | "courier" | "default",
+      ),
+    );
+    setSelectedValue(value);
+    setShowOptions(false);
+  };
+
   return (
-    <div className={"flex flex-1 flex-col gap-2 text-sm"}>
-      <label htmlFor={id} className={"cursor-pointer"}>
-        {labelText}
-      </label>
-      <div className={"flex flex-1"}>
-        {children}
-        <select
-          {...rest}
-          id={id}
-          autoComplete={"off"}
-          className={
-            "outline-tertiary w-full cursor-pointer px-2 py-3 outline-1"
-          }
+    <div
+      className={"group relative flex flex-1 flex-col gap-2 text-sm"}
+      ref={ref}
+    >
+      {mainLabelText && (
+        <label
+          htmlFor={id}
+          className={"group-hover:text-hover cursor-pointer"}
+          onClick={() => setShowOptions(!showOptions)}
         >
-          <option value={"Доставка в пункт выдачи"}>
-            Доставка в пункт выдачи
-          </option>
-          <option value={"Доставка курьером"}>Доставка курьером</option>
-        </select>
+          {mainLabelText}
+        </label>
+      )}
+      <input
+        defaultValue={selectedValue.value}
+        name={"deliveryMethod"}
+        className={"hidden"}
+        id={id}
+      />
+      <div
+        className={clsx(
+          "group group-hover:outline-hover outline-tertiary flex w-full cursor-pointer justify-between px-2 py-3" +
+            " outline-1",
+          {
+            "text-tertiary": selectedValue.value === "default",
+          },
+        )}
+        onClick={() => setShowOptions(!showOptions)}
+      >
+        <span>{selectedValue.label}</span>
+        <span className={"flex items-center"}>
+          <ArrowDownSvg
+            width={13}
+            height={8}
+            className={clsx(
+              "group-hover:[&>path]:stroke-hover rotate-0 transition-transform",
+              {
+                "rotate-180": showOptions,
+              },
+            )}
+          />
+        </span>
       </div>
+      {showOptions && (
+        <div className={"outline-active absolute top-18 w-full outline-1"}>
+          {options.map((opt) =>
+            opt.value !== "" && !opt.disabled ? (
+              <div
+                key={opt.value.toString()}
+                className={
+                  "bg-hover hover:bg-active z-50 cursor-pointer px-2 py-4 text-white"
+                }
+                onClick={() => handleOptionClick(opt)}
+              >
+                {opt.label}
+              </div>
+            ) : null,
+          )}
+        </div>
+      )}
     </div>
   );
-}
+};

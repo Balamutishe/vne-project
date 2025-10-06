@@ -16,6 +16,8 @@ import PlusSvg from "./icons/plus.svg";
 export const Basket = () => {
   const dispatch = useAppDispatch();
   const ref = useRef<HTMLDivElement | null>(null);
+  const { totalPrice } = useAppSelector((state) => state.basketState);
+  console.log(totalPrice);
 
   const handleClickOutside = (event: MouseEvent) => {
     if (ref.current && !ref.current.contains(event.target as Node)) {
@@ -42,15 +44,26 @@ export const Basket = () => {
           <BasketList />
         </div>
         <div className={"flex items-center justify-between"}>
-          <Link
-            href={"/payment"}
-            onClick={() => dispatch(toggleBasketOpen(false))}
-            className={
-              "bg-hover text-background active:bg-active w-full cursor-pointer p-4 transition-colors"
-            }
-          >
-            ОФОРМИТЬ ЗАКАЗ
-          </Link>
+          {totalPrice !== 0 ? (
+            <Link
+              href={"/payment"}
+              onClick={() => dispatch(toggleBasketOpen(false))}
+              className={
+                "bg-hover text-background active:bg-active w-full cursor-pointer p-4 transition-colors"
+              }
+            >
+              ОФОРМИТЬ ЗАКАЗ
+            </Link>
+          ) : (
+            <button
+              disabled={true}
+              className={
+                "bg-hover text-background active:bg-active w-full cursor-pointer p-4 transition-colors"
+              }
+            >
+              ОФОРМИТЬ ЗАКАЗ
+            </button>
+          )}
         </div>
       </div>
     </div>
