@@ -2,11 +2,11 @@
 
 import { clsx } from "clsx";
 import { FC } from "react";
-import { HeaderPreview } from "@/widgets/header/headerPreview";
+import { HeaderPreview } from "@/widgets/header/components/headerPreview";
 import { DropdownMenu } from "@/features/header/dropdownMenu";
-import { HeaderLogo } from "@/widgets/header/headerLogo";
-import { HeaderNav } from "@/widgets/header/headerNav";
-import { HeaderToolbar } from "@/widgets/header/headerToolbar";
+import { HeaderLogo } from "@/widgets/header/components/headerLogo";
+import { HeaderNav } from "@/widgets/header/components/headerNav";
+import { HeaderToolbar } from "@/widgets/header/components/headerToolbar";
 
 export const Header: FC<{ className?: string }> = ({ className }) => {
   return (

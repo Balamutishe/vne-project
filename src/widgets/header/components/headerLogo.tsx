@@ -4,7 +4,7 @@ import Link from "next/link";
 export const HeaderLogo = () => {
   return (
     <div className={"flex items-center justify-center"}>
-      <Link href={"/"}>
+      <Link href={"/public"}>
         <Image
           src={"/images/logo.svg"}
           alt={"Logo"}

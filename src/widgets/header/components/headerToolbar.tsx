@@ -1,8 +1,9 @@
 import { Basket } from "@/features/basket";
 import { toggleBasketOpen } from "@/features/basket/basketSlice";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import UserSvg from "./icons/user.svg";
-import BagSvg from "./icons/bag.svg";
+import Link from "next/link";
+import UserSvg from "../icons/user.svg";
+import BagSvg from "../icons/bag.svg";
 import { HeaderSearchField } from "@/features/header/headerSearchField";
 
 export const HeaderToolbar = () => {
@@ -18,13 +19,14 @@ export const HeaderToolbar = () => {
   return (
     <div className={"flex min-w-[25%] items-center justify-end gap-8"}>
       {!isSearchFieldVisible && (
-        <button
+        <Link
+          href={"/brand"}
           className={
             "hover:text-hover active:text-active cursor-pointer transition-colors"
           }
         >
           О БРЕНДЕ
-        </button>
+        </Link>
       )}
       <HeaderSearchField />
       <UserSvg
