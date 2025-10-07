@@ -5,6 +5,7 @@ import headerSearchReducer from "@/features/header/headerSearchField/headerSearc
 import dropdownMenuReducer from "@/features/header/dropdownMenu/dropdownMenuSlice";
 import basketReducer from "@/features/basket/basketSlice";
 import paymentReducer from "@/features/payment/paymentSlice";
+import authReducer from "@/features/auth/authSlice";
 
 export const makeStore = () => {
   return configureStore({
@@ -15,6 +16,7 @@ export const makeStore = () => {
       dropdownMenuState: dropdownMenuReducer,
       basketState: basketReducer,
       paymentState: paymentReducer,
+      authState: authReducer,
     },
   });
 };

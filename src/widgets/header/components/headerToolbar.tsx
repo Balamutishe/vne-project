@@ -29,11 +29,13 @@ export const HeaderToolbar = () => {
         </Link>
       )}
       <HeaderSearchField />
-      <UserSvg
-        className={"hover:[&>path]:stroke-hover cursor-pointer"}
-        width={24}
-        height={24}
-      />
+      <Link href={"/account"}>
+        <UserSvg
+          className={"hover:[&>path]:stroke-hover cursor-pointer"}
+          width={24}
+          height={24}
+        />
+      </Link>
       <div className={"relative"}>
         {totalQuantity > 0 && (
           <span
