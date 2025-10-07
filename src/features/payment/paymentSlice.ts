@@ -1,11 +1,27 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
+type TVariantPaymentFormValue =
+  | "courier"
+  | "pickupPoint"
+  | "pickup"
+  | "default";
+
+type TVariantPaymentForm = {
+  value: TVariantPaymentFormValue;
+  label: string;
+  disabled?: boolean;
+};
+
 interface PaymentState {
-  variantPaymentForm: "courier" | "pickup" | "default";
+  variantPaymentForm: TVariantPaymentForm;
 }
 
 const initialState: PaymentState = {
-  variantPaymentForm: "pickup",
+  variantPaymentForm: {
+    value: "default",
+    label: "Выберите способ доставки",
+    disabled: true,
+  },
 };
 
 const paymentSlice = createSlice({
@@ -14,7 +30,7 @@ const paymentSlice = createSlice({
   reducers: {
     toggleVariantPaymentForm: (
       state,
-      action: PayloadAction<"courier" | "pickup" | "default">,
+      action: PayloadAction<TVariantPaymentForm>,
     ) => {
       state.variantPaymentForm = action.payload;
     },
