@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export const Footer = () => {
   return (
@@ -15,26 +16,26 @@ const FooterHeader = () => {
   return (
     <div
       className={
-        "flex h-16 items-center justify-between border-t-1 border-b-1 border-zinc-950"
+        "border-tertiary flex h-16 items-center justify-between border-t-1 border-b-1"
       }
     >
       <div
         className={
-          "flex w-1/4 items-center justify-start border-r-1 border-zinc-950 px-13.5 py-4"
+          "border-tertiary flex w-1/4 items-center justify-start border-r-1 px-13.5 py-4"
         }
       >
         <Image src={"/images/logo.svg"} alt={"Logo"} width={115} height={31} />
       </div>
       <div
         className={
-          "flex w-1/4 items-center justify-start border-r-1 border-zinc-950 px-4 py-4"
+          "border-tertiary flex w-1/4 items-center justify-start border-r-1 px-4 py-4"
         }
       >
         КОМПАНИЯ
       </div>
       <div
         className={
-          "flex w-1/4 items-center justify-start border-r-1 border-zinc-950 px-4 py-4"
+          "border-tertiary flex w-1/4 items-center justify-start border-r-1 px-4 py-4"
         }
       >
         ПОМОЩЬ
@@ -52,53 +53,53 @@ const FooterSocials = () => {
   return (
     <div
       className={
-        "flex justify-between text-base [&>*]:w-1/4 [&>*]:border-b-1 [&>*]:border-zinc-950 [&>*]:py-8"
+        "[&>*]:border-tertiary flex justify-between text-base [&>*]:w-1/4 [&>*]:border-b-1 [&>*]:py-8"
       }
     >
-      <div className={"border-r-1 pr-4 pl-13.5"}>
+      <div className={"border-tertiary border-r-1 pr-4 pl-13.5"}>
         Мы создаём простую и качественную базовую одежду вне времени и моды —
         комфортную, универсальную и отражающую индивидуальность.
       </div>
-      <div className={"border-r-1 px-4"}>
+      <div className={"border-tertiary border-r-1 px-4"}>
         <ul className={"flex flex-col gap-6"}>
           <li
             className={
               "hover:text-hover active:text-active cursor-pointer transition-colors"
             }
           >
-            О нас
+            <Link href={"/brand"}>О нас</Link>
           </li>
           <li
             className={
               "hover:text-hover active:text-active cursor-pointer transition-colors"
             }
           >
-            Документы
+            <Link href={"/support/documents"}>Документы</Link>
           </li>
           <li
             className={
               "hover:text-hover active:text-active cursor-pointer transition-colors"
             }
           >
-            Контакты
+            <Link href={"/support/contacts"}>Контакты</Link>
           </li>
         </ul>
       </div>
-      <div className={"border-r-1 px-4"}>
+      <div className={"border-tertiary border-r-1 px-4"}>
         <ul className={"flex flex-col gap-6"}>
           <li
             className={
               "hover:text-hover active:text-active cursor-pointer transition-colors"
             }
           >
-            Доставка
+            <Link href={"/support/delivery"}>Доставка</Link>
           </li>
           <li
             className={
               "hover:text-hover active:text-active cursor-pointer transition-colors"
             }
           >
-            Возврат
+            <Link href={"/support/recovery"}>Возврат</Link>
           </li>
         </ul>
       </div>

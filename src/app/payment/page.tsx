@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <ContainerPage>
       <Header />
-      <Main>
+      <Main className={"px-13.5"}>
         <Payment />
       </Main>
       <Footer />

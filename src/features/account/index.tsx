@@ -14,7 +14,7 @@ const damionFont = localFont({
 });
 
 export const Account = () => {
-  const [varUserData, serVarUserData] = useState<"purchases" | "info">();
+  const [varUserData, serVarUserData] = useState<"purchases" | "info">("info");
 
   return (
     <section>
@@ -25,8 +25,8 @@ export const Account = () => {
       </div>
       <div>
         <div className={"flex h-149 justify-between gap-10"}>
-          <div className={"flex w-1/4 flex-col justify-between"}>
-            <div className={"flex flex-col items-start gap-10"}>
+          <aside className={"flex w-1/4 flex-col justify-between"}>
+            <nav className={"flex flex-col items-start gap-10"}>
               <button
                 className={clsx("hover:text-hover cursor-pointer", {
                   "text-active": varUserData === "purchases",
@@ -43,9 +43,9 @@ export const Account = () => {
               >
                 МОИ ДАННЫЕ
               </button>
-            </div>
+            </nav>
             {varUserData === "purchases" ? (
-              <div className={"flex h-50 flex-col gap-10"}>
+              <article className={"flex h-50 flex-col gap-10"}>
                 <div className={"flex flex-col items-start gap-4"}>
                   <div>№ 7830–004747–8671:</div>
                   <div>
@@ -67,7 +67,7 @@ export const Account = () => {
                 >
                   ВЫЙТИ
                 </button>
-              </div>
+              </article>
             ) : (
               <button
                 className={
@@ -79,7 +79,7 @@ export const Account = () => {
                 ВЫЙТИ
               </button>
             )}
-          </div>
+          </aside>
           <div className={"flex w-3/4 flex-col justify-between"}>
             {varUserData === "purchases" && <PurchasesList />}
             {varUserData === "info" && <AccountInfo />}
@@ -92,7 +92,7 @@ export const Account = () => {
 
 const AccountInfo = () => {
   return (
-    <div>
+    <form>
       <div className={"mb-5 flex w-full justify-between"}>
         <div className={"flex w-[48%] flex-col justify-between gap-5"}>
           <FormField
@@ -206,7 +206,7 @@ const AccountInfo = () => {
           СОХРАНИТЬ
         </button>
       </div>
-    </div>
+    </form>
   );
 };
 
@@ -251,7 +251,7 @@ const PurchasesListItem: FC<{
   };
 
   return (
-    <div>
+    <article>
       <div
         className={clsx(
           "hover:text-hover group flex cursor-pointer justify-between border-t-1 border-[#a7a7a7] px-2 py-2.5",
@@ -296,6 +296,6 @@ const PurchasesListItem: FC<{
           <div>Цена/{item.price * item.quantity} &#8381;</div>
         </div>
       )}
-    </div>
+    </article>
   );
 };

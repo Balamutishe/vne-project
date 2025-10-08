@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <ContainerPage>
       <Header className={"mb-20"} />
-      <Main>
+      <Main className={"px-13.5"}>
         <ProductsListView />
         <CategoriesSection />
       </Main>

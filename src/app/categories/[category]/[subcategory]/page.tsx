@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 export default function ProductPage() {
   return (
     <ContainerPage>
-      <Header />
-      <Main>
+      <Header className={"mb-20"} />
+      <Main className={"px-13.5"}>
         <ProductsListView />
       </Main>
       <Footer />

@@ -11,7 +11,7 @@ export default function CategoriesPage() {
   return (
     <ContainerPage>
       <Header />
-      <Main>
+      <Main className={"px-13.5"}>
         <ProductDetails />
       </Main>
       <Footer />

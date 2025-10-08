@@ -10,7 +10,7 @@ export default function BrandPage() {
   return (
     <ContainerPage>
       <Header />
-      <Main>
+      <Main className={"px-13.5"}>
         <Brand />
       </Main>
       <Footer />

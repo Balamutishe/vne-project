@@ -1,18 +1,18 @@
-import { Account } from "@/features/account";
+import { Support } from "@/widgets/support";
 import { Metadata } from "next";
 import { ContainerPage, Footer, Main, Header } from "@/widgets";
 
 export const metadata: Metadata = {
-  title: "Account",
-  description: "account page",
+  title: "Support",
+  description: "support page",
 };
 
-export default function AccountPage() {
+export default function SupportPage() {
   return (
     <ContainerPage>
       <Header className={"mb-20"} />
-      <Main className={"px-13.5"}>
-        <Account />
+      <Main>
+        <Support />
       </Main>
       <Footer />
     </ContainerPage>
