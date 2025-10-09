@@ -24,7 +24,7 @@ export const ProductsListView = () => {
 
   if (searchParams.get("productName")) {
     const { data, title } =
-      category && subcategory
+      !category && !subcategory
         ? getDataByFilter(searchParams.get("productName") || "")
         : getDataByFilter(
             searchParams.get("productName") || "",
