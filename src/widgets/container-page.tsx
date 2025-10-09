@@ -1,9 +1,11 @@
-import { FC, ReactNode } from "react";
+import { FC, ReactNode, Suspense } from "react";
 
 export const ContainerPage: FC<{ children: ReactNode }> = ({ children }) => {
   return (
-    <div className={"mx-auto flex h-[100vh] max-w-[1440px] flex-col"}>
-      {children}
-    </div>
+    <Suspense fallback={<div>ЗАГРУЗКА...</div>}>
+      <div className={"mx-auto flex h-[100vh] max-w-[1440px] flex-col"}>
+        {children}
+      </div>
+    </Suspense>
   );
 };
