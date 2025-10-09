@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { ContainerPage, Footer, Main, Header, Brand } from "@/widgets";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Brand",
@@ -8,12 +9,14 @@ export const metadata: Metadata = {
 
 export default function BrandPage() {
   return (
-    <ContainerPage>
-      <Header />
-      <Main className={"px-13.5"}>
-        <Brand />
-      </Main>
-      <Footer />
-    </ContainerPage>
+    <Suspense fallback={<div>ЗАГРУЗКА...</div>}>
+      <ContainerPage>
+        <Header />
+        <Main className={"px-13.5"}>
+          <Brand />
+        </Main>
+        <Footer />
+      </ContainerPage>
+    </Suspense>
   );
 }
