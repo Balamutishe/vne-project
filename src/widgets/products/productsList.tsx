@@ -1,10 +1,11 @@
 "use client";
 
-import { getDataByCategory, getTopList } from "@/server/data";
+import { getDataByCategory, getDataByFilter, getTopList } from "@/server/data";
 import { TProduct } from "@/shared/types/categories";
+import { BreadCrumb } from "@/widgets/breadCrumb";
 import { clsx } from "clsx";
 import Link from "next/link";
-import { useParams } from "next/navigation";
+import { useParams, useSearchParams } from "next/navigation";
 import { FC } from "react";
 import Image from "next/image";
 import localFont from "next/font/local";
@@ -16,9 +17,23 @@ const damionFont = localFont({
 
 export const ProductsListView = () => {
   const { category, subcategory } = useParams<{
-    category: "men" | "women";
+    category: "men" | "women" | "accessories";
     subcategory: string;
   }>();
+  const searchParams = useSearchParams();
+
+  if (searchParams.get("productName")) {
+    const { data, title } =
+      category && subcategory
+        ? getDataByFilter(searchParams.get("productName") || "")
+        : getDataByFilter(
+            searchParams.get("productName") || "",
+            category,
+            subcategory,
+          );
+
+    return <ProductsList data={data} title={title} variant={"category"} />;
+  }
 
   const data = category
     ? getDataByCategory(category, subcategory)
@@ -39,28 +54,37 @@ export const ProductsList: FC<{
   variant: "main" | "category";
 }> = ({ data, title, variant }) => {
   return (
-    <section className={"mb-20 w-full"}>
-      <h2 className={`${damionFont.className} mb-20 text-7xl`}>{title}</h2>
-      <ul
-        className={clsx("product-list", {
-          "product-list-odd": variant === "main",
-        })}
-      >
-        {data.map((product: TProduct) => (
-          <li key={product.id}>
-            <Link
-              href={`/categories/${product.gender}/${product.category}/${product.id}`}
-            >
-              <ProductCard
-                title={product.name}
-                price={product.price}
-                previewImgUrl={product.previewImageUrl}
-              />
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </section>
+    <>
+      <div className={"mb-10"}>
+        <BreadCrumb />
+      </div>
+      <section className={"mb-20 w-full"}>
+        <h2 className={`${damionFont.className} mb-10 text-7xl`}>{title}</h2>
+        <ul
+          className={clsx("product-list", {
+            "product-list-odd": variant === "main",
+          })}
+        >
+          {data.length !== 0 ? (
+            data.map((product: TProduct) => (
+              <li key={product.id}>
+                <Link
+                  href={`/categories/${product.gender}/${product.category}/${product.id}`}
+                >
+                  <ProductCard
+                    title={product.name}
+                    price={product.price}
+                    previewImgUrl={product.previewImageUrl}
+                  />
+                </Link>
+              </li>
+            ))
+          ) : (
+            <li>По ЗАПРОСУ НИЧЕГО НЕ НАЙДЕНО</li>
+          )}
+        </ul>
+      </section>
+    </>
   );
 };
 

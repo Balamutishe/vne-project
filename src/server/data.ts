@@ -1,4 +1,9 @@
-import { TCategoriesResponseData, TProduct } from "@/shared/types/categories";
+import {
+  TCategoriesList,
+  TCategoriesResponseData,
+  TCategory,
+  TProduct,
+} from "@/shared/types/categories";
 
 export const categories: TCategoriesResponseData = {
   men: [
@@ -1021,9 +1026,8 @@ export const categories: TCategoriesResponseData = {
             "/images/product/accessories/men-scarfBlue-1.jpg",
             "/images/product/accessories/men-scarfBlue-2.jpg",
             "/images/product/accessories/men-scarfGray-1.jpg",
-            "/images/product/accessories/women-scarfGray-1.jpg",
           ],
-          previewImageUrl: "/images/product/accessories/women-scarfGray-1.jpg",
+          previewImageUrl: "/images/product/accessories/men-scarf-1.jpg",
           gender: "men",
           category: "accessories",
           topList: false,
@@ -2031,7 +2035,6 @@ export const categories: TCategoriesResponseData = {
           price: 9900,
           quantity: 10,
           imagesUrl: [
-            "/images/product/women/tops/TShirtKnitted-1.jpg",
             "/images/product/women/tops/TShirtKnitted-2.jpg",
             "/images/product/women/tops/TShirtKnitted-3.jpg",
           ],
@@ -2411,7 +2414,7 @@ export const categories: TCategoriesResponseData = {
           price: 9900,
           quantity: 10,
           imagesUrl: ["/images/product/accessories/women-scarfGray-1.jpg"],
-          previewImageUrl: "/images/product/accessories/women-scarfGray-1.jpg",
+          previewImageUrl: "/images/product/accessories/women-scarf-1.jpg",
           gender: "women",
           category: "accessories",
           topList: false,
@@ -2894,6 +2897,10 @@ export const categories: TCategoriesResponseData = {
   ],
 };
 
+export const getDataAll = () => {
+  return categories;
+};
+
 export const getDataByCollection = (
   collection: "men" | "women" | "accessories",
 ) => {
@@ -2920,18 +2927,89 @@ export const getTopList = () => {
 };
 
 export const getDataByCategory = (
-  collection: "men" | "women" | "accessories" | undefined,
-  category: string | undefined,
+  collection: "men" | "women" | "accessories",
+  category: string,
 ) => {
   if (!category || !collection) throw new Error("category or gender not found");
 
   return getDataByCollection(collection).find(({ slug }) => slug === category);
 };
 
+export const getDataByFilter = (
+  filter: string,
+  collection?: "men" | "women" | "accessories",
+  category?: string,
+) => {
+  if (!filter) throw new Error("filter not found");
+
+  if (collection && !category) {
+    const data = getDataByCollection(collection);
+
+    if (!data) throw new Error("category not found");
+
+    const result: TProduct[] = data.flatMap((category: TCategory) => {
+      return category.list.filter((product: TProduct) => {
+        return product.name.toLowerCase().includes(filter.toLowerCase());
+      });
+    });
+
+    const switchTitle = () => {
+      switch (collection) {
+        case "accessories":
+          return "АКСЕССУАРЫ";
+        case "men":
+          return "МУЖСКАЯ ОДЕЖДА";
+        case "women":
+          return "ЖЕНСКАЯ ОДЕЖДА";
+      }
+    };
+
+    return {
+      title: switchTitle(),
+      data: result,
+    };
+  }
+
+  if (collection && category) {
+    const data = getDataByCategory(collection, category);
+
+    if (!data) throw new Error("category not found");
+
+    const result = data.list.filter((product) => {
+      return product.name.toLowerCase().includes(filter.toLowerCase());
+    });
+
+    return {
+      title: data.name,
+      data: result,
+    };
+  }
+
+  const dataAll = getDataAll();
+
+  const result: TProduct[] = Object.values(dataAll).flatMap(
+    (collection: TCategoriesList) => {
+      return collection.flatMap((category: TCategory) => {
+        return category.list.filter((product: TProduct) => {
+          return (
+            product.name.toLowerCase().includes(filter.toLowerCase()) &&
+            product.gender !== "unisex"
+          );
+        });
+      });
+    },
+  );
+
+  return {
+    title: "ВСЕ РЕЗУЛЬТАТЫ",
+    data: result,
+  };
+};
+
 export const getDataProductById = (
-  collection: "men" | "women" | "accessories" | undefined,
-  category: string | undefined,
-  productId: string | undefined,
+  collection: "men" | "women" | "accessories",
+  category: string,
+  productId: string,
 ) => {
   if (!category || !collection || !productId)
     throw new Error("category, gender or productId not found");

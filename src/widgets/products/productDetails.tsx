@@ -1,20 +1,20 @@
 "use client";
 
+import { FC, useState } from "react";
+import { useParams } from "next/navigation";
+import Image from "next/image";
+import { clsx } from "clsx";
 import { ProductAddToBasket } from "@/features/basket/productAddToBasket";
 import { TProduct } from "@/shared/types/categories";
-import { clsx } from "clsx";
-import Image from "next/image";
-import { useParams } from "next/navigation";
 import { getDataProductById } from "@/server/data";
-import { FC, useState } from "react";
 import ColorSvg from "./icons/colorImage.svg";
 import ArrowDownSvg from "./icons/arrow-down.svg";
 
 export const ProductDetails = () => {
   const { category, subcategory, productId } = useParams<{
-    category: "men" | "women" | "accessories" | undefined;
-    subcategory: string | undefined;
-    productId: string | undefined;
+    category: "men" | "women" | "accessories";
+    subcategory: string;
+    productId: string;
   }>();
 
   const [size, setSize] = useState("M");

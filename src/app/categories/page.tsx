@@ -1,0 +1,20 @@
+import { Metadata } from "next";
+import { ContainerPage, Footer, Main, Header } from "@/widgets";
+import { ProductsListView } from "@/widgets/products/productsList";
+
+export const metadata: Metadata = {
+  title: "Category",
+  description: "category page",
+};
+
+export default function ProductPage() {
+  return (
+    <ContainerPage>
+      <Header className={"mb-20"} />
+      <Main className={"px-13.5"}>
+        <ProductsListView />
+      </Main>
+      <Footer />
+    </ContainerPage>
+  );
+}

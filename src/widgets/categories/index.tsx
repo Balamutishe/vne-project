@@ -1,8 +1,8 @@
 "use client";
 
-import { CategoriesListView } from "@/widgets/categories/categoriesListView";
-import { CategoriesSwitcher } from "@/widgets/categories/categoriesSwitcher";
-import { CategoryPreview } from "@/widgets/categories/categoryPreview";
+import { CategoriesListView } from "@/widgets/categories/components/categoriesListView";
+import { CategoriesSwitcher } from "@/widgets/categories/components/categoriesSwitcher";
+import { CategoryPreview } from "@/widgets/categories/components/categoryPreview";
 import localFont from "next/font/local";
 
 const damionFont = localFont({

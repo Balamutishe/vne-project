@@ -1,11 +1,12 @@
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { setCategoryType } from "@/widgets/categories/categoriesSlice";
+import {
+  setCategoryCurrent,
+  setCategoryType,
+} from "@/widgets/categories/categoriesSlice";
 import { clsx } from "clsx";
 
 export const CategoriesSwitcher = () => {
-  const categoryType = useAppSelector(
-    (state) => state.categoriesState.categoriesType,
-  );
+  const { categoriesType } = useAppSelector((state) => state.categoriesState);
   const dispatch = useAppDispatch();
 
   return (
@@ -14,10 +15,13 @@ export const CategoriesSwitcher = () => {
         className={clsx(
           "cursor-pointer border-b-1 border-zinc-950 px-9.5 py-1.5 transition-colors",
           {
-            "border-b-hover text-hover": categoryType === "women",
+            "border-b-hover text-hover": categoriesType === "women",
           },
         )}
-        onClick={() => dispatch(setCategoryType("women"))}
+        onClick={() => {
+          dispatch(setCategoryType("women"));
+          dispatch(setCategoryCurrent("trousers"));
+        }}
       >
         Женское
       </button>
@@ -25,10 +29,13 @@ export const CategoriesSwitcher = () => {
         className={clsx(
           "cursor-pointer border-b-1 border-zinc-950 px-9.5 py-1.5 transition-colors",
           {
-            "border-b-hover text-hover": categoryType === "men",
+            "border-b-hover text-hover": categoriesType === "men",
           },
         )}
-        onClick={() => dispatch(setCategoryType("men"))}
+        onClick={() => {
+          dispatch(setCategoryType("men"));
+          dispatch(setCategoryCurrent("trousers"));
+        }}
       >
         Мужское
       </button>

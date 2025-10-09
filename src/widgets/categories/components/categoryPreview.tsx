@@ -12,6 +12,7 @@ export const CategoryPreview = () => {
       alt={"PreviewCategory"}
       width={431}
       height={628}
+      className={"h-full w-full"}
     />
   );
 };

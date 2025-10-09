@@ -5,7 +5,7 @@ import { TCategoriesList } from "@/shared/types/categories";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { setCategoryCurrent } from "@/widgets/categories/categoriesSlice";
 import { clsx } from "clsx";
-import ArrowSvg from "./icons/arrow.svg";
+import ArrowSvg from "../icons/arrow.svg";
 
 export const CategoriesListView = () => {
   const { men, women } = categories;
