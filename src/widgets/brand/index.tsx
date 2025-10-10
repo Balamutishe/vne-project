@@ -51,9 +51,11 @@ export const Brand = () => {
           слова — это основа всего, что мы делаем.
         </p>
       </div>
-      <div className={"mb-15"}>
+      <div className={"mb-15 h-110"}>
         <ul
-          className={"flex justify-between gap-10 [&>*:nth-child(even)]:mt-10"}
+          className={
+            "flex h-full justify-between gap-6 [&>*:nth-child(even)]:mt-10"
+          }
         >
           {imagesSrc.map(
             (src: string, index: number): JSX.Element => (
