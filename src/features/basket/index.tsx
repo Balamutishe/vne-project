@@ -17,7 +17,6 @@ export const Basket = () => {
   const dispatch = useAppDispatch();
   const ref = useRef<HTMLDivElement | null>(null);
   const { totalPrice } = useAppSelector((state) => state.basketState);
-  console.log(totalPrice);
 
   const handleClickOutside = (event: MouseEvent) => {
     if (ref.current && !ref.current.contains(event.target as Node)) {
@@ -81,18 +80,20 @@ export const BasketList = () => {
           products.map((product) => (
             <li
               key={crypto.randomUUID()}
-              className={"flex min-h-36 items-center justify-between"}
+              className={"flex h-36 items-center justify-between"}
             >
               <article
-                className={"flex w-full items-center justify-between gap-4"}
+                className={
+                  "flex h-full w-full items-center justify-between gap-4"
+                }
               >
-                <div className={"w-1/3 border-1 border-[#a7a7a7]"}>
+                <div className={"h-full w-1/3 border-1 border-[#a7a7a7]"}>
                   <Image
                     src={product.imageUrl}
                     alt={product.name}
                     width={107}
                     height={141}
-                    className={"w-full"}
+                    className={"h-full w-full"}
                   />
                 </div>
                 <div className={"w-2/3"}>

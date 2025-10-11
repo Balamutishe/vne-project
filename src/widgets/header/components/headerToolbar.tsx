@@ -54,7 +54,7 @@ export const HeaderToolbar = () => {
           onClick={() => dispatch(toggleBasketOpen(!isBasketOpen))}
         />
         {isBasketOpen && (
-          <div className={"bg-background absolute top-11 -right-14"}>
+          <div className={"bg-background absolute top-11 -right-14 z-50"}>
             <Basket />
           </div>
         )}

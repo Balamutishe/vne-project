@@ -62,13 +62,13 @@ export const ProductsList: FC<{
       )}
       <section className={"mb-20 w-full"}>
         <h2 className={`${damionFont.className} mb-10 text-7xl`}>{title}</h2>
-        <ul
-          className={clsx("product-list", {
-            "product-list-odd": variant === "main",
-          })}
-        >
-          {data.length !== 0 ? (
-            data.map((product: TProduct) => (
+        {data.length !== 0 ? (
+          <ul
+            className={clsx("product-list", {
+              "product-list-odd": variant === "main",
+            })}
+          >
+            {data.map((product: TProduct) => (
               <li key={product.id}>
                 <Link
                   href={`/categories/${product.gender}/${product.category}/${product.id}`}
@@ -80,11 +80,11 @@ export const ProductsList: FC<{
                   />
                 </Link>
               </li>
-            ))
-          ) : (
-            <li>По ЗАПРОСУ НИЧЕГО НЕ НАЙДЕНО</li>
-          )}
-        </ul>
+            ))}
+          </ul>
+        ) : (
+          <p>ПО ВАШЕМУ ЗАПРОСУ НИЧЕГО НЕ НАЙДЕНО</p>
+        )}
       </section>
     </>
   );

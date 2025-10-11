@@ -23,52 +23,40 @@ export const Account = () => {
           ПРИВЕТ, &lt;USER NAME&gt;!
         </h1>
       </div>
-      <div>
-        <div className={"flex h-149 justify-between gap-10"}>
-          <aside className={"flex w-1/4 flex-col justify-between"}>
-            <nav className={"flex flex-col items-start gap-10"}>
-              <button
-                className={clsx("hover:text-hover cursor-pointer", {
-                  "text-active": varUserData === "purchases",
-                })}
-                onClick={() => serVarUserData("purchases")}
-              >
-                МОИ ПОКУПКИ
-              </button>
-              <button
-                className={clsx("hover:text-hover cursor-pointer", {
-                  "text-active": varUserData === "info",
-                })}
-                onClick={() => serVarUserData("info")}
-              >
-                МОИ ДАННЫЕ
-              </button>
-            </nav>
-            {varUserData === "purchases" ? (
-              <article className={"flex h-50 flex-col gap-10"}>
-                <div className={"flex flex-col items-start gap-4"}>
-                  <div>№ 7830–004747–8671:</div>
-                  <div>
-                    <span className={"mr-4"}>ORDER DATE</span>
-                    <span>ORDER PRICE</span>
-                  </div>
-                  <button
-                    className={"text-hover hover:text-active cursor-pointer"}
-                  >
-                    Ожидание оплаты
-                  </button>
+      <div className={"flex max-h-149 justify-between gap-10"}>
+        <aside className={"flex w-1/4 flex-col"}>
+          <nav className={"mb-10 flex flex-col items-start gap-10"}>
+            <button
+              className={clsx("hover:text-hover cursor-pointer", {
+                "text-active": varUserData === "purchases",
+              })}
+              onClick={() => serVarUserData("purchases")}
+            >
+              МОИ ПОКУПКИ
+            </button>
+            <button
+              className={clsx("hover:text-hover cursor-pointer", {
+                "text-active": varUserData === "info",
+              })}
+              onClick={() => serVarUserData("info")}
+            >
+              МОИ ДАННЫЕ
+            </button>
+          </nav>
+          {varUserData === "purchases" ? (
+            <article className={"flex h-50 flex-col gap-10"}>
+              <div className={"flex flex-col items-start gap-4"}>
+                <div>№ 7830–004747–8671:</div>
+                <div>
+                  <span className={"mr-4"}>ORDER DATE</span>
+                  <span>ORDER PRICE</span>
                 </div>
                 <button
-                  className={
-                    "border-hover hover:bg-hover hover:text-background active:text-background active:bg-active w-full" +
-                    " cursor-pointer" +
-                    " border-1 p-2"
-                  }
+                  className={"text-hover hover:text-active cursor-pointer"}
                 >
-                  ВЫЙТИ
+                  Ожидание оплаты
                 </button>
-              </article>
-            ) : (
+              </div>
               <button
                 className={
                   "border-hover hover:bg-hover hover:text-background active:text-background active:bg-active w-full" +
@@ -78,12 +66,22 @@ export const Account = () => {
               >
                 ВЫЙТИ
               </button>
-            )}
-          </aside>
-          <div className={"flex w-3/4 flex-col justify-between"}>
-            {varUserData === "purchases" && <PurchasesList />}
-            {varUserData === "info" && <AccountInfo />}
-          </div>
+            </article>
+          ) : (
+            <button
+              className={
+                "border-hover hover:bg-hover hover:text-background active:text-background active:bg-active w-full" +
+                " cursor-pointer" +
+                " border-1 p-2"
+              }
+            >
+              ВЫЙТИ
+            </button>
+          )}
+        </aside>
+        <div className={"flex w-3/4 flex-col justify-between"}>
+          {varUserData === "purchases" && <PurchasesList />}
+          {varUserData === "info" && <AccountInfo />}
         </div>
       </div>
     </section>
