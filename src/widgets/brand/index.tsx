@@ -59,7 +59,7 @@ export const Brand = () => {
         >
           {imagesSrc.map(
             (src: string, index: number): JSX.Element => (
-              <li key={index} className={"max-h-97"}>
+              <li key={index} className={"max-h-97 w-1/4"}>
                 <Image
                   src={src}
                   alt={"Brand image"}

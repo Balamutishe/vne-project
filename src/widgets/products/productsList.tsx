@@ -55,9 +55,11 @@ export const ProductsList: FC<{
 }> = ({ data, title, variant }) => {
   return (
     <>
-      <div className={"mb-10"}>
-        <BreadCrumb />
-      </div>
+      {variant !== "main" && (
+        <div className={"mb-10"}>
+          <BreadCrumb />
+        </div>
+      )}
       <section className={"mb-20 w-full"}>
         <h2 className={`${damionFont.className} mb-10 text-7xl`}>{title}</h2>
         <ul
