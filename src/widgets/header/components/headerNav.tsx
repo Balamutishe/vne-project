@@ -5,45 +5,29 @@ import { toggleDropdownMenuVisible } from "@/features/header/dropdownMenu/dropdo
 export const HeaderNav = () => {
   const dispatch = useAppDispatch();
 
+  const navList: { name: string; value: "women" | "men" | "accessories" }[] = [
+    { name: "ЖЕНЩИНАМ", value: "women" },
+    { name: "МУЖЧИНАМ", value: "men" },
+    { name: "АКСЕССУАРЫ", value: "accessories" },
+  ];
+
   return (
     <nav>
-      <ul className={"flex items-center gap-8"}>
-        <li
-          key={crypto.randomUUID()}
-          onClick={() => {
-            dispatch(toggleDropdownMenuVisible(true));
-            dispatch(toggleCategoriesType("women"));
-          }}
-          className={
-            "hover:text-hover active:text-active cursor-pointer transition-colors"
-          }
-        >
-          ЖЕНЩИНАМ
-        </li>
-        <li
-          key={crypto.randomUUID()}
-          onClick={() => {
-            dispatch(toggleDropdownMenuVisible(true));
-            dispatch(toggleCategoriesType("men"));
-          }}
-          className={
-            "hover:text-hover active:text-active cursor-pointer transition-colors"
-          }
-        >
-          МУЖЧИНАМ
-        </li>
-        <li
-          key={crypto.randomUUID()}
-          onClick={() => {
-            dispatch(toggleDropdownMenuVisible(true));
-            dispatch(toggleCategoriesType("accessories"));
-          }}
-          className={
-            "hover:text-hover active:text-active cursor-pointer transition-colors"
-          }
-        >
-          АКСЕССУАРЫ
-        </li>
+      <ul className={"flex items-center lg:gap-6 xl:gap-8"}>
+        {navList.map((item) => (
+          <li
+            key={crypto.randomUUID()}
+            onClick={() => {
+              dispatch(toggleDropdownMenuVisible(true));
+              dispatch(toggleCategoriesType(item.value));
+            }}
+            className={
+              "hover:text-hover active:text-active cursor-pointer transition-colors"
+            }
+          >
+            <span>{item.name}</span>
+          </li>
+        ))}
       </ul>
     </nav>
   );

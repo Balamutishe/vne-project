@@ -30,7 +30,7 @@ export const ProductAddToBasket: FC<{
   return (
     <button
       className={
-        "bg-hover text-background active:bg-active min-w-136 cursor-pointer p-4 transition-colors"
+        "bg-hover text-background active:bg-active w-full cursor-pointer p-4 transition-colors"
       }
       onClick={handleProductAddToBasket}
     >

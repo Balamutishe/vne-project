@@ -36,7 +36,7 @@ export const ProductDetails = () => {
       <div>
         <ProductDetailsImagesList imagesUrlList={product.imagesUrl} />
       </div>
-      <div className={"mb-4 flex min-h-135 flex-col pt-16"}>
+      <div className={"mb-4 flex flex-col pt-16 xl:max-h-135"}>
         <ProductDetailsHeader
           name={product.name}
           price={product.price}
@@ -53,7 +53,7 @@ export const ProductDetails = () => {
             sizeChart={sizeChart}
           />
         </div>
-        <div className={"flex items-center justify-center px-30"}>
+        <div className={"flex items-center justify-center px-4"}>
           <ProductAddToBasket
             id={product.id}
             name={product.name}

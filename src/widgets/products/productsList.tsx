@@ -2,18 +2,13 @@
 
 import { getDataByCategory, getDataByFilter, getTopList } from "@/server/data";
 import { TProduct } from "@/shared/types/categories";
+import { SectionTitle } from "@/shared/ui/sectionTitle";
 import { BreadCrumb } from "@/widgets/breadCrumb";
 import { clsx } from "clsx";
 import Link from "next/link";
 import { useParams, useSearchParams } from "next/navigation";
 import { FC } from "react";
 import Image from "next/image";
-import localFont from "next/font/local";
-
-const damionFont = localFont({
-  src: "../../../public/fonts/DaMiOne-Regular.ttf",
-  display: "swap",
-});
 
 export const ProductsListView = () => {
   const { category, subcategory } = useParams<{
@@ -61,7 +56,9 @@ export const ProductsList: FC<{
         </div>
       )}
       <section className={"mb-20 w-full"}>
-        <h2 className={`${damionFont.className} mb-10 text-7xl`}>{title}</h2>
+        <div className={"lg:mb-5 xl:mb-10"}>
+          <SectionTitle title={title} />
+        </div>
         {data.length !== 0 ? (
           <ul
             className={clsx("product-list", {
@@ -72,6 +69,7 @@ export const ProductsList: FC<{
               <li key={product.id}>
                 <Link
                   href={`/categories/${product.gender}/${product.category}/${product.id}`}
+                  className={"size-full"}
                 >
                   <ProductCard
                     title={product.name}
@@ -96,13 +94,13 @@ export const ProductCard: FC<{
   previewImgUrl: string;
 }> = ({ title, price, previewImgUrl }) => {
   return (
-    <article className={"relative h-full overflow-hidden"}>
+    <article className={"relative size-full overflow-hidden"}>
       <div className={"z-[-1] flex items-center justify-between p-2"}>
         <h3>{title}</h3>
         <span>{price} &#8381;</span>
       </div>
       <Image
-        className={"absolute top-0 z-[-2] w-full"}
+        className={"absolute top-0 z-[-2] size-full"}
         src={previewImgUrl}
         alt={"Product image"}
         width={616}

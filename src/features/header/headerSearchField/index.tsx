@@ -71,7 +71,7 @@ export const HeaderSearchField = () => {
   }, [isSearchFieldVisible]);
 
   return (
-    <div className={"relative z-50"}>
+    <div className={"relative"}>
       {isSearchFieldVisible && (
         <input
           ref={ref}
@@ -79,7 +79,7 @@ export const HeaderSearchField = () => {
           name={"search"}
           defaultValue={searchParams.get("productName") || ""}
           className={
-            "hover:border-hover focus:outline-hover absolute top-[-10] right-12 z-50 h-11 w-86 border-1" +
+            "bg-background hover:border-hover focus:outline-hover absolute top-[-10] right-12 z-50 h-11 w-80 border-1" +
             " border-zinc-950 p-2"
           }
           onChange={(e) => handleSearch(e)}

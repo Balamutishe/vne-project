@@ -83,9 +83,7 @@ export const BasketList = () => {
               className={"flex h-36 items-center justify-between"}
             >
               <article
-                className={
-                  "flex h-full w-full items-center justify-between gap-4"
-                }
+                className={"flex size-full items-center justify-between gap-4"}
               >
                 <div className={"h-full w-1/3 border-1 border-[#a7a7a7]"}>
                   <Image
@@ -93,7 +91,7 @@ export const BasketList = () => {
                     alt={product.name}
                     width={107}
                     height={141}
-                    className={"h-full w-full"}
+                    className={"size-full object-cover"}
                   />
                 </div>
                 <div className={"w-2/3"}>

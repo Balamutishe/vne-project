@@ -18,14 +18,14 @@ export const Account = () => {
 
   return (
     <section>
-      <div className={"mb-20"}>
-        <h1 className={`${damionFont.className} text-5xl`}>
+      <div className={"lg:mb-10 xl:mb-20"}>
+        <h1 className={`${damionFont.className} lg:text-3xl xl:text-5xl`}>
           ПРИВЕТ, &lt;USER NAME&gt;!
         </h1>
       </div>
-      <div className={"flex max-h-149 justify-between gap-10"}>
+      <div className={"flex justify-between lg:gap-5 xl:gap-10"}>
         <aside className={"flex w-1/4 flex-col"}>
-          <nav className={"mb-10 flex flex-col items-start gap-10"}>
+          <nav className={"mb-10 flex flex-col items-start lg:gap-5 xl:gap-10"}>
             <button
               className={clsx("hover:text-hover cursor-pointer", {
                 "text-active": varUserData === "purchases",
@@ -92,7 +92,11 @@ const AccountInfo = () => {
   return (
     <form>
       <div className={"mb-5 flex w-full justify-between"}>
-        <div className={"flex w-[48%] flex-col justify-between gap-5"}>
+        <div
+          className={
+            "flex w-[48%] flex-col justify-between lg:gap-2.5 xl:gap-5"
+          }
+        >
           <FormField
             id={crypto.randomUUID()}
             labelText={"Фамилия"}
@@ -129,7 +133,11 @@ const AccountInfo = () => {
             placeholder={"example@mail.ru"}
           />
         </div>
-        <div className={"flex w-[48%] flex-col justify-between gap-5"}>
+        <div
+          className={
+            "flex w-[48%] flex-col justify-between lg:gap-2.5 xl:gap-5"
+          }
+        >
           <FormField
             id={crypto.randomUUID()}
             labelText={"Регион"}
@@ -151,7 +159,11 @@ const AccountInfo = () => {
             type="text"
             placeholder={"Введите улицу"}
           />
-          <div className={"flex flex-1 flex-wrap justify-between gap-5"}>
+          <div
+            className={
+              "flex flex-1 flex-wrap justify-between lg:gap-2.5 xl:gap-5"
+            }
+          >
             <FormField
               id={crypto.randomUUID()}
               labelText={"Дом"}
@@ -188,7 +200,9 @@ const AccountInfo = () => {
         </div>
       </div>
 
-      <div className={"flex w-full flex-col justify-between gap-5"}>
+      <div
+        className={"flex w-full flex-col justify-between lg:gap-2.5 xl:gap-5"}
+      >
         <FormField
           id={crypto.randomUUID()}
           labelText={"Пароль"}
@@ -277,7 +291,7 @@ const PurchasesListItem: FC<{
       {visibleAdditional && (
         <div
           className={
-            "flex h-14 w-full items-center justify-end gap-10 pr-20 text-base"
+            "flex h-14 w-full items-center justify-end gap-10 pr-20 lg:text-sm xl:text-base"
           }
         >
           <div>

@@ -1,11 +1,6 @@
-import localFont from "next/font/local";
+import { SectionTitle } from "@/shared/ui/sectionTitle";
 import Image from "next/image";
 import { JSX } from "react";
-
-const damionFont = localFont({
-  src: "../../../public/fonts/DaMiOne-Regular.ttf",
-  display: "swap",
-});
 
 export const Brand = () => {
   const imagesSrc = [
@@ -19,15 +14,17 @@ export const Brand = () => {
     <section>
       <div
         className={
-          "mb-10 flex h-50 items-center justify-center border-b-1 border-zinc-950"
+          "border-tertiary mb-10 flex items-center justify-center border-b-1 lg:h-30 xl:h-50"
         }
       >
         <div
           className={
-            "flex h-full w-[52%] items-center border-l-1 border-zinc-950"
+            "border-tertiary flex h-full w-[52%] items-center border-l-1"
           }
         >
-          <h1 className={`${damionFont.className} px-20 text-7xl`}>О БРЕНДЕ</h1>
+          <div className={"lg:p-10 xl:p-20"}>
+            <SectionTitle title={"О БРЕНДЕ"} />
+          </div>
         </div>
       </div>
       <div
@@ -60,7 +57,7 @@ export const Brand = () => {
         >
           {imagesSrc.map(
             (src: string, index: number): JSX.Element => (
-              <li key={index} className={"max-h-97 w-1/4"}>
+              <li key={index} className={"w-1/4 lg:h-65 xl:h-97"}>
                 <Image
                   src={src}
                   alt={"Brand image"}

@@ -14,7 +14,7 @@ export const Payment = () => {
   const { variantPaymentForm } = useAppSelector((state) => state.paymentState);
 
   return (
-    <form className={"flex h-full justify-between gap-10 pt-45"}>
+    <form className={"flex h-full justify-between gap-10 lg:pt-25 xl:pt-45"}>
       <section className={"w-1/3"}>
         <h3 className={"mb-10"}>Контакты</h3>
         <div className={"flex flex-col gap-5"}>

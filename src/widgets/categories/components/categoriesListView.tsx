@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FC } from "react";
-import { categories } from "@/server/data";
+import { getDataByCollection } from "@/server/data";
 import { TCategoriesList } from "@/shared/types/categories";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { setCategoryCurrent } from "@/widgets/categories/categoriesSlice";
@@ -8,17 +8,13 @@ import { clsx } from "clsx";
 import ArrowSvg from "../icons/arrow.svg";
 
 export const CategoriesListView = () => {
-  const { men, women } = categories;
   const categoriesType = useAppSelector(
     (state) => state.categoriesState.categoriesType,
   );
 
-  switch (categoriesType) {
-    case "men":
-      return <CategoriesList categoriesData={men} />;
-    case "women":
-      return <CategoriesList categoriesData={women} />;
-  }
+  const data = getDataByCollection(categoriesType);
+
+  return <CategoriesList categoriesData={data} />;
 };
 
 const CategoriesList: FC<{
@@ -37,13 +33,14 @@ const CategoriesList: FC<{
           key={category.id}
           className={clsx(
             "hover:text-hover hover:border-b-hover cursor-pointer transition-colors last:border-b-0" +
-              " border-b-[0.5px] border-zinc-950",
+              " border-tertiary border-b-[0.5px]",
           )}
         >
           <Link
             href={`/categories/${categoriesType}/${categoryCurrent}`}
             className={
-              "group flex items-center justify-between px-4 py-4 text-3xl font-light"
+              "group flex items-center justify-between font-light lg:p-2 lg:text-xl xl:p-4" +
+              " xl:text-3xl"
             }
           >
             <div>
