@@ -1,10 +1,13 @@
 import { z } from "zod";
 
+export const GenderSchema = z.enum(["men", "women", "unisex"]);
+export type TGender = z.infer<typeof GenderSchema>;
+
 export const ProductSchema = z.object({
   id: z.string(),
   name: z.string(),
   slug: z.string(),
-  gender: z.enum(["men", "women", "unisex"]),
+  gender: GenderSchema,
   category: z.string(),
   price: z.number(),
   quantity: z.number(),
@@ -40,10 +43,16 @@ export type TCategory = z.infer<typeof CategorySchema>;
 export const CategoriesListSchema = z.array(CategorySchema);
 export type TCategoriesList = z.infer<typeof CategoriesListSchema>;
 
-export const CategoriesResponseDataSchema = z.object({
-  men: CategoriesListSchema,
-  women: CategoriesListSchema,
+export const CollectionSchema = z.object({
+  clothing: CategoriesListSchema,
   accessories: CategoriesListSchema,
+});
+export type TCollection = z.infer<typeof CollectionSchema>;
+
+export const CategoriesResponseDataSchema = z.object({
+  men: CollectionSchema,
+  women: CollectionSchema,
+  unisex: CollectionSchema,
 });
 export type TCategoriesResponseData = z.infer<
   typeof CategoriesResponseDataSchema

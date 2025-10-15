@@ -11,7 +11,7 @@ export default function CategoriesPage() {
   return (
     <ContainerPage>
       <Header />
-      <Main className={"px-13.5"}>
+      <Main className={"container-padding"}>
         <ProductDetails />
       </Main>
       <Footer />

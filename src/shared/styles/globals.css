@@ -21,6 +21,14 @@
 }
 
 @layer base {
+  .container-padding {
+    @apply sm:px-7 sm:py-1 md:px-7 md:py-1.5 lg:px-13.5 lg:py-2.5
+  }
+
+  .container-margin {
+    @apply sm:mb-5 lg:mb-10 xl:mb-20
+  }
+
   .product-list {
     @apply flex flex-wrap border-zinc-950
     [&>*]:w-1/2 [&>*]:h-202
@@ -49,6 +57,22 @@ body {
   font-size: 18px;
 }
 
+@media (max-width: 1280px) {
+  body {
+    font-size: 0.98rem;
+  }
+
+  @layer base {
+    .product-list {
+      @apply [&>*]:max-h-162
+    }
+
+    .product-list-odd {
+      @apply [&>*:nth-last-child(-n+3)]:max-h-120
+    }
+  }
+}
+
 @media (max-width: 1024px) {
   body {
     font-size: 0.97rem;
@@ -69,10 +93,30 @@ body {
   body {
     font-size: 0.95rem;
   }
+
+  @layer base {
+    .product-list {
+      @apply [&>*]:max-h-100
+    }
+
+    .product-list-odd {
+      @apply [&>*:nth-last-child(-n+3)]:max-h-72
+    }
+  }
 }
 
 @media (max-width: 576px) {
   body {
     font-size: 0.93rem;
+  }
+
+  @layer base {
+    .product-list {
+      @apply [&>*]:max-h-132
+    }
+
+    .product-list-odd {
+      @apply [&>*:nth-last-child(-n+3)]:max-h-92
+    }
   }
 }

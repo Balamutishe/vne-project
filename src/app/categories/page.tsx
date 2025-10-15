@@ -11,7 +11,7 @@ export default function ProductPage() {
   return (
     <ContainerPage>
       <Header className={"mb-20"} />
-      <Main className={"px-13.5"}>
+      <Main className={"container-padding"}>
         <ProductsListView />
       </Main>
       <Footer />

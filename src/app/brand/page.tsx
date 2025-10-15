@@ -10,7 +10,7 @@ export default function BrandPage() {
   return (
     <ContainerPage>
       <Header />
-      <Main className={"px-13.5"}>
+      <Main className={"container-padding"}>
         <Brand />
       </Main>
       <Footer />

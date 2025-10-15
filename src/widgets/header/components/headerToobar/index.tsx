@@ -2,34 +2,29 @@ import { Basket } from "@/features/basket";
 import { toggleBasketOpen } from "@/features/basket/basketSlice";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import Link from "next/link";
-import UserSvg from "../icons/user.svg";
-import BagSvg from "../icons/bag.svg";
+import UserSvg from "../../icons/user.svg";
+import BagSvg from "../../icons/bag.svg";
 import { HeaderSearchField } from "@/features/header/headerSearchField";
 
 export const HeaderToolbar = () => {
   const dispatch = useAppDispatch();
 
-  const { isSearchFieldVisible } = useAppSelector(
-    (state) => state.headerSearchFieldState,
-  );
   const { totalQuantity, isBasketOpen } = useAppSelector(
     (state) => state.basketState,
   );
 
   return (
     <div className={"flex min-w-[25%] items-center justify-end gap-8"}>
-      {!isSearchFieldVisible && (
-        <Link
-          href={"/brand"}
-          className={
-            "hover:text-hover active:text-active cursor-pointer transition-colors"
-          }
-        >
-          О БРЕНДЕ
-        </Link>
-      )}
+      <Link
+        href={"/brand"}
+        className={
+          "hover:text-hover active:text-active hidden cursor-pointer transition-colors lg:block"
+        }
+      >
+        О БРЕНДЕ
+      </Link>
       <HeaderSearchField />
-      <Link href={"/account"}>
+      <Link href={"/account"} className={"lg-block hidden"}>
         <UserSvg
           className={"hover:[&>path]:stroke-hover cursor-pointer"}
           width={24}

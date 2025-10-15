@@ -2,12 +2,10 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface DropdownMenuState {
   isDropdownMenuVisible: boolean;
-  categoriesType: "men" | "women" | "accessories";
 }
 
 const initialState: DropdownMenuState = {
   isDropdownMenuVisible: false,
-  categoriesType: "women",
 };
 
 const dropdownMenuSlice = createSlice({
@@ -17,15 +15,8 @@ const dropdownMenuSlice = createSlice({
     toggleDropdownMenuVisible: (state, action: PayloadAction<boolean>) => {
       state.isDropdownMenuVisible = action.payload;
     },
-    toggleCategoriesType: (
-      state,
-      action: PayloadAction<"men" | "women" | "accessories">,
-    ) => {
-      state.categoriesType = action.payload;
-    },
   },
 });
 
-export const { toggleDropdownMenuVisible, toggleCategoriesType } =
-  dropdownMenuSlice.actions;
+export const { toggleDropdownMenuVisible } = dropdownMenuSlice.actions;
 export default dropdownMenuSlice.reducer;

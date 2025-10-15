@@ -11,7 +11,7 @@ export default function AccountPage() {
   return (
     <ContainerPage>
       <Header className={"mb-20"} />
-      <Main className={"mb-20 px-13.5"}>
+      <Main className={"container-padding mb-20"}>
         <Account />
       </Main>
       <Footer />

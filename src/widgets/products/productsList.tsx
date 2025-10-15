@@ -1,7 +1,7 @@
 "use client";
 
 import { getDataByCategory, getDataByFilter, getTopList } from "@/server/data";
-import { TProduct } from "@/shared/types/categories";
+import { TGender, TProduct } from "@/shared/types/categories";
 import { SectionTitle } from "@/shared/ui/sectionTitle";
 import { BreadCrumb } from "@/widgets/breadCrumb";
 import { clsx } from "clsx";
@@ -12,7 +12,7 @@ import Image from "next/image";
 
 export const ProductsListView = () => {
   const { category, subcategory } = useParams<{
-    category: "men" | "women" | "accessories";
+    category: TGender;
     subcategory: string;
   }>();
   const searchParams = useSearchParams();
@@ -30,14 +30,24 @@ export const ProductsListView = () => {
     return <ProductsList data={data} title={title} variant={"category"} />;
   }
 
-  const data = category
-    ? getDataByCategory(category, subcategory)
-    : getTopList();
+  if (category) {
+    const data = getDataByCategory(category, subcategory);
+
+    return (
+      <ProductsList
+        data={data!.list}
+        title={data!.name}
+        variant={category ? "category" : "main"}
+      />
+    );
+  }
+
+  const data = getTopList();
 
   return (
     <ProductsList
-      data={data!.list}
-      title={data!.name}
+      data={data.data}
+      title={data!.title}
       variant={category ? "category" : "main"}
     />
   );
@@ -56,7 +66,7 @@ export const ProductsList: FC<{
         </div>
       )}
       <section className={"mb-20 w-full"}>
-        <div className={"lg:mb-5 xl:mb-10"}>
+        <div className={"sm:mb-5 md:mb-5 lg:mb-5 xl:mb-10"}>
           <SectionTitle title={title} />
         </div>
         {data.length !== 0 ? (
@@ -95,7 +105,11 @@ export const ProductCard: FC<{
 }> = ({ title, price, previewImgUrl }) => {
   return (
     <article className={"relative size-full overflow-hidden"}>
-      <div className={"z-[-1] flex items-center justify-between p-2"}>
+      <div
+        className={
+          "z-[-1] flex items-center justify-between p-2 sm:text-xs md:text-sm lg:text-base"
+        }
+      >
         <h3>{title}</h3>
         <span>{price} &#8381;</span>
       </div>

@@ -3,11 +3,9 @@ import Link from "next/link";
 
 export const Footer = () => {
   return (
-    <footer className={"xl:max-h-77"}>
-      <section className={"h-full"}>
-        <FooterHeader />
-        <FooterSocials />
-      </section>
+    <footer className={"max-h-77"}>
+      <FooterHeader />
+      <FooterSocials />
     </footer>
   );
 };
@@ -16,12 +14,12 @@ const FooterHeader = () => {
   return (
     <div
       className={
-        "border-tertiary flex items-center justify-between border-t-1 border-b-1 lg:max-h-14 xl:max-h-16"
+        "border-tertiary flex items-center justify-between border-t-1 border-b-1 lg:h-14 xl:h-16"
       }
     >
       <div
         className={
-          "border-tertiary flex w-1/4 items-center justify-start border-r-1 px-13.5 py-4"
+          "border-tertiary container-padding flex w-1/4 items-center justify-start border-r-1"
         }
       >
         <Image src={"/images/logo.svg"} alt={"Logo"} width={115} height={31} />

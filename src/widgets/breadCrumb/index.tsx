@@ -24,12 +24,14 @@ export const BreadCrumb = () => {
 
       return Object.values(data)
         .map((category) => {
-          return Object.values(category).map((categoryItem) => {
-            return {
-              name: categoryItem.name,
-              slug: categoryItem.slug,
-            };
-          });
+          return Object.values(category)
+            .flat()
+            .map((categoryItem) => {
+              return {
+                name: categoryItem.name,
+                slug: categoryItem.slug,
+              };
+            });
         })
         .flat()
         .find((category) => category.slug === item);

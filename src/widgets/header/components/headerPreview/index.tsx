@@ -7,7 +7,7 @@ export const HeaderPreview = () => {
   if (pathName !== "/") return null;
 
   return (
-    <section className={"max-h-196 overflow-hidden"}>
+    <section className={"z-[-1] max-h-196 max-w-[1440px] overflow-hidden"}>
       <Image
         src={"/images/preview.jpg"}
         alt={"Preview"}

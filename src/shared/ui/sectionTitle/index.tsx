@@ -8,7 +8,9 @@ const damionFont = localFont({
 
 export const SectionTitle: FC<{ title: string }> = ({ title }) => {
   return (
-    <h2 className={`${damionFont.className} lg:text-5xl xl:text-7xl`}>
+    <h2
+      className={`${damionFont.className} text-3xl md:text-4xl lg:text-5xl xl:text-7xl`}
+    >
       {title}
     </h2>
   );
