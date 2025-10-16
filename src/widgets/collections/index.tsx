@@ -10,13 +10,13 @@ import {
 export const CollectionsSection = () => {
   return (
     <section className={"container-margin w-full"}>
-      <div className={"flex items-center justify-between lg:mb-5 xl:mb-10"}>
+      <div className={"container-margin flex-center-between"}>
         <SectionTitle title={"КАТЕГОРИИ"} />
         <CollectionSwitcher />
       </div>
       <div
         className={
-          "border-tertiary flex h-full items-center justify-between gap-2 border-t-1 border-b-1 py-2"
+          "border-tertiary flex-center-between h-full gap-2 border-t-1 border-b-1 py-2"
         }
       >
         <div className={"w-1/3"}>

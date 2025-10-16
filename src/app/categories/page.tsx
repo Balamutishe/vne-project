@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function ProductPage() {
   return (
     <ContainerPage>
-      <Header className={"mb-20"} />
+      <Header className={"container-margin"} />
       <Main className={"container-padding"}>
         <ProductsListView />
       </Main>

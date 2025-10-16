@@ -33,22 +33,27 @@ export const Basket = () => {
   }, []);
 
   return (
-    <div ref={ref} className={clsx("max-h-199 w-98 px-5 py-8")}>
-      <div className={"mb-4 flex items-center justify-between"}>
+    <div
+      ref={ref}
+      className={clsx(
+        "max-h-180 w-80 px-2.5 py-4 lg:max-h-199 lg:w-98 lg:px-5 lg:py-8",
+      )}
+    >
+      <div className={"flex-center-between mb-1 lg:mb-4"}>
         <h3>КОРЗИНА</h3>
         <BasketClear />
       </div>
       <div>
-        <div className={"mb-5"}>
+        <div className={"mb-3 lg:mb-5"}>
           <BasketList />
         </div>
-        <div className={"flex items-center justify-between"}>
+        <div className={"flex-center-between"}>
           {totalPrice !== 0 ? (
             <Link
               href={"/payment"}
               onClick={() => dispatch(toggleBasketOpen(false))}
               className={
-                "bg-hover text-background active:bg-active w-full cursor-pointer p-4 transition-colors"
+                "bg-hover text-background active:bg-active w-full cursor-pointer p-2 transition-colors lg:p-4"
               }
             >
               ОФОРМИТЬ ЗАКАЗ
@@ -57,10 +62,18 @@ export const Basket = () => {
             <button
               disabled={true}
               className={
-                "bg-hover text-background active:bg-active w-full cursor-pointer p-4 transition-colors"
+                "bg-hover text-background active:bg-active w-full cursor-pointer p-2 transition-colors lg:p-4"
               }
             >
-              ОФОРМИТЬ ЗАКАЗ
+              <Link
+                href={"/payment"}
+                onClick={() => dispatch(toggleBasketOpen(false))}
+                className={
+                  "bg-hover text-background active:bg-active w-full cursor-pointer p-2 transition-colors lg:p-4"
+                }
+              >
+                ОФОРМИТЬ ЗАКАЗ
+              </Link>
             </button>
           )}
         </div>
@@ -75,37 +88,39 @@ export const BasketList = () => {
 
   return (
     <>
-      <ul className={"mb-5 flex max-h-135 flex-col gap-6 overflow-auto"}>
+      <ul
+        className={
+          "mb-2 flex max-h-96 flex-col gap-6 overflow-auto lg:mb-5 lg:max-h-135"
+        }
+      >
         {products.length !== 0 ? (
           products.map((product) => (
             <li
               key={crypto.randomUUID()}
-              className={"flex h-36 items-center justify-between"}
+              className={"flex-center-between h-27 lg:h-36"}
             >
-              <article
-                className={"flex size-full items-center justify-between gap-4"}
-              >
-                <div className={"h-full w-1/3 border-1 border-[#a7a7a7]"}>
+              <article className={"flex-center-between size-full gap-4"}>
+                <div className={"border-tertiary h-full w-1/3 border-1"}>
                   <Image
                     src={product.imageUrl}
                     alt={product.name}
                     width={107}
                     height={141}
-                    className={"size-full object-cover"}
+                    className={"object-content size-full"}
                   />
                 </div>
                 <div className={"w-2/3"}>
-                  <div className={"flex justify-between"}>
-                    <h4 className={"text-base"}>{product.name}</h4>
+                  <div className={"flex-center-between"}>
+                    <h4 className={"text-sm lg:text-base"}>{product.name}</h4>
                     <ProductDeleteFromBasket id={product._id} />
                   </div>
                   <div>
                     {product.color} / {product.size}
                   </div>
-                  <div className={"flex items-center justify-between"}>
-                    <div className={"flex items-center justify-between gap-1"}>
+                  <div className={"flex-center-between"}>
+                    <div className={"flex-center-between gap-1"}>
                       <button
-                        className={"text-3xl"}
+                        className={"text-xl lg:text-3xl"}
                         disabled={product.quantity === 1}
                       >
                         <MinusSvg
@@ -128,7 +143,7 @@ export const BasketList = () => {
                         ( {product.quantity} )
                       </span>
                       <button
-                        className={"text-3xl"}
+                        className={"text-xl lg:text-3xl"}
                         onClick={() =>
                           dispatch(productAdd({ ...product, quantity: 1 }))
                         }
@@ -152,7 +167,7 @@ export const BasketList = () => {
           <li>Корзина пуста</li>
         )}
       </ul>
-      <div className={"flex items-center justify-between"}>
+      <div className={"flex-center-between"}>
         <span>ВСЕГО</span>
         <span>{totalPrice} &#8381;</span>
       </div>

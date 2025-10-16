@@ -1,5 +1,5 @@
 import { TGender } from "@/shared/types/categories";
-import { toggleCategoryHeader } from "@/widgets/collections/collectionsSlice";
+import { toggleCollectionHeader } from "@/widgets/collections/collectionsSlice";
 import { clsx } from "clsx";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { DropdownMenuClose } from "@/widgets/header/components/dropdownMenu/components";
@@ -73,16 +73,20 @@ export const DropdownMenuMobile = () => {
   ];
 
   return (
-    <div className={"border-tertiary bg-background border-t-1 p-4"}>
+    <div
+      className={
+        "border-tertiary bg-background container-padding border-t-1 lg:pt-4 lg:pb-4"
+      }
+    >
       <nav className={"flex"}>
         {navList.map((item) => (
           <button
             key={crypto.randomUUID()}
-            className={clsx("border-tertiary w-1/3 border-b-3 pb-2", {
+            className={clsx("border-tertiary w-1/3 border-b-3 pt-2 pb-2", {
               "border-zinc-950": collectionHeaderType === item.value,
             })}
             onClick={() => {
-              dispatch(toggleCategoryHeader(item.value));
+              dispatch(toggleCollectionHeader(item.value));
             }}
           >
             {item.name}

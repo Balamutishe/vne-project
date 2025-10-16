@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function SupportPage() {
   return (
     <ContainerPage>
-      <Header className={"mb-20"} />
+      <Header className={"container-margin"} />
       <Main>
         <Support />
       </Main>

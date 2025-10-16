@@ -65,8 +65,8 @@ export const ProductsList: FC<{
           <BreadCrumb />
         </div>
       )}
-      <section className={"mb-20 w-full"}>
-        <div className={"sm:mb-5 md:mb-5 lg:mb-5 xl:mb-10"}>
+      <section className={"container-margin w-full"}>
+        <div className={"container-margin"}>
           <SectionTitle title={title} />
         </div>
         {data.length !== 0 ? (
@@ -107,7 +107,7 @@ export const ProductCard: FC<{
     <article className={"relative size-full overflow-hidden"}>
       <div
         className={
-          "z-[-1] flex items-center justify-between p-2 sm:text-xs md:text-sm lg:text-base"
+          "flex-center-between z-[-1] p-2 text-xs md:text-sm lg:text-base"
         }
       >
         <h3>{title}</h3>

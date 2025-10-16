@@ -14,7 +14,7 @@ export const Brand = () => {
     <section>
       <div
         className={
-          "border-tertiary mb-10 flex items-center justify-center border-b-1 lg:h-30 xl:h-50"
+          "border-tertiary container-margin flex h-20 items-center justify-center border-b-1 lg:h-30 xl:h-50"
         }
       >
         <div
@@ -22,13 +22,15 @@ export const Brand = () => {
             "border-tertiary flex h-full w-[52%] items-center border-l-1"
           }
         >
-          <div className={"lg:p-10 xl:p-20"}>
+          <div className={"p-10 xl:p-20"}>
             <SectionTitle title={"О БРЕНДЕ"} />
           </div>
         </div>
       </div>
       <div
-        className={"mb-10 flex justify-between gap-10 px-30 py-5 [&>*]:w-1/2"}
+        className={
+          "container-margin flex justify-between gap-10 px-20 py-2.5 lg:px-30 lg:py-5 [&>*]:w-1/2"
+        }
       >
         <p>
           VNE — это минимализм, за которым стоит смысл. Мы создаём удобную,
@@ -39,7 +41,7 @@ export const Brand = () => {
           Наши вещи вне времени — потому что мимолётные тренды устают, а стиль
           остаётся.
         </p>
-        <p className={"mt-5"}>
+        <p className={"mt-2.5 lg:mt-5"}>
           Мы верим, что современному человеку достаточно простого и понятного
           гардероба, чтобы выглядеть привлекательно в любой повседневной
           ситуации. Одежда VNE создана, чтобы служить дольше, сочетаться легко
@@ -49,7 +51,7 @@ export const Brand = () => {
           это основа всего, что мы делаем.
         </p>
       </div>
-      <div className={"mb-15 max-h-110"}>
+      <div className={"container-margin h-80 lg:h-110"}>
         <ul
           className={
             "flex h-full justify-between gap-10 [&>*:nth-child(even)]:mt-10"
@@ -57,7 +59,7 @@ export const Brand = () => {
         >
           {imagesSrc.map(
             (src: string, index: number): JSX.Element => (
-              <li key={index} className={"w-1/4 lg:h-65 xl:h-97"}>
+              <li key={index} className={"h-70 xl:h-97"}>
                 <Image
                   src={src}
                   alt={"Brand image"}

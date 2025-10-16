@@ -22,11 +22,15 @@
 
 @layer base {
   .container-padding {
-    @apply sm:px-7 sm:py-1 md:px-7 md:py-1.5 lg:px-13.5 lg:py-2.5
+    @apply px-2 sm:px-4 md:px-7 lg:px-13.5
   }
 
   .container-margin {
-    @apply sm:mb-5 lg:mb-10 xl:mb-20
+    @apply mb-5 sm:mb-10 lg:mb-15 xl:mb-20
+  }
+
+  .flex-center-between {
+    @apply flex justify-between items-center
   }
 
   .product-list {
@@ -80,11 +84,11 @@ body {
 
   @layer base {
     .product-list {
-      @apply [&>*]:max-h-132
+      @apply [&>*]:max-h-136
     }
 
     .product-list-odd {
-      @apply [&>*:nth-last-child(-n+3)]:max-h-92
+      @apply [&>*:nth-last-child(-n+3)]:max-h-100
     }
   }
 }
@@ -96,7 +100,7 @@ body {
 
   @layer base {
     .product-list {
-      @apply [&>*]:max-h-100
+      @apply [&>*]:max-h-104
     }
 
     .product-list-odd {
