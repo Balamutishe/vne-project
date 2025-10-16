@@ -907,7 +907,7 @@ export const categories: TCategoriesResponseData = {
         list: [
           {
             id: crypto.randomUUID(),
-            name: "Сумка-жилетка",
+            name: "СУМКА-ЖИЛЕТКА",
             slug: "bagVest",
             price: 9900,
             quantity: 10,
@@ -973,7 +973,7 @@ export const categories: TCategoriesResponseData = {
         list: [
           {
             id: crypto.randomUUID(),
-            name: "Съемный капюшон с карманом",
+            name: "СЪЕМНЫЙ КАПЮШОН С КАРМАНОМ",
             slug: "removableHoodWithCamouflage",
             price: 9900,
             quantity: 10,
@@ -1040,7 +1040,7 @@ export const categories: TCategoriesResponseData = {
         list: [
           {
             id: crypto.randomUUID(),
-            name: "Шарф",
+            name: "ШАРФ",
             slug: "scarf",
             price: 9900,
             quantity: 10,
@@ -1107,7 +1107,7 @@ export const categories: TCategoriesResponseData = {
         list: [
           {
             id: crypto.randomUUID(),
-            name: "Шапка",
+            name: "ШАПКА",
             slug: "cap",
             price: 9900,
             quantity: 10,
@@ -1173,7 +1173,7 @@ export const categories: TCategoriesResponseData = {
         list: [
           {
             id: crypto.randomUUID(),
-            name: "Балаклава",
+            name: "БАЛАКЛАВА",
             slug: "balaclava",
             price: 9900,
             quantity: 10,
@@ -2333,7 +2333,7 @@ export const categories: TCategoriesResponseData = {
         list: [
           {
             id: crypto.randomUUID(),
-            name: "Сумка-жилетка",
+            name: "СУМКА-ЖИЛЕТКА",
             slug: "bagVest",
             price: 9900,
             quantity: 10,
@@ -2399,7 +2399,7 @@ export const categories: TCategoriesResponseData = {
         list: [
           {
             id: crypto.randomUUID(),
-            name: "Съемный капюшон с карманом",
+            name: "СЪЕМНЫЙ КАПЮШОН С КАРМАНОМ",
             slug: "removableHoodWithCamouflage",
             price: 9900,
             quantity: 10,
@@ -2466,7 +2466,7 @@ export const categories: TCategoriesResponseData = {
         list: [
           {
             id: crypto.randomUUID(),
-            name: "Шарф",
+            name: "ШАРФ",
             slug: "scarf",
             price: 9900,
             quantity: 10,
@@ -2529,7 +2529,7 @@ export const categories: TCategoriesResponseData = {
         list: [
           {
             id: crypto.randomUUID(),
-            name: "Шапка",
+            name: "ШАПКА",
             slug: "cap",
             price: 9900,
             quantity: 10,
@@ -2595,7 +2595,7 @@ export const categories: TCategoriesResponseData = {
         list: [
           {
             id: crypto.randomUUID(),
-            name: "Балаклава",
+            name: "БАЛАКЛАВА",
             slug: "balaclava",
             price: 9900,
             quantity: 10,
@@ -2668,7 +2668,7 @@ export const categories: TCategoriesResponseData = {
         list: [
           {
             id: crypto.randomUUID(),
-            name: "Сумка-жилетка",
+            name: "СУМКА-ЖИЛЕТКА",
             slug: "bagVest",
             price: 9900,
             quantity: 10,
@@ -2736,7 +2736,7 @@ export const categories: TCategoriesResponseData = {
         list: [
           {
             id: crypto.randomUUID(),
-            name: "Съемный капюшон с карманом",
+            name: "СЪЕМНЫЙ КАПЮШОН С КАРМАНОМ",
             slug: "removableHoodWithCamouflage",
             price: 9900,
             quantity: 10,
@@ -2805,7 +2805,7 @@ export const categories: TCategoriesResponseData = {
         list: [
           {
             id: crypto.randomUUID(),
-            name: "Шарф",
+            name: "ШАРФ",
             slug: "scarf",
             price: 9900,
             quantity: 10,
@@ -2870,11 +2870,11 @@ export const categories: TCategoriesResponseData = {
       {
         id: crypto.randomUUID(),
         slug: "caps",
-        name: "Шапки",
+        name: "ШАПКИ",
         list: [
           {
             id: crypto.randomUUID(),
-            name: "Шапка",
+            name: "ШАПКА",
             slug: "cap",
             price: 9900,
             quantity: 10,
@@ -2942,7 +2942,7 @@ export const categories: TCategoriesResponseData = {
         list: [
           {
             id: crypto.randomUUID(),
-            name: "Балаклава",
+            name: "БАЛАКЛАВА",
             slug: "balaclava",
             price: 9900,
             quantity: 10,

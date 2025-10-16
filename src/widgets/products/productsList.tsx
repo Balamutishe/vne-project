@@ -72,11 +72,20 @@ export const ProductsList: FC<{
         {data.length !== 0 ? (
           <ul
             className={clsx("product-list", {
-              "product-list-odd": variant === "main",
+              "product-list-odd":
+                variant === "main" && window.screen.width >= 768,
             })}
           >
             {data.map((product: TProduct) => (
-              <li key={product.id}>
+              <li
+                key={product.id}
+                className={clsx("", {
+                  "last:hidden":
+                    variant === "main" && window.screen.width <= 768,
+                  "last:block":
+                    variant === "category" && window.screen.width <= 768,
+                })}
+              >
                 <Link
                   href={`/categories/${product.gender}/${product.category}/${product.id}`}
                   className={"size-full"}
@@ -107,14 +116,14 @@ export const ProductCard: FC<{
     <article className={"relative size-full overflow-hidden"}>
       <div
         className={
-          "flex-center-between z-[-1] p-2 text-xs md:text-sm lg:text-base"
+          "z-[-1] flex size-full flex-col p-2 text-[0.6rem] sm:flex-row sm:justify-between sm:text-base"
         }
       >
         <h3>{title}</h3>
         <span>{price} &#8381;</span>
       </div>
       <Image
-        className={"absolute top-0 z-[-2] size-full"}
+        className={"absolute top-2 z-[-2] size-full object-cover"}
         src={previewImgUrl}
         alt={"Product image"}
         width={616}

@@ -34,7 +34,7 @@
   }
 
   .product-list {
-    @apply flex flex-wrap border-zinc-950
+    @apply flex flex-wrap border-tertiary [&>*]:border-tertiary
     [&>*]:w-1/2 [&>*]:h-202
     [&>*:nth-child(even)]:border-r-1
     [&>*:nth-child(even)]:border-b-1
@@ -68,11 +68,11 @@ body {
 
   @layer base {
     .product-list {
-      @apply [&>*]:max-h-162
+      @apply [&>*]:h-162
     }
 
     .product-list-odd {
-      @apply [&>*:nth-last-child(-n+3)]:max-h-120
+      @apply [&>*:nth-last-child(-n+3)]:h-120
     }
   }
 }
@@ -84,11 +84,11 @@ body {
 
   @layer base {
     .product-list {
-      @apply [&>*]:max-h-136
+      @apply [&>*]:h-136
     }
 
     .product-list-odd {
-      @apply [&>*:nth-last-child(-n+3)]:max-h-100
+      @apply [&>*:nth-last-child(-n+3)]:h-100
     }
   }
 }
@@ -100,11 +100,11 @@ body {
 
   @layer base {
     .product-list {
-      @apply [&>*]:max-h-104
+      @apply [&>*]:h-104
     }
 
     .product-list-odd {
-      @apply [&>*:nth-last-child(-n+3)]:max-h-72
+      @apply [&>*:nth-last-child(-n+3)]:h-72
     }
   }
 }
@@ -116,11 +116,19 @@ body {
 
   @layer base {
     .product-list {
-      @apply [&>*]:max-h-132
+      @apply [&>*]:h-132
     }
 
     .product-list-odd {
-      @apply [&>*:nth-last-child(-n+3)]:max-h-92
+      @apply [&>*:nth-last-child(-n+3)]:h-92
+    }
+  }
+}
+
+@media (max-width: 376px) {
+  @layer base {
+    .product-list {
+      @apply [&>*]:h-55
     }
   }
 }
