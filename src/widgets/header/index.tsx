@@ -44,7 +44,7 @@ export const Header: FC<{
         <HeaderToolbar />
         <div
           className={
-            "absolute top-12 right-0 z-50 max-h-80 last:w-full lg:top-16"
+            "absolute top-12 right-0 z-100 max-h-80 last:w-full sm:top-16"
           }
         >
           <DropdownMenuView />

@@ -35,8 +35,11 @@ export const HeaderToolbar = () => {
         {totalQuantity > 0 && (
           <span
             className={
-              "bg-hover text-background absolute -top-3 -right-4 flex h-5 w-5 items-center justify-center" +
-              " rounded-full p-2 text-base leading-0"
+              "bg-hover text-background absolute -top-2 -right-3 flex h-3 w-3 items-center sm:-top-3 sm:-right-4" +
+              " sm:h-5" +
+              " sm:w-5" +
+              " justify-center" +
+              " rounded-full p-2 text-xs leading-0 sm:text-base"
             }
           >
             {totalQuantity}
@@ -48,12 +51,14 @@ export const HeaderToolbar = () => {
           height={24}
           onClick={() => dispatch(toggleBasketOpen(!isBasketOpen))}
         />
-        {isBasketOpen && (
-          <div className={"bg-background absolute top-11 -right-14 z-50"}>
-            <Basket />
-          </div>
-        )}
       </div>
+      {isBasketOpen && (
+        <div
+          className={"bg-background absolute top-12 right-0 z-100 sm:top-16"}
+        >
+          <Basket />
+        </div>
+      )}
     </div>
   );
 };

@@ -7,6 +7,7 @@ import { clsx } from "clsx";
 import { ProductAddToBasket } from "@/features/basket/productAddToBasket";
 import { TProduct } from "@/shared/types/categories";
 import { getDataProductById } from "@/server/data";
+import { ReactSwiper } from "@/widgets/swiper";
 import ColorSvg from "./icons/colorImage.svg";
 import ArrowDownSvg from "./icons/arrow-down.svg";
 
@@ -32,11 +33,16 @@ export const ProductDetails = () => {
   const [currentColor, setCurrentColor] = useState(color[0]);
 
   return (
-    <section className={"mb-31 flex justify-between [&>*]:w-1/2"}>
-      <div>
+    <section
+      className={"container-margin sm:flex sm:justify-between sm:[&>*]:w-1/2"}
+    >
+      <div className={"hidden sm:block"}>
         <ProductDetailsImagesList imagesUrlList={product.imagesUrl} />
       </div>
-      <div className={"mb-4 flex flex-col pt-16 xl:max-h-135"}>
+      <div className={"sm:hidden"}>
+        <ReactSwiper imagesUrlList={product.imagesUrl} />
+      </div>
+      <div className={"flex flex-col pt-16 xl:max-h-135"}>
         <ProductDetailsHeader
           name={product.name}
           price={product.price}
@@ -46,7 +52,7 @@ export const ProductDetails = () => {
           currentColor={currentColor}
           setCurrentColor={setCurrentColor}
         />
-        <div className={"mb-16"}>
+        <div className={"container-margin"}>
           <ProductDetailsDescriptionList
             description={description}
             care={care}
@@ -95,13 +101,13 @@ const ProductDetailsHeader: FC<{
     <div>
       <div
         className={
-          "flex justify-between border-t-1 border-b-1 border-[#a7a7a7] px-30 py-4"
+          "border-tertiary flex justify-between border-t-1 border-b-1 px-6 py-4 text-sm sm:px-30 sm:py-4"
         }
       >
         <span>{name}</span>
         <span>{price} &#8381;</span>
       </div>
-      <div className={"mb-16 px-30 py-4"}>
+      <div className={"container-margin px-6 py-4 sm:px-30 sm:py-4"}>
         <div className={"flex gap-2"}>
           {colors.map((color) => (
             <ColorSvg
@@ -125,7 +131,7 @@ const ProductDetailsHeader: FC<{
             <button
               key={crypto.randomUUID()}
               className={clsx(
-                "hover:text-background hover:bg-hover h-8.5 w-8.5 cursor-pointer border-1 border-[#a7a7a7]",
+                "hover:text-background hover:bg-hover border-tertiary h-8.5 w-8.5 cursor-pointer border-1",
                 { "text-background bg-hover": size === currentSize },
               )}
               onClick={() => handleSetSize(size)}
@@ -181,7 +187,7 @@ const ProductDetailsDescriptionList: FC<{
   ];
 
   return (
-    <ul className={"border-[#a7a7a7] last:border-b-1"}>
+    <ul className={"border-tertiary last:border-b-1"}>
       {listDescriptionProduct.map((item, index) => (
         <li key={index}>
           <ProductDetailsDescriptionItem item={item} index={index} />
@@ -241,7 +247,7 @@ const ProductDetailsDescriptionItem: FC<{
         </span>
       </div>
       {visibleAdditional && (
-        <div className={"pt-4 pb-4 pl-50"}>
+        <div className={"px-2 py-2 sm:pt-4 sm:pb-4 sm:pl-50"}>
           {!Array.isArray(item.data) && <p>{item.data}</p>}
           {Array.isArray(item.data) && (
             <ul className={"flex flex-col justify-between"}>
