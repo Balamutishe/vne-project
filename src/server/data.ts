@@ -2870,7 +2870,7 @@ export const categories: TCategoriesResponseData = {
       {
         id: crypto.randomUUID(),
         slug: "caps",
-        name: "ШАПКИ",
+        name: "Шапки",
         list: [
           {
             id: crypto.randomUUID(),

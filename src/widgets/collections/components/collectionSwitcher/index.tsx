@@ -27,12 +27,12 @@ export const CollectionSwitcher = () => {
   ];
 
   return (
-    <div className={"flex items-center gap-5"}>
+    <div className={"flex-center-between gap-5"}>
       {buttonsList.map((button) => (
         <button
           key={crypto.randomUUID()}
           className={clsx(
-            "border-tertiary cursor-pointer border-b-1 px-9.5 py-1.5 transition-colors",
+            "border-tertiary cursor-pointer border-b-1 px-9.5 py-1 transition-colors lg:py-1.5",
             {
               "border-b-hover text-hover": collectionMainType === button.value,
             },

@@ -61,7 +61,7 @@ export const ProductsList: FC<{
   return (
     <>
       {variant !== "main" && (
-        <div className={"mb-10"}>
+        <div className={"sm:container-margin mb-5"}>
           <BreadCrumb />
         </div>
       )}
@@ -116,7 +116,7 @@ export const ProductCard: FC<{
     <article className={"relative size-full overflow-hidden"}>
       <div
         className={
-          "z-[-1] flex size-full flex-col p-2 text-[0.6rem] sm:flex-row sm:justify-between sm:text-base"
+          "z-[-1] flex size-full flex-col p-2 text-[0.5rem] sm:flex-row sm:justify-between sm:text-base"
         }
       >
         <h3>{title}</h3>

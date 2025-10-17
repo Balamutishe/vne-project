@@ -5,6 +5,8 @@ export const Main: FC<{ children: ReactNode; className?: string }> = ({
   className,
 }) => {
   return (
-    <main className={`flex flex-1 flex-col ${className}`}>{children}</main>
+    <main className={`flex flex-1 flex-col ${className} z-1 sm:z-50`}>
+      {children}
+    </main>
   );
 };

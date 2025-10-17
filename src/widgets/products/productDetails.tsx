@@ -12,7 +12,7 @@ import ArrowDownSvg from "./icons/arrow-down.svg";
 
 export const ProductDetails = () => {
   const { category, subcategory, productId } = useParams<{
-    category: "men" | "women" | "accessories";
+    category: "men" | "women" | "unisex";
     subcategory: string;
     productId: string;
   }>();
@@ -215,7 +215,7 @@ const ProductDetailsDescriptionItem: FC<{
   const listSizeChartHeader = ["РАЗМЕР", "РОССИЯ", "ГРУДЬ", "ТАЛИЯ", "БЕДРА"];
 
   return (
-    <div>
+    <article>
       <div
         className={clsx(
           "hover:text-hover group flex cursor-pointer justify-between border-t-1 border-[#a7a7a7] px-2 py-2.5",
@@ -274,7 +274,7 @@ const ProductDetailsDescriptionItem: FC<{
           )}
         </div>
       )}
-    </div>
+    </article>
   );
 };
 

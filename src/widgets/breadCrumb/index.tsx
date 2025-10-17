@@ -43,7 +43,7 @@ export const BreadCrumb = () => {
       {
         <ul
           className={
-            "[&>*:hover]:text-hover text-tertiary flex items-center gap-1 text-sm [&>*]:cursor-pointer"
+            "[&>*:hover]:text-hover text-tertiary flex items-center gap-1 text-[0.5rem] sm:text-sm [&>*]:cursor-pointer"
           }
         >
           <li>

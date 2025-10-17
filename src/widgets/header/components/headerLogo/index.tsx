@@ -8,9 +8,10 @@ export const HeaderLogo = () => {
         <Image
           src={"/images/logo.svg"}
           alt={"Logo"}
-          width={115}
+          width={110}
           height={31}
           priority={true}
+          className={"h-8 w-25 lg:h-10 lg:w-32"}
         />
       </Link>
     </div>

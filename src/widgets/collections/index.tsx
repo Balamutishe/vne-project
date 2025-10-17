@@ -10,9 +10,17 @@ import {
 export const CollectionsSection = () => {
   return (
     <section className={"container-margin w-full"}>
-      <div className={"container-margin flex-center-between flex-wrap"}>
-        <SectionTitle title={"КАТЕГОРИИ"} />
-        <CollectionSwitcher />
+      <div
+        className={
+          "container-margin flex flex-col lg:flex-row lg:items-center lg:justify-between"
+        }
+      >
+        <div className={"container-margin lg:m-0"}>
+          <SectionTitle title={"КАТЕГОРИИ"} />
+        </div>
+        <div className={"flex items-center justify-center"}>
+          <CollectionSwitcher />
+        </div>
       </div>
       <div
         className={

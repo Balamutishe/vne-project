@@ -93,7 +93,7 @@ export const DropdownMenuMobile = () => {
           </button>
         ))}
       </nav>
-      <div>
+      <div className={"px-2"}>
         <CollectionListView variant={"header"} />
       </div>
     </div>

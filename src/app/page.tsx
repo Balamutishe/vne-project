@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <ContainerPage>
-      <Header className={"container-margin"} />
+      <Header className={"container-margin"} variant={"main"} />
       <Main className={"container-padding"}>
         <ProductsListView />
         <CollectionsSection />

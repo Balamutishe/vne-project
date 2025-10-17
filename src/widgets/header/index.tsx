@@ -1,10 +1,10 @@
 "use client";
 
-import { toggleCollectionHeader } from "@/widgets/collections/collectionsSlice";
 import { FC, useEffect, useRef } from "react";
-import { useAppDispatch } from "@/store/hooks";
 import { clsx } from "clsx";
+import { useAppDispatch } from "@/store/hooks";
 import { toggleDropdownMenuVisible } from "@/widgets/header/components/dropdownMenu/dropdownMenuSlice";
+import { toggleCollectionHeader } from "@/widgets/collections/collectionsSlice";
 import {
   HeaderPreview,
   HeaderLogo,
@@ -13,7 +13,10 @@ import {
   DropdownMenuView,
 } from "@/widgets/header/components";
 
-export const Header: FC<{ className?: string }> = ({ className }) => {
+export const Header: FC<{
+  className?: string;
+  variant?: "main" | "second";
+}> = ({ className, variant }) => {
   const ref = useRef<HTMLElement | null>(null);
   const dispatch = useAppDispatch();
 
@@ -32,18 +35,28 @@ export const Header: FC<{ className?: string }> = ({ className }) => {
   }, []);
 
   return (
-    <header ref={ref} className={clsx(`max-h-212 ${className}`)}>
+    <header ref={ref} className={clsx(`${className} overflow-hidden sm:p-0`)}>
       <section
-        className={`container-padding relative flex h-16 items-center justify-between [&>*]:w-1/3`}
+        className={`container-padding flex-center-between h-12 lg:h-16 [&>*]:w-1/3`}
       >
         <HeaderNav />
         <HeaderLogo />
         <HeaderToolbar />
+        <div
+          className={
+            "absolute top-12 right-0 z-50 max-h-80 last:w-full lg:top-16"
+          }
+        >
+          <DropdownMenuView />
+        </div>
       </section>
-      <HeaderPreview />
-      <div className={"absolute top-16 z-50 max-h-80 w-full max-w-[1440px]"}>
-        <DropdownMenuView />
-      </div>
+      <section
+        className={clsx("z-[-1] h-112 lg:h-200", {
+          hidden: variant !== "main",
+        })}
+      >
+        <HeaderPreview />
+      </section>
     </header>
   );
 };
