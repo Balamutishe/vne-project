@@ -79,15 +79,12 @@ export const ProductsList: FC<{
             {data.map((product: TProduct) => (
               <li
                 key={product.id}
-                className={clsx(
-                  "h-70 w-1/2 sm:h-140 md:h-150 lg:h-170 xl:h-210",
-                  {
-                    "last:hidden":
-                      variant === "main" && window.screen.width <= 640,
-                    "last:block":
-                      variant === "category" && window.screen.width <= 640,
-                  },
-                )}
+                className={clsx("h-70 sm:h-140 md:h-150 lg:h-170 xl:h-210", {
+                  "last:hidden":
+                    variant === "main" && window.screen.width <= 640,
+                  "last:block":
+                    variant === "category" && window.screen.width <= 640,
+                })}
               >
                 <Link
                   href={`/categories/${product.gender}/${product.category}/${product.id}`}

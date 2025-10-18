@@ -34,7 +34,7 @@
   }
 
   .product-list {
-    @apply flex flex-wrap border-tertiary [&>*]:border-tertiary
+    @apply flex flex-wrap border-tertiary [&>*]:border-tertiary [&>*]:w-1/2
     [&>*:nth-child(even)]:border-r-1
     [&>*:nth-child(even)]:border-b-1
     [&>*:nth-child(even)]:border-l-0
@@ -96,7 +96,7 @@ body {
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 640px) {
   body {
     font-size: 0.93rem;
   }
