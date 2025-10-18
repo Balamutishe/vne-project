@@ -46,13 +46,22 @@ export const HeaderToolbar = () => {
           </span>
         )}
         <BagSvg
-          className={"hover:[&>path]:fill-hover cursor-pointer"}
+          className={"hover:[&>path]:fill-hover hidden cursor-pointer sm:block"}
           width={24}
           height={24}
-          onClick={() => dispatch(toggleBasketOpen(!isBasketOpen))}
+          onClick={() => {
+            dispatch(toggleBasketOpen(!isBasketOpen));
+          }}
         />
+        <Link href={"/basket"} className={"sm:hidden"}>
+          <BagSvg
+            className={"hover:[&>path]:fill-hover cursor-pointer"}
+            width={24}
+            height={24}
+          />
+        </Link>
       </div>
-      {isBasketOpen && window.screen.width >= 640 && (
+      {isBasketOpen && window.screen.width > 640 && (
         <div
           className={"bg-background absolute top-12 right-0 z-100 sm:top-16"}
         >

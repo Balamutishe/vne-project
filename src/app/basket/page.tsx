@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { Basket } from "@/features/basket";
+import { BasketView } from "@/features/basket";
 import { ContainerPage, Footer, Main, Header } from "@/widgets";
 
 export const metadata: Metadata = {
@@ -10,9 +10,9 @@ export const metadata: Metadata = {
 export default function BasketPage() {
   return (
     <ContainerPage>
-      <Header className={"container-margin"} variant={"main"} />
+      <Header className={"container-margin"} />
       <Main className={"container-padding"}>
-        <Basket />
+        <BasketView />
       </Main>
       <Footer />
     </ContainerPage>
