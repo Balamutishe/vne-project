@@ -52,7 +52,7 @@ export const HeaderToolbar = () => {
           onClick={() => dispatch(toggleBasketOpen(!isBasketOpen))}
         />
       </div>
-      {isBasketOpen && (
+      {isBasketOpen && window.screen.width >= 640 && (
         <div
           className={"bg-background absolute top-12 right-0 z-100 sm:top-16"}
         >

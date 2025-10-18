@@ -73,7 +73,7 @@ export const ProductsList: FC<{
           <ul
             className={clsx("product-list", {
               "product-list-odd":
-                variant === "main" && window.screen.width >= 768,
+                variant === "main" && window.screen.width >= 640,
             })}
           >
             {data.map((product: TProduct) => (
@@ -83,9 +83,9 @@ export const ProductsList: FC<{
                   "h-70 w-1/2 sm:h-140 md:h-150 lg:h-170 xl:h-210",
                   {
                     "last:hidden":
-                      variant === "main" && window.screen.width <= 768,
+                      variant === "main" && window.screen.width <= 640,
                     "last:block":
-                      variant === "category" && window.screen.width <= 768,
+                      variant === "category" && window.screen.width <= 640,
                   },
                 )}
               >
@@ -118,7 +118,7 @@ export const ProductCard: FC<{
     <article className={"relative size-full overflow-hidden"}>
       <div
         className={
-          "z-[-1] flex size-full flex-col p-2 text-[0.5rem] sm:flex-row sm:justify-between sm:text-base"
+          "z-[-1] flex size-full flex-col p-2 text-[0.5rem] sm:flex-row sm:justify-between sm:text-xl"
         }
       >
         <h3>{title}</h3>

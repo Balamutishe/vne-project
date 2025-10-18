@@ -2741,10 +2741,10 @@ export const categories: TCategoriesResponseData = {
             price: 9900,
             quantity: 10,
             imagesUrl: [
-              "/images/product/accessories/men-removableHoodWithCamouflage-1.jpg",
-              "/images/product/accessories/men-removableHoodWithCamouflage-2.jpg",
               "/images/product/accessories/women-removableHoodWithCamouflage-1.jpg",
               "/images/product/accessories/women-removableHoodWithCamouflage-2.jpg",
+              "/images/product/accessories/men-removableHoodWithCamouflage-1.jpg",
+              "/images/product/accessories/men-removableHoodWithCamouflage-2.jpg",
             ],
             previewImageUrl:
               "/images/product/accessories/women-removableHoodWithCamouflage-3.jpg",
@@ -2810,13 +2810,12 @@ export const categories: TCategoriesResponseData = {
             price: 9900,
             quantity: 10,
             imagesUrl: [
+              "/images/product/accessories/women-scarfGray-1.jpg",
               "/images/product/accessories/men-scarfBlue-1.jpg",
               "/images/product/accessories/men-scarfBlue-2.jpg",
               "/images/product/accessories/men-scarfGray-1.jpg",
-              "/images/product/accessories/women-scarfGray-1.jpg",
             ],
-            previewImageUrl:
-              "/images/product/accessories/women-removableHoodWithCamouflage-3.jpg",
+            previewImageUrl: "/images/product/accessories/women-scarf-1.jpg",
             gender: "unisex",
             category: "scarfs",
             topList: false,
@@ -2879,10 +2878,10 @@ export const categories: TCategoriesResponseData = {
             price: 9900,
             quantity: 10,
             imagesUrl: [
-              "/images/product/accessories/men-cap-1.jpg",
-              "/images/product/accessories/men-cap-2.jpg",
               "/images/product/accessories/women-cap-1.jpg",
               "/images/product/accessories/women-cap-2.jpg",
+              "/images/product/accessories/men-cap-1.jpg",
+              "/images/product/accessories/men-cap-2.jpg",
             ],
             previewImageUrl: "/images/product/accessories/women-cap-3.jpg",
             gender: "unisex",

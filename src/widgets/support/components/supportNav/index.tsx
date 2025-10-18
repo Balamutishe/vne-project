@@ -21,7 +21,7 @@ export const SupportNav = () => {
     <nav>
       <ul
         className={clsx("flex flex-col gap-8", {
-          "pt-6": window.screen.width <= 376 && !content,
+          "pt-6": window.screen.width <= 640 && !content,
         })}
       >
         {navList.map((link) => (
@@ -30,14 +30,14 @@ export const SupportNav = () => {
             className={clsx("hover:text-hover flex items-center gap-2", {
               "text-hover hover:text-active":
                 link.url === `${baseUrl}/${content}` &&
-                window.screen.width > 376,
+                window.screen.width > 640,
               hidden:
                 link.url !== `${baseUrl}/${content}` &&
-                window.screen.width <= 376 &&
+                window.screen.width <= 640 &&
                 content,
               "border-tertiary container-padding border-b-1 py-2":
                 link.url === `${baseUrl}/${content}` &&
-                window.screen.width <= 376,
+                window.screen.width <= 640,
             })}
           >
             <Link href={baseUrl}>

@@ -76,16 +76,6 @@ export const HeaderSearchField = () => {
     <div className={"relative"}>
       {isSearchFieldVisible && (
         <>
-          {/*<SearchSvg*/}
-          {/*  className={*/}
-          {/*    "hover:[&>path]:stroke-hover absolute top-1/2 right-53 z-51 -translate-y-1/2 sm:right-63"*/}
-          {/*  }*/}
-          {/*  width={24}*/}
-          {/*  height={24}*/}
-          {/*  onClick={() => {*/}
-          {/*    handlerToggleSearchFieldVisible("onclick");*/}
-          {/*  }}*/}
-          {/*/>*/}
           <input
             ref={ref}
             type={"text"}

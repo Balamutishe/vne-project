@@ -31,7 +31,7 @@ export const SupportContentDocuments = () => {
             className={clsx(
               "text-hover hover:text-active mb-5 cursor-pointer",
               {
-                hidden: window.screen.width <= 376,
+                hidden: window.screen.width <= 640,
               },
             )}
             onClick={() => setDocContent("default")}
