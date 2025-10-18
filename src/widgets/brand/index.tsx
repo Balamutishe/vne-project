@@ -14,25 +14,26 @@ export const Brand = () => {
     <section>
       <div
         className={
-          "border-tertiary container-margin flex h-20 items-center justify-center border-b-1 lg:h-30 xl:h-50"
+          "border-tertiary sm:container-margin flex h-20 items-center justify-center sm:h-30 sm:border-b-1 lg:h-40" +
+          " xl:h-50"
         }
       >
         <div
           className={
-            "border-tertiary flex h-full w-[52%] items-center border-l-1"
+            "border-tertiary flex items-center sm:h-full sm:w-[52%] sm:border-l-1"
           }
         >
-          <div className={"p-10 xl:p-20"}>
+          <div className={"sm:p-10 xl:p-20"}>
             <SectionTitle title={"О БРЕНДЕ"} />
           </div>
         </div>
       </div>
       <div
         className={
-          "container-margin flex justify-between gap-10 px-20 py-2.5 lg:px-30 lg:py-5 [&>*]:w-1/2"
+          "container-margin py-2.5 sm:flex sm:justify-between sm:gap-10 sm:px-20 lg:px-30 lg:py-5 sm:[&>*]:w-1/2"
         }
       >
-        <p>
+        <p className={"mb-10 sm:mb-0"}>
           VNE — это минимализм, за которым стоит смысл. Мы создаём удобную,
           лаконичную и продуманную одежду, которая подчёркивает личность,
           а не заменяет её.
@@ -41,7 +42,7 @@ export const Brand = () => {
           Наши вещи вне времени — потому что мимолётные тренды устают, а стиль
           остаётся.
         </p>
-        <p className={"mt-2.5 lg:mt-5"}>
+        <p className={"sm:mt-2.5 lg:mt-5"}>
           Мы верим, что современному человеку достаточно простого и понятного
           гардероба, чтобы выглядеть привлекательно в любой повседневной
           ситуации. Одежда VNE создана, чтобы служить дольше, сочетаться легко
@@ -51,22 +52,26 @@ export const Brand = () => {
           это основа всего, что мы делаем.
         </p>
       </div>
-      <div className={"container-margin h-80 lg:h-110"}>
+      <div className={"container-margin sm:h-80 lg:h-110"}>
         <ul
           className={
-            "flex h-full justify-between gap-10 [&>*:nth-child(even)]:mt-10"
+            "flex max-h-114 flex-wrap justify-between gap-1 sm:gap-5" +
+            " sm:[&>*:nth-child(even)]:mt-10"
           }
         >
           {imagesSrc.map(
             (src: string, index: number): JSX.Element => (
-              <li key={index} className={"h-70 xl:h-97"}>
+              <li
+                key={index}
+                className={"h-52 w-[49%] sm:h-70 sm:w-[23%] xl:h-97"}
+              >
                 <Image
                   src={src}
                   alt={"Brand image"}
                   width={318}
                   height={389}
                   priority={true}
-                  className={"h-full w-full"}
+                  className={"size-full object-cover"}
                 />
               </li>
             ),

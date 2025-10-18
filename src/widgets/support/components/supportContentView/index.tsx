@@ -20,5 +20,9 @@ export const SupportContentView = () => {
       return <SupportContentDocuments />;
     case "contacts":
       return <SupportContentContacts />;
+    default:
+      return (
+        <div className={"hidden sm:block"}>МЫ ВСЕГДА РАДЫ ВАМ ПОМОЧЬ!!!</div>
+      );
   }
 };

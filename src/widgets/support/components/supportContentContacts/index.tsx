@@ -19,7 +19,7 @@ export const SupportContentContacts = () => {
   ];
 
   return (
-    <div className={"w-1/3"}>
+    <section className={"sm:w-1/3"}>
       <h4 className={"mb-3"}>Свяжитесь с нами</h4>
       <ul>
         {contacts.map((contact) => (
@@ -32,6 +32,6 @@ export const SupportContentContacts = () => {
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   );
 };

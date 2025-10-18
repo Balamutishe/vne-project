@@ -1,3 +1,4 @@
+import { clsx } from "clsx";
 import { useState } from "react";
 
 export const SupportContentDocuments = () => {
@@ -8,15 +9,15 @@ export const SupportContentDocuments = () => {
   switch (docContent) {
     case "default":
       return (
-        <div className={"flex flex-col items-start gap-5"}>
+        <div className={"flex flex-col items-start justify-start gap-8"}>
           <button
-            className={"text-hover hover:text-active cursor-pointer"}
+            className={"text-hover hover:text-active cursor-pointer text-left"}
             onClick={() => setDocContent("publicOffer")}
           >
             ПУБЛИЧНАЯ ОФЕРТА ИНТЕРНЕТ МАГАЗИНА &lt;&lt;VNE&gt;&gt;
           </button>
           <button
-            className={"text-hover hover:text-active cursor-pointer"}
+            className={"text-hover hover:text-active cursor-pointer text-left"}
             onClick={() => setDocContent("personalData")}
           >
             ПОЛИТИКА ОБРАБОТКИ ПЕРСОНАЛЬНЫХ ДАННЫХ
@@ -25,14 +26,19 @@ export const SupportContentDocuments = () => {
       );
     case "publicOffer":
       return (
-        <div className={"max-h-140"}>
+        <div className={"max-h-70 overflow-auto sm:max-h-140"}>
           <button
-            className={"text-hover hover:text-active mb-5 cursor-pointer"}
+            className={clsx(
+              "text-hover hover:text-active mb-5 cursor-pointer",
+              {
+                hidden: window.screen.width <= 376,
+              },
+            )}
             onClick={() => setDocContent("default")}
           >
             Назад к документам
           </button>
-          <p className={"max-h-130 overflow-auto"}>
+          <p className={"max-h-70 sm:max-h-140"}>
             Публичная оферта
             <br />
             <br />
@@ -374,14 +380,19 @@ export const SupportContentDocuments = () => {
       );
     case "personalData":
       return (
-        <div className={"max-h-140 overflow-auto"}>
+        <div className={"max-h-70 overflow-auto sm:max-h-140"}>
           <button
-            className={"text-hover hover:text-active mb-5 cursor-pointer"}
+            className={clsx(
+              "text-hover hover:text-active mb-5 cursor-pointer",
+              {
+                hidden: window.screen.width <= 376,
+              },
+            )}
             onClick={() => setDocContent("default")}
           >
             Назад к документам
           </button>
-          <p className={"max-h-130 overflow-auto"}>
+          <p className={"max-h-140 overflow-auto"}>
             Политика в отношении обработки персональных данных
             <br />
             <br />
