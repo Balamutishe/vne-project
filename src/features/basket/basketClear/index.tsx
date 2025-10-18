@@ -11,7 +11,7 @@ export const BasketClear = () => {
   return (
     <button
       className={
-        "hover:text-hover cursor-pointer text-[0.55rem] transition-colors sm:text-sm lg:text-base"
+        "hover:text-hover cursor-pointer text-xs transition-colors sm:text-sm lg:text-base"
       }
       onClick={handleBasketClear}
     >

@@ -14,7 +14,7 @@ export const HeaderToolbar = () => {
   );
 
   return (
-    <div className={"flex min-w-[25%] items-center justify-end gap-8"}>
+    <div className={"flex min-w-[25%] items-center justify-end gap-7"}>
       <Link
         href={"/brand"}
         className={

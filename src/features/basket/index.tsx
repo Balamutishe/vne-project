@@ -19,12 +19,12 @@ import PlusSvg from "./icons/plus.svg";
 export const BasketView = () => {
   return (
     <>
-      <section className={"hidden sm:block"}>
+      <div className={"hidden sm:block"}>
         <Basket />
-      </section>
-      <section className={"sm:hidden"}>
+      </div>
+      <div className={"sm:hidden"}>
         <BasketMobile />
-      </section>
+      </div>
     </>
   );
 };
@@ -48,23 +48,21 @@ export const Basket = () => {
   }, []);
 
   return (
-    <div
+    <section
       ref={ref}
       className={clsx(
         "bg-background max-h-180 w-60 px-2.5 py-4 text-[0.65rem] sm:w-80 sm:text-base lg:max-h-199 lg:w-98 lg:px-5 lg:py-8 lg:text-lg",
       )}
     >
-      <div className={"flex-center-between mb-4"}>
+      <div className={"flex-center-between mb-3 sm:mb-5"}>
         <h3>КОРЗИНА</h3>
         <BasketClear />
       </div>
-      <div>
-        <div className={"mb-3 sm:mb-5"}>
-          <BasketList />
-        </div>
-        <BasketFooter />
+      <div className={"mb-3 sm:mb-5"}>
+        <BasketList />
       </div>
-    </div>
+      <BasketFooter />
+    </section>
   );
 };
 
@@ -74,14 +72,14 @@ export const BasketList = () => {
   return (
     <ul
       className={
-        "mb-2 flex max-h-96 flex-col gap-6 overflow-auto sm:mb-5 sm:max-h-135"
+        "flex flex-col gap-2 overflow-auto sm:mb-5 sm:max-h-135 sm:gap-6"
       }
     >
       {products.length !== 0 ? (
         products.map((product) => (
           <li
             key={crypto.randomUUID()}
-            className={"flex-center-between h-20 sm:h-27 lg:h-40"}
+            className={"flex-center-between h-30 sm:h-35 lg:h-40"}
           >
             <BasketCard product={product} />
           </li>
@@ -123,13 +121,22 @@ const BasketCard: FC<{ product: BasketProduct }> = ({ product }) => {
   );
 };
 
+const BasketHeader = () => {
+  return (
+    <div className={"flex-center-between w-full"}>
+      <h3>КОРЗИНА</h3>
+      <BasketClear />
+    </div>
+  );
+};
+
 const BasketFooter = () => {
   const dispatch = useAppDispatch();
 
   const { totalPrice } = useAppSelector((state) => state.basketState);
 
   return (
-    <section>
+    <section className={"w-full"}>
       <div
         className={
           "flex-center-between mb-2 text-[0.65rem] sm:text-base lg:text-lg"
@@ -144,7 +151,7 @@ const BasketFooter = () => {
             href={"/payment"}
             onClick={() => dispatch(toggleBasketOpen(false))}
             className={
-              "bg-hover text-background active:bg-active w-full cursor-pointer p-2 transition-colors lg:p-4"
+              "bg-hover text-background active:bg-active w-full cursor-pointer p-2 text-center transition-colors lg:p-4"
             }
           >
             ОФОРМИТЬ ЗАКАЗ
@@ -153,7 +160,7 @@ const BasketFooter = () => {
           <button
             disabled={true}
             className={
-              "bg-hover text-background active:bg-active w-full cursor-pointer p-2 transition-colors lg:p-4"
+              "bg-hover text-background active:bg-active w-full cursor-pointer p-2 text-center transition-colors lg:p-4"
             }
           >
             ОФОРМИТЬ ЗАКАЗ
@@ -203,12 +210,10 @@ const BasketCountChange: FC<{ product: BasketProduct }> = ({ product }) => {
 
 const BasketMobile = () => {
   return (
-    <div>
-      <div className={"flex-center-between mb-4"}>
-        <h3>КОРЗИНА</h3>
-        <BasketClear />
-      </div>
+    <section className={"container-margin flex flex-col gap-4 text-xs"}>
+      <BasketHeader />
       <BasketList />
-    </div>
+      <BasketFooter />
+    </section>
   );
 };
