@@ -35,7 +35,6 @@
 
   .product-list {
     @apply flex flex-wrap border-tertiary [&>*]:border-tertiary
-    [&>*]:w-1/2 [&>*]:h-202
     [&>*:nth-child(even)]:border-r-1
     [&>*:nth-child(even)]:border-b-1
     [&>*:nth-child(even)]:border-l-0
@@ -67,10 +66,6 @@ body {
   }
 
   @layer base {
-    .product-list {
-      @apply [&>*]:h-162
-    }
-
     .product-list-odd {
       @apply [&>*:nth-last-child(-n+3)]:h-120
     }
@@ -83,10 +78,6 @@ body {
   }
 
   @layer base {
-    .product-list {
-      @apply [&>*]:h-136
-    }
-
     .product-list-odd {
       @apply [&>*:nth-last-child(-n+3)]:h-100
     }
@@ -99,10 +90,6 @@ body {
   }
 
   @layer base {
-    .product-list {
-      @apply [&>*]:h-104
-    }
-
     .product-list-odd {
       @apply [&>*:nth-last-child(-n+3)]:h-72
     }
@@ -115,20 +102,8 @@ body {
   }
 
   @layer base {
-    .product-list {
-      @apply [&>*]:h-132
-    }
-
     .product-list-odd {
       @apply [&>*:nth-last-child(-n+3)]:h-92
-    }
-  }
-}
-
-@media (max-width: 376px) {
-  @layer base {
-    .product-list {
-      @apply [&>*]:h-55
     }
   }
 }

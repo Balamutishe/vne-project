@@ -55,8 +55,9 @@ export const Brand = () => {
       <div className={"container-margin sm:h-80 lg:h-110"}>
         <ul
           className={
-            "flex max-h-114 flex-wrap justify-between gap-1 sm:gap-5" +
-            " sm:[&>*:nth-child(even)]:mt-10"
+            "flex max-h-120 flex-col flex-wrap justify-between gap-[0.5rem] sm:flex-row sm:gap-5" +
+            " [&>*:nth-child(2)]:mb-10 [&>*:nth-child(3)]:mt-10 sm:[&>*:nth-child(3)]:mt-0" +
+            " sm:[&>*:nth-child(2)]:mb-0 sm:[&>*:nth-child(even)]:mt-10"
           }
         >
           {imagesSrc.map(

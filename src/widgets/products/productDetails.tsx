@@ -101,7 +101,7 @@ const ProductDetailsHeader: FC<{
     <div>
       <div
         className={
-          "border-tertiary flex justify-between border-t-1 border-b-1 px-6 py-4 text-sm sm:px-30 sm:py-4"
+          "border-tertiary flex justify-between border-t-1 border-b-1 px-6 py-4 text-sm sm:px-30 sm:py-4 sm:text-xl"
         }
       >
         <span>{name}</span>

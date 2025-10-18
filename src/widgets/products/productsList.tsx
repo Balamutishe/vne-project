@@ -65,7 +65,7 @@ export const ProductsList: FC<{
           <BreadCrumb />
         </div>
       )}
-      <section className={"container-margin w-full"}>
+      <section className={"container-margin size-full"}>
         <div className={"container-margin"}>
           <SectionTitle title={title} />
         </div>
@@ -79,16 +79,18 @@ export const ProductsList: FC<{
             {data.map((product: TProduct) => (
               <li
                 key={product.id}
-                className={clsx("", {
-                  "last:hidden":
-                    variant === "main" && window.screen.width <= 768,
-                  "last:block":
-                    variant === "category" && window.screen.width <= 768,
-                })}
+                className={clsx(
+                  "h-70 w-1/2 sm:h-140 md:h-150 lg:h-170 xl:h-210",
+                  {
+                    "last:hidden":
+                      variant === "main" && window.screen.width <= 768,
+                    "last:block":
+                      variant === "category" && window.screen.width <= 768,
+                  },
+                )}
               >
                 <Link
                   href={`/categories/${product.gender}/${product.category}/${product.id}`}
-                  className={"size-full"}
                 >
                   <ProductCard
                     title={product.name}
@@ -123,7 +125,7 @@ export const ProductCard: FC<{
         <span>{price} &#8381;</span>
       </div>
       <Image
-        className={"absolute top-2 z-[-2] size-full object-cover"}
+        className={"absolute top-4 z-[-2] size-full object-cover"}
         src={previewImgUrl}
         alt={"Product image"}
         width={616}

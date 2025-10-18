@@ -10,7 +10,7 @@ export const ReactSwiper: FC<{ imagesUrlList: string[] }> = ({
 }) => {
   return (
     <section>
-      <Swiper spaceBetween={0} slidesPerView={1} className={"h-112"}>
+      <Swiper spaceBetween={0} slidesPerView={1}>
         {imagesUrlList.map((url) => (
           <SwiperSlide key={crypto.randomUUID()}>
             <Image
