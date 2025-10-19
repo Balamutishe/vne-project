@@ -84,7 +84,7 @@ const CollectionListHeader: FC<{
     <>
       <ul
         className={clsx(
-          "flex flex-col items-start justify-between pt-4 pb-4 lg:block lg:px-13.5 lg:py-2.5",
+          "flex flex-col items-start justify-between px-2 py-4 lg:block lg:px-13.5 lg:py-2.5",
         )}
       >
         {collectionData.clothing.map((category) => {

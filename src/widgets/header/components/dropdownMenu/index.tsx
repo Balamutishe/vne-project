@@ -1,9 +1,12 @@
-import { TGender } from "@/shared/types/categories";
-import { toggleCollectionHeader } from "@/widgets/collections/collectionsSlice";
+import { toggleDropdownMenuVisible } from "@/widgets/header/components/dropdownMenu/dropdownMenuSlice";
+import Link from "next/link";
 import { clsx } from "clsx";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { TGender } from "@/shared/types/categories";
+import { toggleCollectionHeader } from "@/widgets/collections/collectionsSlice";
 import { DropdownMenuClose } from "@/widgets/header/components/dropdownMenu/components";
 import { CollectionListView } from "@/widgets/collections/components/collectionListView";
+import UserSvg from "../../icons/user.svg";
 
 export const DropdownMenuView = () => {
   const { isDropdownMenuVisible } = useAppSelector(
@@ -72,29 +75,59 @@ export const DropdownMenuMobile = () => {
     { name: "АКСЕССУАРЫ", value: "unisex" },
   ];
 
+  const handleSetVisibility = () => {
+    dispatch(toggleDropdownMenuVisible(false));
+  };
+
   return (
-    <div
-      className={
-        "border-tertiary bg-background container-padding border-t-1 lg:pt-4 lg:pb-4"
-      }
-    >
-      <nav className={"flex"}>
-        {navList.map((item) => (
-          <button
-            key={crypto.randomUUID()}
-            className={clsx("border-tertiary w-1/3 border-b-3 pt-2 pb-2", {
-              "border-zinc-950": collectionHeaderType === item.value,
-            })}
-            onClick={() => {
-              dispatch(toggleCollectionHeader(item.value));
-            }}
-          >
-            {item.name}
-          </button>
-        ))}
-      </nav>
-      <div className={"px-2"}>
+    <div>
+      <div
+        className={
+          "border-tertiary bg-background container-padding border-t-1 border-b-1"
+        }
+      >
+        <nav className={"flex"}>
+          {navList.map((item) => (
+            <button
+              key={crypto.randomUUID()}
+              className={clsx("border-tertiary w-1/3 border-b-3 py-2", {
+                "border-zinc-950": collectionHeaderType === item.value,
+              })}
+              onClick={() => {
+                dispatch(toggleCollectionHeader(item.value));
+              }}
+            >
+              {item.name}
+            </button>
+          ))}
+        </nav>
         <CollectionListView variant={"header"} />
+      </div>
+      <div className={"bg-background container-padding flex-center-between"}>
+        <div
+          className={
+            "border-tertiary flex w-[90%] items-center justify-end border-r-1 px-3"
+          }
+        >
+          <Link
+            href={"/support"}
+            className={"active:text-active py-1"}
+            onClick={handleSetVisibility}
+          >
+            Помощь
+          </Link>
+        </div>
+        <Link
+          href={"/account"}
+          className={"py-1"}
+          onClick={handleSetVisibility}
+        >
+          <UserSvg
+            className={"active:[&>path]:stroke-active"}
+            width={24}
+            height={24}
+          />
+        </Link>
       </div>
     </div>
   );
