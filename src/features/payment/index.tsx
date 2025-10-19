@@ -12,12 +12,19 @@ import ShareSvg from "./icons/share.svg";
 
 export const Payment = () => {
   const { variantPaymentForm } = useAppSelector((state) => state.paymentState);
+  const { totalPrice } = useAppSelector((state) => state.basketState);
 
   return (
-    <form className={"flex h-full justify-between gap-14 lg:pt-25 xl:pt-45"}>
-      <section className={"w-1/3"}>
-        <h3 className={"mb-10"}>Контакты</h3>
-        <div className={"flex flex-col gap-5"}>
+    <form
+      className={
+        "flex h-full flex-col justify-between sm:flex-row sm:gap-14 lg:pt-25 xl:pt-45 [&>section]:w-full" +
+        " [&>section]:mb-10 sm:[&>section]:mb-0" +
+        " sm:[&>section]:w-1/3"
+      }
+    >
+      <section>
+        <h3 className={"mb-5 sm:mb-10"}>Контакты</h3>
+        <div className={"flex flex-col gap-2.5 sm:gap-5"}>
           <FormField
             id={crypto.randomUUID()}
             labelText={"Фамилия"}
@@ -55,10 +62,10 @@ export const Payment = () => {
           />
         </div>
       </section>
-      <section className={"w-1/3"}>
-        <h3 className={"mb-10"}>Доставка</h3>
+      <section>
+        <h3 className={"mb-5 sm:mb-10"}>Доставка</h3>
         {variantPaymentForm.value !== "pickupPoint" ? (
-          <div className={"flex flex-col gap-5"}>
+          <div className={"flex flex-col gap-2.5 sm:gap-5"}>
             <CustomSelect
               options={[
                 {
@@ -175,9 +182,13 @@ export const Payment = () => {
           </>
         )}
       </section>
-      <section className={"w-1/3"}>
-        <div className={"mb-5"}>
+      <section>
+        <div className={"hidden sm:mb-10 sm:block"}>
           <BasketList />
+        </div>
+        <div className={"flex-center-between mb-5 text-sm sm:hidden"}>
+          <span>ВСЕГО</span>
+          <span>{totalPrice} &#8381;</span>
         </div>
         <button
           type={"submit"}
