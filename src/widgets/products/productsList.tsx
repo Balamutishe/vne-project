@@ -79,7 +79,7 @@ export const ProductsList: FC<{
             {data.map((product: TProduct) => (
               <li
                 key={product.id}
-                className={clsx("h-70 sm:h-140 md:h-150 lg:h-170 xl:h-210", {
+                className={clsx("", {
                   "last:hidden":
                     variant === "main" && window.screen.width <= 640,
                   "last:block":
@@ -115,7 +115,7 @@ export const ProductCard: FC<{
     <article className={"relative size-full overflow-hidden"}>
       <div
         className={
-          "z-[-1] flex size-full flex-col p-2 text-[0.5rem] sm:flex-row sm:justify-between sm:text-xl"
+          "z-[-1] flex size-full flex-col p-2 text-[0.5rem] sm:flex-row sm:justify-between sm:text-lg"
         }
       >
         <h3>{title}</h3>
