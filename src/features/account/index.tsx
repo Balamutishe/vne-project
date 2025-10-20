@@ -1,29 +1,35 @@
 "use client";
 
-import { FormField } from "@/shared/ui/formField";
-import { useAppSelector } from "@/store/hooks";
-import ArrowDownSvg from "@/widgets/products/icons/arrow-down.svg";
+import { FC, ReactNode, useState } from "react";
+import Image from "next/image";
 import { clsx } from "clsx";
 import localFont from "next/font/local";
-import Image from "next/image";
-import { FC, useState } from "react";
+import { useAppSelector } from "@/store/hooks";
+import { FormField } from "@/shared/ui/formField";
+import ArrowDownSvg from "@/widgets/products/icons/arrow-down.svg";
 
 const damionFont = localFont({
   src: "../../../public/fonts/DaMiOne-Regular.ttf",
   display: "swap",
 });
 
-export const Account = () => {
+export const AccountView = () => {
+  if (window.screen.width >= 640) return <Account />;
+
+  return <AccountMobile />;
+};
+
+const Account = () => {
   const [varUserData, serVarUserData] = useState<"purchases" | "info">("info");
 
   return (
-    <section>
-      <div className={"lg:mb-10 xl:mb-20"}>
-        <h1 className={`${damionFont.className} lg:text-3xl xl:text-5xl`}>
-          ПРИВЕТ, &lt;USER NAME&gt;!
+    <section className={"container-padding"}>
+      <div className={"mb-5 sm:mb-10 xl:mb-20"}>
+        <h1 className={`${damionFont.className} text-3xl xl:text-5xl`}>
+          ПРИВЕТ, &lt;USER NAME&gt;!
         </h1>
       </div>
-      <div className={"flex justify-between lg:gap-5 xl:gap-10"}>
+      <div className={"flex justify-between sm:gap-5 xl:gap-10"}>
         <aside className={"flex w-1/4 flex-col"}>
           <nav className={"mb-10 flex flex-col items-start lg:gap-5 xl:gap-10"}>
             <button
@@ -43,44 +49,15 @@ export const Account = () => {
               МОИ ДАННЫЕ
             </button>
           </nav>
-          {varUserData === "purchases" ? (
-            <article className={"flex h-50 flex-col gap-10"}>
-              <div className={"flex flex-col items-start gap-4"}>
-                <div>№ 7830–004747–8671:</div>
-                <div>
-                  <span className={"mr-4"}>ORDER DATE</span>
-                  <span>ORDER PRICE</span>
-                </div>
-                <button
-                  className={"text-hover hover:text-active cursor-pointer"}
-                >
-                  Ожидание оплаты
-                </button>
-              </div>
-              <button
-                className={
-                  "border-hover hover:bg-hover hover:text-background active:text-background active:bg-active w-full" +
-                  " cursor-pointer" +
-                  " border-1 p-2"
-                }
-              >
-                ВЫЙТИ
-              </button>
-            </article>
-          ) : (
-            <button
-              className={
-                "border-hover hover:bg-hover hover:text-background active:text-background active:bg-active w-full" +
-                " cursor-pointer" +
-                " border-1 p-2"
-              }
-            >
-              ВЫЙТИ
-            </button>
+          {varUserData === "purchases" && (
+            <div className={"mb-5"}>
+              <PurchaseGeneralInfo />
+            </div>
           )}
+          <ButtonLogout />
         </aside>
         <div className={"flex w-3/4 flex-col justify-between"}>
-          {varUserData === "purchases" && <PurchasesList />}
+          {varUserData === "purchases" && <PurchasesList variant={"desktop"} />}
           {varUserData === "info" && <AccountInfo />}
         </div>
       </div>
@@ -88,121 +65,105 @@ export const Account = () => {
   );
 };
 
+const AccountMobile = () => {
+  const accountItems = ["МОИ ПОКУПКИ", "АДРЕС ДОСТАВКИ", "МОИ ДАННЫЕ"];
+
+  const handleSetItemContent = (
+    item: "МОИ ПОКУПКИ" | "АДРЕС ДОСТАВКИ" | "МОИ ДАННЫЕ",
+  ) => {
+    switch (item) {
+      case "АДРЕС ДОСТАВКИ":
+        return <FormDeliveryData />;
+      case "МОИ ДАННЫЕ":
+        return <FormUserData />;
+      case "МОИ ПОКУПКИ":
+        return <PurchasesList variant={"mobile"} />;
+    }
+  };
+
+  return (
+    <section>
+      <h1 className={`${damionFont.className} container-padding mb-5 text-3xl`}>
+        ПРИВЕТ, &lt;USER NAME&gt;!
+      </h1>
+      <ul className={"mb-10"}>
+        {accountItems.map((item) => (
+          <li
+            key={crypto.randomUUID()}
+            className={"border-tertiary last:border-b-1"}
+          >
+            <AccountMobileItem
+              item={item}
+              children={handleSetItemContent(
+                item as "МОИ ПОКУПКИ" | "АДРЕС ДОСТАВКИ" | "МОИ ДАННЫЕ",
+              )}
+            />
+          </li>
+        ))}
+      </ul>
+      <div className={"container-padding"}>
+        <div className={"mb-10"}>
+          <PurchaseGeneralInfo />
+        </div>
+        <ButtonLogout />
+      </div>
+    </section>
+  );
+};
+
+const AccountMobileItem: FC<{ item: string; children: ReactNode }> = ({
+  item,
+  children,
+}) => {
+  const [visibleAdditional, setVisibleAdditional] = useState<boolean>(false);
+  const handleSetVisibleAdditional = () => {
+    setVisibleAdditional((prev) => !prev);
+  };
+
+  return (
+    <article>
+      <div
+        className={clsx(
+          "hover:text-hover group container-padding flex cursor-pointer justify-between border-t-1 border-[#a7a7a7]" +
+            " py-2.5",
+          { "border-b-1": visibleAdditional },
+        )}
+        onClick={handleSetVisibleAdditional}
+      >
+        <span>{item}</span>
+        <span className={"flex items-center"}>
+          <ArrowDownSvg
+            width={13}
+            height={8}
+            className={clsx(
+              "group-hover:[&>path]:stroke-hover rotate-0 transition-transform",
+              {
+                "rotate-180": visibleAdditional,
+              },
+            )}
+          />
+        </span>
+      </div>
+      {visibleAdditional && (
+        <div className={"container-padding w-full py-5"}>{children}</div>
+      )}
+    </article>
+  );
+};
+
 const AccountInfo = () => {
   return (
-    <form>
-      <div className={"mb-5 flex w-full justify-between"}>
-        <div
-          className={
-            "flex w-[48%] flex-col justify-between lg:gap-2.5 xl:gap-5"
-          }
-        >
-          <FormField
-            id={crypto.randomUUID()}
-            labelText={"Фамилия"}
-            name={"surname"}
-            type="text"
-            placeholder={"Иванов"}
-          />
-          <FormField
-            id={crypto.randomUUID()}
-            labelText={"Имя"}
-            name={"firstname"}
-            type="text"
-            placeholder={"Иван"}
-          />
-          <FormField
-            id={crypto.randomUUID()}
-            labelText={"Отчество"}
-            name={"lastname"}
-            type="text"
-            placeholder={"Иванович"}
-          />
-          <FormField
-            id={crypto.randomUUID()}
-            labelText={"Телефон"}
-            name={"phone"}
-            type="tel"
-            placeholder={"+7 ("}
-          />
-          <FormField
-            id={crypto.randomUUID()}
-            labelText={"Email"}
-            name={"email"}
-            type="email"
-            placeholder={"example@mail.ru"}
-          />
+    <section>
+      <div className={"mb-2.5 flex w-full justify-between sm:mb-5"}>
+        <div className={"w-[48%]"}>
+          <FormUserData />
         </div>
-        <div
-          className={
-            "flex w-[48%] flex-col justify-between lg:gap-2.5 xl:gap-5"
-          }
-        >
-          <FormField
-            id={crypto.randomUUID()}
-            labelText={"Регион"}
-            name={"region"}
-            type="text"
-            placeholder={"Введите регион"}
-          />
-          <FormField
-            id={crypto.randomUUID()}
-            labelText={"Город"}
-            name={"city"}
-            type="text"
-            placeholder={"Введите город"}
-          />
-          <FormField
-            id={crypto.randomUUID()}
-            labelText={"Улица"}
-            name={"street"}
-            type="text"
-            placeholder={"Введите улицу"}
-          />
-          <div
-            className={
-              "flex flex-1 flex-wrap justify-between lg:gap-2.5 xl:gap-5"
-            }
-          >
-            <FormField
-              id={crypto.randomUUID()}
-              labelText={"Дом"}
-              name={"house"}
-              type="number"
-              placeholder={"Номер дома"}
-              containerStyle={"w-[47%]"}
-            />
-            <FormField
-              id={crypto.randomUUID()}
-              labelText={"Подъезд"}
-              name={"entrance"}
-              type="number"
-              placeholder={"Номер подъезда"}
-              containerStyle={"w-[47%]"}
-            />
-            <FormField
-              id={crypto.randomUUID()}
-              labelText={"Квартира"}
-              name={"apartment"}
-              type="number"
-              placeholder={"Номер квартиры"}
-              containerStyle={"w-[47%]"}
-            />
-            <FormField
-              id={crypto.randomUUID()}
-              labelText={"Этаж"}
-              name={"floor"}
-              type="number"
-              placeholder={"Номер этажа"}
-              containerStyle={"w-[47%]"}
-            />
-          </div>
+        <div className={"w-[48%]"}>
+          <FormDeliveryData />
         </div>
       </div>
 
-      <div
-        className={"flex w-full flex-col justify-between lg:gap-2.5 xl:gap-5"}
-      >
+      <div className={"flex w-full flex-col justify-between gap-2.5 sm:gap-5"}>
         <FormField
           id={crypto.randomUUID()}
           labelText={"Пароль"}
@@ -218,23 +179,134 @@ const AccountInfo = () => {
           СОХРАНИТЬ
         </button>
       </div>
+    </section>
+  );
+};
+
+const FormUserData = () => {
+  return (
+    <form
+      className={
+        "flex w-full flex-col justify-between gap-2.5 sm:gap-5 [&>*]:w-full"
+      }
+    >
+      <FormField
+        id={crypto.randomUUID()}
+        labelText={"Фамилия"}
+        name={"surname"}
+        type="text"
+        placeholder={"Иванов"}
+      />
+      <FormField
+        id={crypto.randomUUID()}
+        labelText={"Имя"}
+        name={"firstname"}
+        type="text"
+        placeholder={"Иван"}
+      />
+      <FormField
+        id={crypto.randomUUID()}
+        labelText={"Отчество"}
+        name={"lastname"}
+        type="text"
+        placeholder={"Иванович"}
+      />
+      <FormField
+        id={crypto.randomUUID()}
+        labelText={"Телефон"}
+        name={"phone"}
+        type="tel"
+        placeholder={"+7 ("}
+      />
+      <FormField
+        id={crypto.randomUUID()}
+        labelText={"Email"}
+        name={"email"}
+        type="email"
+        placeholder={"example@mail.ru"}
+      />
     </form>
   );
 };
 
-const PurchasesList = () => {
+const FormDeliveryData = () => {
+  return (
+    <form className={"flex flex-col justify-between gap-2.5 sm:gap-5"}>
+      <FormField
+        id={crypto.randomUUID()}
+        labelText={"Регион"}
+        name={"region"}
+        type="text"
+        placeholder={"Введите регион"}
+      />
+      <FormField
+        id={crypto.randomUUID()}
+        labelText={"Город"}
+        name={"city"}
+        type="text"
+        placeholder={"Введите город"}
+      />
+      <FormField
+        id={crypto.randomUUID()}
+        labelText={"Улица"}
+        name={"street"}
+        type="text"
+        placeholder={"Введите улицу"}
+      />
+      <div className={"flex flex-1 flex-wrap justify-between gap-2.5 sm:gap-5"}>
+        <FormField
+          id={crypto.randomUUID()}
+          labelText={"Дом"}
+          name={"house"}
+          type="number"
+          placeholder={"Номер дома"}
+          containerStyle={"w-[47%]"}
+        />
+        <FormField
+          id={crypto.randomUUID()}
+          labelText={"Подъезд"}
+          name={"entrance"}
+          type="number"
+          placeholder={"Номер подъезда"}
+          containerStyle={"w-[47%]"}
+        />
+        <FormField
+          id={crypto.randomUUID()}
+          labelText={"Квартира"}
+          name={"apartment"}
+          type="number"
+          placeholder={"Номер квартиры"}
+          containerStyle={"w-[47%]"}
+        />
+        <FormField
+          id={crypto.randomUUID()}
+          labelText={"Этаж"}
+          name={"floor"}
+          type="number"
+          placeholder={"Номер этажа"}
+          containerStyle={"w-[47%]"}
+        />
+      </div>
+    </form>
+  );
+};
+
+const PurchasesList: FC<{ variant: "desktop" | "mobile" }> = ({ variant }) => {
   const { products } = useAppSelector((state) => state.basketState);
 
   return (
     <ul
-      className={clsx("border-[#a7a7a7]", {
-        "last:border-b-1": products.length !== 0,
+      className={clsx("border-tertiary", {
+        "sm:last:border-b-1": products.length !== 0,
       })}
     >
       {products.length !== 0 ? (
         products.map((item, index) => (
           <li key={index}>
-            <PurchasesListItem item={item} index={index} />
+            {variant === "desktop" && (
+              <PurchaseCard item={item} index={index} />
+            )}
+            {variant === "mobile" && <PurchaseProductDetails item={item} />}
           </li>
         ))
       ) : (
@@ -244,7 +316,7 @@ const PurchasesList = () => {
   );
 };
 
-const PurchasesListItem: FC<{
+const PurchaseCard: FC<{
   item: {
     _id: string;
     id: string;
@@ -288,26 +360,83 @@ const PurchasesListItem: FC<{
           />
         </span>
       </div>
-      {visibleAdditional && (
+      {visibleAdditional && <PurchaseProductDetails item={item} />}
+    </article>
+  );
+};
+
+const PurchaseProductDetails: FC<{
+  item: {
+    _id: string;
+    id: string;
+    name: string;
+    price: number;
+    size: string;
+    color: string;
+    quantity: number;
+    imageUrl: string;
+  };
+}> = ({ item }) => {
+  return (
+    <div
+      className={
+        "flex h-14 w-full items-center justify-between gap-2.5 text-[0.62rem] sm:justify-end sm:gap-10 sm:pr-20" +
+        " sm:text-xs lg:text-base"
+      }
+    >
+      <div className={"border-tertiary border-1 p-1 sm:border-0 sm:p-0"}>
+        <Image
+          src={item.imageUrl}
+          alt={"Product preview"}
+          width={33}
+          height={41}
+        />
+      </div>
+      <div>Цвет/{item.color}</div>
+      <div>Размер/{item.size}</div>
+      <div>Количество/{item.quantity} шт.</div>
+      <div>Цена/{item.price * item.quantity} &#8381;</div>
+    </div>
+  );
+};
+
+const PurchaseGeneralInfo = () => {
+  const { totalPrice } = useAppSelector((state) => state.basketState);
+
+  return (
+    <section className={"flex flex-col items-start gap-5"}>
+      <h3>НЕОПЛАЧЕННЫЕ ЗАКАЗЫ</h3>
+      {totalPrice !== 0 ? (
         <div
           className={
-            "flex h-14 w-full items-center justify-end gap-10 pr-20 lg:text-sm xl:text-base"
+            "border-tertiary flex w-full flex-col items-start gap-2.5 border-1 border-dashed p-2"
           }
         >
-          <div>
-            <Image
-              src={item.imageUrl}
-              alt={"Product preview"}
-              width={33}
-              height={41}
-            />
+          <p>№ 7830–004747–8671: ORDER DATE</p>
+          <div className={"flex w-full gap-2.5"}>
+            <span>{totalPrice} &#8381;</span>
+            <button className={"text-hover hover:text-active cursor-pointer"}>
+              Ожидание оплаты
+            </button>
           </div>
-          <div>Цвет/{item.color}</div>
-          <div>Размер/{item.size}</div>
-          <div>Количество/{item.quantity} шт.</div>
-          <div>Цена/{item.price * item.quantity} &#8381;</div>
         </div>
+      ) : (
+        <p>У вас нет неоплаченных заказов</p>
       )}
-    </article>
+    </section>
+  );
+};
+
+const ButtonLogout = () => {
+  return (
+    <button
+      className={
+        "border-hover hover:bg-hover hover:text-background active:text-background active:bg-active w-full" +
+        " cursor-pointer" +
+        " border-1 p-2"
+      }
+    >
+      ВЫЙТИ
+    </button>
   );
 };

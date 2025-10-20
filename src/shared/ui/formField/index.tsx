@@ -28,7 +28,8 @@ export function FormField({
           id={id}
           autoComplete={"off"}
           className={
-            "outline-tertiary group-hover:outline-hover w-full cursor-pointer px-2 py-3 outline-1"
+            "border-tertiary group-hover:border-hover w-full cursor-pointer px-2 py-3" +
+            " border-1 transition-colors outline-none"
           }
         />
       </div>

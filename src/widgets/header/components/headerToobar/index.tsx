@@ -24,7 +24,7 @@ export const HeaderToolbar = () => {
         О БРЕНДЕ
       </Link>
       <HeaderSearchField />
-      <Link href={"/account"} className={"lg-block hidden"}>
+      <Link href={"/account"} className={"hidden sm:block"}>
         <UserSvg
           className={"hover:[&>path]:stroke-hover cursor-pointer"}
           width={24}

@@ -1,5 +1,5 @@
-import { Account } from "@/features/account";
 import { Metadata } from "next";
+import { AccountView } from "@/features/account";
 import { ContainerPage, Footer, Main, Header } from "@/widgets";
 
 export const metadata: Metadata = {
@@ -10,9 +10,9 @@ export const metadata: Metadata = {
 export default function AccountPage() {
   return (
     <ContainerPage>
-      <Header className={"mb-20"} />
-      <Main className={"container-padding mb-20"}>
-        <Account />
+      <Header className={"container-margin"} />
+      <Main className={"container-margin"}>
+        <AccountView />
       </Main>
       <Footer />
     </ContainerPage>
