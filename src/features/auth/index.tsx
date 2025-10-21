@@ -10,7 +10,11 @@ export const Auth = () => {
 
   return (
     <section className={"flex w-full justify-center"}>
-      <div className={"flex w-1/2 flex-col gap-5"}>
+      <div
+        className={
+          "container-padding flex w-full flex-col gap-5 sm:w-1/2 sm:p-0"
+        }
+      >
         <div className={"flex h-full items-start justify-between [&>*]:w-1/2"}>
           <button
             className={clsx("cursor-pointer bg-black/10 p-1", {

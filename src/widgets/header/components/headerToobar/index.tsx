@@ -12,6 +12,7 @@ export const HeaderToolbar = () => {
   const { totalQuantity, isBasketOpen } = useAppSelector(
     (state) => state.basketState,
   );
+  const { isAuth } = useAppSelector((state) => state.authState);
 
   return (
     <div className={"flex min-w-[25%] items-center justify-end gap-7"}>
@@ -24,7 +25,7 @@ export const HeaderToolbar = () => {
         О БРЕНДЕ
       </Link>
       <HeaderSearchField />
-      <Link href={"/account"} className={"hidden sm:block"}>
+      <Link href={isAuth ? "/account" : "/auth"} className={"hidden sm:block"}>
         <UserSvg
           className={"hover:[&>path]:stroke-hover cursor-pointer"}
           width={24}

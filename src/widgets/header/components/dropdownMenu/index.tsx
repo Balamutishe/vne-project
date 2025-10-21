@@ -67,6 +67,8 @@ export const DropdownMenuMobile = () => {
   const { collectionHeaderType } = useAppSelector(
     (state) => state.collectionsState,
   );
+  const { isAuth } = useAppSelector((state) => state.authState);
+
   const dispatch = useAppDispatch();
 
   const navList: { name: string; value: TGender }[] = [
@@ -118,7 +120,7 @@ export const DropdownMenuMobile = () => {
           </Link>
         </div>
         <Link
-          href={"/account"}
+          href={isAuth ? "/account" : "/auth"}
           className={"py-1"}
           onClick={handleSetVisibility}
         >

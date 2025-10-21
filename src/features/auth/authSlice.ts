@@ -4,7 +4,7 @@ interface AuthState {
   isAuth: boolean;
 }
 
-const initialState: AuthState = { isAuth: true };
+const initialState: AuthState = { isAuth: false };
 
 const authSlice = createSlice({
   name: "authState",
