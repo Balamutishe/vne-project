@@ -1,3 +1,5 @@
+"use client";
+
 import { clsx } from "clsx";
 import { ChangeEvent, useEffect, useRef } from "react";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";

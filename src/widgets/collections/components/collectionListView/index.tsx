@@ -1,4 +1,4 @@
-import { toggleDropdownMenuVisible } from "@/widgets/header/components/dropdownMenu/dropdownMenuSlice";
+import { toggleDropdownMenuVisible } from "@/widgets/dropdownMenu/dropdownMenuSlice";
 import Link from "next/link";
 import { FC } from "react";
 import { getDataByCollection } from "@/server/data";

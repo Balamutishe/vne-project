@@ -1,69 +1,13 @@
-import { toggleDropdownMenuVisible } from "@/widgets/header/components/dropdownMenu/dropdownMenuSlice";
-import Link from "next/link";
-import { clsx } from "clsx";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { TGender } from "@/shared/types/categories";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { toggleCollectionHeader } from "@/widgets/collections/collectionsSlice";
-import { DropdownMenuClose } from "@/widgets/header/components/dropdownMenu/components";
-import { CollectionListView } from "@/widgets/collections/components/collectionListView";
-import UserSvg from "../../icons/user.svg";
+import { CollectionListView } from "@/widgets/collections/components";
+import { toggleDropdownMenuVisible } from "@/widgets/dropdownMenu/dropdownMenuSlice";
+import UserSvg from "@/widgets/header/icons/user.svg";
+import { clsx } from "clsx";
+import Link from "next/link";
 
-export const DropdownMenuView = () => {
-  const { isDropdownMenuVisible } = useAppSelector(
-    (state) => state.dropdownMenuState,
-  );
-
-  if (!isDropdownMenuVisible) return null;
-
-  return (
-    <>
-      <section className={"hidden lg:block"}>
-        <DropdownMenuDesktop />
-      </section>
-      <section className={"lg:hidden"}>
-        <DropdownMenuMobile />
-      </section>
-    </>
-  );
-};
-
-export const DropdownMenuDesktop = () => {
-  const { collectionHeaderType } = useAppSelector(
-    (state) => state.collectionsState,
-  );
-
-  return (
-    <section className={"bg-background"}>
-      <div
-        className={
-          "border-tertiary flex h-11.5 items-center border-t-1 border-b-1"
-        }
-      >
-        <span className={"container-padding flex w-[23%] items-center"}>
-          {collectionHeaderType !== "unisex" && "ОДЕЖДА"}
-        </span>
-        <span
-          className={
-            "border-tertiary flex w-[23%] items-center border-r-1 border-l-1 px-4 py-2.5"
-          }
-        >
-          АКСЕССУАРЫ
-        </span>
-        <span
-          className={"container-padding flex w-[54%] items-center justify-end"}
-        >
-          <DropdownMenuClose />
-        </span>
-      </div>
-      <div className={"flex h-80 [&>*]:w-[23%]"}>
-        <CollectionListView variant={"header"} />
-      </div>
-      <div className={"w-[54%]"}></div>
-    </section>
-  );
-};
-
-export const DropdownMenuMobile = () => {
+export const DropdownMobile = () => {
   const { collectionHeaderType } = useAppSelector(
     (state) => state.collectionsState,
   );

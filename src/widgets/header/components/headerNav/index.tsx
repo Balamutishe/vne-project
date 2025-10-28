@@ -1,9 +1,13 @@
+"use client";
+
 import { TGender } from "@/shared/types/categories";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { toggleCollectionHeader } from "@/widgets/collections/collectionsSlice";
-import { DropdownMenuClose } from "@/widgets/header/components/dropdownMenu/components";
-import { toggleDropdownMenuVisible } from "@/widgets/header/components/dropdownMenu/dropdownMenuSlice";
+import { DropdownMenuView } from "@/widgets/dropdownMenu";
+import { DropdownMenuClose } from "@/widgets/dropdownMenu/components";
+import { toggleDropdownMenuVisible } from "@/widgets/dropdownMenu/dropdownMenuSlice";
 import BurgerSvg from "@/widgets/header/icons/burger.svg";
+import { useEffect, useRef } from "react";
 
 export const HeaderNav = () => {
   const { isDropdownMenuVisible } = useAppSelector(
@@ -17,8 +21,24 @@ export const HeaderNav = () => {
     { name: "АКСЕССУАРЫ", value: "unisex" },
   ];
 
+  const ref = useRef<HTMLDivElement | null>(null);
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (ref.current && !ref.current.contains(event.target as Node)) {
+      dispatch(toggleDropdownMenuVisible(false));
+      dispatch(toggleCollectionHeader("women"));
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <>
+    <div ref={ref}>
       <div className={"lg:hidden"}>
         {!isDropdownMenuVisible ? (
           <button
@@ -51,6 +71,7 @@ export const HeaderNav = () => {
           ))}
         </ul>
       </nav>
-    </>
+      <DropdownMenuView />
+    </div>
   );
 };

@@ -1,3 +1,5 @@
+"use client";
+
 import { Basket } from "@/features/basket";
 import { toggleBasketOpen } from "@/features/basket/basketSlice";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
