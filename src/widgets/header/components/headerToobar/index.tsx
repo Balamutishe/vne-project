@@ -6,7 +6,7 @@ import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import Link from "next/link";
 import UserSvg from "../../icons/user.svg";
 import BagSvg from "../../icons/bag.svg";
-import { HeaderSearchField } from "@/features/header/headerSearchField";
+import { HeaderSearchField } from "@/features/searchField";
 
 export const HeaderToolbar = () => {
   const dispatch = useAppDispatch();

@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import collectionsReducer from "@/widgets/collections/collectionsSlice";
 import headerReducer from "@/widgets/dropdownMenu/dropdownMenuSlice";
-import headerSearchReducer from "@/features/header/headerSearchField/headerSearchFieldSlice";
+import headerSearchReducer from "@/features/searchField/headerSearchFieldSlice";
 import dropdownMenuReducer from "@/widgets/dropdownMenu/dropdownMenuSlice";
 import basketReducer from "@/features/basket/basketSlice";
 import paymentReducer from "@/features/payment/paymentSlice";

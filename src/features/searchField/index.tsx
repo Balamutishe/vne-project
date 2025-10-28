@@ -8,7 +8,7 @@ import { useSearchParams, useRouter, useParams } from "next/navigation";
 import {
   setSearchFieldValue,
   toggleHeaderSearchFieldVisible,
-} from "@/features/header/headerSearchField/headerSearchFieldSlice";
+} from "@/features/searchField/headerSearchFieldSlice";
 import SearchSvg from "./icons/search.svg";
 import CloseSvg from "./icons/close.svg";
 

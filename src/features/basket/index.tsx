@@ -1,10 +1,11 @@
 "use client";
 
 import { FC, useEffect, useRef } from "react";
-import { BasketClear } from "@/features/basket/basketClear";
 import Link from "next/link";
 import Image from "next/image";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { clsx } from "clsx";
+import { BasketClear } from "@/features/basket/basketClear";
 import {
   BasketProduct,
   productAdd,
@@ -12,7 +13,6 @@ import {
   toggleBasketOpen,
 } from "@/features/basket/basketSlice";
 import { ProductDeleteFromBasket } from "@/features/basket/productDeleteFromBasket";
-import { clsx } from "clsx";
 import MinusSvg from "./icons/minus.svg";
 import PlusSvg from "./icons/plus.svg";
 
