@@ -1,6 +1,6 @@
 "use client";
 
-import { BreadCrumb } from "@/widgets/breadCrumb";
+import { BreadCrumb } from "@/features/breadCrumb";
 import { SupportContentView } from "@/widgets/support/components";
 import { SupportNav } from "@/widgets/support/components/supportNav";
 

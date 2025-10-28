@@ -1,14 +1,14 @@
 "use client";
 
-import { getDataByCategory, getDataByFilter, getTopList } from "@/server/data";
-import { TGender, TProduct } from "@/shared/types/categories";
-import { SectionTitle } from "@/shared/ui/sectionTitle";
-import { BreadCrumb } from "@/widgets/breadCrumb";
+import { FC } from "react";
 import { clsx } from "clsx";
 import Link from "next/link";
 import { useParams, useSearchParams } from "next/navigation";
-import { FC } from "react";
-import Image from "next/image";
+import { getDataByCategory, getDataByFilter, getTopList } from "@/server/data";
+import { BreadCrumb } from "@/features/breadCrumb";
+import { TGender, TProduct } from "@/shared/types/categories";
+import { SectionTitle } from "@/shared/ui/sectionTitle";
+import { ProductCard } from "@/widgets/productsList/components/productCard";
 
 export const ProductsListView = () => {
   const { category, subcategory } = useParams<{
@@ -53,7 +53,7 @@ export const ProductsListView = () => {
   );
 };
 
-export const ProductsList: FC<{
+const ProductsList: FC<{
   data: TProduct[];
   title: string;
   variant: "main" | "category";
@@ -103,32 +103,5 @@ export const ProductsList: FC<{
         )}
       </section>
     </>
-  );
-};
-
-export const ProductCard: FC<{
-  title: string;
-  price: number;
-  previewImgUrl: string;
-}> = ({ title, price, previewImgUrl }) => {
-  return (
-    <article className={"relative size-full overflow-hidden"}>
-      <div
-        className={
-          "z-[-1] flex size-full flex-col p-2 text-[0.5rem] sm:flex-row sm:justify-between sm:text-lg"
-        }
-      >
-        <h3>{title}</h3>
-        <span>{price} &#8381;</span>
-      </div>
-      <Image
-        className={"absolute top-4 z-[-2] size-full object-cover"}
-        src={previewImgUrl}
-        alt={"Product image"}
-        width={616}
-        height={813}
-        priority={true}
-      />
-    </article>
   );
 };

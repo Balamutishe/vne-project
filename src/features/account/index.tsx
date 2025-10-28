@@ -6,7 +6,7 @@ import { clsx } from "clsx";
 import localFont from "next/font/local";
 import { useAppSelector } from "@/store/hooks";
 import { FormField } from "@/shared/ui/formField";
-import ArrowDownSvg from "@/widgets/products/icons/arrow-down.svg";
+import ArrowDownSvg from "@/widgets/productDetails/icons/arrow-down.svg";
 
 const damionFont = localFont({
   src: "../../../public/fonts/DaMiOne-Regular.ttf",

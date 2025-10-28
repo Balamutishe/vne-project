@@ -1,7 +1,7 @@
-import { getDataAll } from "@/server/data";
-import { TCategoriesResponseData } from "@/shared/types/categories";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { getDataAll } from "@/server/data";
+import { TCategoriesResponseData } from "@/shared/types/categories";
 
 export const BreadCrumb = () => {
   const data: TCategoriesResponseData = getDataAll();
@@ -47,7 +47,7 @@ export const BreadCrumb = () => {
           }
         >
           <li>
-            <Link href={"/"}>Главная</Link>
+            <Link href={"/public"}>Главная</Link>
           </li>
           {result.map((item) => (
             <li key={item.slug}> / {item.name}</li>

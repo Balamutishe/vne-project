@@ -3,7 +3,7 @@
 import { clsx } from "clsx";
 import Image from "next/image";
 import Link from "next/link";
-import ArrowDownSvg from "@/widgets/products/icons/arrow-down.svg";
+import ArrowDownSvg from "@/widgets/productDetails/icons/arrow-down.svg";
 import { FC, useState } from "react";
 import InstagramSvg from "./icons/instagram.svg";
 import VkSvg from "./icons/vk.svg";
