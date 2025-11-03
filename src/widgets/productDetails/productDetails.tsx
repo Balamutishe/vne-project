@@ -1,33 +1,21 @@
 "use client";
 
-import { useState } from "react";
-import { useParams } from "next/navigation";
+import { FC, useState } from "react";
 import { ReactSwiper } from "@/widgets/swiper";
-import { ProductAddToBasket } from "@/features/basket/productAddToBasket";
-import { TProduct } from "@/shared/types/categories";
-import { getDataProductById } from "@/server/data";
+import { ProductAddToBasket } from "@/features/basket/addToBasket";
+import { TProduct } from "@/lib/mongoRepository/actions";
 import {
   ProductDetailsHeader,
   ProductDetailsImagesList,
   ProductDetailsDescription,
 } from "@/widgets/productDetails/components";
 
-export const ProductDetails = () => {
-  const { category, subcategory, productId } = useParams<{
-    category: "men" | "women" | "unisex";
-    subcategory: string;
-    productId: string;
-  }>();
-
+export const ProductDetails: FC<{ product: TProduct | undefined }> = ({
+  product,
+}) => {
   const [size, setSize] = useState("M");
 
-  const product: TProduct | undefined = getDataProductById(
-    category,
-    subcategory,
-    productId,
-  );
-
-  if (!product) return <div>Продукт не найден</div>;
+  if (!product) return <div>Product not founded</div>;
 
   const { description, care, sizeChart, color } = product.details;
 

@@ -1,162 +1,184 @@
-import { toggleDropdownMenuVisible } from "@/widgets/dropdownMenu/dropdownMenuSlice";
-import Link from "next/link";
-import { FC } from "react";
-import { getDataByCollection } from "@/server/data";
-import { TCollection } from "@/shared/types/categories";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { toggleCategoryMain } from "@/widgets/collections/collectionsSlice";
-import { clsx } from "clsx";
-import ArrowSvg from "../../icons/arrow.svg";
+"use client";
 
-export const CollectionListView: FC<{ variant: "main" | "header" }> = ({
-  variant,
-}) => {
+import { FC } from "react";
+import { useAppSelector } from "@/store/hooks";
+import {
+  CollectionListMain,
+  CollectionListHeader,
+} from "@/widgets/collections/components/collectionListView/components";
+
+const collectionsDataWithList = {
+  men: [
+    {
+      group: "clothing",
+      slug: "trousers",
+      name: "Брюки и джинсы",
+    },
+    {
+      group: "clothing",
+      slug: "shirts",
+      name: "Рубашки",
+    },
+    {
+      group: "clothing",
+      slug: "t-shirts",
+      name: "Майки и футболки",
+    },
+    {
+      group: "clothing",
+      slug: "sweaters",
+      name: "Худи и свитеры",
+    },
+    {
+      group: "clothing",
+      slug: "jackets",
+      name: "Пиджаки",
+    },
+    {
+      group: "clothing",
+      slug: "outerwear",
+      name: "Верхняя одежда",
+    },
+    {
+      group: "accessories",
+      slug: "bags",
+      name: "Сумки",
+    },
+    {
+      group: "accessories",
+      slug: "hoods",
+      name: "Капюшоны",
+    },
+    {
+      group: "accessories",
+      slug: "scarfs",
+      name: "Шарфы",
+    },
+    {
+      group: "accessories",
+      slug: "caps",
+      name: "Шапки",
+    },
+    {
+      group: "accessories",
+      slug: "balaclavas",
+      name: "Балаклавы",
+    },
+  ],
+
+  women: [
+    {
+      group: "clothing",
+      slug: "dresses",
+      name: "Платья",
+    },
+    {
+      group: "clothing",
+      slug: "trousers",
+      name: "Брюки и джинсы",
+    },
+    {
+      group: "clothing",
+      slug: "skirts",
+      name: "Юбки",
+    },
+    {
+      group: "clothing",
+      slug: "sweaters",
+      name: "Свитеры",
+    },
+    {
+      group: "clothing",
+      slug: "jackets",
+      name: "Жакеты",
+    },
+    {
+      group: "clothing",
+      slug: "t-shirts",
+      name: "Топы и футболки",
+    },
+    {
+      group: "clothing",
+      slug: "shirts",
+      name: "Рубашки",
+    },
+    {
+      group: "clothing",
+      slug: "outerwear",
+      name: "Верхняя одежда",
+    },
+    {
+      group: "accessories",
+      slug: "bags",
+      name: "Сумки",
+    },
+    {
+      group: "accessories",
+      slug: "hoods",
+      name: "Капюшоны",
+    },
+    {
+      group: "accessories",
+      slug: "scarfs",
+      name: "Шарфы",
+    },
+    {
+      group: "accessories",
+      slug: "caps",
+      name: "Шапки",
+    },
+    {
+      group: "accessories",
+      slug: "balaclavas",
+      name: "Балаклавы",
+    },
+  ],
+
+  unisex: [
+    {
+      group: "accessories",
+      slug: "bags",
+      name: "Сумки",
+    },
+    {
+      group: "accessories",
+      slug: "hoods",
+      name: "Капюшоны",
+    },
+    {
+      group: "accessories",
+      slug: "scarfs",
+      name: "Шарфы",
+    },
+    {
+      group: "accessories",
+      slug: "caps",
+      name: "Шапки",
+    },
+    {
+      group: "accessories",
+      slug: "balaclavas",
+      name: "Балаклавы",
+    },
+  ],
+};
+
+export const CollectionListView: FC<{
+  variant: "main" | "header";
+}> = ({ variant }) => {
   const { collectionHeaderType, collectionMainType } = useAppSelector(
     (state) => state.collectionsState,
   );
 
-  const currentCollection = getDataByCollection(
-    variant === "header" ? collectionHeaderType : collectionMainType,
-  );
+  const currentDataWithList =
+    variant === "header"
+      ? collectionsDataWithList[collectionHeaderType]
+      : collectionsDataWithList[collectionMainType];
 
   switch (variant) {
     case "header":
-      return <CollectionListHeader collectionData={currentCollection} />;
+      return <CollectionListHeader collectionData={currentDataWithList} />;
     case "main":
-      return <CollectionListMain collectionData={currentCollection} />;
+      return <CollectionListMain collectionData={currentDataWithList} />;
   }
-};
-
-const CollectionListMain: FC<{
-  collectionData: TCollection;
-}> = ({ collectionData }) => {
-  const dispatch = useAppDispatch();
-  const { collectionMainType } = useAppSelector(
-    (state) => state.collectionsState,
-  );
-
-  return (
-    <ul>
-      {collectionData.clothing.map((category) => (
-        <li
-          onMouseEnter={() => dispatch(toggleCategoryMain(category.slug))}
-          key={category.id}
-          className={clsx(
-            "hover:text-hover hover:border-b-hover cursor-pointer transition-colors last:border-b-0" +
-              " border-tertiary border-b-[0.5px]",
-          )}
-        >
-          <Link
-            href={`/categories/${collectionMainType}/${category.slug}`}
-            className={
-              "group flex-center-between p-1 text-lg font-light sm:p-2 sm:text-xl lg:text-2xl xl:p-4" +
-              " xl:text-3xl"
-            }
-          >
-            <div>
-              {category.name} ({category.count})
-            </div>
-            <ArrowSvg
-              className={"group-hover:[&>path]:fill-hover"}
-              width={48}
-              height={8}
-            />
-          </Link>
-        </li>
-      ))}
-    </ul>
-  );
-};
-
-const CollectionListHeader: FC<{
-  collectionData: TCollection;
-}> = ({ collectionData }) => {
-  const { collectionHeaderType } = useAppSelector(
-    (state) => state.collectionsState,
-  );
-  const dispatch = useAppDispatch();
-
-  const handleMenuClose = () => {
-    dispatch(toggleDropdownMenuVisible(false));
-  };
-
-  return (
-    <>
-      <ul
-        className={clsx(
-          "flex flex-col items-start justify-between px-2 py-4 lg:block lg:px-13.5 lg:py-2.5",
-        )}
-      >
-        {collectionData.clothing.map((category) => {
-          return (
-            <li
-              key={category.id}
-              className={clsx(
-                "flex-center-between hover:text-hover hover:border-b-hover cursor-pointer transition-colors" +
-                  " pt-1 pb-1 last:border-b-0 lg:pt-0 lg:pb-0",
-              )}
-              onClick={handleMenuClose}
-            >
-              <Link
-                href={`/categories/${collectionHeaderType}/${category.slug}`}
-              >
-                {category.name} ({category.count})
-              </Link>
-            </li>
-          );
-        })}
-        <div
-          className={clsx("", {
-            "block lg:hidden": collectionHeaderType === "unisex",
-            hidden:
-              collectionHeaderType === "men" ||
-              collectionHeaderType === "women",
-          })}
-        >
-          {collectionData.accessories.map((category) => {
-            return (
-              <li
-                key={category.id}
-                className={clsx(
-                  "flex-center-between hover:text-hover hover:border-b-hover cursor-pointer transition-colors" +
-                    " pt-1 pb-1 last:border-b-0 lg:pt-0 lg:pb-0",
-                )}
-                onClick={handleMenuClose}
-              >
-                <Link
-                  href={`/categories/${collectionHeaderType}/${category.slug}`}
-                >
-                  {category.name} ({category.count})
-                </Link>
-              </li>
-            );
-          })}
-        </div>
-      </ul>
-      <ul
-        className={
-          "border-tertiary hidden border-r-1 border-l-1 px-4 py-2.5 lg:block"
-        }
-      >
-        {collectionData.accessories.map((category) => {
-          return (
-            <li
-              key={category.id}
-              className={clsx(
-                "flex items-center justify-between" +
-                  " hover:text-hover hover:border-b-hover cursor-pointer transition-colors last:border-b-0",
-              )}
-              onClick={handleMenuClose}
-            >
-              <Link
-                href={`/categories/${collectionHeaderType}/${category.slug}`}
-              >
-                {category.name} ({category.count})
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-    </>
-  );
 };

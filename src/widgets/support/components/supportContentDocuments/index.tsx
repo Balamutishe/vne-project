@@ -26,7 +26,7 @@ export const SupportContentDocuments = () => {
       );
     case "publicOffer":
       return (
-        <div className={"max-h-70 overflow-auto sm:max-h-140"}>
+        <div className={"max-h-70 overflow-auto sm:max-h-120"}>
           <button
             className={clsx(
               "text-hover hover:text-active mb-5 cursor-pointer",
@@ -38,7 +38,7 @@ export const SupportContentDocuments = () => {
           >
             Назад к документам
           </button>
-          <p className={"max-h-70 sm:max-h-140"}>
+          <p className={"max-h-70 sm:max-h-120"}>
             Публичная оферта
             <br />
             <br />
@@ -380,7 +380,7 @@ export const SupportContentDocuments = () => {
       );
     case "personalData":
       return (
-        <div className={"max-h-70 overflow-auto sm:max-h-140"}>
+        <div className={"max-h-70 overflow-auto sm:max-h-120"}>
           <button
             className={clsx(
               "text-hover hover:text-active mb-5 cursor-pointer",
@@ -392,7 +392,7 @@ export const SupportContentDocuments = () => {
           >
             Назад к документам
           </button>
-          <p className={"max-h-140 overflow-auto"}>
+          <p className={"max-h-120 overflow-auto"}>
             Политика в отношении обработки персональных данных
             <br />
             <br />

@@ -1,5 +1,3 @@
-"use client";
-
 import { SectionTitle } from "@/shared/ui/sectionTitle";
 import {
   CollectionListView,

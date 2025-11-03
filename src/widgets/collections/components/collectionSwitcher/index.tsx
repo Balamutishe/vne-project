@@ -1,3 +1,5 @@
+"use client";
+
 import { TGender } from "@/shared/types/categories";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import {

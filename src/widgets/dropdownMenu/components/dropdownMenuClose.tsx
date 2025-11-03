@@ -1,3 +1,5 @@
+"use client";
+
 import { useAppDispatch } from "@/store/hooks";
 import { toggleDropdownMenuVisible } from "@/widgets/dropdownMenu/dropdownMenuSlice";
 import CloseSvg from "../icons/close.svg";

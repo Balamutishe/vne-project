@@ -26,7 +26,7 @@
   }
 
   .container-margin {
-    @apply mb-10 lg:mb-15 xl:mb-20
+    @apply mb-8 lg:mb-12 xl:mb-14
   }
 
   .flex-center-between {

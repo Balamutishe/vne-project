@@ -1,5 +1,9 @@
 "use client";
 
+import {
+  TCategoriesNames,
+  TCollectionsNames,
+} from "@/lib/mongoRepository/actions";
 import { clsx } from "clsx";
 import { ChangeEvent, useEffect, useRef } from "react";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
@@ -14,9 +18,9 @@ import CloseSvg from "./icons/close.svg";
 
 export const HeaderSearchField = () => {
   const ref = useRef<HTMLInputElement | null>(null);
-  const { category, subcategory } = useParams<{
-    category: "men" | "women" | "accessories";
-    subcategory: string;
+  const { collection, category } = useParams<{
+    collection: TCollectionsNames;
+    category: TCategoriesNames;
   }>();
   const searchParams = useSearchParams();
   const { push } = useRouter();
@@ -38,7 +42,6 @@ export const HeaderSearchField = () => {
   const handleSearch = useDebouncedCallback(
     (e: ChangeEvent<HTMLInputElement>) => {
       setSearchFieldValue(e.target.value);
-      console.log(category, subcategory);
 
       const newSearchParams = new URLSearchParams();
       searchParams
@@ -48,20 +51,20 @@ export const HeaderSearchField = () => {
       if (e.target.value) {
         newSearchParams.set("productName", e.target.value);
 
-        if (!category || !subcategory) {
-          push(`/categories?${newSearchParams.toString()}`);
-        } else {
+        if (!collection || !category) {
+          push(`/?${newSearchParams.toString()}`);
+        } else if (collection && category) {
           push(
-            `/categories/${category}/${subcategory}?${newSearchParams.toString()}`,
+            `/collections/${collection}/${category}?${newSearchParams.toString()}`,
           );
         }
       } else {
         newSearchParams.delete("productName");
 
-        if (!category || !subcategory) {
+        if (!collection || !category) {
           push(`/`);
-        } else if (category && subcategory) {
-          push(`/categories/${category}/${subcategory}`);
+        } else if (collection && category) {
+          push(`/collections/${collection}/${category}`);
         }
       }
     },

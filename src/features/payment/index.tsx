@@ -17,7 +17,7 @@ export const Payment = () => {
   return (
     <form
       className={
-        "flex h-full flex-col justify-between sm:flex-row sm:gap-14 lg:pt-25 xl:pt-45 [&>section]:w-full" +
+        "flex h-full flex-col justify-between sm:flex-row sm:gap-14 [&>section]:w-full" +
         " [&>section]:mb-10 sm:[&>section]:mb-0" +
         " sm:[&>section]:w-1/3"
       }

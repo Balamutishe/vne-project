@@ -5,6 +5,7 @@ import {
   HeaderLogo,
   HeaderNav,
   HeaderToolbar,
+  DropdownMenuView,
 } from "@/widgets/header/components";
 
 export const Header: FC<{
@@ -27,6 +28,7 @@ export const Header: FC<{
       >
         <HeaderPreview />
       </section>
+      <DropdownMenuView />
     </header>
   );
 };

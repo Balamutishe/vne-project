@@ -12,7 +12,7 @@ import {
   productDelete,
   toggleBasketOpen,
 } from "@/features/basket/basketSlice";
-import { ProductDeleteFromBasket } from "@/features/basket/productDeleteFromBasket";
+import { ProductDeleteFromBasket } from "@/features/basket/deleteFromBasket";
 import MinusSvg from "./icons/minus.svg";
 import PlusSvg from "./icons/plus.svg";
 
@@ -54,7 +54,7 @@ export const Basket = () => {
         "bg-background max-h-180 w-60 px-2.5 py-4 text-[0.65rem] sm:w-80 sm:text-base lg:max-h-199 lg:w-98 lg:px-5 lg:py-8 lg:text-lg",
       )}
     >
-      <div className={"flex-center-between mb-3 sm:mb-5"}>
+      <div className={"flex-center-between mb-3 w-full sm:mb-5"}>
         <h3>КОРЗИНА</h3>
         <BasketClear />
       </div>
@@ -104,7 +104,7 @@ const BasketCard: FC<{ product: BasketProduct }> = ({ product }) => {
           alt={product.name}
           width={107}
           height={141}
-          className={"size-full object-cover"}
+          className={"size-full object-contain"}
         />
       </div>
       <div className={"w-2/3"}>
