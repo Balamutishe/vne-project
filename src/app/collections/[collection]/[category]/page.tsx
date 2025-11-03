@@ -14,29 +14,14 @@ export const metadata: Metadata = {
 
 export default async function CategoryPage({
   params,
-  searchParams,
 }: {
   params: Promise<{
     collection: TCollectionsNames;
     category: TCategoriesNames;
   }>;
-  searchParams: Promise<{
-    productName: string;
-  }>;
 }) {
   const { collection, category } = await params;
-  const { productName } = await searchParams;
-  const { name, list } = await categoryGet(collection, category).then(
-    (data) => {
-      if (productName)
-        return {
-          ...data,
-          list: data.list.filter((item) => item.name === productName),
-        };
-
-      return data;
-    },
-  );
+  const { name, list } = await categoryGet(collection, category);
 
   return (
     <ContainerPage>
