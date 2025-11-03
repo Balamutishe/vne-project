@@ -85,17 +85,26 @@ export const collectionGet = async (collectionName: TCollectionsNames) => {
 export const categoryGet = async (
   collectionName: TCollectionsNames,
   categoryName: TCategoriesNames,
+  filter?: string,
 ): Promise<TCategory> => {
   try {
     await connectToDb();
 
-    const data = await client
+    let data = await client
       .db("vne")
       .collection<TCategory>(collectionName)
-      .find({ slug: categoryName })
-      .toArray();
+      .findOne({ slug: categoryName });
 
-    return data[0];
+    if (filter && data) {
+      data = {
+        ...data,
+        list: data.list.filter((product) =>
+          product.name.toLowerCase().includes(filter.toLowerCase()),
+        ),
+      };
+    }
+
+    return data!;
   } catch (error) {
     if (error instanceof Error) {
       console.error(error.message);
@@ -103,7 +112,7 @@ export const categoryGet = async (
       console.error(error);
     }
     // @ts-ignore
-    return [];
+    return { name: "СПИСОК ПУСТ", list: [] };
   } finally {
     await client.close();
   }
@@ -213,11 +222,11 @@ export const productGetByFilter = async (
     if (collectionName && categoryName) {
       const category = await categoryGet(collectionName, categoryName);
 
-      const listFiltered = category.list.filter((product) =>
+      const listFiltered = category!.list.filter((product) =>
         product.name.toLowerCase().includes(productName.toLowerCase()),
       );
 
-      return { name: category.name, list: listFiltered };
+      return { name: category!.name, list: listFiltered };
     }
 
     const collectionsList = await client.db("vne").listCollections().toArray();

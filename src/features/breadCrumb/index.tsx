@@ -1,10 +1,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { getDataAll } from "@/server/data";
-import { TCategoriesResponseData } from "@/shared/types/categories";
 
 export const BreadCrumb = () => {
-  const data: TCategoriesResponseData = getDataAll();
+  // const data: TCategoriesResponseData = getDataAll();
 
   const pathname = usePathname();
 
@@ -22,19 +20,19 @@ export const BreadCrumb = () => {
         return { name: "Категории", slug: "categories" };
       if (item === "payments") return { name: "Оплата", slug: "payments" };
 
-      return Object.values(data)
-        .map((category) => {
-          return Object.values(category)
-            .flat()
-            .map((categoryItem) => {
-              return {
-                name: categoryItem.name,
-                slug: categoryItem.slug,
-              };
-            });
-        })
-        .flat()
-        .find((category) => category.slug === item);
+      // return Object.values(data)
+      //   .map((category) => {
+      //     return Object.values(category)
+      //       .flat()
+      //       .map((categoryItem) => {
+      //         return {
+      //           name: categoryItem.name,
+      //           slug: categoryItem.slug,
+      //         };
+      //       });
+      //   })
+      //   .flat()
+      //   .find((category) => category.slug === item);
     })
     .filter((item) => item !== undefined && item !== null);
 

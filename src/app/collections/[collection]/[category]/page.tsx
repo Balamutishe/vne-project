@@ -6,6 +6,7 @@ import {
 import { Metadata } from "next";
 import { ContainerPage, Footer, Main, Header } from "@/widgets";
 import { ProductsList } from "@/widgets/productsList";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Category",
@@ -14,20 +15,31 @@ export const metadata: Metadata = {
 
 export default async function CategoryPage({
   params,
+  searchParams,
 }: {
   params: Promise<{
     collection: TCollectionsNames;
     category: TCategoriesNames;
   }>;
+  searchParams: Promise<{
+    productName: string;
+  }>;
 }) {
   const { collection, category } = await params;
-  const { name, list } = await categoryGet(collection, category);
+  const { productName } = await searchParams;
+  const { name, list } = await categoryGet(
+    collection,
+    category,
+    productName || "",
+  );
 
   return (
     <ContainerPage>
       <Header className={"container-margin"} />
       <Main className={"container-padding"}>
-        <ProductsList data={list} title={name} variant={"category"} />
+        <Suspense fallback={<div>Загрузка...</div>}>
+          <ProductsList data={list} title={name} variant={"category"} />
+        </Suspense>
       </Main>
       <Footer />
     </ContainerPage>

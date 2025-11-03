@@ -1,6 +1,5 @@
 "use client";
 
-import { BreadCrumb } from "@/features/breadCrumb";
 import { SupportContentView } from "@/widgets/support/components";
 import { SupportNav } from "@/widgets/support/components/supportNav";
 
@@ -8,9 +7,6 @@ export const SupportView = () => {
   return (
     <>
       <section className={"hidden flex-1 flex-col sm:flex"}>
-        <div className={"container-margin container-padding"}>
-          <BreadCrumb />
-        </div>
         <SupportMain />
       </section>
       <section className={"flex flex-1 sm:hidden"}>
