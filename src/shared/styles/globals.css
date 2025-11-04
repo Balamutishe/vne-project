@@ -38,7 +38,7 @@
     flex flex-wrap
     border-tertiary [&>*]:border-tertiary
     [&>*]:w-1/2
-    [&>*]:h-70 sm:[&>*]:h-140 [&>*]:last:hidden md:[&>*]:last:block md:[&>*]:h-150 lg:[&>*]:h-160 xl:[&>*]:h-180
+    [&>*]:h-70 sm:[&>*]:h-140 md:[&>*]:h-150 lg:[&>*]:h-160 xl:[&>*]:h-180
     [&>*:nth-child(even)]:border-r-1
     [&>*:nth-child(even)]:border-b-1
     [&>*:nth-child(even)]:border-l-0
@@ -56,6 +56,7 @@
     xl:[&>*:nth-last-child(-n+3)]:h-120
     md:[&>*:nth-last-child(2)]:border-r-0
     [&>*:nth-last-child(2)]:border-r-1
+    [&>*]:last:hidden md:[&>*]:last:block
   }
 }
 
