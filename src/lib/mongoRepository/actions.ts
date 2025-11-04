@@ -1,5 +1,4 @@
-import { client, connectToDb } from "@/lib/mongoRepository/mongoClient";
-import { GenderSchema } from "@/shared/types/categories";
+import { connectToDb } from "@/lib/mongoRepository/mongoClient";
 import { z } from "zod";
 
 export const CollectionsNamesSchema = z.enum(["men", "women", "unisex"]);
@@ -26,7 +25,7 @@ export const ProductSchema = z.object({
   id: z.string(),
   name: z.string(),
   slug: z.string(),
-  gender: GenderSchema,
+  gender: CollectionsNamesSchema,
   category: z.string(),
   price: z.number(),
   quantity: z.number(),
@@ -63,13 +62,9 @@ export type TCategory = z.infer<typeof CategorySchema>;
 
 export const collectionGet = async (collectionName: TCollectionsNames) => {
   try {
-    await connectToDb();
+    const db = await connectToDb();
 
-    return await client
-      .db("vne")
-      .collection<TCategory>(collectionName)
-      .find({})
-      .toArray();
+    return await db!.collection<TCategory>(collectionName).find({}).toArray();
   } catch (error) {
     if (error instanceof Error) {
       console.error(error.message);
@@ -77,8 +72,6 @@ export const collectionGet = async (collectionName: TCollectionsNames) => {
       console.error(error);
     }
     return [];
-  } finally {
-    await client.close();
   }
 };
 
@@ -88,10 +81,9 @@ export const categoryGet = async (
   filter?: string,
 ): Promise<TCategory> => {
   try {
-    await connectToDb();
+    const db = await connectToDb();
 
-    let data = await client
-      .db("vne")
+    let data = await db!
       .collection<TCategory>(collectionName)
       .findOne({ slug: categoryName });
 
@@ -113,17 +105,15 @@ export const categoryGet = async (
     }
     // @ts-ignore
     return { name: "СПИСОК ПУСТ", list: [] };
-  } finally {
-    await client.close();
   }
 };
 
 export const productGetById = async (productId: string) => {
   try {
-    await connectToDb();
+    const db = await connectToDb();
     let productFind: TProduct | undefined = undefined;
 
-    const collectionsList = await client.db("vne").listCollections().toArray();
+    const collectionsList = await db!.listCollections().toArray();
     for (let collectionItem of collectionsList) {
       const collection = await collectionGet(
         collectionItem.name as TCollectionsNames,
@@ -154,17 +144,16 @@ export const productGetById = async (productId: string) => {
     } else {
       console.error(error);
     }
-  } finally {
-    await client.close();
   }
 };
 
 export const productGetByTop = async () => {
   try {
-    await connectToDb();
+    const db = await connectToDb();
+
     let productsTop: TProduct[] | [] = [];
 
-    const collectionsList = await client.db("vne").listCollections().toArray();
+    const collectionsList = await db!.listCollections().toArray();
 
     for (let collectionItem of collectionsList) {
       const collection = await collectionGet(
@@ -192,8 +181,6 @@ export const productGetByTop = async () => {
       console.error(error);
     }
     return { name: "ОШИБКА ПРИ ПОЛУЧЕНИИ ДАННЫХ", list: [] };
-  } finally {
-    await client.close();
   }
 };
 
@@ -203,8 +190,6 @@ export const productGetByFilter = async (
   categoryName?: TCategoriesNames,
 ) => {
   try {
-    await connectToDb();
-
     if (collectionName && !categoryName) {
       const collection = await collectionGet(collectionName);
 
@@ -229,7 +214,8 @@ export const productGetByFilter = async (
       return { name: category!.name, list: listFiltered };
     }
 
-    const collectionsList = await client.db("vne").listCollections().toArray();
+    const db = await connectToDb();
+    const collectionsList = await db!.listCollections().toArray();
 
     let result: TProduct[] = [];
 
@@ -259,43 +245,5 @@ export const productGetByFilter = async (
     }
 
     return { name: "ОШИБКА В ПОИСКЕ", list: [] };
-  } finally {
-    await client.close();
-  }
-};
-
-export const getDataAll = async () => {
-  try {
-    await connectToDb();
-    let dataAll: TCategory[] | [] = [];
-
-    const collectionsList = await client.db("vne").listCollections().toArray();
-
-    for (let collectionItem of collectionsList) {
-      const collection = await collectionGet(
-        collectionItem.name as TCollectionsNames,
-      );
-
-      const collectionCategories = collection
-        .map((category) => category)
-        .flat();
-
-      dataAll = [...dataAll, ...collectionCategories];
-    }
-
-    if (dataAll.length === 0) {
-      console.log(`Data not founded`);
-    }
-
-    return dataAll;
-  } catch (error) {
-    if (error instanceof Error) {
-      console.error(error.message);
-    } else {
-      console.error(error);
-    }
-    return [];
-  } finally {
-    await client.close();
   }
 };

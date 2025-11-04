@@ -22,7 +22,7 @@ export const Header: FC<{
         <HeaderToolbar />
       </section>
       <section
-        className={clsx("z-[-1] h-112 lg:h-200", {
+        className={clsx("z-[-1] h-112 w-full lg:h-200", {
           hidden: variant !== "main",
         })}
       >

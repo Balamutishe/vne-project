@@ -15,7 +15,6 @@ export const HeaderPreview = () => {
       height={800}
       width={1440}
       className={"h-full w-full object-cover"}
-      priority={true}
     />
   );
 };

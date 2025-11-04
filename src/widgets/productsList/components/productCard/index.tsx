@@ -17,11 +17,11 @@ export const ProductCard: FC<{
         <span>{price} &#8381;</span>
       </div>
       <Image
-        className={"absolute top-4 z-[-2] object-cover"}
+        className={"absolute top-4 z-[-2] object-contain"}
         src={previewImgUrl}
         alt={"Product image"}
-        width={616}
-        height={813}
+        fill={true}
+        sizes="(max-width: 768px) 50vw, (max-width: 1200px) 80vw, 100vw"
       />
     </article>
   );
