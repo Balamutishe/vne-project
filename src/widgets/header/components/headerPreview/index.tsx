@@ -10,7 +10,7 @@ export const HeaderPreview = () => {
 
   return (
     <Image
-      src={"/images/preview-3.jpg"}
+      src={"/images/preview.jpg"}
       alt={"Preview"}
       height={800}
       width={1440}

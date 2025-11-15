@@ -1,11 +1,8 @@
 "use client";
 
-import { toggleVariantPaymentForm } from "@/features/payment/paymentSlice";
-import { useOutsideClick } from "@/shared/hooks/useOutsideClick";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import ArrowDownSvg from "@/widgets/productDetails/icons/arrow-down.svg";
-import { clsx } from "clsx";
-import { FC, useRef, useState } from "react";
+import { CustomSelect } from "@/shared/ui/customSelect";
+import UserDataForm from "@/widgets/userDataForm";
+import { useAppSelector } from "@/store/hooks";
 import { BasketList } from "@/features/basket";
 import { FormField } from "@/shared/ui/formField";
 import ShareSvg from "./icons/share.svg";
@@ -15,57 +12,25 @@ export const Payment = () => {
   const { totalPrice } = useAppSelector((state) => state.basketState);
 
   return (
-    <form
+    <section
       className={
-        "flex h-full flex-col justify-between sm:flex-row sm:gap-14 [&>section]:w-full" +
+        "flex flex-col sm:flex-row sm:gap-14 [&>section]:w-full" +
         " [&>section]:mb-10 sm:[&>section]:mb-0" +
         " sm:[&>section]:w-1/3"
       }
     >
       <section>
         <h3 className={"mb-5 sm:mb-10"}>Контакты</h3>
-        <div className={"flex flex-col gap-2.5 sm:gap-5"}>
-          <FormField
-            id={crypto.randomUUID()}
-            labelText={"Фамилия"}
-            name={"surname"}
-            type="text"
-            placeholder={"Иванов"}
-          />
-          <FormField
-            id={crypto.randomUUID()}
-            labelText={"Имя"}
-            name={"firstname"}
-            type="text"
-            placeholder={"Иван"}
-          />
-          <FormField
-            id={crypto.randomUUID()}
-            labelText={"Отчество"}
-            name={"lastname"}
-            type="text"
-            placeholder={"Иванович"}
-          />
-          <FormField
-            id={crypto.randomUUID()}
-            labelText={"Телефон"}
-            name={"phone"}
-            type="tel"
-            placeholder={"+7 ("}
-          />
-          <FormField
-            id={crypto.randomUUID()}
-            labelText={"Email"}
-            name={"email"}
-            type="email"
-            placeholder={"example@mail.ru"}
-          />
-        </div>
+        <UserDataForm />
       </section>
       <section>
         <h3 className={"mb-5 sm:mb-10"}>Доставка</h3>
         {variantPaymentForm.value !== "pickupPoint" ? (
-          <div className={"flex flex-col gap-2.5 sm:gap-5"}>
+          <form
+            className={
+              "flex w-full flex-col justify-between gap-2.5 sm:gap-5 [&>*]:w-full"
+            }
+          >
             <CustomSelect
               options={[
                 {
@@ -153,7 +118,7 @@ export const Payment = () => {
                 />
               </div>
             )}
-          </div>
+          </form>
         ) : (
           <>
             <div className={"mb-4"}>
@@ -213,100 +178,6 @@ export const Payment = () => {
           <FormField name={"promotionalCode"} placeholder={"Ваш промокод"} />
         </div>
       </section>
-    </form>
-  );
-};
-
-type OptionType = {
-  value: "pickup" | "pickupPoint" | "courier" | "default";
-  label: string;
-  disabled?: boolean;
-};
-
-interface CustomSelectProps {
-  options: OptionType[];
-  initialValue?: OptionType;
-  id?: string;
-  mainLabelText?: string;
-}
-
-const CustomSelect: FC<CustomSelectProps> = ({
-  options,
-  id,
-  mainLabelText,
-}) => {
-  const dispatch = useAppDispatch();
-  const { variantPaymentForm } = useAppSelector((state) => state.paymentState);
-
-  const [showOptions, setShowOptions] = useState(false);
-  const ref = useRef<HTMLDivElement | null>(null);
-
-  useOutsideClick({ ref, callback: setShowOptions });
-
-  const handleOptionClick = (value: OptionType) => {
-    dispatch(toggleVariantPaymentForm(value));
-    setShowOptions(false);
-  };
-
-  return (
-    <div
-      className={"group relative flex flex-1 flex-col gap-2 text-sm"}
-      ref={ref}
-    >
-      {mainLabelText && (
-        <label
-          htmlFor={id}
-          className={"group-hover:text-hover cursor-pointer"}
-          onClick={() => setShowOptions(!showOptions)}
-        >
-          {mainLabelText}
-        </label>
-      )}
-      <input
-        defaultValue={variantPaymentForm.value}
-        name={"deliveryMethod"}
-        className={"hidden"}
-        id={id}
-      />
-      <div
-        className={clsx(
-          "group group-hover:outline-hover outline-tertiary flex w-full cursor-pointer justify-between px-2 py-3" +
-            " outline-1",
-          {
-            "text-tertiary": variantPaymentForm.value === "default",
-          },
-        )}
-        onClick={() => setShowOptions(!showOptions)}
-      >
-        <span>{variantPaymentForm.label}</span>
-        <span className={"flex items-center"}>
-          <ArrowDownSvg
-            width={13}
-            height={8}
-            className={clsx(
-              "group-hover:[&>path]:stroke-hover rotate-0 transition-transform",
-              {
-                "rotate-180": showOptions,
-              },
-            )}
-          />
-        </span>
-      </div>
-      {showOptions && (
-        <div className={"outline-active absolute top-18 w-full outline-1"}>
-          {options.map((opt) => (
-            <div
-              key={opt.value.toString()}
-              className={
-                "bg-hover hover:bg-active z-50 cursor-pointer px-2 py-4 text-white"
-              }
-              onClick={() => handleOptionClick(opt)}
-            >
-              {opt.label}
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
+    </section>
   );
 };

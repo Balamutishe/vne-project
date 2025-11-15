@@ -1,5 +1,6 @@
 "use client";
 
+import UserDataForm from "@/widgets/userDataForm";
 import { FC, ReactNode, useState } from "react";
 import Image from "next/image";
 import { clsx } from "clsx";
@@ -75,7 +76,7 @@ const AccountMobile = () => {
       case "АДРЕС ДОСТАВКИ":
         return <FormDeliveryData />;
       case "МОИ ДАННЫЕ":
-        return <FormUserData />;
+        return <UserDataForm />;
       case "МОИ ПОКУПКИ":
         return <PurchasesList variant={"mobile"} />;
     }
@@ -156,7 +157,7 @@ const AccountInfo = () => {
     <section>
       <div className={"mb-2.5 flex w-full justify-between sm:mb-5"}>
         <div className={"w-[48%]"}>
-          <FormUserData />
+          <UserDataForm />
         </div>
         <div className={"w-[48%]"}>
           <FormDeliveryData />
@@ -180,52 +181,6 @@ const AccountInfo = () => {
         </button>
       </div>
     </section>
-  );
-};
-
-const FormUserData = () => {
-  return (
-    <form
-      className={
-        "flex w-full flex-col justify-between gap-2.5 sm:gap-5 [&>*]:w-full"
-      }
-    >
-      <FormField
-        id={crypto.randomUUID()}
-        labelText={"Фамилия"}
-        name={"surname"}
-        type="text"
-        placeholder={"Иванов"}
-      />
-      <FormField
-        id={crypto.randomUUID()}
-        labelText={"Имя"}
-        name={"firstname"}
-        type="text"
-        placeholder={"Иван"}
-      />
-      <FormField
-        id={crypto.randomUUID()}
-        labelText={"Отчество"}
-        name={"lastname"}
-        type="text"
-        placeholder={"Иванович"}
-      />
-      <FormField
-        id={crypto.randomUUID()}
-        labelText={"Телефон"}
-        name={"phone"}
-        type="tel"
-        placeholder={"+7 ("}
-      />
-      <FormField
-        id={crypto.randomUUID()}
-        labelText={"Email"}
-        name={"email"}
-        type="email"
-        placeholder={"example@mail.ru"}
-      />
-    </form>
   );
 };
 

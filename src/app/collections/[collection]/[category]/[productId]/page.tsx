@@ -4,7 +4,7 @@ import {
   TCollectionsNames,
 } from "@/lib/mongoRepository/actions";
 import { Metadata } from "next";
-import { ProductDetails } from "@/widgets/productDetails/productDetails";
+import { Index } from "@/widgets/productDetails";
 import { ContainerPage, Footer, Main, Header } from "@/widgets";
 
 export const metadata: Metadata = {
@@ -28,7 +28,7 @@ export default async function ProductPage({
     <ContainerPage>
       <Header />
       <Main className={"container-padding"}>
-        <ProductDetails product={product} />
+        <Index product={product} />
       </Main>
       <Footer />
     </ContainerPage>

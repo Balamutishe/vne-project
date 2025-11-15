@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <ContainerPage>
       <Header className={"container-margin"} />
-      <Main className={"container-padding"}>
+      <Main className={"container-padding container-margin"}>
         <Payment />
       </Main>
       <Footer />

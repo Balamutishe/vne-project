@@ -44,7 +44,7 @@ export const SupportMain = () => {
 
 export const SupportMobile = () => {
   return (
-    <div className={"flex w-full flex-col items-center justify-start"}>
+    <section className={"flex w-full flex-col items-center justify-start"}>
       <h3
         className={
           "border-tertiary container-padding flex w-full items-center justify-start border-t-1 border-b-1 py-2"
@@ -58,6 +58,6 @@ export const SupportMobile = () => {
           <SupportContentView />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
