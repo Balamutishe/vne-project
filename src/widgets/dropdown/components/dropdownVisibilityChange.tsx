@@ -1,11 +1,11 @@
 "use client";
 
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { DropdownMenuClose } from "@/widgets/dropdownMenu/components";
-import { toggleDropdownMenuVisible } from "@/widgets/dropdownMenu/dropdownMenuSlice";
+import { toggleDropdownMenuVisible } from "@/widgets/dropdown/dropdownMenuSlice";
 import BurgerSvg from "@/widgets/header/icons/burger.svg";
+import CloseSvg from "../icons/close.svg";
 
-export const BurgerButton = () => {
+export const DropdownVisibilityChange = () => {
   const dispatch = useAppDispatch();
   const { isDropdownMenuVisible } = useAppSelector(
     (state) => state.dropdownMenuState,
@@ -23,7 +23,16 @@ export const BurgerButton = () => {
           <BurgerSvg width={32} height={32} />
         </button>
       ) : (
-        <DropdownMenuClose />
+        <button
+          className={"flex cursor-pointer items-center"}
+          onClick={() => dispatch(toggleDropdownMenuVisible(false))}
+        >
+          <CloseSvg
+            className={"hover:[&>path]:fill-hover"}
+            width={24}
+            height={24}
+          />
+        </button>
       )}
     </>
   );

@@ -3,7 +3,7 @@
 import { TGender } from "@/shared/types/categories";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { toggleCollectionHeader } from "@/widgets/collections/collectionsSlice";
-import { toggleDropdownMenuVisible } from "@/widgets/dropdownMenu/dropdownMenuSlice";
+import { toggleDropdownMenuVisible } from "@/widgets/dropdown/dropdownMenuSlice";
 import clsx from "clsx";
 
 export const NavList = () => {

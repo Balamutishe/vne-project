@@ -1,7 +1,7 @@
 "use client";
 
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { toggleDropdownMenuVisible } from "@/widgets/dropdownMenu/dropdownMenuSlice";
+import { toggleDropdownMenuVisible } from "@/widgets/dropdown/dropdownMenuSlice";
 import { clsx } from "clsx";
 import Link from "next/link";
 import { FC } from "react";

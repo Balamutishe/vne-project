@@ -1,34 +1,11 @@
 "use client";
 
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { CollectionListView } from "@/widgets/collections/components";
-import { toggleDropdownMenuVisible } from "@/widgets/dropdownMenu/dropdownMenuSlice";
+import { toggleDropdownMenuVisible } from "@/widgets/dropdown/dropdownMenuSlice";
 import UserSvg from "@/widgets/header/icons/user.svg";
 import Link from "next/link";
-import { NavList } from "@/widgets/header/components/headerNav/components";
 
-export const DropdownMobile = () => {
-  const { isDropdownMenuVisible } = useAppSelector(
-    (state) => state.dropdownMenuState,
-  );
-  if (!isDropdownMenuVisible) return null;
-
-  return (
-    <section className={"lg:hidden"}>
-      <div
-        className={
-          "border-tertiary bg-background container-padding border-t-1 border-b-1"
-        }
-      >
-        <NavList />
-        <CollectionListView variant={"header"} />
-      </div>
-      <DropdownMobileFooter />
-    </section>
-  );
-};
-
-const DropdownMobileFooter = () => {
+export const DropdownFooter = () => {
   const dispatch = useAppDispatch();
   const { isAuth } = useAppSelector((state) => state.authState);
 

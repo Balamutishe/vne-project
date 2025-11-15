@@ -1,28 +1,9 @@
 "use client";
 
 import { useAppSelector } from "@/store/hooks";
-import { DropdownMenuClose } from "@/widgets/dropdownMenu/components/dropdownMenuClose";
-import { FC, ReactNode } from "react";
+import { DropdownVisibilityChange } from "@/widgets/dropdown/components/dropdownVisibilityChange";
 
-export const DropdownDesktop: FC<{ Component: ReactNode }> = ({
-  Component,
-}) => {
-  const { isDropdownMenuVisible } = useAppSelector(
-    (state) => state.dropdownMenuState,
-  );
-
-  if (!isDropdownMenuVisible) return null;
-
-  return (
-    <section className={"bg-background hidden lg:block"}>
-      <DropdownHeader />
-      <div className={"flex h-80 [&>*]:w-[23%]"}>{Component}</div>
-      <div className={"w-[54%]"}></div>
-    </section>
-  );
-};
-
-const DropdownHeader = () => {
+export const DropdownHeader = () => {
   const { collectionHeaderType } = useAppSelector(
     (state) => state.collectionsState,
   );
@@ -46,7 +27,7 @@ const DropdownHeader = () => {
       <span
         className={"container-padding flex w-[54%] items-center justify-end"}
       >
-        <DropdownMenuClose />
+        <DropdownVisibilityChange />
       </span>
     </div>
   );
