@@ -16,7 +16,7 @@ import {
 import SearchSvg from "./icons/search.svg";
 import CloseSvg from "./icons/close.svg";
 
-export const HeaderSearchField = () => {
+export const SearchField = () => {
   const ref = useRef<HTMLInputElement | null>(null);
   const { collection, category } = useParams<{
     collection: TCollectionsNames;

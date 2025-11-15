@@ -45,7 +45,7 @@ export const BreadCrumb = () => {
           }
         >
           <li>
-            <Link href={"/"}>Главная</Link>
+            <Link href={"/public"}>Главная</Link>
           </li>
           {result.map((item) => (
             <li key={item.slug}> / {item.name}</li>

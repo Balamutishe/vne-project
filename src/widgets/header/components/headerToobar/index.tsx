@@ -6,7 +6,7 @@ import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import Link from "next/link";
 import UserSvg from "../../icons/user.svg";
 import BagSvg from "../../icons/bag.svg";
-import { HeaderSearchField } from "@/features/searchField";
+import { SearchField } from "@/features/searchField";
 
 export const HeaderToolbar = () => {
   const dispatch = useAppDispatch();
@@ -26,7 +26,7 @@ export const HeaderToolbar = () => {
       >
         О БРЕНДЕ
       </Link>
-      <HeaderSearchField />
+      <SearchField />
       <Link href={isAuth ? "/account" : "/auth"} className={"hidden sm:block"}>
         <UserSvg
           className={"hover:[&>path]:stroke-hover cursor-pointer"}
@@ -64,9 +64,11 @@ export const HeaderToolbar = () => {
           />
         </Link>
       </div>
-      {isBasketOpen && window.screen.width > 640 && (
+      {isBasketOpen && (
         <div
-          className={"bg-background absolute top-12 right-0 z-100 sm:top-16"}
+          className={
+            "bg-background absolute top-12 right-0 z-100 hidden sm:top-16 sm:block"
+          }
         >
           <Basket />
         </div>

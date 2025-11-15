@@ -1,5 +1,3 @@
-"use client";
-
 import { SupportContentView } from "@/widgets/support/components";
 import { SupportNav } from "@/widgets/support/components/supportNav";
 
