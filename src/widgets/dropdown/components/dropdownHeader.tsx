@@ -10,9 +10,7 @@ export const DropdownHeader = () => {
 
   return (
     <div
-      className={
-        "border-tertiary flex h-11.5 items-center border-t-1 border-b-1"
-      }
+      className={"border-tertiary flex h-12 items-center border-t-1 border-b-1"}
     >
       <span className={"container-padding flex w-[23%] items-center"}>
         {collectionHeaderType !== "unisex" && "ОДЕЖДА"}

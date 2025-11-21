@@ -2,11 +2,11 @@
 
 import { Basket } from "@/features/basket";
 import { toggleBasketOpen } from "@/features/basket/basketSlice";
+import { SearchField } from "@/features/searchField";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import Link from "next/link";
-import UserSvg from "../../icons/user.svg";
 import BagSvg from "../../icons/bag.svg";
-import { SearchField } from "@/features/searchField";
+import UserSvg from "../../icons/user.svg";
 
 export const HeaderToolbar = () => {
   const dispatch = useAppDispatch();
@@ -17,7 +17,7 @@ export const HeaderToolbar = () => {
   const { isAuth } = useAppSelector((state) => state.authState);
 
   return (
-    <div className={"flex min-w-[25%] items-center justify-end gap-7"}>
+    <section className={"flex min-w-[25%] items-center justify-end gap-7"}>
       <Link
         href={"/brand"}
         className={
@@ -73,6 +73,6 @@ export const HeaderToolbar = () => {
           <Basket />
         </div>
       )}
-    </div>
+    </section>
   );
 };

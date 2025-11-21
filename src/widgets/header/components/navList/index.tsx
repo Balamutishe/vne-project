@@ -19,7 +19,7 @@ export const NavList = () => {
   ];
 
   return (
-    <nav>
+    <nav data-dropdown>
       <ul className={"flex-center-between lg:gap-6 xl:gap-8"}>
         {navList.map((item) => (
           <li

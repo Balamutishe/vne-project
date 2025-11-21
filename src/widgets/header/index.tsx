@@ -1,21 +1,21 @@
-import { DropdownVisibilityChange } from "@/widgets/dropdown/components";
-import { FC } from "react";
-import { clsx } from "clsx";
-import {
-  HeaderPreview,
-  HeaderLogo,
-  HeaderToolbar,
-} from "@/widgets/header/components";
-import { Dropdown } from "@/widgets/header/components";
 import { CollectionListView } from "@/widgets/collections/components";
-import { NavList } from "@/widgets/header/components";
+import { Dropdown } from "@/widgets/dropdown";
+import { DropdownVisibilityChange } from "@/widgets/dropdown/components";
+import {
+  HeaderLogo,
+  HeaderPreview,
+  HeaderToolbar,
+  NavList,
+} from "@/widgets/header/components";
+import { clsx } from "clsx";
+import { FC } from "react";
 
 export const Header: FC<{
   className?: string;
   variant?: "main" | "second";
 }> = ({ className, variant }) => {
   return (
-    <header className={clsx(`${className} overflow-hidden sm:p-0`)}>
+    <header className={`${className} overflow-hidden sm:p-0`}>
       <section
         className={`container-padding flex-center-between h-12 lg:h-16 [&>*]:w-1/3`}
       >
