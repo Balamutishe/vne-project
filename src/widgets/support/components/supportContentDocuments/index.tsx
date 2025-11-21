@@ -30,12 +30,9 @@ export const SupportContentDocuments = () => {
       return (
         <div className={"max-h-70 overflow-auto sm:max-h-120"}>
           <button
-            className={clsx(
-              "text-hover hover:text-active mb-5 cursor-pointer",
-              {
-                hidden: window.screen.width <= 640,
-              },
-            )}
+            className={
+              "text-hover hover:text-active mb-5 hidden cursor-pointer sm:block"
+            }
             onClick={() => setDocContent("default")}
           >
             Назад к документам
@@ -385,10 +382,7 @@ export const SupportContentDocuments = () => {
         <div className={"max-h-70 overflow-auto sm:max-h-120"}>
           <button
             className={clsx(
-              "text-hover hover:text-active mb-5 cursor-pointer",
-              {
-                hidden: window.screen.width <= 376,
-              },
+              "text-hover hover:text-active mb-5 hidden cursor-pointer sm:block",
             )}
             onClick={() => setDocContent("default")}
           >

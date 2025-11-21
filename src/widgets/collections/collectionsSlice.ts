@@ -1,4 +1,4 @@
-import { TGender } from "@/shared/types/categories";
+import { TGender } from "@/shared/types/collections.types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface CollectionsState {

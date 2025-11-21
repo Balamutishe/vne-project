@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { clsx } from "clsx";
 import Link from "next/link";
-import { TProduct } from "@/shared/types/categories";
+import { TProduct } from "@/shared/types/collections.types";
 import { SectionTitle } from "@/shared/ui/sectionTitle";
 import { ProductCard } from "@/widgets/productsList/components/productCard";
 

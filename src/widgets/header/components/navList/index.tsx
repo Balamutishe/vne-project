@@ -1,6 +1,6 @@
 "use client";
 
-import { TGender } from "@/shared/types/categories";
+import { TGender } from "@/shared/types/collections.types";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { toggleCollectionHeader } from "@/widgets/collections/collectionsSlice";
 import { toggleDropdownMenuVisible } from "@/widgets/dropdown/dropdownMenuSlice";

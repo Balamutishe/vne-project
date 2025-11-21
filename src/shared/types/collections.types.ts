@@ -48,12 +48,3 @@ export const CollectionSchema = z.object({
   accessories: CategoriesListSchema,
 });
 export type TCollection = z.infer<typeof CollectionSchema>;
-
-export const CategoriesResponseDataSchema = z.object({
-  men: CollectionSchema,
-  women: CollectionSchema,
-  unisex: CollectionSchema,
-});
-export type TCategoriesResponseData = z.infer<
-  typeof CategoriesResponseDataSchema
->;

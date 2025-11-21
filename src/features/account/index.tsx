@@ -15,9 +15,17 @@ const damionFont = localFont({
 });
 
 export const AccountView = () => {
-  if (window.screen.width >= 640) return <Account />;
-
-  return <AccountMobile />;
+  return (
+    <>
+      <div className={"hidden sm:block"}>
+        <Account />
+      </div>
+      <div className={"sm:hidden"}>
+        <AccountMobile />
+      </div>
+      ;
+    </>
+  );
 };
 
 const Account = () => {
