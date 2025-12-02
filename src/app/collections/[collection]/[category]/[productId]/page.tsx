@@ -3,9 +3,9 @@ import {
   TCategoriesNames,
   TCollectionsNames,
 } from "@/lib/mongoRepository/actions";
+import { ContainerPage, Footer, Header, Main } from "@/widgets";
+import { Index } from "@/widgets/Products/ProductDetails";
 import { Metadata } from "next";
-import { Index } from "@/widgets/productDetails";
-import { ContainerPage, Footer, Main, Header } from "@/widgets";
 
 export const metadata: Metadata = {
   title: "Product",

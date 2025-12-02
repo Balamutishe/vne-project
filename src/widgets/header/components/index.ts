@@ -1,4 +1,4 @@
-export * from "../../dropdown";
+export * from "../../Dropdown";
 export * from "./headerLogo";
 export * from "./headerPreview";
 export * from "./headerToobar";

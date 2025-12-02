@@ -1,8 +1,8 @@
 "use client";
 
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { toggleCategoryMain } from "@/widgets/collections/collectionsSlice";
-import ArrowSvg from "@/widgets/collections/icons/arrow.svg";
+import { toggleCategoryMain } from "@/widgets/Collections/collectionsSlice";
+import ArrowSvg from "@/widgets/Collections/icons/arrow.svg";
 import { clsx } from "clsx";
 import Link from "next/link";
 import { FC } from "react";

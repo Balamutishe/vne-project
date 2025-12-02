@@ -1,11 +1,11 @@
 "use client";
 
+import { toggleDropdownMenuVisible } from "@/features/Dropdown/dropdownMenuSlice";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { toggleDropdownMenuVisible } from "@/widgets/dropdown/dropdownMenuSlice";
 import UserSvg from "@/widgets/header/icons/user.svg";
 import Link from "next/link";
 
-export const DropdownFooter = () => {
+const DropdownFooter = () => {
   const dispatch = useAppDispatch();
   const { isAuth } = useAppSelector((state) => state.authState);
 
@@ -42,3 +42,5 @@ export const DropdownFooter = () => {
     </div>
   );
 };
+
+export default DropdownFooter;

@@ -3,7 +3,7 @@ import {
   CollectionListView,
   CollectionPreview,
   CollectionSwitcher,
-} from "@/widgets/collections/components";
+} from "@/widgets/Collections/components";
 
 export const CollectionsSection = () => {
   return (

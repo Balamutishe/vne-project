@@ -1,11 +1,11 @@
 "use client";
 
-import { FC } from "react";
 import { useAppSelector } from "@/store/hooks";
 import {
-  CollectionListMain,
   CollectionListHeader,
-} from "@/widgets/collections/components/collectionListView/components";
+  CollectionListMain,
+} from "@/widgets/Collections/components/CollectionListView/components";
+import { FC } from "react";
 
 const collectionsDataWithList = {
   men: [

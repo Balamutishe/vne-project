@@ -2,7 +2,7 @@ import { toggleDropdownMenuVisible } from "@/features/Dropdown/dropdownMenuSlice
 import { useAppDispatch } from "@/store/hooks";
 import { useRef } from "react";
 
-const useDropdowVisibilityOnBlur = () => {
+const useDropdownVisibilityOnBlur = () => {
   const dispatch = useAppDispatch();
   const ref = useRef<HTMLElement | null>(null);
 
@@ -14,8 +14,8 @@ const useDropdowVisibilityOnBlur = () => {
 
   return {
     ref,
-    handleToggleVisible
+    handleToggleVisible,
   };
 };
 
-export default useDropdowVisibilityOnBlur();
+export default useDropdownVisibilityOnBlur;

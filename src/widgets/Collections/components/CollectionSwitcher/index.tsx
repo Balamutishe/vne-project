@@ -5,7 +5,7 @@ import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import {
   toggleCategoryMain,
   toggleCollectionMain,
-} from "@/widgets/collections/collectionsSlice";
+} from "@/widgets/Collections/collectionsSlice";
 import { clsx } from "clsx";
 
 export const CollectionSwitcher = () => {

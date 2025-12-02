@@ -1,3 +1,3 @@
-export * from "./collectionListView";
-export * from "./collectionSwitcher";
-export * from "./collectionPreview";
+export * from "./CollectionListView";
+export * from "./CollectionSwitcher";
+export * from "./CollectionPreview";

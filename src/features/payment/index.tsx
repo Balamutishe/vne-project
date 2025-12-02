@@ -1,10 +1,10 @@
 "use client";
 
-import { CustomSelect } from "@/shared/ui/customSelect";
-import UserDataForm from "@/widgets/userDataForm";
-import { useAppSelector } from "@/store/hooks";
 import { BasketList } from "@/features/basket";
+import { CustomSelect } from "@/shared/ui/customSelect";
 import { FormField } from "@/shared/ui/formField";
+import { useAppSelector } from "@/store/hooks";
+import FormFieldsUserData from "@/widgets/FormFields/FormFieldsUserData";
 import ShareSvg from "./icons/share.svg";
 
 export const Payment = () => {
@@ -21,7 +21,7 @@ export const Payment = () => {
     >
       <section>
         <h3 className={"mb-5 sm:mb-10"}>Контакты</h3>
-        <UserDataForm />
+        <FormFieldsUserData />
       </section>
       <section>
         <h3 className={"mb-5 sm:mb-10"}>Доставка</h3>

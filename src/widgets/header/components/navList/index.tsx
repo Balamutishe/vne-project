@@ -1,9 +1,9 @@
 "use client";
 
+import { toggleDropdownMenuVisible } from "@/features/Dropdown/dropdownMenuSlice";
 import { TGender } from "@/shared/types/collections.types";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { toggleCollectionHeader } from "@/widgets/collections/collectionsSlice";
-import { toggleDropdownMenuVisible } from "@/widgets/dropdown/dropdownMenuSlice";
+import { toggleCollectionHeader } from "@/widgets/Collections/collectionsSlice";
 import clsx from "clsx";
 
 export const NavList = () => {

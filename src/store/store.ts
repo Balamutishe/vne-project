@@ -1,16 +1,14 @@
-import { configureStore } from "@reduxjs/toolkit";
-import collectionsReducer from "@/widgets/collections/collectionsSlice";
-import headerReducer from "@/widgets/dropdown/dropdownMenuSlice";
-import headerSearchReducer from "@/features/searchField/headerSearchFieldSlice";
-import dropdownMenuReducer from "@/widgets/dropdown/dropdownMenuSlice";
-import basketReducer from "@/features/basket/basketSlice";
-import paymentReducer from "@/features/payment/paymentSlice";
 import authReducer from "@/features/auth/authSlice";
+import basketReducer from "@/features/basket/basketSlice";
+import dropdownMenuReducer from "@/features/Dropdown/dropdownMenuSlice";
+import paymentReducer from "@/features/payment/paymentSlice";
+import headerSearchReducer from "@/features/searchField/headerSearchFieldSlice";
+import collectionsReducer from "@/widgets/Collections/collectionsSlice";
+import { configureStore } from "@reduxjs/toolkit";
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
-      headerState: headerReducer,
       collectionsState: collectionsReducer,
       headerSearchFieldState: headerSearchReducer,
       dropdownMenuState: dropdownMenuReducer,

@@ -3,7 +3,7 @@
 import DropdownVisibilityChange from "@/features/Dropdown/DropdownVisibilityChange";
 import { useAppSelector } from "@/store/hooks";
 
-export const DropdownHeader = () => {
+const DropdownHeader = () => {
   const { collectionHeaderType } = useAppSelector(
     (state) => state.collectionsState,
   );
@@ -30,3 +30,5 @@ export const DropdownHeader = () => {
     </div>
   );
 };
+
+export default DropdownHeader;

@@ -1,9 +1,9 @@
-import { FC } from "react";
-import { clsx } from "clsx";
-import Link from "next/link";
 import { TProduct } from "@/shared/types/collections.types";
 import { SectionTitle } from "@/shared/ui/sectionTitle";
-import { ProductCard } from "@/widgets/productsList/components/productCard";
+import { ProductCard } from "@/widgets/Products/ProductsList/components/productCard";
+import { clsx } from "clsx";
+import Link from "next/link";
+import { FC } from "react";
 
 export const ProductsList: FC<{
   data: TProduct[];

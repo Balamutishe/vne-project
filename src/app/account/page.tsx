@@ -1,10 +1,10 @@
+import { ContainerPage, Footer, Header, Main } from "@/widgets";
+import { AccountView } from "@/widgets/Account";
 import { Metadata } from "next";
-import { AccountView } from "@/features/account";
-import { ContainerPage, Footer, Main, Header } from "@/widgets";
 
 export const metadata: Metadata = {
   title: "Account",
-  description: "account page",
+  description: "Account page",
 };
 
 export default function AccountPage() {

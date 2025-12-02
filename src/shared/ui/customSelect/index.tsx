@@ -1,7 +1,7 @@
 import { toggleVariantPaymentForm } from "@/features/payment/paymentSlice";
 import { useOutsideClick } from "@/shared/hooks/useOutsideClick";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import ArrowDownSvg from "@/widgets/productDetails/icons/arrow-down.svg";
+import ArrowDownSvg from "@/widgets/Products/ProductDetails/icons/arrow-down.svg";
 import { clsx } from "clsx";
 import { FC, useRef, useState } from "react";
 

@@ -1,11 +1,11 @@
-import { Metadata } from "next";
 import {
   productGetByFilter,
   productGetByTop,
 } from "@/lib/mongoRepository/actions";
-import { ContainerPage, Footer, Main, Header } from "@/widgets";
-import { CollectionsSection } from "@/widgets/collections";
-import { ProductsList } from "@/widgets/productsList";
+import { ContainerPage, Footer, Header, Main } from "@/widgets";
+import { CollectionsSection } from "@/widgets/Collections";
+import { ProductsList } from "@/widgets/Products/ProductsList";
+import { Metadata } from "next";
 import { Suspense } from "react";
 
 export const metadata: Metadata = {

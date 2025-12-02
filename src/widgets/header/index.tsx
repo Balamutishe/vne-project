@@ -1,6 +1,6 @@
-import { CollectionListView } from "@/widgets/collections/components";
-import { Dropdown } from "@/widgets/dropdown";
-import { DropdownVisibilityChange } from "@/widgets/dropdown/components";
+import DropdownVisibilityChange from "@/features/Dropdown/DropdownVisibilityChange";
+import { CollectionListView } from "@/widgets/Collections/components";
+import { Dropdown } from "@/widgets/Dropdown";
 import {
   HeaderLogo,
   HeaderPreview,

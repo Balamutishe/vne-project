@@ -3,9 +3,9 @@ import {
   TCategoriesNames,
   TCollectionsNames,
 } from "@/lib/mongoRepository/actions";
+import { ContainerPage, Footer, Header, Main } from "@/widgets";
+import { ProductsList } from "@/widgets/Products/ProductsList";
 import { Metadata } from "next";
-import { ContainerPage, Footer, Main, Header } from "@/widgets";
-import { ProductsList } from "@/widgets/productsList";
 import { Suspense } from "react";
 
 export const metadata: Metadata = {

@@ -1,14 +1,14 @@
 "use client";
 
-import { FC, useState } from "react";
-import { ReactSwiper } from "@/widgets/swiper";
 import { ProductAddToBasket } from "@/features/basket/addToBasket";
 import { TProduct } from "@/lib/mongoRepository/actions";
 import {
+  ProductDetailsDescription,
   ProductDetailsHeader,
   ProductDetailsImagesList,
-  ProductDetailsDescription,
-} from "@/widgets/productDetails/components";
+} from "@/widgets/Products/ProductDetails/components";
+import { ReactSwiper } from "@/widgets/swiper";
+import { FC, useState } from "react";
 
 export const Index: FC<{ product: TProduct | undefined }> = ({ product }) => {
   const [size, setSize] = useState("M");

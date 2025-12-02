@@ -1,4 +1,4 @@
-import ArrowDownSvg from "@/widgets/productDetails/icons/arrow-down.svg";
+import ArrowDownSvg from "@/widgets/Products/ProductDetails/icons/arrow-down.svg";
 import { clsx } from "clsx";
 import { FC, useState } from "react";
 

@@ -9,7 +9,7 @@ export const BreadCrumb = () => {
   const result = pathname
     .split("/")
     .map((item) => {
-      if (item === "account") return { name: "Аккаунт", slug: "account" };
+      if (item === "Account") return { name: "Аккаунт", slug: "Account" };
       if (item === "brand") return { name: "Брэнд", slug: "brand" };
       if (item === "support") return { name: "Помощь", slug: "support" };
       if (item === "contacts") return { name: "Контакты", slug: "contacts" };
