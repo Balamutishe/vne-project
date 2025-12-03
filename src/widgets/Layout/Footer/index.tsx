@@ -1,7 +1,7 @@
-import FooterDesktop from "@/widgets/Footer/components/FooterDesktop";
-import FooterMobile from "@/widgets/Footer/components/FooterMobile";
+import FooterDesktop from "./components/FooterDesktop";
+import FooterMobile from "./components/FooterMobile";
 
-export const Footer = () => {
+const Footer = () => {
   return (
     <footer className={"sm:max-h-77"}>
       <div className={"hidden sm:block"}>
@@ -13,3 +13,5 @@ export const Footer = () => {
     </footer>
   );
 };
+
+export default Footer;

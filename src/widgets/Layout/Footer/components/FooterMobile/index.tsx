@@ -1,7 +1,7 @@
-import FooterMobileSupportNavList from "@/widgets/Footer/components/FooterMobile/components/FooterMobileSupportNavList";
-import InstagramSvg from "@/widgets/Footer/icons/instagram.svg";
-import TelegramSvg from "@/widgets/Footer/icons/telegram.svg";
-import VkSvg from "@/widgets/Footer/icons/vk.svg";
+import FooterMobileSupportNavList from "./components/FooterMobileSupportNavList";
+import InstagramSvg from "@/widgets/Layout/Footer/icons/instagram.svg";
+import TelegramSvg from "@/widgets/Layout/Footer/icons/telegram.svg";
+import VkSvg from "@/widgets/Layout/Footer/icons/vk.svg";
 import Image from "next/image";
 
 const FooterMobile = () => {

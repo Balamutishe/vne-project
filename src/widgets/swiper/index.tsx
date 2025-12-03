@@ -5,9 +5,7 @@ import { FC } from "react";
 import "swiper/swiper.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-export const ReactSwiper: FC<{ imagesUrlList: string[] }> = ({
-  imagesUrlList,
-}) => {
+const ReactSwiper: FC<{ imagesUrlList: string[] }> = ({ imagesUrlList }) => {
   return (
     <section>
       <Swiper spaceBetween={0} slidesPerView={1}>
@@ -26,3 +24,5 @@ export const ReactSwiper: FC<{ imagesUrlList: string[] }> = ({
     </section>
   );
 };
+
+export default ReactSwiper;

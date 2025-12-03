@@ -1,4 +1,4 @@
-import ListItem from "@/widgets/Footer/components/FooterMobile/components/FooterMobileSupportNavList/components/ListItem";
+import ListItem from "./components/ListItem";
 
 const FooterMobileSupportNavList = () => {
   const supportList = [

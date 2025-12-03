@@ -3,7 +3,10 @@ import { ReactNode } from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../shared/styles/globals.css";
-import { ContainerPage, Footer, Header, Main } from "@/widgets";
+import ContainerPage from "@/widgets/Layout/ContainerPage";
+import Header from "@/widgets/Layout/Header";
+import Main from "@/widgets/Layout/Main";
+import Footer from "@/widgets/Layout/Footer";
 
 const interFont = Inter({
   variable: "--font-inter",

@@ -2,7 +2,6 @@ import {
   productGetByFilter,
   productGetByTop,
 } from "@/lib/mongoRepository/actions";
-import { ContainerPage, Footer, Header, Main } from "@/widgets";
 import { CollectionsSection } from "@/widgets/Collections";
 import { ProductsList } from "@/widgets/Products/ProductsList";
 import { Preview } from "@/widgets/Preview";

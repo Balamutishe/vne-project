@@ -5,13 +5,9 @@ import {
   HeaderLogo,
   HeaderToolbar,
   NavList,
-} from "@/widgets/Header/components";
-import { clsx } from "clsx";
-import { FC } from "react";
+} from "@/widgets/Layout/Header/components";
 
-export const Header: FC<{
-  className?: string;
-}> = ({ className }) => {
+const Header = () => {
   return (
     <header className={`sm:p-0`}>
       <section
@@ -35,3 +31,5 @@ export const Header: FC<{
     </header>
   );
 };
+
+export default Header;

@@ -1,6 +1,6 @@
 import { FC, ReactNode, Suspense } from "react";
 
-export const ContainerPage: FC<{ children: ReactNode }> = ({ children }) => {
+const ContainerPage: FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <Suspense fallback={<div>ЗАГРУЗКА...</div>}>
       <div
@@ -13,3 +13,5 @@ export const ContainerPage: FC<{ children: ReactNode }> = ({ children }) => {
     </Suspense>
   );
 };
+
+export default ContainerPage;

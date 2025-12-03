@@ -3,7 +3,7 @@
 import AccountDesktop from "@/widgets/Account/components/AccountDesktop";
 import AccountMobile from "@/widgets/Account/components/AccountMobile";
 
-export const AccountView = () => {
+const AccountView = () => {
   return (
     <>
       <div className={"hidden sm:block"}>
@@ -16,3 +16,5 @@ export const AccountView = () => {
     </>
   );
 };
+
+export default AccountView;

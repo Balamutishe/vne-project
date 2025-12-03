@@ -3,10 +3,8 @@ import {
   TCategoriesNames,
   TCollectionsNames,
 } from "@/lib/mongoRepository/actions";
-import { ContainerPage, Footer, Header, Main } from "@/widgets";
 import { ProductsList } from "@/widgets/Products/ProductsList";
 import { Metadata } from "next";
-import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Category",

@@ -7,7 +7,7 @@ import {
   ProductDetailsHeader,
   ProductDetailsImagesList,
 } from "@/widgets/Products/ProductDetails/components";
-import { ReactSwiper } from "@/widgets/Swiper";
+import Swiper from "@/widgets/Swiper";
 import { FC, useState } from "react";
 
 export const ProductDetails: FC<{ product: TProduct | undefined }> = ({
@@ -29,7 +29,7 @@ export const ProductDetails: FC<{ product: TProduct | undefined }> = ({
         <ProductDetailsImagesList imagesUrlList={product.imagesUrl} />
       </div>
       <div className={"sm:hidden"}>
-        <ReactSwiper imagesUrlList={product.imagesUrl} />
+        <Swiper imagesUrlList={product.imagesUrl} />
       </div>
       <div className={"flex flex-col pt-16 xl:max-h-135"}>
         <ProductDetailsHeader

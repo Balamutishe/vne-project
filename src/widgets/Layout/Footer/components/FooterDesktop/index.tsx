@@ -1,5 +1,5 @@
-import FooterHeader from "@/widgets/Footer/components/FooterHeader";
-import FooterSocials from "@/widgets/Footer/components/FooterSocilas";
+import FooterHeader from "../FooterHeader";
+import FooterSocials from "../FooterSocilas";
 
 const FooterDesktop = () => {
   return (

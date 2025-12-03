@@ -1,4 +1,4 @@
-import { AccountView } from "@/widgets/Account";
+import AccountView from "@/widgets/Account";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

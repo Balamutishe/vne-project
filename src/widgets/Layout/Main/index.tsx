@@ -1,6 +1,6 @@
 import { FC, ReactNode } from "react";
 
-export const Main: FC<{ children: ReactNode; className?: string }> = ({
+const Main: FC<{ children: ReactNode; className?: string }> = ({
   children,
   className,
 }) => {
@@ -10,3 +10,5 @@ export const Main: FC<{ children: ReactNode; className?: string }> = ({
     </main>
   );
 };
+
+export default Main;

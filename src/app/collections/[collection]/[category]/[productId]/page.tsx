@@ -3,7 +3,6 @@ import {
   TCategoriesNames,
   TCollectionsNames,
 } from "@/lib/mongoRepository/actions";
-import { ContainerPage, Footer, Header, Main } from "@/widgets";
 import { ProductDetails } from "@/widgets/Products/ProductDetails";
 import { Metadata } from "next";
 

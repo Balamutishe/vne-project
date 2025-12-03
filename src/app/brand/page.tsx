@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { ContainerPage, Footer, Main, Header, Brand } from "@/widgets";
+import { Brand } from "@/widgets/Brand";
 
 export const metadata: Metadata = {
   title: "Brand",
