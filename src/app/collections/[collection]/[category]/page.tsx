@@ -33,15 +33,5 @@ export default async function CategoryPage({
     productName || "",
   );
 
-  return (
-    <ContainerPage>
-      <Header className={"container-margin"} />
-      <Main className={"container-padding"}>
-        <Suspense fallback={<div>Загрузка...</div>}>
-          <ProductsList data={list} title={name} variant={"category"} />
-        </Suspense>
-      </Main>
-      <Footer />
-    </ContainerPage>
-  );
+  return <ProductsList data={list} title={name} variant={"category"} />;
 }

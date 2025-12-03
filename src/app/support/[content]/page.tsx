@@ -1,4 +1,4 @@
-import { SupportView } from "@/widgets/support";
+import { SupportView } from "@/widgets/Support";
 import { Metadata } from "next";
 import { ContainerPage, Footer, Main, Header } from "@/widgets";
 
@@ -8,13 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function SupportPage() {
-  return (
-    <ContainerPage>
-      <Header className={"container-margin"} />
-      <Main>
-        <SupportView />
-      </Main>
-      <Footer />
-    </ContainerPage>
-  );
+  return <SupportView />;
 }

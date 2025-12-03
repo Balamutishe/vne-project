@@ -11,7 +11,7 @@ export const ProductsList: FC<{
   variant: "main" | "category";
 }> = ({ data, title, variant }) => {
   return (
-    <section className={"container-margin size-full"}>
+    <section className={"container-margin container-padding size-full"}>
       <div className={"container-margin"}>
         <SectionTitle title={title} />
       </div>

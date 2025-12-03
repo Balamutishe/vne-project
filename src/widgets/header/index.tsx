@@ -3,19 +3,17 @@ import { CollectionListView } from "@/widgets/Collections/components";
 import { Dropdown } from "@/widgets/Dropdown";
 import {
   HeaderLogo,
-  HeaderPreview,
   HeaderToolbar,
   NavList,
-} from "@/widgets/header/components";
+} from "@/widgets/Header/components";
 import { clsx } from "clsx";
 import { FC } from "react";
 
 export const Header: FC<{
   className?: string;
-  variant?: "main" | "second";
-}> = ({ className, variant }) => {
+}> = ({ className }) => {
   return (
-    <header className={`${className} overflow-hidden sm:p-0`}>
+    <header className={`sm:p-0`}>
       <section
         className={`container-padding flex-center-between h-12 lg:h-16 [&>*]:w-1/3`}
       >
@@ -29,13 +27,6 @@ export const Header: FC<{
         </section>
         <HeaderLogo />
         <HeaderToolbar />
-      </section>
-      <section
-        className={clsx("z-[-1] h-112 w-full lg:h-200", {
-          hidden: variant !== "main",
-        })}
-      >
-        <HeaderPreview />
       </section>
       <Dropdown
         ComponentList={<CollectionListView variant={"header"} />}

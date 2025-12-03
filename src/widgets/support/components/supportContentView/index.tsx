@@ -6,7 +6,7 @@ import {
   SupportContentDelivery,
   SupportContentDocuments,
   SupportContentRecovery,
-} from "@/widgets/support/components";
+} from "./components";
 
 export const SupportContentView = () => {
   const { content } = useParams<{

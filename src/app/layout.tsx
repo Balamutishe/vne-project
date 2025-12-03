@@ -3,6 +3,7 @@ import { ReactNode } from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../shared/styles/globals.css";
+import { ContainerPage, Footer, Header, Main } from "@/widgets";
 
 const interFont = Inter({
   variable: "--font-inter",
@@ -23,7 +24,13 @@ export default function RootLayout({
   return (
     <StoreProvider>
       <html lang="en">
-        <body className={`${interFont.className} antialiased`}>{children}</body>
+        <body className={`${interFont.className} antialiased`}>
+          <ContainerPage>
+            <Header />
+            <Main>{children}</Main>
+            <Footer />
+          </ContainerPage>
+        </body>
       </html>
     </StoreProvider>
   );

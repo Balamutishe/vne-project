@@ -8,13 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  return (
-    <ContainerPage>
-      <Header className={"container-margin"} />
-      <Main className={"container-padding container-margin"}>
-        <Payment />
-      </Main>
-      <Footer />
-    </ContainerPage>
-  );
+  return <Payment />;
 }

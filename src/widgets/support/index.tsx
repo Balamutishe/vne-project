@@ -1,5 +1,5 @@
-import { SupportContentView } from "@/widgets/support/components";
-import { SupportNav } from "@/widgets/support/components/supportNav";
+import { SupportContentView } from "@/widgets/Support/components";
+import { SupportNav } from "@/widgets/Support/components/SupportNav";
 
 export const SupportView = () => {
   return (

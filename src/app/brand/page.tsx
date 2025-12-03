@@ -7,13 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function BrandPage() {
-  return (
-    <ContainerPage>
-      <Header />
-      <Main className={"container-padding"}>
-        <Brand />
-      </Main>
-      <Footer />
-    </ContainerPage>
-  );
+  return <Brand />;
 }

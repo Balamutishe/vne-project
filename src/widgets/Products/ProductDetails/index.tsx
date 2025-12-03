@@ -7,10 +7,12 @@ import {
   ProductDetailsHeader,
   ProductDetailsImagesList,
 } from "@/widgets/Products/ProductDetails/components";
-import { ReactSwiper } from "@/widgets/swiper";
+import { ReactSwiper } from "@/widgets/Swiper";
 import { FC, useState } from "react";
 
-export const Index: FC<{ product: TProduct | undefined }> = ({ product }) => {
+export const ProductDetails: FC<{ product: TProduct | undefined }> = ({
+  product,
+}) => {
   const [size, setSize] = useState("M");
 
   if (!product) return <div>Product not founded</div>;

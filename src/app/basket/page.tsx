@@ -8,13 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function BasketPage() {
-  return (
-    <ContainerPage>
-      <Header className={"container-margin"} />
-      <Main className={"container-padding"}>
-        <BasketView />
-      </Main>
-      <Footer />
-    </ContainerPage>
-  );
+  return <BasketView />;
 }

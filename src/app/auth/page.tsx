@@ -8,13 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function AuthPage() {
-  return (
-    <ContainerPage>
-      <Header className={"container-margin"} />
-      <Main className={"container-margin"}>
-        <Auth />
-      </Main>
-      <Footer />
-    </ContainerPage>
-  );
+  return <Auth />;
 }

@@ -7,7 +7,7 @@ import {
 
 export const CollectionsSection = () => {
   return (
-    <section className={"container-margin w-full"}>
+    <section className={"container-margin container-padding w-full"}>
       <div
         className={
           "container-margin flex flex-col lg:flex-row lg:items-center lg:justify-between"

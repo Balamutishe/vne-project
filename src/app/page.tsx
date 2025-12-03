@@ -5,8 +5,8 @@ import {
 import { ContainerPage, Footer, Header, Main } from "@/widgets";
 import { CollectionsSection } from "@/widgets/Collections";
 import { ProductsList } from "@/widgets/Products/ProductsList";
+import { Preview } from "@/widgets/Preview";
 import { Metadata } from "next";
-import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Main",
@@ -26,22 +26,14 @@ export default async function Home({
     : await productGetByFilter(productName);
 
   return (
-    <ContainerPage>
-      <Header
-        className={"container-margin"}
-        variant={!productName ? "main" : "second"}
+    <>
+      {!productName && <Preview />}
+      <ProductsList
+        data={data.list}
+        title={!productName ? data.name : `ПОИСК ПО ИМЕНИ: ${productName}`}
+        variant={!productName ? "main" : "category"}
       />
-      <Main className={"container-padding"}>
-        <Suspense fallback={<div>Загрузка...</div>}>
-          <ProductsList
-            data={data.list}
-            title={!productName ? data.name : `ПОИСК ПО ИМЕНИ: ${productName}`}
-            variant={!productName ? "main" : "category"}
-          />
-        </Suspense>
-        {!productName && <CollectionsSection />}
-      </Main>
-      <Footer />
-    </ContainerPage>
+      {!productName && <CollectionsSection />}
+    </>
   );
 }
