@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { useAppDispatch } from "@/store/hooks";
-import { productAdd } from "@/features/basket/basketSlice";
+import { productAdd } from "@/features/Basket/basketSlice";
 
-export const ProductAddToBasket: FC<{
+export const AddToBasket: FC<{
   id: string;
   name: string;
   price: number;

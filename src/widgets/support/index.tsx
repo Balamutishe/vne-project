@@ -1,7 +1,7 @@
 import { SupportDesktop } from "./components/SupportDesktop";
 import { SupportMobile } from "./components/SupportMobile";
 
-export const SupportView = () => {
+const SupportView = () => {
   return (
     <>
       <section className={"hidden flex-1 flex-col sm:flex"}>
@@ -13,3 +13,5 @@ export const SupportView = () => {
     </>
   );
 };
+
+export default SupportView;

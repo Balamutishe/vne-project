@@ -1,9 +1,9 @@
-import { productDelete } from "@/features/basket/basketSlice";
-import CloseSvg from "@/features/basket/icons/close.svg";
+import { productDelete } from "@/features/Basket/basketSlice";
+import CloseSvg from "@/shared/icons/close.svg";
 import { useAppDispatch } from "@/store/hooks";
 import { FC } from "react";
 
-export const ProductDeleteFromBasket: FC<{ id: string }> = ({ id }) => {
+export const DeleteFromBasket: FC<{ id: string }> = ({ id }) => {
   const dispatch = useAppDispatch();
   const handleProductDeleteFromBasket = () => {
     dispatch(productDelete({ type: "deleteProduct", _id: id }));

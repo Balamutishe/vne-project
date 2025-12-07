@@ -1,78 +1,17 @@
-"use client";
-
-import { Basket } from "@/features/basket";
-import { toggleBasketOpen } from "@/features/basket/basketSlice";
-import { SearchField } from "@/features/searchField";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import Link from "next/link";
-import BagSvg from "../../icons/bag.svg";
-import UserSvg from "../../icons/user.svg";
+import { SearchField } from "@/features/Search";
+import AccountLink from "@/widgets/Account/components/AccountLink";
+import BasketView from "@/widgets/Basket";
+import BasketLink from "@/widgets/Basket/components/BasketLink";
+import BrandLink from "@/widgets/Brand/components/BrandLink";
 
 export const HeaderToolbar = () => {
-  const dispatch = useAppDispatch();
-
-  const { totalQuantity, isBasketOpen } = useAppSelector(
-    (state) => state.basketState,
-  );
-  const { isAuth } = useAppSelector((state) => state.authState);
-
   return (
     <section className={"flex min-w-[25%] items-center justify-end gap-7"}>
-      <Link
-        href={"/brand"}
-        className={
-          "hover:text-hover active:text-active hidden cursor-pointer transition-colors lg:block"
-        }
-      >
-        О БРЕНДЕ
-      </Link>
+      <BrandLink />
       <SearchField />
-      <Link href={isAuth ? "/account" : "/auth"} className={"hidden sm:block"}>
-        <UserSvg
-          className={"hover:[&>path]:stroke-hover cursor-pointer"}
-          width={24}
-          height={24}
-        />
-      </Link>
-      <div className={"relative"}>
-        {totalQuantity > 0 && (
-          <span
-            className={
-              "bg-hover text-background absolute -top-2 -right-3 flex h-3 w-3 items-center sm:-top-3 sm:-right-4" +
-              " sm:h-5" +
-              " sm:w-5" +
-              " justify-center" +
-              " rounded-full p-2 text-xs leading-0 sm:text-base"
-            }
-          >
-            {totalQuantity}
-          </span>
-        )}
-        <BagSvg
-          className={"hover:[&>path]:fill-hover hidden cursor-pointer sm:block"}
-          width={24}
-          height={24}
-          onClick={() => {
-            dispatch(toggleBasketOpen(!isBasketOpen));
-          }}
-        />
-        <Link href={"/basket"} className={"sm:hidden"}>
-          <BagSvg
-            className={"hover:[&>path]:fill-hover cursor-pointer"}
-            width={24}
-            height={24}
-          />
-        </Link>
-      </div>
-      {isBasketOpen && (
-        <div
-          className={
-            "bg-background absolute top-12 right-0 z-100 hidden sm:top-16 sm:block"
-          }
-        >
-          <Basket />
-        </div>
-      )}
+      <AccountLink />
+      <BasketLink />
+      <BasketView />
     </section>
   );
 };

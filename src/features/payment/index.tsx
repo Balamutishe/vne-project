@@ -1,6 +1,6 @@
 "use client";
 
-import { BasketList } from "@/features/basket";
+import BasketList from "@/widgets/Basket/components/BasketList";
 import { CustomSelect } from "@/shared/ui/customSelect";
 import { FormField } from "@/shared/ui/formField";
 import { useAppSelector } from "@/store/hooks";
@@ -16,7 +16,7 @@ export const Payment = () => {
       className={
         "flex flex-col sm:flex-row sm:gap-14 [&>section]:w-full" +
         " [&>section]:mb-10 sm:[&>section]:mb-0" +
-        " sm:[&>section]:w-1/3"
+        " container-margin container-margin-top sm:[&>section]:w-1/3"
       }
     >
       <section>

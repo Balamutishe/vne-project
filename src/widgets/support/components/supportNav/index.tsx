@@ -3,7 +3,7 @@
 import clsx from "clsx";
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import ArrowSvg from "../../icons/arrow-small.svg";
+import ArrowSvg from "@/shared/icons/arrow-small.svg";
 
 export const SupportNav = () => {
   const { content } = useParams<{

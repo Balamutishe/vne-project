@@ -1,4 +1,4 @@
-import { basketClear } from "@/features/basket/basketSlice";
+import { basketClear } from "@/features/Basket/basketSlice";
 import { useAppDispatch } from "@/store/hooks";
 
 export const BasketClear = () => {

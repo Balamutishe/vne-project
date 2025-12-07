@@ -1,6 +1,6 @@
 "use client";
 
-import ArrowDownSvg from "@/widgets/Products/ProductDetails/icons/arrow-down.svg";
+import ArrowDownSvg from "@/shared/icons/arrow-down.svg";
 import { clsx } from "clsx";
 import Link from "next/link";
 import { FC, useState } from "react";

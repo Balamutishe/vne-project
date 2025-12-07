@@ -1,4 +1,4 @@
-import { SupportView } from "@/widgets/Support";
+import SupportView from "@/widgets/Support";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

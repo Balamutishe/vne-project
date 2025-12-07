@@ -2,8 +2,8 @@
 
 import { toggleDropdownMenuVisible } from "@/features/Dropdown/dropdownMenuSlice";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import BurgerSvg from "@/widgets/header/icons/burger.svg";
-import CloseSvg from "../icons/close.svg";
+import BurgerSvg from "@/shared/icons/burger.svg";
+import CloseSvg from "@/shared/icons/close.svg";
 
 const DropdownVisibilityChange = () => {
   const dispatch = useAppDispatch();

@@ -2,7 +2,7 @@
 
 import { toggleDropdownMenuVisible } from "@/features/Dropdown/dropdownMenuSlice";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import UserSvg from "@/widgets/header/icons/user.svg";
+import UserSvg from "@/shared/icons/user.svg";
 import Link from "next/link";
 
 const DropdownFooter = () => {

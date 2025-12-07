@@ -1,7 +1,7 @@
 import FooterMobileSupportNavList from "./components/FooterMobileSupportNavList";
-import InstagramSvg from "@/widgets/Layout/Footer/icons/instagram.svg";
-import TelegramSvg from "@/widgets/Layout/Footer/icons/telegram.svg";
-import VkSvg from "@/widgets/Layout/Footer/icons/vk.svg";
+import InstagramSvg from "@/shared/icons/instagram.svg";
+import TelegramSvg from "@/shared/icons/telegram.svg";
+import VkSvg from "@/shared/icons/vk.svg";
 import Image from "next/image";
 
 const FooterMobile = () => {

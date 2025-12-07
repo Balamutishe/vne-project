@@ -1,4 +1,4 @@
-import ColorSvg from "@/widgets/Products/ProductDetails/icons/colorImage.svg";
+import ColorSvg from "@/shared/icons/colorImage.svg";
 import { clsx } from "clsx";
 import { FC } from "react";
 

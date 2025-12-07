@@ -1,6 +1,6 @@
 "use client";
 
-import { ProductAddToBasket } from "@/features/basket/addToBasket";
+import { AddToBasket } from "@/features/Basket/AddToBasket";
 import { TProduct } from "@/lib/mongoRepository/actions";
 import {
   ProductDetailsDescription,
@@ -49,7 +49,7 @@ export const ProductDetails: FC<{ product: TProduct | undefined }> = ({
           />
         </div>
         <div className={"flex items-center justify-center px-4"}>
-          <ProductAddToBasket
+          <AddToBasket
             id={product.id}
             name={product.name}
             price={product.price}

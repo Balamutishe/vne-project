@@ -1,7 +1,7 @@
 import { toggleVariantPaymentForm } from "@/features/payment/paymentSlice";
 import { useOutsideClick } from "@/shared/hooks/useOutsideClick";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import ArrowDownSvg from "@/widgets/Products/ProductDetails/icons/arrow-down.svg";
+import ArrowDownSvg from "@/shared/icons/arrow-down.svg";
 import { clsx } from "clsx";
 import { FC, useRef, useState } from "react";
 
@@ -29,7 +29,7 @@ export const CustomSelect: FC<CustomSelectProps> = ({
   const [showOptions, setShowOptions] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
 
-  useOutsideClick({ ref, callback: setShowOptions });
+  useOutsideClick({ ref, callback: setShowOptions, callbackValue: false });
 
   const handleOptionClick = (value: OptionType) => {
     dispatch(toggleVariantPaymentForm(value));

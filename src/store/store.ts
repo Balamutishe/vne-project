@@ -1,8 +1,8 @@
 import authReducer from "@/features/auth/authSlice";
-import basketReducer from "@/features/basket/basketSlice";
+import basketReducer from "@/features/Basket/basketSlice";
 import dropdownMenuReducer from "@/features/Dropdown/dropdownMenuSlice";
 import paymentReducer from "@/features/payment/paymentSlice";
-import headerSearchReducer from "@/features/searchField/headerSearchFieldSlice";
+import headerSearchReducer from "@/features/Search/headerSearchFieldSlice";
 import collectionsReducer from "@/widgets/Collections/collectionsSlice";
 import { configureStore } from "@reduxjs/toolkit";
 
