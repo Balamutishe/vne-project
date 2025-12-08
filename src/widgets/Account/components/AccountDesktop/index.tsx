@@ -17,7 +17,9 @@ const AccountDesktop = () => {
   );
 
   return (
-    <section className={"container-padding"}>
+    <section
+      className={"container-padding container-margin container-margin-top"}
+    >
       <div className={"mb-5 sm:mb-10 xl:mb-20"}>
         <h1 className={`${damionFont.className} text-3xl xl:text-5xl`}>
           ПРИВЕТ, &lt;USER NAME&gt;!
