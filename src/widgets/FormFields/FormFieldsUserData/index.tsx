@@ -8,35 +8,30 @@ export const FormFieldsUserData = () => {
       }
     >
       <FormField
-        id={crypto.randomUUID()}
         labelText={"Фамилия"}
         name={"surname"}
         type="text"
         placeholder={"Иванов"}
       />
       <FormField
-        id={crypto.randomUUID()}
         labelText={"Имя"}
-        name={"firstname"}
+        name={"firstName"}
         type="text"
         placeholder={"Иван"}
       />
       <FormField
-        id={crypto.randomUUID()}
         labelText={"Отчество"}
-        name={"lastname"}
+        name={"lastName"}
         type="text"
         placeholder={"Иванович"}
       />
       <FormField
-        id={crypto.randomUUID()}
         labelText={"Телефон"}
         name={"phone"}
         type="tel"
         placeholder={"+7 ("}
       />
       <FormField
-        id={crypto.randomUUID()}
         labelText={"Email"}
         name={"email"}
         type="email"

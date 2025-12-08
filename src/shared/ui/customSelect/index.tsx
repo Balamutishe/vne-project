@@ -13,14 +13,14 @@ type OptionType = {
 
 interface CustomSelectProps {
   options: OptionType[];
+  name: string;
   initialValue?: OptionType;
-  id?: string;
   mainLabelText?: string;
 }
 
 export const CustomSelect: FC<CustomSelectProps> = ({
   options,
-  id,
+  name,
   mainLabelText,
 }) => {
   const dispatch = useAppDispatch();
@@ -40,7 +40,7 @@ export const CustomSelect: FC<CustomSelectProps> = ({
     <div className={"group relative flex flex-col gap-2 text-sm"} ref={ref}>
       {mainLabelText && (
         <label
-          htmlFor={id}
+          htmlFor={name}
           className={"group-hover:text-hover cursor-pointer"}
           onClick={() => setShowOptions(!showOptions)}
         >
@@ -49,9 +49,8 @@ export const CustomSelect: FC<CustomSelectProps> = ({
       )}
       <input
         defaultValue={variantPaymentForm.value}
-        name={"deliveryMethod"}
+        name={name}
         className={"hidden"}
-        id={id}
       />
       <div
         className={clsx(

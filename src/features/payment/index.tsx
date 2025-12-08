@@ -21,7 +21,42 @@ export const Payment = () => {
     >
       <section>
         <h3 className={"mb-5 sm:mb-10"}>Контакты</h3>
-        <FormFieldsUserData />
+        <form
+          className={
+            "flex w-full flex-col justify-between gap-2.5 sm:gap-5 [&>*]:w-full"
+          }
+        >
+          <FormField
+            labelText={"Фамилия"}
+            name={"surname"}
+            type="text"
+            placeholder={"Иванов"}
+          />
+          <FormField
+            labelText={"Имя"}
+            name={"firstName"}
+            type="text"
+            placeholder={"Иван"}
+          />
+          <FormField
+            labelText={"Отчество"}
+            name={"lastName"}
+            type="text"
+            placeholder={"Иванович"}
+          />
+          <FormField
+            labelText={"Телефон"}
+            name={"phone"}
+            type="tel"
+            placeholder={"+7 ("}
+          />
+          <FormField
+            labelText={"Email"}
+            name={"email"}
+            type="email"
+            placeholder={"example@mail.ru"}
+          />
+        </form>
       </section>
       <section>
         <h3 className={"mb-5 sm:mb-10"}>Доставка</h3>
@@ -46,25 +81,22 @@ export const Payment = () => {
                   label: "Самовывоз",
                 },
               ]}
-              id={crypto.randomUUID()}
+              name={"deliveryMethod"}
               mainLabelText={"Доставка"}
             />
             <FormField
-              id={crypto.randomUUID()}
               labelText={"Регион"}
               name={"region"}
               type="text"
               placeholder={"Введите регион"}
             />
             <FormField
-              id={crypto.randomUUID()}
               labelText={"Город"}
               name={"city"}
               type="text"
               placeholder={"Введите город"}
             />
             <FormField
-              id={crypto.randomUUID()}
               labelText={"Улица"}
               name={"street"}
               type="text"
@@ -74,7 +106,6 @@ export const Payment = () => {
             {(variantPaymentForm.value === "pickup" ||
               variantPaymentForm.value === "default") && (
               <FormField
-                id={crypto.randomUUID()}
                 labelText={"Дом"}
                 name={"house"}
                 type="number"
@@ -85,7 +116,6 @@ export const Payment = () => {
             {variantPaymentForm.value === "courier" && (
               <div className={"flex flex-1 flex-wrap justify-between gap-4"}>
                 <FormField
-                  id={crypto.randomUUID()}
                   labelText={"Дом"}
                   name={"house"}
                   type="number"
@@ -93,7 +123,6 @@ export const Payment = () => {
                   containerStyle={"w-[47%]"}
                 />
                 <FormField
-                  id={crypto.randomUUID()}
                   labelText={"Подъезд"}
                   name={"entrance"}
                   type="number"
@@ -101,7 +130,6 @@ export const Payment = () => {
                   containerStyle={"w-[47%]"}
                 />
                 <FormField
-                  id={crypto.randomUUID()}
                   labelText={"Квартира"}
                   name={"apartment"}
                   type="number"
@@ -109,7 +137,6 @@ export const Payment = () => {
                   containerStyle={"w-[47%]"}
                 />
                 <FormField
-                  id={crypto.randomUUID()}
                   labelText={"Этаж"}
                   name={"floor"}
                   type="number"
@@ -137,7 +164,7 @@ export const Payment = () => {
                     label: "Самовывоз",
                   },
                 ]}
-                id={crypto.randomUUID()}
+                name={"deliveryMethod"}
                 mainLabelText={"Доставка"}
               />
             </div>

@@ -10,14 +10,17 @@ interface IFormField extends InputHTMLAttributes<HTMLInputElement> {
 export function FormField({
   children,
   labelText,
-  id,
+  name,
   containerStyle,
   ...rest
 }: IFormField) {
   return (
     <div className={`group flex flex-col gap-2 text-sm ${containerStyle}`}>
       {labelText && (
-        <label htmlFor={id} className={"group-hover:text-hover cursor-pointer"}>
+        <label
+          htmlFor={name}
+          className={"group-hover:text-hover cursor-pointer"}
+        >
           {labelText}
         </label>
       )}
@@ -25,7 +28,7 @@ export function FormField({
         {children}
         <input
           {...rest}
-          id={id}
+          name={name}
           autoComplete={"off"}
           className={
             "border-tertiary group-hover:border-hover w-full cursor-pointer px-2 py-3" +

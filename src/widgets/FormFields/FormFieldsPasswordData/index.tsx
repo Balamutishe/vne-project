@@ -4,7 +4,6 @@ const FormFieldsPasswordData = () => {
   return (
     <section>
       <FormField
-        id={crypto.randomUUID()}
         labelText={"Пароль"}
         name={"password"}
         type="password"
