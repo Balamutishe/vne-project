@@ -14,7 +14,7 @@ const ReactSwiper: FC<{ imagesUrlList: string[] }> = ({ imagesUrlList }) => {
             <Image
               src={url}
               alt={"ProductImage"}
-              width={710}
+              width={711}
               height={952}
               className={"size-full"}
             />
